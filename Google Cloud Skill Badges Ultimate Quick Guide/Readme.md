@@ -109,13 +109,13 @@ If you've participated in Arcade events like:
 
 | No. | Skill Badge Name | Skill Badge Link | 🧪 Labs | 🎥 Solution |
 |:--:|------------------|------------|:------:|------------|
-| 1 | **Build Real World AI Applications with Gemini and Imagen** | [Link](https://www.cloudskillsboost.google/course_templates/1076) | 4 | [Watch Playlist](https://www.youtube.com/playlist?list=PLjgJ9U8TlGxnwHP7sX9K3GotQa6-Kqxn2) |
-| 2 | **Prompt Design in Vertex AI** | [Link](https://www.cloudskillsboost.google/course_templates/976) | 4 | [Watch Playlist](https://www.youtube.com/playlist?list=PLjgJ9U8TlGxke2GDICOLL12NA_YagXxKs) |
-| 3 | **App Building with AppSheet** | [Link](https://www.cloudskillsboost.google/course_templates/635) | 4 | [Playlist 1](https://www.youtube.com/playlist?list=PLjgJ9U8TlGxn5iRYemUiKt1qriHWYv1F1)<br>[Playlist 2](https://www.youtube.com/playlist?list=PLHfVKuKwHnWMxAbG0aRFwAQ798rHwaook) |
-| 4 | **Analyze BigQuery Data in Connected Sheets** | [Link](https://www.cloudskillsboost.google/course_templates/632) | 4 | [Watch Playlist](https://www.youtube.com/playlist?list=PLHfVKuKwHnWNvQIqW3-rWDfttSrOfTJC1) |
-| 5 | **Get Started with Looker** | [Link](https://www.cloudskillsboost.google/course_templates/647) | 4 | [Playlist 1](https://www.youtube.com/playlist?list=PLjgJ9U8TlGxlkHd9eZCbgkeKMvyXLuMId)<br>[Playlist 2](https://www.youtube.com/playlist?list=PLHfVKuKwHnWMiMf1ZNKq5QpjL987cHfLc) |
-| 6 | **Prepare Data for Looker Dashboards and Reports** | [Link](https://www.cloudskillsboost.google/course_templates/628) | 5 | [Watch Playlist](https://www.youtube.com/playlist?list=PLHfVKuKwHnWMTFXqbvAGGJPk59Xdk2xch) |
-| 7 | **Manage Data Models in Looker** | [Link](https://www.cloudskillsboost.google/course_templates/651) | 6 | [Watch Playlist](https://www.youtube.com/playlist?list=PL2QxKmNdTMQ7UiHkqDG1hdkSGeyzitfqC) |
+| 1 | **Build Real World AI Applications with Gemini and Imagen** | [Link](https://www.cloudskillsboost.google/course_templates/1076) | 4 | [Watch Playlist](Available Soon) |
+| 2 | **Prompt Design in Vertex AI** | [Link](https://www.cloudskillsboost.google/course_templates/976) | 4 | [Watch Playlist](Available Soon) |
+| 3 | **App Building with AppSheet** | [Link](https://www.cloudskillsboost.google/course_templates/635) | 4 | [Watch Playlist](Available Soon) |
+| 4 | **Analyze BigQuery Data in Connected Sheets** | [Link](https://www.cloudskillsboost.google/course_templates/632) | 4 | [Watch Playlist](Available Soon) |
+| 5 | **Get Started with Looker** | [Link](https://www.cloudskillsboost.google/course_templates/647) | 4 | [Watch Playlist](Available Soon) |
+| 6 | **Prepare Data for Looker Dashboards and Reports** | [Link](https://www.cloudskillsboost.google/course_templates/628) | 5 | [Watch Playlist](Available Soon) |
+| 7 | **Manage Data Models in Looker** | [Link](https://www.cloudskillsboost.google/course_templates/651) | 6 | [Watch Playlist](Available Soon) |
 
 ---
 
@@ -223,12 +223,6 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 
 ✨ Here we have completely categorized all 85 skill badges in efficient and organized way.
 
-🗺️ **Plan Your Path:**  
-🔗 Check out the [**RoadMap.md**](https://github.com/AyanMemon296/GoogleCloud-SkillBadges-QuickGuide/blob/main/RoadMap.md) — your personal guide with milestones and progress tracking.
-
-📅 **Optimize Your Lab Usage:**  
----
----
 
 # ✍️ Created by: **Babai Dey**
 
@@ -237,9 +231,9 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 
 ---
 
-## 📢 Connect with Me
+## 📢 Connect with Me:
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Tripti%20Gupta-blue?logo=linkedin)](https://www.linkedin.com/in/ayanmemon296)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Tripti%20Gupta-blue?logo=linkedin)](https://www.linkedin.com/in/tripti-gupta-a28a6832b/)  
 [![GitHub](https://img.shields.io/badge/GitHub-Arcade-With-Us-black?logo=github)](https://github.com/Arcade-With-Us)  
 [![YouTube](https://img.shields.io/badge/YouTube-ARCADE WITH US-red?logo=youtube)](https://www.youtube.com/@ARCADEWITHUS_We)
 [![WhatsApp](https://img.shields.io/badge/Join_WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="Join WhatsApp)](https://chat.whatsapp.com/KN3NvYNTJvU5xMCVTORJtS)
