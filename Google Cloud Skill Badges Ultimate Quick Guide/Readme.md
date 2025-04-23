@@ -24,7 +24,7 @@ It’s specially curated for:
 1. 🚀 [1 Lab Skill Badges](#-1-lab-skill-badges)  
 2. 🆓 [Free / No-Cost Skill Badges](#-free--no-cost-google-cloud-skill-badges)  
 3. 💡 [Least Labs + Lowest Credits Skill Badges](#-least-labs--lowest-credits-skill-badges)   
-
+4. ✨ [Lab free Badges List](#-lab-free-badges-list)
 ---
 ---
 
@@ -222,26 +222,48 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 
 ---
 ---
-## 🏅 Lab free Badges List (With Video Solutions)
+## 🏅 Lab free Badges List (With Video Solutions):
+
+**_What are “lab‑free courses” in Google Cloud Arcade?_**
+
+1. **Zero‑credit learning** → inclusive onboarding
+New players get only a handful of temporary lab credits. Lab‑free courses guarantee that everyone— even those who run out of credits or live in regions where payment cards don’t work—can still finish the mandatory game milestones.
+
+2. **Fast badge accumulation for the game’s leaderboard**
+Every lab‑free course awards a completion badge just like a paid lab. Badges translate into Arcade points that you need to clear the Facilitator game and unlock the prize counter (swag, vouchers, or charitable donations). Without them you’d be forced to spend credits on extra labs to reach the same point total.
+
+3. **Facilitators use them to mentor cohorts**
+Under the Facilitator Program you host study jams or office hours. Lab‑free courses are easy ice‑breakers because everyone can stream the content simultaneously and discuss quiz answers without worrying about VM startup failures or quota limits. 
+Google Cloud Community.
+
+4. **Compliance with the game’s “All‑activities” rule**
+To earn the coveted “Arcade Facilitator ’25” game badge you must complete every activity listed in the game screen— courses, skill‑badge quests, and trivia. Skipping the lab‑free items leaves the game “in progress” and you won’t be listed as a finisher.
+
+`⚠️Note`: **The Lab free badges are important for geyying the full points under Facilititaor Program**
 
 | No. |  Badge Name |  Badge Link | 🎥 Video Solution |
 |--:|------------------|------------------|-------------------|
 | 1 | **Digital Transformation with Google Cloud** | [Link](https://www.cloudskillsboost.google/course_templates/266) | [Watch](Will be available) |
-| 2 | **Trust and Security with Google Cloud* | [Link](https://www.cloudskillsboost.google/course_templates/945) | [Watch](Will be available) |
-| 3 | **Set Up an App Dev Environment on Google Cloud** | [Link](https://www.cloudskillsboost.google/course_templates/637) | [Watch](Will be available) |
-| 4 | **Build LookML Objects in Looker** | [Link](https://www.cloudskillsboost.google/course_templates/639) | [Watch](Will be available) |
-| 5 | **Perform Predictive Data Analysis in BigQuery** | [Link](https://www.cloudskillsboost.google/course_templates/656) | [Watch](Will be available) |
-| 6 | **Build Infrastructure with Terraform on Google Cloud** | [Link](https://www.cloudskillsboost.google/course_templates/636) | [Watch](Will be available) |
-| 7 | **Use Functions, Formulas, and Charts in Google Sheets** | [Link](https://www.cloudskillsboost.google/course_templates/776) | [Watch](Will be available) |
-| 8 | **Monitoring in Google Cloud** | [Link](https://www.cloudskillsboost.google/course_templates/747) | [Watch](Will be available) |
-| 9 | **Explore Generative AI with Gemini API in Vertex AI** | [Link](https://www.cloudskillsboost.google/course_templates/959) | [Watch](Will be available) |
-| 10 | **Discover and Protect Sensitive Data Across Your Ecosystem** | [Link](https://www.cloudskillsboost.google/course_templates/1177) | [Watch](Will be available) |
-| 1 | **Get Started with Google Workspace Tools** | [Link](https://www.cloudskillsboost.google/course_templates/676) | [Watch](Will be available) |
-| 2 | **Deploy Kubernetes Applications on Google Cloud** | [Link](https://www.cloudskillsboost.google/course_templates/663) | [Watch](Will be available) |
-| 3 | **Set Up an App Dev Environment on Google Cloud** | [Link](https://www.cloudskillsboost.google/course_templates/637) | [Watch](Will be available) |
-| 4 | **Build LookML Objects in Looker** | [Link](https://www.cloudskillsboost.google/course_templates/639) | [Watch](Will be available) |
-| 5 | **Perform Predictive Data Analysis in BigQuery** | [Link](https://www.cloudskillsboost.google/course_templates/656) | [Watch](Will be available) |
-| 4 | **Build LookML Objects in Looker** | [Link](https://www.cloudskillsboost.google/course_templates/639) | [Watch](Will be available) |
+| 2 | **Trust and Security with Google Cloud** | [Link](https://www.cloudskillsboost.google/course_templates/945) | [Watch](Will be available) |
+| 3 | **Exploring Data Transformation with Google Cloud** | [Link](https://www.cloudskillsboost.google/course_templates/267) | [Watch](Will be available) |
+| 4 | **Infrastructure and Application Modernization with Google Cloud** | [Link](https://www.cloudskillsboost.google/course_templates/265) | [Watch](Will be available) |
+| 5 | **Scaling with Google Cloud Operations** | [Link](https://www.cloudskillsboost.google/course_templates/271) | [Watch](Will be available) |
+| 6 | **Innovating with Google Cloud Artificial Intelligence** | [Link](https://www.cloudskillsboost.google/course_templates/946) | [Watch](Will be available) |
+| 7 | **Google Drive** | [Link](https://www.cloudskillsboost.google/course_templates/199) | [Watch](Will be available) |
+| 8 | **Google Docs** | [Link](https://www.cloudskillsboost.google/course_templates/195) | [Watch](Will be available) |
+| 9 | **Google Slides** | [Link](https://www.cloudskillsboost.google/course_templates/197) | [Watch](Will be available) |
+| 10 | **Google Meet** | [Link](https://www.cloudskillsboost.google/course_templates/198) | [Watch](Will be available) |
+| 11 | **Google Sheets** | [Link](https://www.cloudskillsboost.google/course_templates/196) | [Watch](Will be available) |
+| 12 | **Google Calendar** | [Link](https://www.cloudskillsboost.google/course_templates/201) | [Watch](Will be available) |
+| 13 | **Responsible AI for Digital Leaders with Google Cloud** | [Link](https://www.cloudskillsboost.google/course_templates/1069) | [Watch](Will be available) |
+| 14 | **Customer Experience with Google AI Architecture** | [Link](https://www.cloudskillsboost.google/course_templates/1002) | [Watch](Will be available) |
+| 15 | **Machine Learning Operations (MLOps) with Vertex AI: Model Evaluation** | [Link](https://www.cloudskillsboost.google/course_templates/1080) | [Watch](Will be available) |
+| 16 | **Conversational AI on Vertex AI and Dialogflow CX** | [Link](https://www.cloudskillsboost.google/course_templates/892) | [Watch](Will be available) |
+| 17 | **Building Complex End to End Self-Service Experiences in Dialogflow CX** | [Link](https://www.cloudskillsboost.google/course_templates/1103) | [Watch](Will be available) |
+
+**_Finish them early, free up your credits for the skill‑badge quests, and you’ll breeze through the game while maximizing your chances of snagging those Google Cloud goodies. 🎮☁️_**
+
+`These are taken from the Arcade Facilitator ’25 syllabus and the “Lab‑Free Courses” playlist released by Google Cloud two weeks ago.` 
 
 ✨ Here we have completely categorized all 85 skill badges in efficient and organized way.
 
