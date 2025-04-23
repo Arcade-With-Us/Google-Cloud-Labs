@@ -2,7 +2,7 @@
 
 ![Google Cloud](https://img.shields.io/badge/Google%20Cloud-Skills%20Boost-blue?logo=googlecloud)
 ![Last Updated](https://img.shields.io/badge/Updated-April%202025-brightgreen)
-![Made by Babai](https://img.shields.io/badge/Made%20By-Babai%20Dey-yellow)
+![Made by Babai](https://img.shields.io/badge/Made%20By-Abir%20Dey-yellow)
 [![Subscribe](https://img.shields.io/badge/YouTube-Arcade%20With%20Us-red?logo=youtube)](https://www.youtube.com/@ARCADEWITHUS_We)
 > 🎓 **Smart Shortcut to Earning Google Cloud Skill Badges — Fast, Free & Efficient.**
 
@@ -116,6 +116,7 @@ If you've participated in Arcade events like:
 | 5 | **Get Started with Looker** | [Link](https://www.cloudskillsboost.google/course_templates/647) | 4 | [Watch Playlist](Available Soon) |
 | 6 | **Prepare Data for Looker Dashboards and Reports** | [Link](https://www.cloudskillsboost.google/course_templates/628) | 5 | [Watch Playlist](Available Soon) |
 | 7 | **Manage Data Models in Looker** | [Link](https://www.cloudskillsboost.google/course_templates/651) | 6 | [Watch Playlist](Available Soon) |
+| 8 | **Build LookML Objects in Looker** | [Link](https://www.cloudskillsboost.google/course_templates/639) | 5 | [Watch Playlist](Available Soon) |
 
 ---
 
@@ -123,10 +124,11 @@ If you've participated in Arcade events like:
 
 > 🎯 After completing everything, you'll earn:
 
-- 🆓 **7 Free / No-Cost Skill Badges**
+- 🆓 **8 Free / No-Cost Skill Badges**
 - ⚡ **10 One-Lab Skill Badges**
 
-> 🧾 **Total = 🏅 17 Skill Badges**
+> 🧾 **Total = 🏅 18 Skill Badges**
+> 🧾 **Total = 🏅 9 Arcade Points**
 
 ---
 ---
@@ -224,7 +226,7 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 ✨ Here we have completely categorized all 85 skill badges in efficient and organized way.
 
 
-# ✍️ Created by: **Babai Dey**
+# ✍️ Created by: **Abir Dey**
 
 > 🙌 I spent hours researching, testing, and organizing this.  
 > Give credit if you find it helpful — don’t copy blindly.
