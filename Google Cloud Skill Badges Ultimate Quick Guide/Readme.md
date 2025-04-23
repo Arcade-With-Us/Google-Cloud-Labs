@@ -148,77 +148,77 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 
 ## 📋 Least Labs + Lowest Credits Skill Badges List
 
-| No. | Name                                                                 | Credits | Labs |
-|-----|----------------------------------------------------------------------|---------|------|
-| 1   | Get Started with Pub/Sub                                            | 2       | 3    |
-| 2   | Streaming Analytics into BigQuery                                   | 2       | 4    |
-| 3   | Integrate BigQuery Data and Google Workspace using Apps Script      | 2       | 4    |
-| 4   | Store, Process, and Manage Data on Google Cloud - Command Line      | 3       | 4    |
-| 5   | Store, Process, and Manage Data on Google Cloud - Console           | 3       | 4    |
-| 6   | Get Started with API Gateway                                        | 3       | 4    |
-| 7   | Create a Streaming Data Lake on Cloud Storage                       | 3       | 4    |
-| 8   | Get Started with Eventarc                                           | 3       | 4    |
-| 9   | Tag and Discover BigLake Data                                       | 3       | 4    |
-| 10  | Get Started with Dataplex                                           | 4       | 4    |
-| 11  | Monitor and Manage Google Cloud Resources                           | 4       | 4    |
-| 12  | Cloud Run Functions: 3 Ways                                         | 4       | 4    |
-| 13  | Get Started with Cloud Storage                                      | 4       | 4    |
-| 14  | App Engine: 3 Ways                                                  | 4       | 4    |
-| 15  | Create a Secure Data Lake on Cloud Storage                          | 4       | 4    |
-| 16  | Secure BigLake Data                                                 | 4       | 4    |
-| 17  | Get Started with Sensitive Data Protection                          | 4       | 4    |
-| 18  | Networking Fundamentals on Google Cloud                             | 4       | 4    |
-| 19  | The Basics of Google Cloud Compute                                  | 4       | 4    |
-| 20  | Use APIs to Work with Cloud Storage                                 | 4       | 4    |
-| 21  | Using the Google Cloud Speech API                                   | 4       | 4    |
-| 22  | Cloud Speech API: 3 Ways                                            | 4       | 4    |
-| 23  | Configure Service Accounts and IAM Roles for Google Cloud           | 4       | 4    |
-| 24  | Develop with Apps Script and AppSheet                               | 7       | 4    |
-| 25  | Automate Data Capture at Scale with Document AI                     | 8       | 4    |
-| 26  | Analyze Speech and Language with Google APIs                        | 8       | 4    |
-| 27  | Set Up a Google Cloud Network                                       | 8       | 4    |
-| 28  | Analyze Images with the Cloud Vision API                            | 12      | 4    |
-| 29  | Analyze Sentiment with Natural Language API                         | 12      | 4    |
-| 30  | Engineer Data for Predictive Modeling with BigQuery ML              | 15      | 4    |
-| 31  | Implement DevOps Workflows in Google Cloud                          | 16      | 4    |
-| 32  | Develop Serverless Apps with Firebase                               | 16      | 4    |
-| 33  | Secure Software Delivery                                            | 16      | 4    |
-| 34  | Protect Cloud Traffic with Chrome Enterprise Premium Security       | 16      | 4    |
-| 35  | Manage Kubernetes in Google Cloud                                   | 20      | 4    |
-| 36  | Build and Deploy Machine Learning Solutions on Vertex AI            | 20      | 4    |
-| 37  | Implement CI/CD Pipelines on Google Cloud                           | 20      | 4    |
-| 38  | Build Google Cloud Infrastructure for AWS Professionals             | 20      | 4    |
-| 39  | Build Google Cloud Infrastructure for Azure Professionals           | 20      | 4    |
-| 40  | Inspect Rich Documents with Gemini Multimodality and Multimodal RAG | 20      | 4    |
-| 41  | Migrate MySQL data to Cloud SQL using Database Migration Service    | 5       | 5    |
-| 42  | Mitigate Threats and Vulnerabilities with Security Command Center   | 5       | 5    |
-| 43  | Implement Load Balancing on Compute Engine                          | 5       | 5    |
-| 44  | Create and Manage Cloud SQL for PostgreSQL Instances                | 5       | 5    |
-| 45  | Create and Manage Cloud Spanner Instances                           | 5       | 5    |
-| 46  | Create and Manage Bigtable Instances                                | 5       | 5    |
-| 47  | Build a Data Mesh with Dataplex                                     | 5       | 5    |
-| 48  | Share Data Using Google Data Cloud                                  | 9       | 5    |
-| 49  | Monitor and Log with Google Cloud Observability                     | 9       | 5    |
-| 50  | Deploy and Manage Apigee X                                          | 9       | 5    |
-| 51  | Create ML Models with BigQuery ML                                   | 11      | 5    |
-| 52  | Monitor Environments with Google Cloud Managed Service for Prometheus | 13    | 5    |
-| 53  | Build a Website on Google Cloud                                     | 13      | 5    |
-| 54  | Develop GenAI Apps with Gemini and Streamlit                        | 20      | 5    |
-| 55  | Build a Data Warehouse with BigQuery                                | 25      | 5    |
-| 56  | Develop Serverless Applications on Cloud Run                        | 25      | 5    |
-| 57  | Optimize Costs for Google Kubernetes Engine                         | 25      | 5    |
-| 58  | Detect Manufacturing Defects using Visual Inspection AI             | 25      | 5    |
-| 59  | Create and Manage AlloyDB Instances                                 | 6       | 6    |
-| 60  | Develop your Google Cloud Network                                   | 18      | 6    |
-| 61  | Classify Images with TensorFlow on Google Cloud                     | 26      | 6    |
-| 62  | Develop and Secure APIs with Apigee X                               | 26      | 6    |
-| 63  | Build a Secure Google Cloud Network                                 | 30      | 6    |
-| 64  | Build Custom Processors with Document AI                            | 30      | 6    |
-| 65  | Cloud Architecture: Design, Implement, and Manage                   | 32      | 6    |
-| 66  | Derive Insights from BigQuery Data                                  | 6       | 7    |
-| 67  | Use Machine Learning APIs on Google Cloud                           | 31      | 7    |
-| 68  | Implement Cloud Security Fundamentals on Google Cloud               | 20      | 8    |
-| 69  | Prepare Data for ML APIs on Google Cloud                            | 13      | 9    |
+| No. | Name                                                                | Credits | Labs | Skill Badge Link |
+|-----|---------------------------------------------------------------------|---------|------|------------------|
+| 1   | Get Started with Pub/Sub                                            | 2       | 3    |                  |
+| 2   | Streaming Analytics into BigQuery                                   | 2       | 4    |                  |
+| 3   | Integrate BigQuery Data and Google Workspace using Apps Script      | 2       | 4    |                  |
+| 4   | Store, Process, and Manage Data on Google Cloud - Command Line      | 3       | 4    |                  |
+| 5   | Store, Process, and Manage Data on Google Cloud - Console           | 3       | 4    |                  |
+| 6   | Get Started with API Gateway                                        | 3       | 4    |                  |
+| 7   | Create a Streaming Data Lake on Cloud Storage                       | 3       | 4    |                  |
+| 8   | Get Started with Eventarc                                           | 3       | 4    |                  |
+| 9   | Tag and Discover BigLake Data                                       | 3       | 4    |                  |
+| 10  | Get Started with Dataplex                                           | 4       | 4    |                  |
+| 11  | Monitor and Manage Google Cloud Resources                           | 4       | 4    |                  |
+| 12  | Cloud Run Functions: 3 Ways                                         | 4       | 4    |                  |
+| 13  | Get Started with Cloud Storage                                      | 4       | 4    |                  |
+| 14  | App Engine: 3 Ways                                                  | 4       | 4    |                  |
+| 15  | Create a Secure Data Lake on Cloud Storage                          | 4       | 4    |                  |
+| 16  | Secure BigLake Data                                                 | 4       | 4    |                  |
+| 17  | Get Started with Sensitive Data Protection                          | 4       | 4    |                  |
+| 18  | Networking Fundamentals on Google Cloud                             | 4       | 4    |                  |
+| 19  | The Basics of Google Cloud Compute                                  | 4       | 4    |                  |
+| 20  | Use APIs to Work with Cloud Storage                                 | 4       | 4    |                  |
+| 21  | Using the Google Cloud Speech API                                   | 4       | 4    |                  |
+| 22  | Cloud Speech API: 3 Ways                                            | 4       | 4    |                  |
+| 23  | Configure Service Accounts and IAM Roles for Google Cloud           | 4       | 4    |                  |
+| 24  | Develop with Apps Script and AppSheet                               | 7       | 4    |                  |
+| 25  | Automate Data Capture at Scale with Document AI                     | 8       | 4    |                  |
+| 26  | Analyze Speech and Language with Google APIs                        | 8       | 4    |                  |
+| 27  | Set Up a Google Cloud Network                                       | 8       | 4    |                  |
+| 28  | Analyze Images with the Cloud Vision API                            | 12      | 4    |                  |
+| 29  | Analyze Sentiment with Natural Language API                         | 12      | 4    |                  |
+| 30  | Engineer Data for Predictive Modeling with BigQuery ML              | 15      | 4    |                  |
+| 31  | Implement DevOps Workflows in Google Cloud                          | 16      | 4    |                  |
+| 32  | Develop Serverless Apps with Firebase                               | 16      | 4    |                  |
+| 33  | Secure Software Delivery                                            | 16      | 4    |                  |
+| 34  | Protect Cloud Traffic with Chrome Enterprise Premium Security       | 16      | 4    |                  |
+| 35  | Manage Kubernetes in Google Cloud                                   | 20      | 4    |                  |
+| 36  | Build and Deploy Machine Learning Solutions on Vertex AI            | 20      | 4    |                  |
+| 37  | Implement CI/CD Pipelines on Google Cloud                           | 20      | 4    |                  |
+| 38  | Build Google Cloud Infrastructure for AWS Professionals             | 20      | 4    |                  |
+| 39  | Build Google Cloud Infrastructure for Azure Professionals           | 20      | 4    |                  |
+| 40  | Inspect Rich Documents with Gemini Multimodality and Multimodal RAG | 20      | 4    |                  |
+| 41  | Migrate MySQL data to Cloud SQL using Database Migration Service    | 5       | 5    |                  |
+| 42  | Mitigate Threats and Vulnerabilities with Security Command Center   | 5       | 5    |                  |
+| 43  | Implement Load Balancing on Compute Engine                          | 5       | 5    |                  |
+| 44  | Create and Manage Cloud SQL for PostgreSQL Instances                | 5       | 5    |                  |
+| 45  | Create and Manage Cloud Spanner Instances                           | 5       | 5    |                  |
+| 46  | Create and Manage Bigtable Instances                                | 5       | 5    |                  |
+| 47  | Build a Data Mesh with Dataplex                                     | 5       | 5    |                  |
+| 48  | Share Data Using Google Data Cloud                                  | 9       | 5    |                  |
+| 49  | Monitor and Log with Google Cloud Observability                     | 9       | 5    |                  |
+| 50  | Deploy and Manage Apigee X                                          | 9       | 5    |                  |
+| 51  | Create ML Models with BigQuery ML                                   | 11      | 5    |                  |
+| 52  | Monitor Environments with Google Cloud Managed Service for Prometheus | 13    | 5    |                  |
+| 53  | Build a Website on Google Cloud                                     | 13      | 5    |                  |
+| 54  | Develop GenAI Apps with Gemini and Streamlit                        | 20      | 5    |                  |
+| 55  | Build a Data Warehouse with BigQuery                                | 25      | 5    |                  |
+| 56  | Develop Serverless Applications on Cloud Run                        | 25      | 5    |                  |
+| 57  | Optimize Costs for Google Kubernetes Engine                         | 25      | 5    |                  |
+| 58  | Detect Manufacturing Defects using Visual Inspection AI             | 25      | 5    |                  |
+| 59  | Create and Manage AlloyDB Instances                                 | 6       | 6    |                  |
+| 60  | Develop your Google Cloud Network                                   | 18      | 6    |                  |
+| 61  | Classify Images with TensorFlow on Google Cloud                     | 26      | 6    |                  |
+| 62  | Develop and Secure APIs with Apigee X                               | 26      | 6    |                  |
+| 63  | Build a Secure Google Cloud Network                                 | 30      | 6    |                  |
+| 64  | Build Custom Processors with Document AI                            | 30      | 6    |                  |
+| 65  | Cloud Architecture: Design, Implement, and Manage                   | 32      | 6    |                  |
+| 66  | Derive Insights from BigQuery Data                                  | 6       | 7    |                  |
+| 67  | Use Machine Learning APIs on Google Cloud                           | 31      | 7    |                  |
+| 68  | Implement Cloud Security Fundamentals on Google Cloud               | 20      | 8    |                  |
+| 69  | Prepare Data for ML APIs on Google Cloud                            | 13      | 9    |                  |
 
 ---
 ---
