@@ -3,7 +3,7 @@
 ![Google Cloud](https://img.shields.io/badge/Google%20Cloud-Skills%20Boost-blue?logo=googlecloud)
 ![Last Updated](https://img.shields.io/badge/Updated-April%202025-brightgreen)
 ![Made by Babai](https://img.shields.io/badge/Made%20By-Babai%20Dey-yellow)
-[![Subscribe](https://img.shields.io/badge/Subscribe-Arcade%20With%20Us-style=for-the-badge&logo=youtube&logoColor=red)](https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l)
+[![Subscribe](https://img.shields.io/badge/Subscribe-Arcade%20With%20Us-FFF0000-style=for-the-badge&logo=youtube&logoColor=red)](https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l)
 > 🎓 **Smart Shortcut to Earning Google Cloud Skill Badges — Fast, Free & Efficient.**
 
 ---
@@ -233,10 +233,9 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 
 ## 📢 Connect with Me:
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Tripti%20Gupta-blue?logo=linkedin)](https://www.linkedin.com/in/tripti-gupta-a28a6832b/)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Tripti%20Gupta-blue?logo=linkedin)](https://www.linkedin.com/in/tripti-gupta-a28a6832b)  
 [![GitHub](https://img.shields.io/badge/GitHub-Arcade-With-Us-black?logo=github)](https://github.com/Arcade-With-Us)  
 [![YouTube](https://img.shields.io/badge/YouTube-ARCADE WITH US-red?logo=youtube)](https://www.youtube.com/@ARCADEWITHUS_We)
-[![WhatsApp](https://img.shields.io/badge/Join_WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="Join WhatsApp)](https://chat.whatsapp.com/KN3NvYNTJvU5xMCVTORJtS)
 ---
 
 ## ⚠️ Disclaimer
