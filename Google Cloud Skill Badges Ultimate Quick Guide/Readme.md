@@ -151,7 +151,7 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 | No. | Name                                                                | Credits | Labs | Skill Badge Link |
 |-----|---------------------------------------------------------------------|---------|------|------------------|
 | 1   | Get Started with Pub/Sub                                            | 2       | 3    |      [Link](https://www.cloudskillsboost.google/course_templates/728)          |
-| 2   | Streaming Analytics into BigQuery                                   | 2       | 4    |  [Link](https://www.cloudskillsboost.google/course_templates/752)                |
+| 2   | Streaming Analytics into BigQuery                                   | 2       | 4    |      [Link](https://www.cloudskillsboost.google/course_templates/752)                |
 | 3   | Integrate BigQuery Data and Google Workspace using Apps Script      | 2       | 4    |         [Link](https://www.cloudskillsboost.google/course_templates/737)         |
 | 4   | Store, Process, and Manage Data on Google Cloud - Command Line      | 3       | 4    |          [Link](https://www.cloudskillsboost.google/course_templates/659)        |
 | 5   | Store, Process, and Manage Data on Google Cloud - Console           | 3       | 4    |          [Link](https://www.cloudskillsboost.google/course_templates/658)        |
@@ -160,26 +160,27 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 | 8   | Get Started with Eventarc                                           | 3       | 4    |         [Link](https://www.cloudskillsboost.google/course_templates/727)         |
 | 9   | Tag and Discover BigLake Data                                       | 3       | 4    |         [Link](https://www.cloudskillsboost.google/course_templates/753)         |
 | 10  | Get Started with Dataplex                                           | 4       | 4    |         [Link](https://www.cloudskillsboost.google/course_templates/756)         |
-| 11  | Monitor and Manage Google Cloud Resources                           | 4       | 4    |                  |
-| 12  | Cloud Run Functions: 3 Ways                                         | 4       | 4    |                  |
-| 13  | Get Started with Cloud Storage                                      | 4       | 4    |                  |
-| 14  | App Engine: 3 Ways                                                  | 4       | 4    |                  |
-| 15  | Create a Secure Data Lake on Cloud Storage                          | 4       | 4    |                  |
-| 16  | Secure BigLake Data                                                 | 4       | 4    |                  |
-| 17  | Get Started with Sensitive Data Protection                          | 4       | 4    |                  |
-| 18  | Networking Fundamentals on Google Cloud                             | 4       | 4    |                  |
-| 19  | The Basics of Google Cloud Compute                                  | 4       | 4    |                  |
-| 20  | Use APIs to Work with Cloud Storage                                 | 4       | 4    |                  |
-| 21  | Using the Google Cloud Speech API                                   | 4       | 4    |                  |
-| 22  | Cloud Speech API: 3 Ways                                            | 4       | 4    |                  |
-| 23  | Configure Service Accounts and IAM Roles for Google Cloud           | 4       | 4    |                  |
-| 24  | Develop with Apps Script and AppSheet                               | 7       | 4    |                  |
-| 25  | Automate Data Capture at Scale with Document AI                     | 8       | 4    |                  |
-| 26  | Analyze Speech and Language with Google APIs                        | 8       | 4    |                  |
-| 27  | Set Up a Google Cloud Network                                       | 8       | 4    |                  |
-| 28  | Analyze Images with the Cloud Vision API                            | 12      | 4    |                  |
-| 29  | Analyze Sentiment with Natural Language API                         | 12      | 4    |                  |
-| 30  | Engineer Data for Predictive Modeling with BigQuery ML              | 15      | 4    |                  |
+| 11  | Monitor and Manage Google Cloud Resources                           | 4       | 4    |          [Link](https://www.cloudskillsboost.google/course_templates/653)         |
+| 12  | Cloud Run Functions: 3 Ways                                         | 4       | 4    |           [Link](https://www.cloudskillsboost.google/course_templates/696)        |
+| 13  | Get Started with Cloud Storage                                      | 4       | 4    |           [Link](https://www.cloudskillsboost.google/course_templates/725)        |
+| 14  | App Engine: 3 Ways                                                  | 4       | 4    |           [Link](https://www.cloudskillsboost.google/course_templates/671)        |
+| 15  | Create a Secure Data Lake on Cloud Storage                          | 4       | 4    |           [Link](https://www.cloudskillsboost.google/course_templates/704)        |
+| 16  | Secure BigLake Data                                                 | 4       | 4    |            [Link](https://www.cloudskillsboost.google/course_templates/751)       |
+| 17  | Get Started with Sensitive Data Protection                          | 4       | 4    |          [Link](https://www.cloudskillsboost.google/course_templates/750)         |
+| 18  | Networking Fundamentals on Google Cloud                             | 4       | 4    |           [Link](https://www.cloudskillsboost.google/course_templates/748)        |
+| 19  | The Basics of Google Cloud Compute                                  | 4       | 4    |           [Link](https://www.cloudskillsboost.google/course_templates/754)        |
+| 20  | Use APIs to Work with Cloud Storage                                 | 4       | 4    |           [Link](https://www.cloudskillsboost.google/course_templates/755)        |
+| 21  | Using the Google Cloud Speech API                                   | 4       | 4    |         [Link]()         |
+| 21  | Using the Google Cloud Speech API                                   | 4       | 4    |          [Link]()        |
+| 22  | Cloud Speech API: 3 Ways                                            | 4       | 4    |          [Link]()        |
+| 23  | Configure Service Accounts and IAM Roles for Google Cloud           | 4       | 4    |          [Link]()        |
+| 24  | Develop with Apps Script and AppSheet                               | 7       | 4    |         [Link]()         |
+| 25  | Automate Data Capture at Scale with Document AI                     | 8       | 4    |         [Link]()         |
+| 26  | Analyze Speech and Language with Google APIs                        | 8       | 4    |        [Link]()          |
+| 27  | Set Up a Google Cloud Network                                       | 8       | 4    |         [Link]()         |
+| 28  | Analyze Images with the Cloud Vision API                            | 12      | 4    |         [Link]()         |
+| 29  | Analyze Sentiment with Natural Language API                         | 12      | 4    |          [Link]()        |
+| 30  | Engineer Data for Predictive Modeling with BigQuery ML              | 15      | 4    |         [Link]()         |
 | 31  | Implement DevOps Workflows in Google Cloud                          | 16      | 4    |                  |
 | 32  | Develop Serverless Apps with Firebase                               | 16      | 4    |                  |
 | 33  | Secure Software Delivery                                            | 16      | 4    |                  |
