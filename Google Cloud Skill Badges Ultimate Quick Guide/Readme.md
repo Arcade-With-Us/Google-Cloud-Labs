@@ -150,7 +150,7 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 
 | No. | Name                                                                | Credits | Labs | Skill Badge Link |
 |-----|---------------------------------------------------------------------|---------|------|------------------|
-| 1   | Get Started with Pub/Sub                                            | 2       | 3    |        [Link](https://www.cloudskillsboost.google/course_templates/728)          |
+| 1   | Get Started with Pub/Sub                                            | 2       | 3    |           [Link](https://www.cloudskillsboost.google/course_templates/728)          |
 | 2   | Streaming Analytics into BigQuery                                   | 2       | 4    |                  |
 | 3   | Integrate BigQuery Data and Google Workspace using Apps Script      | 2       | 4    |                  |
 | 4   | Store, Process, and Manage Data on Google Cloud - Command Line      | 3       | 4    |                  |
