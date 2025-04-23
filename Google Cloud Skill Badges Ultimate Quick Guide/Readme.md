@@ -222,6 +222,10 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 
 ---
 ---
+## 🏅 Lab free Badges List (With Video Solutions)
+
+| No. | Badge Name | Badge Link |🎥 Video Solution |
+|     |            |            |                  |
 
 ✨ Here we have completely categorized all 85 skill badges in efficient and organized way.
 
@@ -238,7 +242,8 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Tripti%20Gupta-blue?logo=linkedin)](https://www.linkedin.com/in/tripti-gupta-a28a6832b)  
 [![Github](https://img.shields.io/badge/GitHub-Arcade%20With%20Us-white?logo=github)](https://github.com/Arcade-With-Us)
 [![YouTube](https://img.shields.io/badge/YouTube-Arcade%20With%20Us-red?logo=youtube)](https://www.youtube.com/@ARCADEWITHUS_We)
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-Arcade%20With%20Us-green?logo=WhatsApp)](https://chat.whatsapp.com/KN3NvYNTJvU5xMCVTORJtS)
+[![WhatsApp](https://img.shields.io/badge/Instagram-Arcade%20With%20Us-green?logo=WhatsApp)](https://chat.whatsapp.com/KN3NvYNTJvU5xMCVTORJtS)
+[![Instagram](https://img.shields.io/badge/Instagram-Arcade%20With%20Us-pink?logo=Instagram)](https://www.instagram.com/_.studywith_tripti._?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==)
 ---
 
 ## ⚠️ Disclaimer
