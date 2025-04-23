@@ -224,6 +224,24 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 ---
 ## 🏅 Lab free Badges List (With Video Solutions)
 
+| No. |  Badge Name |  Badge Link | 🎥 Video Solution |
+|--:|------------------|------------------|-------------------|
+| 1 | **Digital Transformation with Google Cloud** | [Link](https://www.cloudskillsboost.google/course_templates/266) | [Watch](Will be available) |
+| 2 | **Trust and Security with Google Cloud* | [Link](https://www.cloudskillsboost.google/course_templates/945) | [Watch](Will be available) |
+| 3 | **Set Up an App Dev Environment on Google Cloud** | [Link](https://www.cloudskillsboost.google/course_templates/637) | [Watch](Will be available) |
+| 4 | **Build LookML Objects in Looker** | [Link](https://www.cloudskillsboost.google/course_templates/639) | [Watch](Will be available) |
+| 5 | **Perform Predictive Data Analysis in BigQuery** | [Link](https://www.cloudskillsboost.google/course_templates/656) | [Watch](Will be available) |
+| 6 | **Build Infrastructure with Terraform on Google Cloud** | [Link](https://www.cloudskillsboost.google/course_templates/636) | [Watch](Will be available) |
+| 7 | **Use Functions, Formulas, and Charts in Google Sheets** | [Link](https://www.cloudskillsboost.google/course_templates/776) | [Watch](Will be available) |
+| 8 | **Monitoring in Google Cloud** | [Link](https://www.cloudskillsboost.google/course_templates/747) | [Watch](Will be available) |
+| 9 | **Explore Generative AI with Gemini API in Vertex AI** | [Link](https://www.cloudskillsboost.google/course_templates/959) | [Watch](Will be available) |
+| 10 | **Discover and Protect Sensitive Data Across Your Ecosystem** | [Link](https://www.cloudskillsboost.google/course_templates/1177) | [Watch](Will be available) |
+| 1 | **Get Started with Google Workspace Tools** | [Link](https://www.cloudskillsboost.google/course_templates/676) | [Watch](Will be available) |
+| 2 | **Deploy Kubernetes Applications on Google Cloud** | [Link](https://www.cloudskillsboost.google/course_templates/663) | [Watch](Will be available) |
+| 3 | **Set Up an App Dev Environment on Google Cloud** | [Link](https://www.cloudskillsboost.google/course_templates/637) | [Watch](Will be available) |
+| 4 | **Build LookML Objects in Looker** | [Link](https://www.cloudskillsboost.google/course_templates/639) | [Watch](Will be available) |
+| 5 | **Perform Predictive Data Analysis in BigQuery** | [Link](https://www.cloudskillsboost.google/course_templates/656) | [Watch](Will be available) |
+| 4 | **Build LookML Objects in Looker** | [Link](https://www.cloudskillsboost.google/course_templates/639) | [Watch](Will be available) |
 
 ✨ Here we have completely categorized all 85 skill badges in efficient and organized way.
 
