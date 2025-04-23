@@ -170,7 +170,6 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 | 18  | Networking Fundamentals on Google Cloud                             | 4       | 4    |           [Link](https://www.cloudskillsboost.google/course_templates/748)        |
 | 19  | The Basics of Google Cloud Compute                                  | 4       | 4    |           [Link](https://www.cloudskillsboost.google/course_templates/754)        |
 | 20  | Use APIs to Work with Cloud Storage                                 | 4       | 4    |           [Link](https://www.cloudskillsboost.google/course_templates/755)        |
-| 21  | Using the Google Cloud Speech API                                   | 4       | 4    |         [Link]()         |
 | 21  | Using the Google Cloud Speech API                                   | 4       | 4    |          [Link]()        |
 | 22  | Cloud Speech API: 3 Ways                                            | 4       | 4    |          [Link]()        |
 | 23  | Configure Service Accounts and IAM Roles for Google Cloud           | 4       | 4    |          [Link]()        |
