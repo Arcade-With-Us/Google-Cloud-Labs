@@ -236,7 +236,7 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Tripti%20Gupta-blue?logo=linkedin)](https://www.linkedin.com/in/tripti-gupta-a28a6832b)  
 [![Github](https://img.shields.io/badge/GitHub-Arcade%20With%20Us-black?logo=github)](https://github.com/Arcade-With-Us)
 [![YouTube](https://img.shields.io/badge/YouTube-Arcade%20With%20Us-red?logo=youtube)](https://www.youtube.com/@ARCADEWITHUS_We)
-
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-Arcade%20With%20Us-green?logo=WhatsApp)](https://chat.whatsapp.com/KN3NvYNTJvU5xMCVTORJtS)
 ---
 
 ## ⚠️ Disclaimer
