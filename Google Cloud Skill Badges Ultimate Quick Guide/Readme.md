@@ -225,7 +225,24 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 ## 🏅 Lab free Badges List (With Video Solutions)
 
 | No. | Badge Name | Badge Link |🎥 Video Solution |
-|     |            |            |                  |
+| 1. | Badge Name | Badge Link |🎥 Video Solution |
+| 2. | Badge Name | Badge Link |🎥 Video Solution |
+| 3. | Badge Name | Badge Link |🎥 Video Solution |
+| 4. | Badge Name | Badge Link |🎥 Video Solution |
+| 5. | Badge Name | Badge Link |🎥 Video Solution |
+| 6. | Badge Name | Badge Link |🎥 Video Solution |
+| 7. | Badge Name | Badge Link |🎥 Video Solution |
+| 8. | Badge Name | Badge Link |🎥 Video Solution |
+| 9. | Badge Name | Badge Link |🎥 Video Solution |
+| 10. | Badge Name | Badge Link |🎥 Video Solution |
+| 11. | Badge Name | Badge Link |🎥 Video Solution |
+| 12. | Badge Name | Badge Link |🎥 Video Solution |
+| 13. | Badge Name | Badge Link |🎥 Video Solution |
+| 14. | Badge Name | Badge Link |🎥 Video Solution |
+| 15. | Badge Name | Badge Link |🎥 Video Solution |
+| 16. | Badge Name | Badge Link |🎥 Video Solution |
+| 17. | Badge Name | Badge Link |🎥 Video Solution |
+| 18. | Badge Name | Badge Link |🎥 Video Solution |
 
 ✨ Here we have completely categorized all 85 skill badges in efficient and organized way.
 
@@ -244,7 +261,7 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 [![YouTube](https://img.shields.io/badge/YouTube-Arcade%20With%20Us-red?logo=youtube)](https://www.youtube.com/@ARCADEWITHUS_We)
 [![WhatsApp](https://img.shields.io/badge/Instagram-Arcade%20With%20Us-green?logo=WhatsApp)](https://chat.whatsapp.com/KN3NvYNTJvU5xMCVTORJtS)
 [![Instagram](https://img.shields.io/badge/Instagram-Arcade%20With%20Us-pink?logo=Instagram)](https://www.instagram.com/_.studywith_tripti._?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==)
-[![User](https://img.shields.io/badge/Creator-Abir%20Dey-orange?logo=User)]
+[User](https://img.shields.io/badge/Creator-Abir%20Dey-orange?logo=User)
 ---
 
 ## ⚠️ Disclaimer
