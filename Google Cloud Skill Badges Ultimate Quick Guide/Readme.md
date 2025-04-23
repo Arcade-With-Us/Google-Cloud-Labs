@@ -150,16 +150,16 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 
 | No. | Name                                                                | Credits | Labs | Skill Badge Link |
 |-----|---------------------------------------------------------------------|---------|------|------------------|
-| 1   | Get Started with Pub/Sub                                            | 2       | 3    |           [Link](https://www.cloudskillsboost.google/course_templates/728)          |
-| 2   | Streaming Analytics into BigQuery                                   | 2       | 4    |                  |
-| 3   | Integrate BigQuery Data and Google Workspace using Apps Script      | 2       | 4    |                  |
-| 4   | Store, Process, and Manage Data on Google Cloud - Command Line      | 3       | 4    |                  |
-| 5   | Store, Process, and Manage Data on Google Cloud - Console           | 3       | 4    |                  |
-| 6   | Get Started with API Gateway                                        | 3       | 4    |                  |
-| 7   | Create a Streaming Data Lake on Cloud Storage                       | 3       | 4    |                  |
-| 8   | Get Started with Eventarc                                           | 3       | 4    |                  |
-| 9   | Tag and Discover BigLake Data                                       | 3       | 4    |                  |
-| 10  | Get Started with Dataplex                                           | 4       | 4    |                  |
+| 1   | Get Started with Pub/Sub                                            | 2       | 3    |      [Link](https://www.cloudskillsboost.google/course_templates/728)          |
+| 2   | Streaming Analytics into BigQuery                                   | 2       | 4    |  [Link](https://www.cloudskillsboost.google/course_templates/752)                |
+| 3   | Integrate BigQuery Data and Google Workspace using Apps Script      | 2       | 4    |         [Link](https://www.cloudskillsboost.google/course_templates/737)         |
+| 4   | Store, Process, and Manage Data on Google Cloud - Command Line      | 3       | 4    |          [Link](https://www.cloudskillsboost.google/course_templates/659)        |
+| 5   | Store, Process, and Manage Data on Google Cloud - Console           | 3       | 4    |          [Link](https://www.cloudskillsboost.google/course_templates/658)        |
+| 6   | Get Started with API Gateway                                        | 3       | 4    |          [Link](https://www.cloudskillsboost.google/course_templates/662)        |
+| 7   | Create a Streaming Data Lake on Cloud Storage                       | 3       | 4    |         [Link](https://www.cloudskillsboost.google/course_templates/752)         |
+| 8   | Get Started with Eventarc                                           | 3       | 4    |         [Link](https://www.cloudskillsboost.google/course_templates/727)         |
+| 9   | Tag and Discover BigLake Data                                       | 3       | 4    |         [Link](https://www.cloudskillsboost.google/course_templates/753)         |
+| 10  | Get Started with Dataplex                                           | 4       | 4    |         [Link](https://www.cloudskillsboost.google/course_templates/756)         |
 | 11  | Monitor and Manage Google Cloud Resources                           | 4       | 4    |                  |
 | 12  | Cloud Run Functions: 3 Ways                                         | 4       | 4    |                  |
 | 13  | Get Started with Cloud Storage                                      | 4       | 4    |                  |
