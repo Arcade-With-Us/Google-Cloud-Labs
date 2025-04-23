@@ -244,6 +244,7 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 [![YouTube](https://img.shields.io/badge/YouTube-Arcade%20With%20Us-red?logo=youtube)](https://www.youtube.com/@ARCADEWITHUS_We)
 [![WhatsApp](https://img.shields.io/badge/Instagram-Arcade%20With%20Us-green?logo=WhatsApp)](https://chat.whatsapp.com/KN3NvYNTJvU5xMCVTORJtS)
 [![Instagram](https://img.shields.io/badge/Instagram-Arcade%20With%20Us-pink?logo=Instagram)](https://www.instagram.com/_.studywith_tripti._?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==)
+[![User](https://img.shields.io/badge/Creator-Abir%20Dey-orange?logo=User)]
 ---
 
 ## ⚠️ Disclaimer
