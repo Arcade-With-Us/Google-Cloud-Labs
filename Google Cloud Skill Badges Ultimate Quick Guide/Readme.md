@@ -242,7 +242,9 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 [![YouTube](https://img.shields.io/badge/YouTube-Arcade%20With%20Us-red?logo=youtube)](https://www.youtube.com/@ARCADEWITHUS_We)
 [![WhatsApp](https://img.shields.io/badge/Instagram-Arcade%20With%20Us-green?logo=WhatsApp)](https://chat.whatsapp.com/KN3NvYNTJvU5xMCVTORJtS)
 [![Instagram](https://img.shields.io/badge/Instagram-Arcade%20With%20Us-pink?logo=Instagram)](https://www.instagram.com/_.studywith_tripti._?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==)
-[![User](https://img.shields.io/badge/Creator-Abir%20Dey-Purple?logo=User)](https://www.cloudskillsboost.google/public_profiles/bf03df4e-7b41-41f3-b8e8-cea7f334a0c7)
+[![User](https://img.shields.io/badge/Creator-Abir%20Dey-Purple?logo=GoogleCloud)](https://www.cloudskillsboost.google/public_profiles/bf03df4e-7b41-41f3-b8e8-cea7f334a0c7)
+[![Helper](https://img.shields.io/badge/Creator-Tripti%20Gupta-indigo?logo=User)](https://www.cloudskillsboost.google/public_profiles/c5c8dd6a-e998-4d83-95cf-44b3add2a0f4)
+
 ---
 
 ## ⚠️ Disclaimer
