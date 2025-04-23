@@ -180,45 +180,45 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 | 28  | Analyze Images with the Cloud Vision API                            | 12      | 4    |         [Link]()         |
 | 29  | Analyze Sentiment with Natural Language API                         | 12      | 4    |          [Link]()        |
 | 30  | Engineer Data for Predictive Modeling with BigQuery ML              | 15      | 4    |         [Link]()         |
-| 31  | Implement DevOps Workflows in Google Cloud                          | 16      | 4    |                  |
-| 32  | Develop Serverless Apps with Firebase                               | 16      | 4    |                  |
-| 33  | Secure Software Delivery                                            | 16      | 4    |                  |
-| 34  | Protect Cloud Traffic with Chrome Enterprise Premium Security       | 16      | 4    |                  |
-| 35  | Manage Kubernetes in Google Cloud                                   | 20      | 4    |                  |
-| 36  | Build and Deploy Machine Learning Solutions on Vertex AI            | 20      | 4    |                  |
-| 37  | Implement CI/CD Pipelines on Google Cloud                           | 20      | 4    |                  |
-| 38  | Build Google Cloud Infrastructure for AWS Professionals             | 20      | 4    |                  |
-| 39  | Build Google Cloud Infrastructure for Azure Professionals           | 20      | 4    |                  |
-| 40  | Inspect Rich Documents with Gemini Multimodality and Multimodal RAG | 20      | 4    |                  |
-| 41  | Migrate MySQL data to Cloud SQL using Database Migration Service    | 5       | 5    |                  |
-| 42  | Mitigate Threats and Vulnerabilities with Security Command Center   | 5       | 5    |                  |
-| 43  | Implement Load Balancing on Compute Engine                          | 5       | 5    |                  |
-| 44  | Create and Manage Cloud SQL for PostgreSQL Instances                | 5       | 5    |                  |
-| 45  | Create and Manage Cloud Spanner Instances                           | 5       | 5    |                  |
-| 46  | Create and Manage Bigtable Instances                                | 5       | 5    |                  |
-| 47  | Build a Data Mesh with Dataplex                                     | 5       | 5    |                  |
-| 48  | Share Data Using Google Data Cloud                                  | 9       | 5    |                  |
-| 49  | Monitor and Log with Google Cloud Observability                     | 9       | 5    |                  |
-| 50  | Deploy and Manage Apigee X                                          | 9       | 5    |                  |
-| 51  | Create ML Models with BigQuery ML                                   | 11      | 5    |                  |
-| 52  | Monitor Environments with Google Cloud Managed Service for Prometheus | 13    | 5    |                  |
-| 53  | Build a Website on Google Cloud                                     | 13      | 5    |                  |
-| 54  | Develop GenAI Apps with Gemini and Streamlit                        | 20      | 5    |                  |
-| 55  | Build a Data Warehouse with BigQuery                                | 25      | 5    |                  |
-| 56  | Develop Serverless Applications on Cloud Run                        | 25      | 5    |                  |
-| 57  | Optimize Costs for Google Kubernetes Engine                         | 25      | 5    |                  |
-| 58  | Detect Manufacturing Defects using Visual Inspection AI             | 25      | 5    |                  |
-| 59  | Create and Manage AlloyDB Instances                                 | 6       | 6    |                  |
-| 60  | Develop your Google Cloud Network                                   | 18      | 6    |                  |
-| 61  | Classify Images with TensorFlow on Google Cloud                     | 26      | 6    |                  |
-| 62  | Develop and Secure APIs with Apigee X                               | 26      | 6    |                  |
-| 63  | Build a Secure Google Cloud Network                                 | 30      | 6    |                  |
-| 64  | Build Custom Processors with Document AI                            | 30      | 6    |                  |
-| 65  | Cloud Architecture: Design, Implement, and Manage                   | 32      | 6    |                  |
-| 66  | Derive Insights from BigQuery Data                                  | 6       | 7    |                  |
-| 67  | Use Machine Learning APIs on Google Cloud                           | 31      | 7    |                  |
-| 68  | Implement Cloud Security Fundamentals on Google Cloud               | 20      | 8    |                  |
-| 69  | Prepare Data for ML APIs on Google Cloud                            | 13      | 9    |                  |
+| 31  | Implement DevOps Workflows in Google Cloud                          | 16      | 4    |         [Link]()         |
+| 32  | Develop Serverless Apps with Firebase                               | 16      | 4    |          [Link]()        |
+| 33  | Secure Software Delivery                                            | 16      | 4    |           [Link]()       |
+| 34  | Protect Cloud Traffic with Chrome Enterprise Premium Security       | 16      | 4    |           [Link]()       |
+| 35  | Manage Kubernetes in Google Cloud                                   | 20      | 4    |     [Link]()             |
+| 36  | Build and Deploy Machine Learning Solutions on Vertex AI            | 20      | 4    |             [Link]()     |
+| 37  | Implement CI/CD Pipelines on Google Cloud                           | 20      | 4    |      [Link]()            |
+| 38  | Build Google Cloud Infrastructure for AWS Professionals             | 20      | 4    |              [Link]()    |
+| 39  | Build Google Cloud Infrastructure for Azure Professionals           | 20      | 4    | [Link]()                 |
+| 40  | Inspect Rich Documents with Gemini Multimodality and Multimodal RAG | 20      | 4    |         [Link]()         |
+| 41  | Migrate MySQL data to Cloud SQL using Database Migration Service    | 5       | 5    |                 [Link](https://www.cloudskillsboost.google/course_templates/629) |
+| 42  | Mitigate Threats and Vulnerabilities with Security Command Center   | 5       | 5    |  [Link](https://www.cloudskillsboost.google/course_templates/759)                |
+| 43  | Implement Load Balancing on Compute Engine                          | 5       | 5    |          [Link](https://www.cloudskillsboost.google/course_templates/648)        |
+| 44  | Create and Manage Cloud SQL for PostgreSQL Instances                | 5       | 5    |                  [Link](https://www.cloudskillsboost.google/course_templates/652)|
+| 45  | Create and Manage Cloud Spanner Instances                           | 5       | 5    | [Link](https://www.cloudskillsboost.google/course_templates/643)                 |
+| 46  | Create and Manage Bigtable Instances                                | 5       | 5    |         [Link](https://www.cloudskillsboost.google/course_templates/650)         |
+| 47  | Build a Data Mesh with Dataplex                                     | 5       | 5    |                 [Link](https://www.cloudskillsboost.google/course_templates/681) |
+| 48  | Share Data Using Google Data Cloud                                  | 9       | 5    |   [Link](https://www.cloudskillsboost.google/course_templates/657)               |
+| 49  | Monitor and Log with Google Cloud Observability                     | 9       | 5    |           [Link](https://www.cloudskillsboost.google/course_templates/749)       |
+| 50  | Deploy and Manage Apigee X                                          | 9       | 5    |                  [Link](https://www.cloudskillsboost.google/course_templates/661)|
+| 51  | Create ML Models with BigQuery ML                                   | 11      | 5    | [Link](https://www.cloudskillsboost.google/course_templates/626)                 |
+| 52  | Monitor Environments with Google Cloud Managed Service for Prometheus | 13    | 5    |         [Link](https://www.cloudskillsboost.google/course_templates/761)         |
+| 53  | Build a Website on Google Cloud                                     | 13      | 5    |                 [Link](https://www.cloudskillsboost.google/course_templates/638) |
+| 54  | Develop GenAI Apps with Gemini and Streamlit                        | 20      | 5    |  [Link](https://www.cloudskillsboost.google/course_templates/978)                |
+| 55  | Build a Data Warehouse with BigQuery                                | 25      | 5    |          [Link](https://www.cloudskillsboost.google/course_templates/624)        |
+| 56  | Develop Serverless Applications on Cloud Run                        | 25      | 5    |                  [Link](https://www.cloudskillsboost.google/course_templates/741)|
+| 57  | Optimize Costs for Google Kubernetes Engine                         | 25      | 5    | [Link](https://www.cloudskillsboost.google/course_templates/655)                 |
+| 58  | Detect Manufacturing Defects using Visual Inspection AI             | 25      | 5    |         [Link](https://www.cloudskillsboost.google/course_templates/644)         |
+| 59  | Create and Manage AlloyDB Instances                                 | 6       | 6    |                 [Link](https://www.cloudskillsboost.google/course_templates/642) |
+| 60  | Develop your Google Cloud Network                                   | 18      | 6    | [Link](https://www.cloudskillsboost.google/course_templates/625)                 |
+| 61  | Classify Images with TensorFlow on Google Cloud                     | 26      | 6    |         [Link](https://www.cloudskillsboost.google/course_templates/646)         |
+| 62  | Develop and Secure APIs with Apigee X                               | 26      | 6    |                 [Link](https://www.cloudskillsboost.google/course_templates/714) |
+| 63  | Build a Secure Google Cloud Network                                 | 30      | 6    | [Link](https://www.cloudskillsboost.google/course_templates/654)                 |
+| 64  | Build Custom Processors with Document AI                            | 30      | 6    |         [Link](https://www.cloudskillsboost.google/course_templates/686)         |
+| 65  | Cloud Architecture: Design, Implement, and Manage                   | 32      | 6    |                 [Link](https://www.cloudskillsboost.google/course_templates/640) |
+| 66  | Derive Insights from BigQuery Data                                  | 6       | 7    |  [Link](https://www.cloudskillsboost.google/course_templates/623)                |
+| 67  | Use Machine Learning APIs on Google Cloud                           | 31      | 7    |          [Link](https://www.cloudskillsboost.google/course_templates/630)        |
+| 68  | Implement Cloud Security Fundamentals on Google Cloud               | 20      | 8    |                  [Link](https://www.cloudskillsboost.google/course_templates/645)|
+| 69  | Prepare Data for ML APIs on Google Cloud                            | 13      | 9    |    [Link](https://www.cloudskillsboost.google/course_templates/631)              |
 
 ---
 ---
@@ -236,7 +236,7 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 ## 📢 Connect with Me:
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Tripti%20Gupta-blue?logo=linkedin)](https://www.linkedin.com/in/tripti-gupta-a28a6832b)  
-[![Github](https://img.shields.io/badge/GitHub-Arcade%20With%20Us-black?logo=github)](https://github.com/Arcade-With-Us)
+[![Github](https://img.shields.io/badge/GitHub-Arcade%20With%20Us-white?logo=github)](https://github.com/Arcade-With-Us)
 [![YouTube](https://img.shields.io/badge/YouTube-Arcade%20With%20Us-red?logo=youtube)](https://www.youtube.com/@ARCADEWITHUS_We)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-Arcade%20With%20Us-green?logo=WhatsApp)](https://chat.whatsapp.com/KN3NvYNTJvU5xMCVTORJtS)
 ---
