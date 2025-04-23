@@ -36,7 +36,7 @@ sudo chmod +x GSP374.sh
 
 ./GSP374.sh
 ```
-
+* Open **`BigQuery`** Studio from [HERE](https://console.cloud.google.com/bigquery?)
 </div>
 
 ---
