@@ -170,26 +170,26 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 | 18  | Networking Fundamentals on Google Cloud                             | 4       | 4    |           [Link](https://www.cloudskillsboost.google/course_templates/748)        |
 | 19  | The Basics of Google Cloud Compute                                  | 4       | 4    |           [Link](https://www.cloudskillsboost.google/course_templates/754)        |
 | 20  | Use APIs to Work with Cloud Storage                                 | 4       | 4    |           [Link](https://www.cloudskillsboost.google/course_templates/755)        |
-| 21  | Using the Google Cloud Speech API                                   | 4       | 4    |          [Link]()        |
-| 22  | Cloud Speech API: 3 Ways                                            | 4       | 4    |          [Link]()        |
-| 23  | Configure Service Accounts and IAM Roles for Google Cloud           | 4       | 4    |          [Link]()        |
-| 24  | Develop with Apps Script and AppSheet                               | 7       | 4    |         [Link]()         |
-| 25  | Automate Data Capture at Scale with Document AI                     | 8       | 4    |         [Link]()         |
-| 26  | Analyze Speech and Language with Google APIs                        | 8       | 4    |        [Link]()          |
-| 27  | Set Up a Google Cloud Network                                       | 8       | 4    |         [Link]()         |
-| 28  | Analyze Images with the Cloud Vision API                            | 12      | 4    |         [Link]()         |
-| 29  | Analyze Sentiment with Natural Language API                         | 12      | 4    |          [Link]()        |
-| 30  | Engineer Data for Predictive Modeling with BigQuery ML              | 15      | 4    |         [Link]()         |
-| 31  | Implement DevOps Workflows in Google Cloud                          | 16      | 4    |         [Link]()         |
-| 32  | Develop Serverless Apps with Firebase                               | 16      | 4    |          [Link]()        |
-| 33  | Secure Software Delivery                                            | 16      | 4    |           [Link]()       |
-| 34  | Protect Cloud Traffic with Chrome Enterprise Premium Security       | 16      | 4    |           [Link]()       |
-| 35  | Manage Kubernetes in Google Cloud                                   | 20      | 4    |     [Link]()             |
-| 36  | Build and Deploy Machine Learning Solutions on Vertex AI            | 20      | 4    |             [Link]()     |
-| 37  | Implement CI/CD Pipelines on Google Cloud                           | 20      | 4    |      [Link]()            |
-| 38  | Build Google Cloud Infrastructure for AWS Professionals             | 20      | 4    |              [Link]()    |
-| 39  | Build Google Cloud Infrastructure for Azure Professionals           | 20      | 4    | [Link]()                 |
-| 40  | Inspect Rich Documents with Gemini Multimodality and Multimodal RAG | 20      | 4    |         [Link]()         |
+| 21  | Using the Google Cloud Speech API                                   | 4       | 4    |          [Link](https://www.cloudskillsboost.google/course_templates/756)        |
+| 22  | Cloud Speech API: 3 Ways                                            | 4       | 4    |          [Link](https://www.cloudskillsboost.google/course_templates/700)        |
+| 23  | Configure Service Accounts and IAM Roles for Google Cloud           | 4       | 4    |          [Link](https://www.cloudskillsboost.google/course_templates/702)        |
+| 24  | Develop with Apps Script and AppSheet                               | 7       | 4    |         [Link](https://www.cloudskillsboost.google/course_templates/715)         |
+| 25  | Automate Data Capture at Scale with Document AI                     | 8       | 4    |         [Link](https://www.cloudskillsboost.google/course_templates/674)         |
+| 26  | Analyze Speech and Language with Google APIs                        | 8       | 4    |        [Link](https://www.cloudskillsboost.google/course_templates/634)          |
+| 27  | Set Up a Google Cloud Network                                       | 8       | 4    |         [Link](https://www.cloudskillsboost.google/course_templates/641)         |
+| 28  | Analyze Images with the Cloud Vision API                            | 12      | 4    |         [Link](https://www.cloudskillsboost.google/course_templates/633)         |
+| 29  | Analyze Sentiment with Natural Language API                         | 12      | 4    |          [Link](https://www.cloudskillsboost.google/course_templates/667)        |
+| 30  | Engineer Data for Predictive Modeling with BigQuery ML              | 15      | 4    |         [Link](https://www.cloudskillsboost.google/course_templates/627)         |
+| 31  | Implement DevOps Workflows in Google Cloud                          | 16      | 4    |         [Link](https://www.cloudskillsboost.google/course_templates/716)         |
+| 32  | Develop Serverless Apps with Firebase                               | 16      | 4    |          [Link](https://www.cloudskillsboost.google/course_templates/649)        |
+| 33  | Secure Software Delivery                                            | 16      | 4    |           [Link](https://www.cloudskillsboost.google/course_templates/1164)       |
+| 34  | Protect Cloud Traffic with Chrome Enterprise Premium Security       | 16      | 4    |           [Link](https://www.cloudskillsboost.google/course_templates/784)       |
+| 35  | Manage Kubernetes in Google Cloud                                   | 20      | 4    |     [Link](https://www.cloudskillsboost.google/course_templates/783)             |
+| 36  | Build and Deploy Machine Learning Solutions on Vertex AI            | 20      | 4    |             [Link](https://www.cloudskillsboost.google/course_templates/684)     |
+| 37  | Implement CI/CD Pipelines on Google Cloud                           | 20      | 4    |      [Link](https://www.cloudskillsboost.google/course_templates/691)            |
+| 38  | Build Google Cloud Infrastructure for AWS Professionals             | 20      | 4    |              [Link](https://www.cloudskillsboost.google/course_templates/687)    |
+| 39  | Build Google Cloud Infrastructure for Azure Professionals           | 20      | 4    | [Link](https://www.cloudskillsboost.google/course_templates/688)                 |
+| 40  | Inspect Rich Documents with Gemini Multimodality and Multimodal RAG | 20      | 4    |         [Link](https://www.cloudskillsboost.google/course_templates/981)         |
 | 41  | Migrate MySQL data to Cloud SQL using Database Migration Service    | 5       | 5    |                 [Link](https://www.cloudskillsboost.google/course_templates/629) |
 | 42  | Mitigate Threats and Vulnerabilities with Security Command Center   | 5       | 5    |  [Link](https://www.cloudskillsboost.google/course_templates/759)                |
 | 43  | Implement Load Balancing on Compute Engine                          | 5       | 5    |          [Link](https://www.cloudskillsboost.google/course_templates/648)        |
