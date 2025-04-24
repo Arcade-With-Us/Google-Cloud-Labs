@@ -24,8 +24,6 @@
 
 > ✅ **NOTE:** *Watch Full Video to get Full Scores on Check My Progress.*
 
-* Go to **Sensitive Data Protection** from [here](https://console.cloud.google.com/security/sensitive-data-protection/create/discoveryConfiguration;source=DATA_PROFILE_COVERAGE_DASHBOARD;discoveryType=4?project=)
-
 <div style="padding: 15px; margin: 10px 0;">
 <p><strong>☁️ Run in Cloud Shell:</strong></p>
 
