@@ -222,7 +222,7 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 
 ---
 ---
-## 🏅 Lab free Badges List (With Video Solutions):
+## 🏅 Lab free Badges List
 
 **_What are “lab‑free courses” in Google Cloud Arcade?_**
 
