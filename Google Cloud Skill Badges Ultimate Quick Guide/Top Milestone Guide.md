@@ -92,9 +92,9 @@
 
 ## 🔗 Useful Links
 
-- 📚 [🎯 Skill Badges Quick Guide Repo]()
-- 🗺️ [🛣️ Google Cloud Arcade Roadmap]()
-- 📘 [📥 Daily Lab Limits Guide (PDF)]()
+- 📚 [🎯 Skill Badges Quick Guide Repo](https://github.com/Arcade-With-Us/Google-Cloud-Labs/blob/main/Google%20Cloud%20Skill%20Badges%20Ultimate%20Quick%20Guide/Google%20Cloud%20Facilitator%20Program%20Details.md)
+- 🗺️ [🛣️ Google Cloud Arcade Roadmap](https://github.com/Arcade-With-Us/Google-Cloud-Labs/blob/main/Google%20Cloud%20Skill%20Badges%20Ultimate%20Quick%20Guide/Arcade%20Program%20RoadMap.md)
+- 📘 [📥 Daily Lab Limits Guide (PDF)](https://github.com/Arcade-With-Us/Google-Cloud-Labs/blob/main/Google%20Cloud%20Skill%20Badges%20Ultimate%20Quick%20Guide/Daily_Lab_Limit.pdf)
 
 ---
 
@@ -113,9 +113,10 @@ Stay consistent, track your progress, and **unlock the Arcade Legend 85 Badge** 
 
 ## 📢 Connect with Me
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Tripti%20Gupta-blue?logo=linkedin)]()  
-[![GitHub](https://img.shields.io/badge/GitHub-Arcade-With-Us-white?logo=github)]()  
-[![YouTube](https://img.shields.io/badge/YouTube-Arcade%20With%20Us-red?logo=youtube)]()
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Tripti%20Gupta-blue?logo=linkedin)](https://www.linkedin.com/in/tripti-gupta-a28a6832b)  
+[![Github](https://img.shields.io/badge/GitHub-Arcade%20With%20Us-white?logo=github)](https://github.com/Arcade-With-Us)
+[![YouTube](https://img.shields.io/badge/YouTube-Arcade%20With%20Us-red?logo=youtube)](https://www.youtube.com/@ARCADEWITHUS_We)
+[![WhatsApp](https://img.shields.io/badge/Instagram-Arcade%20With%20Us-green?logo=WhatsApp)](https://chat.whatsapp.com/KN3NvYNTJvU5xMCVTORJtS)
 
 ---
 
