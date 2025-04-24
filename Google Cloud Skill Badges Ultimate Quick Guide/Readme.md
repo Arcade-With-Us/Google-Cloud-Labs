@@ -116,7 +116,6 @@ If you've participated in Arcade events like:
 | 5 | **Get Started with Looker** | [Link](https://www.cloudskillsboost.google/course_templates/647) | 4 | [Watch Playlist](Available Soon) |
 | 6 | **Prepare Data for Looker Dashboards and Reports** | [Link](https://www.cloudskillsboost.google/course_templates/628) | 5 | [Watch Playlist](Available Soon) |
 | 7 | **Manage Data Models in Looker** | [Link](https://www.cloudskillsboost.google/course_templates/651) | 6 | [Watch Playlist](Available Soon) |
-| 8 | **Build LookML Objects in Looker** | [Link](https://www.cloudskillsboost.google/course_templates/639) | 5 | [Watch Playlist](Available Soon) |
 
 ---
 
@@ -127,8 +126,8 @@ If you've participated in Arcade events like:
 - 🆓 **8 Free / No-Cost Skill Badges**
 - ⚡ **10 One-Lab Skill Badges**
 
-> 🧾 **Total = 🏅 18 Skill Badges**
-> 🧾 **Total = 🏅 9 Arcade Points**
+> 🧾 **Total = 🏅 17 Skill Badges**
+> 🧾 **Total = 🏅 8.5 Arcade Points**
 
 ---
 ---
@@ -147,6 +146,9 @@ If you've participated in Arcade events like:
 These badges offer the **best balance between fewer labs and minimum credits**, making them ideal for fast progress at low cost.
 
 ## 📋 Least Labs + Lowest Credits Skill Badges List
+
+_Firsst 40 skill Badges are very easy And you don't have to put much effort for solving them_
+**Solution wikk be available soon**
 
 | No. | Name                                                                | Credits | Labs | Skill Badge Link |
 |-----|---------------------------------------------------------------------|---------|------|------------------|
