@@ -86,7 +86,7 @@
 | Season 2 | July – December(Next Guide Will be available soon) |
 
 📌 **You are currently in Season 1 (April 2025)**  
-🎁 **Prize Redemption Starts: Last Week of June 2025**
+🎁 **Prize Redemption Starts: Last Week of June 2025 / First week of July**
 
 ---
 
