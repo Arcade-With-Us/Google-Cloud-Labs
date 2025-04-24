@@ -96,7 +96,7 @@ If you've participated in Arcade events like:
 - 🎯 Trivia Week 1–4  
 - 🚀 Level 1, 2, 3  
 - 🏕️ Base Camp  
-- ⭐ Special Events  
+- ⭐ Special Events(2 Arcade points)  
 - 🎓 Certification Events  
 
 ...and your daily lab quota is going unused, this is the perfect opportunity to earn badges **at zero cost** ✅.
