@@ -63,7 +63,7 @@ echo ""
 
 # Step 5: Download the image file
 echo "${MAGENTA_TEXT}${BOLD_TEXT}Downloading the image file...${RESET_FORMAT}"
-curl -LO https://raw.githubusercontent.com/ArcadeCrew/Google-Cloud-Labs/refs/heads/main/Use%20APIs%20to%20Work%20with%20Cloud%20Storage%20Challenge%20Lab/world.jpeg
+curl -LO https://github.com/Arcade-With-Us/Google-Cloud-Labs/refs/main/Use%20APIs%20to%20Work%20with%20Cloud%20Storage%3A%20Challenge%20Lab/world.jpeg
 
 # Instructions before Step 6
 echo ""
@@ -127,3 +127,9 @@ echo ""
 # Step 10: Delete bucket1
 echo "${BOLD_TEXT}${BLUE_TEXT}Deleting bucket1...${RESET_FORMAT}"
 curl -X DELETE -H "Authorization: Bearer $(gcloud auth print-access-token)" "https://storage.googleapis.com/storage/v1/b/$DEVSHELL_PROJECT_ID-bucket-1"
+
+echo
+echo "${MAGENTA_TEXT}${BOLD_TEXT}💖 Enjoyed the video? Consider subscribing to Arcade With Us! 👇${RESET_FORMAT}"
+echo "" 
+echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe to my Channel (Arcade With Us):${RESET_FORMAT} ${BLUE_TEXT}${BOLD_TEXT}https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
+echo
