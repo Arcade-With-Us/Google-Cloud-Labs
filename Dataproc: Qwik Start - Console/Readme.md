@@ -29,8 +29,6 @@
 
 ## 💻 **Execute in Cloud Shell**  
 Run the following commands in **Cloud Shell**:
-```bash
-```
 ```
 export ZONE=
 ```
