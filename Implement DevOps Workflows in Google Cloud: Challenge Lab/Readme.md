@@ -27,6 +27,7 @@
 ### 📋 **Prerequisites**  
 
 * If you do not already have a **GitHub** account, you will need to create a [GitHub account](https://github.com/signup)
+  ---
 _An example_:- [![Github](https://img.shields.io/badge/GitHub-Arcade%20With%20Us-white?logo=github)](https://github.com/Babai-69)
 ### 🔐 **Recommendations**  
 
