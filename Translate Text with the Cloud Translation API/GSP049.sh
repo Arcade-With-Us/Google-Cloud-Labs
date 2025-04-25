@@ -29,7 +29,7 @@ API_KEY=$(gcloud alpha services api-keys get-key-string $KEY_NAME --format="valu
 echo $API_KEY
 
 echo
-echo -e "\e[1;31mDeleting the script (arcadecrew.sh) for safety purposes...\e[0m"
+echo -e "\e[1;31mDeleting the script (GSP049.sh) for safety purposes...\e[0m"
 rm -- "$0"
 echo
 echo
