@@ -36,6 +36,24 @@ sudo chmod +x GSP154.sh
 
 ./GSP154.sh
 ```
+
+**If you don't get full score then run this command**
+```bash
+cat > request.json <<EOF
+{
+   "inputUri":"gs://spls/gsp154/video/train.mp4",
+   "features": [
+       "LABEL_DETECTION"
+   ]
+}
+EOF
+```
+```bash
+curl -s -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer '$(gcloud auth print-access-token)'' \
+    'https://videointelligence.googleapis.com/v1/videos:annotate' \
+    -d @request.json
+```
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
