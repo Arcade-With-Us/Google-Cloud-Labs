@@ -35,7 +35,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 Run the following commands in **Cloud Shell**:
 ```
-https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Artifact%20Registry%3A%20Qwik%20Start/GSP1131.sh
+curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Artifact%20Registry%3A%20Qwik%20Start/GSP1131.sh
 
 sudo chmod +x GSP1131.sh
 
