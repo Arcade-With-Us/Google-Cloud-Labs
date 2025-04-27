@@ -29,11 +29,7 @@
 
 ## ⚙️ Lab Environment Setup:
 
-```
-Challenge scenario
-```
-
-**Note**: You've been assigned random tasks from the set of tasks. Please reference this Form ID: **[Form id]**check it in lab manual and respective Task Number while reporting any issues, requesting assistance with these tasks or providing any feedback.
+**Note**: You've been assigned random tasks from the set of tasks. Please reference this Form ID: **Form id**check it in lab manual and respective Task Number while reporting any issues, requesting assistance with these tasks or providing any feedback.
 
 **🌐Launch Cloud Shell:**
 Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
