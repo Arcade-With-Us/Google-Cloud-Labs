@@ -54,7 +54,7 @@ gsutil iam ch projectEditor:serviceAccount:$PROJECT_NUMBER@cloudbuild.gserviceac
 echo "${GREEN_TEXT} ${BOLD_TEXT} IAM permissions set successfully! ${RESET_FORMAT}"
 
 echo "${YELLOW_TEXT} ${BOLD_TEXT} Downloading sample image... ${RESET_FORMAT}"
-curl -LO raw.githubusercontent.com/ArcadeCrew/Google-Cloud-Labs/refs/heads/main/Extract%2C%20Analyze%2C%20and%20Translate%20Text%20from%20Images%20with%20the%20Cloud%20ML%20APIs/sign.jpg
+curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Extract%2C%20Analyze%2C%20and%20Translate%20Text%20from%20Images%20with%20the%20Cloud%20ML%20APIs/sign.jpg
 echo "${GREEN_TEXT} ${BOLD_TEXT} Sample image downloaded! ${RESET_FORMAT}"
 
 echo "${YELLOW_TEXT} ${BOLD_TEXT} Copying image to GCS Bucket... ${RESET_FORMAT}"
