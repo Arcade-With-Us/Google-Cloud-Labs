@@ -32,7 +32,7 @@
 
 ---
 
-### 🗂️ **Form 1** || [Solution Video](https://youtu.be/oi6IEhyfCnw)
+### 🗂️ **Form 1** || [Solution Video]()
 
 ✅ Tasks:
 - 📦 **Task 1. Publish a message to the topic.**  
@@ -43,15 +43,17 @@
 <p><strong>☁️ Run in Cloud Shell:</strong></p>
 
 ```bash
-curl -LO raw.githubusercontent.com/ArcadeCrew/Google-Cloud-Labs/refs/heads/main/Get%20Started%20with%20PubSub%20Challenge%20Lab/arcadecrew.sh
-sudo chmod +x arcadecrew.sh
-./arcadecrew.sh
+curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Get%20Started%20with%20Pub-Sub%3A%20Challenge%20Lab/ARC113-1.sh
+
+sudo chmod +x ARC113-1.sh
+
+./ARC113-1.sh
 ```
 </div>
 
 ---
 
-### 🗂️ **Form 2** || [Solution Video](https://youtu.be/LoiywpiO9vE)  
+### 🗂️ **Form 2** || [Solution Video]()  
 
 ✅ Tasks:
 - 📦 **Task 1. Create Pub/Sub schema.**  
@@ -62,15 +64,17 @@ sudo chmod +x arcadecrew.sh
 <p><strong>☁️ Run in Cloud Shell:</strong></p>
 
 ```bash
-curl -LO raw.githubusercontent.com/ArcadeCrew/Google-Cloud-Labs/refs/heads/main/Get%20Started%20with%20PubSub%20Challenge%20Lab/arcadecrew1.sh
-sudo chmod +x arcadecrew1.sh
-./arcadecrew1.sh
+curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Get%20Started%20with%20Pub-Sub%3A%20Challenge%20Lab/ARC113-2.sh
+
+sudo chmod +x ARC113-2.sh
+
+./ARC113-2.sh
 ```
 </div>
 
 ---
 
-### 🗂️ **Form 3** || [Solution Video](https://youtu.be/_VQl61IW65Q)  
+### 🗂️ **Form 3** || [Solution Video]()  
 
 ✅ Tasks:
 - 📦 **Task 1. Set up Cloud Pub/Sub.**  
@@ -81,9 +85,11 @@ sudo chmod +x arcadecrew1.sh
 <p><strong>☁️ Run in Cloud Shell:</strong></p>
 
 ```bash
-curl -LO raw.githubusercontent.com/ArcadeCrew/Google-Cloud-Labs/refs/heads/main/Get%20Started%20with%20PubSub%20Challenge%20Lab/arcadecrew3.sh
-sudo chmod +x arcadecrew3.sh
-./arcadecrew3.sh
+curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Get%20Started%20with%20Pub-Sub%3A%20Challenge%20Lab/ARC113-1.sh
+
+sudo chmod +x ARC113-3.sh
+
+./ARC113-3.sh
 ```
 </div>
 
