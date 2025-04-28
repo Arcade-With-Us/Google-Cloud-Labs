@@ -42,7 +42,7 @@ curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/m
 
 sudo chmod +x GSP1073.sh
 
-./GSPGSP1073.sh
+./GSP1073.sh
 ```
 ---
 
