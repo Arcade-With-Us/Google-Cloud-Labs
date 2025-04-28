@@ -150,8 +150,8 @@ These badges offer the **best balance between fewer labs and minimum credits**, 
 _Firsst 40 skill Badges are very easy And you don't have to put much effort for solving them_
 **Solution wikk be available soon**
 
-| No. | Name                                                                | Credits | Labs | Skill Badge Link |
-|-----|---------------------------------------------------------------------|---------|------|------------------|
+| No. | Name                                                                | Credits | Labs | Skill Badge Link | 🎥 Video Solution |
+|-----|---------------------------------------------------------------------|---------|------|------------------|-------------------|
 | 1   | Get Started with Pub/Sub                                            | 2       | 3    |      [Link](https://www.cloudskillsboost.google/course_templates/728)          |
 | 2   | Streaming Analytics into BigQuery                                   | 2       | 4    |      [Link](https://www.cloudskillsboost.google/course_templates/752)                |
 | 3   | Integrate BigQuery Data and Google Workspace using Apps Script      | 2       | 4    |         [Link](https://www.cloudskillsboost.google/course_templates/737)         |
