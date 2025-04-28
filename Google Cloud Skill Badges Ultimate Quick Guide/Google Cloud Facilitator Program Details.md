@@ -152,9 +152,9 @@ _Firsst 40 skill Badges are very easy And you don't have to put much effort for 
 
 | No. | Name                                                                | Credits | Labs | Skill Badge Link | 🎥 Video Solution |
 |-----|---------------------------------------------------------------------|---------|------|------------------|-------------------|
-| 1   | Get Started with Pub/Sub                                            | 2       | 3    |      [Link](https://www.cloudskillsboost.google/course_templates/728)          |
-| 2   | Streaming Analytics into BigQuery                                   | 2       | 4    |      [Link](https://www.cloudskillsboost.google/course_templates/752)                |
-| 3   | Integrate BigQuery Data and Google Workspace using Apps Script      | 2       | 4    |         [Link](https://www.cloudskillsboost.google/course_templates/737)         |
+| 1   | Get Started with Pub/Sub                                            | 2       | 3    |      [Link]      |(https://www.cloudskillsboost.google/course_templates/728)          |
+| 2   | Streaming Analytics into BigQuery                                   | 2       | 4    |      [Link]      |(https://www.cloudskillsboost.google/course_templates/752)                |
+| 3   | Integrate BigQuery Data and Google Workspace using Apps Script      | 2       | 4    |         [Link]      |[Click Here](https://www.youtube.com/playlist?list=PLkxD9AdMsmVJs_FEuGjkJHb2S1l-wk5zZ)(https://www.cloudskillsboost.google/course_templates/737)         |
 | 4   | Store, Process, and Manage Data on Google Cloud - Command Line      | 3       | 4    |          [Link](https://www.cloudskillsboost.google/course_templates/659)        |
 | 5   | Store, Process, and Manage Data on Google Cloud - Console           | 3       | 4    |          [Link](https://www.cloudskillsboost.google/course_templates/658)        |
 | 6   | Get Started with API Gateway                                        | 3       | 4    |          [Link](https://www.cloudskillsboost.google/course_templates/662)        |
