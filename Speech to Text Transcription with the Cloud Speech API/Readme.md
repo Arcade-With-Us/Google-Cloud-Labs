@@ -1,3 +1,4 @@
+<h1 align="center">
 # ✨ Speech to Text Transcription with the Cloud Speech API || GSP048 ✨
 <div align="center">
 <a href="https://www.cloudskillsboost.google/focuses/2187?parent=catalog" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
