@@ -44,7 +44,7 @@ sudo chmod +x GSP207.sh
 
 ./GSP207.sh
 ```
-##If the task 3 not getting checked please run this sommand in **cloud shell🌐:**
+## If the task 3 not getting checked please run this sommand in **cloud shell🌐:**
 ```
 python -m apache_beam.examples.wordcount --project $DEVSHELL_PROJECT_ID \
   --runner DataflowRunner \
