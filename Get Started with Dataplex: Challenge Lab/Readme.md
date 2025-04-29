@@ -38,7 +38,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ## 💻 **Execute in Cloud Shell** 
 ```
-curl -LO aw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Get%20Started%20with%20Dataplex%3A%20Challenge%20Lab/ARC117.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Get%20Started%20with%20Dataplex%3A%20Challenge%20Lab/ARC117.sh
 
 sudo chmod +x ARC117.sh
 
