@@ -30,13 +30,17 @@
 ## ⚙️ Lab Environment Setup:
 
 ## 💻 Run the following commands in **Terminal**:
-```
+
+<div style="padding: 15px; margin: 10px 0;">
+<p><strong>☁️ Run in Cloud Shell:</strong></p>
+    
+  ```bash
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Build%20an%20AI%20Image%20Recognition%20app%20using%20Gemini%20on%20Vertex%20AI/bb-ide-genai-001.sh
-
-
 source bb-ide-genai-001.sh
 ```
 ---
+</div>
+
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
 
