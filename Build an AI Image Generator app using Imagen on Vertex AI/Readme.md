@@ -42,7 +42,7 @@ curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/m
 
 source bb-ide-genai-002.sh
 ```
-
+---
 </div>
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
