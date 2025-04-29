@@ -26,12 +26,15 @@
 ## ⚙️ Lab Environment Setup:
 
 ## 💻 **Execute in Cloud Shell Terminal** 
-```
+
+<div style="padding: 15px; margin: 10px 0;">
+<p><strong>☁️ Run in Cloud Shell:</strong></p>
+    
+  ```bash
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Build%20an%20application%20to%20send%20Chat%20Prompts%20using%20the%20Gemini%20model/bb-ide-genai-003.sh
 source bb-ide-genai-003.sh
 ```
 ---
-
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
 
 Your hard work and determination paid off! 💻
