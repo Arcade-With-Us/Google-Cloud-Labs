@@ -36,9 +36,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Build%20an%20AI%20Image%20Recognition%20app%20using%20Gemini%20on%20Vertex%20AI/bb-ide-genai-001.sh
 
-sudo chmod +x bb-ide-genai-001.sh
-
-./bb-ide-genai-001.sh
+source bb-ide-genai-001.sh
 ```
 ---
 
