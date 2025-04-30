@@ -36,14 +36,14 @@
 **🌐Launch Cloud Shell:**
 Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
 
-🌐 **Connect to your lab VM by running the following commands in Cloud Shell:**
+**Connect to your lab VM by running the following commands in Cloud Shell:**
 
 ```bash
 export ZONE=$(gcloud compute instances list lab-vm --format 'csv[no-heading](zone)')
 gcloud compute ssh lab-vm --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet
 ```
 
-## 💻 **Once connected to the lab VM, download and run the setup script: Execute in Cloud Shell** 
+## 💻 **Once connected to the lab VM, download and run the setup script:** 
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Analyze%20Speech%20%26%20Language%20with%20Google%20APIs%3A%20Challenge%20Lab/ARC114.sh
 
