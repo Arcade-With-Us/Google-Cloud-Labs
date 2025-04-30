@@ -35,7 +35,7 @@ gsutil mb -p $BUCKET gs://$BUCKET-bucket
 
 # Download the demo image
 echo "${YELLOW_TEXT} ${BOLD_TEXT}Downloading the demo image...${RESET_FORMAT}"
-curl -LO 
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/APIs%20Explorer%3A%20Qwik%20Start/demo-image.jpg
 
 # Upload the demo image to the bucket
 echo "${YELLOW_TEXT} ${BOLD_TEXT}Uploading the demo image to the bucket...${RESET_FORMAT}"
