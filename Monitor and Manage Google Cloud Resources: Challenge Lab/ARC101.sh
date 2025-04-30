@@ -357,6 +357,9 @@ gcloud alpha monitoring policies create --policy-from-file="active-instances-pol
         # Consider exiting: exit 1
 }
 
+exit 0 # Explicitly exit with success code
+        
+
 # --- Completion Message ---
 echo
 echo "${GREEN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
