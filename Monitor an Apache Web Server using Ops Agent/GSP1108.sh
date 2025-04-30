@@ -167,6 +167,8 @@ echo "${GREEN_TEXT}${BOLD_TEXT}            LAB COMPLETED!             ${RESET_FO
 echo "${GREEN_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
 
 # Subscription message
+
+# Subscription message
 echo
 echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe to my Channel (Arcade With Us):${RESET_FORMAT} ${BLUE_TEXT}${BOLD_TEXT}https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
 echo
