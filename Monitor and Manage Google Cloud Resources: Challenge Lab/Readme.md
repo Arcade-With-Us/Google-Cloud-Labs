@@ -43,6 +43,7 @@ sudo chmod +x ARC101.sh
 
 ./ARC101.sh
 ```
+* Create Alerting Policy (**`Active Cloud Run Function Instances`**) from [HERE](https://console.cloud.google.com/monitoring/alerting/policies/create?)
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
