@@ -40,9 +40,9 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Create%20a%20Custom%20Network%20and%20Apply%20Firewall%20Rules/GSP159.sh
 
-sudo chmod +x gsp159.sh
+sudo chmod +x GSP159.sh
 
-./gsp159.sh
+./gspGSP159.sh
 ```
 ---
 
