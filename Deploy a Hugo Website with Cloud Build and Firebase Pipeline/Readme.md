@@ -44,10 +44,8 @@
 
 ## ⚙️ Lab Environment Setup:
 
-**🌐Launch Cloud Shell:**
-Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
-
-## 💻 **Execute in Cloud Shell** 
+<div style="padding: 15px; margin: 10px 0;">
+<p><strong>☁️ Run in SSH Terminal:</strong></p>
 
 ```bash
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Deploy%20a%20Hugo%20Website%20with%20Cloud%20Build%20and%20Firebase%20Pipeline/GSP747.sh
