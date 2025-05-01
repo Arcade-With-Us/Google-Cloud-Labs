@@ -36,7 +36,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ## 💻 **Execute in Cloud Shell** 
 ```
-export ZONE=
+export REGION=
 ```
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/User%20Authentication%3A%20Identity-Aware%20Proxy/GSP499.sh
