@@ -61,7 +61,7 @@ echo
 
 # Download importTestData.js
 echo "${YELLOW_TEXT}Downloading importTestData.js...${RESET_FORMAT}"
-curl https://raw.githubusercontent.com/ArcadeCrew/Google-Cloud-Labs/refs/heads/main/Importing%20Data%20to%20a%20Firestore%20Database/importTestData.js > importTestData.js
+curl https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Importing%20Data%20to%20a%20Firestore%20Database/importTestData.js > importTestData.js
 echo "${GREEN_TEXT}${BOLD_TEXT}importTestData.js downloaded successfully!${RESET_FORMAT}"
 echo
 
@@ -73,7 +73,7 @@ echo
 
 # Download createTestData.js
 echo "${YELLOW_TEXT}Downloading createTestData.js...${RESET_FORMAT}"
-curl https://raw.githubusercontent.com/ArcadeCrew/Google-Cloud-Labs/refs/heads/main/Importing%20Data%20to%20a%20Firestore%20Database/createTestData.js > createTestData.js
+curl https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Importing%20Data%20to%20a%20Firestore%20Database/createTestData.js > createTestData.js
 echo "${GREEN_TEXT}${BOLD_TEXT}createTestData.js downloaded successfully!${RESET_FORMAT}"
 echo
 
