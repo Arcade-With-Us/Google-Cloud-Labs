@@ -38,7 +38,7 @@
 🔒 **GitHub** will likely block a new account as spam.
 
 🛡️ Enable [Two-Factor Authentication](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication) on your **GitHub** to enhance security.
-## ⚙️ <ins>Lab Environment Setup</ins>
+
 ---
 > ✅ **NOTE:** *Watch Full Video to get Full Scores on Check My Progress.*
 
