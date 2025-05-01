@@ -46,7 +46,7 @@ sudo chmod +x GSP430.sh
 ```
 * Go to Dataprep from [here](https://console.cloud.google.com/dataprep)
 
-* Download File from [here](https://github.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Creating%20a%20Data%20Transformation%20Pipeline%20with%20Cloud%20Dataprep/flow_Ecommerce_Analytics_Pipeline.zip)
+* Download File from [here](https://github.com/Arcade-With-Us/Google-Cloud-Labs/raw/refs/heads/main/Creating%20a%20Data%20Transformation%20Pipeline%20with%20Cloud%20Dataprep/flow_Ecommerce_Analytics_Pipeline.zip)
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
