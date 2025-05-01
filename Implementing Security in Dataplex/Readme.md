@@ -47,7 +47,10 @@ sudo chmod +x GSP1157.sh
 ./GSP1157.sh
 ```
 ---
-## After login into 2nd Student account please upload this file into bucket:[test.csv]()
+
+# After login into 2nd Student account please upload this file into bucket: [test.csv](https://github.com/Arcade-With-Us/Google-Cloud-Labs/raw/refs/heads/main/Implementing%20Security%20in%20Dataplex/test.csv)
+
+---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
 
