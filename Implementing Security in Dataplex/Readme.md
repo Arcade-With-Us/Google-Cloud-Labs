@@ -47,6 +47,7 @@ sudo chmod +x GSP1157.sh
 ./GSP1157.sh
 ```
 ---
+## After login into 2nd Student account please upload this file into bucket:[test.csv]()
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
 
