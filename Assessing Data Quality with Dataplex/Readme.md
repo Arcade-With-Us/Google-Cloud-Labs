@@ -58,7 +58,6 @@ sudo chmod +x gsp1158.sh
 
 * Go to `Create task` from [here](https://console.cloud.google.com/dataplex/process/create-task/data-quality?)
 
-```
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
