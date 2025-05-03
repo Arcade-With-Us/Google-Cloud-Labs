@@ -39,7 +39,6 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ```
 export ZONE=
 export ZONE2=
-
 ``` 
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Create%20and%20Manage%20Bigtable%20Instances%3A%20Challenge%20Lab/GSP380.sh
