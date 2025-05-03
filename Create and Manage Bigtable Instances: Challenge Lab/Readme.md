@@ -37,15 +37,19 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-export ZONE=
-export ZONE2=
-``` 
-```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Create%20and%20Manage%20Bigtable%20Instances%3A%20Challenge%20Lab/GSP380.sh
 
 sudo chmod +x GSP380.sh
 
 ./GSP380.sh
+```
+### ***```Once you get a score on first 4 task then only run the below commands:-```*** 
+
+```
+gcloud bigtable backups delete PersonalizedProducts_7 --instance=ecommerce-recommendations \
+  --cluster=ecommerce-recommendations-c1  --quiet
+
+gcloud bigtable instances delete ecommerce-recommendations --quiet
 ```
 
 ---
