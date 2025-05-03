@@ -243,7 +243,7 @@ To earn the coveted “Arcade Facilitator ’25” game badge you must complete 
 
 `⚠️Note`: **The Lab free badges are important for geyying the full points under Facilititaor Program**
 
-| No. |  Badge Name |  Badge Link | 🎥 Video Solution |
+| No. |  Badge Name |  Badge Link | 🎥 Solution |
 |--:|------------------|------------------|-------------------|
 | 1 | **Digital Transformation with Google Cloud** | [Link](https://www.cloudskillsboost.google/course_templates/266) | [Watch](Will be available) |
 | 2 | **Trust and Security with Google Cloud** | [Link](https://www.cloudskillsboost.google/course_templates/945) | [Watch](Will be available) |
@@ -251,7 +251,7 @@ To earn the coveted “Arcade Facilitator ’25” game badge you must complete 
 | 4 | **Infrastructure and Application Modernization with Google Cloud** | [Link](https://www.cloudskillsboost.google/course_templates/265) | [Watch](Will be available) |
 | 5 | **Scaling with Google Cloud Operations** | [Link](https://www.cloudskillsboost.google/course_templates/271) | [Watch](Will be available) |
 | 6 | **Innovating with Google Cloud Artificial Intelligence** | [Link](https://www.cloudskillsboost.google/course_templates/946) | [Watch](Will be available) |
-| 7 | **Google Drive** | [Link](https://www.cloudskillsboost.google/course_templates/199) | [Watch](Will be available) |
+| 7 | **Google Drive** | [Link](https://www.cloudskillsboost.google/course_templates/199) | [Open](https://docs.google.com/document/d/12YzcvDWHq_09R4zvTEF4jK9dlVf0oD25EM1GKxS0wwQ/edit?usp=sharing) |
 | 8 | **Google Docs** | [Link](https://www.cloudskillsboost.google/course_templates/195) | [Watch](Will be available) |
 | 9 | **Google Slides** | [Link](https://www.cloudskillsboost.google/course_templates/197) | [Watch](Will be available) |
 | 10 | **Google Meet** | [Link](https://www.cloudskillsboost.google/course_templates/198) | [Watch](Will be available) |
