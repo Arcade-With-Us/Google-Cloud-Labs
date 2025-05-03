@@ -47,7 +47,7 @@ sudo chmod +x GSP380.sh
 
 ./GSP380.sh
 ```
-## If your score don't get updated just wait for 5-6 minutes and again check you will surely get full score
+### If your score don't get updated just wait for 5-6 minutes and again check you will surely get full score
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
