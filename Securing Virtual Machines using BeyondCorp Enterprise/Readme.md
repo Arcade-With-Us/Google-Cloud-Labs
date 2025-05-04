@@ -33,9 +33,6 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 Run the following commands in **Cloud Shell**:
 ```
-export ZONE=
-```
-```
 curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Securing%20Virtual%20Machines%20using%20BeyondCorp%20Enterprise/GSP1036.sh
 
 sudo chmod +x GSP1036.sh
