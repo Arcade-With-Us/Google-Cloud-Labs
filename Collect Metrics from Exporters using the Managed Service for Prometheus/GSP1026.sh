@@ -24,11 +24,11 @@ RESET=`tput sgr0`
 
 # Header Section
 echo "${BG_MAGENTA}${BOLD}╔════════════════════════════════════════════════════════╗${RESET}"
-echo "${BG_MAGENTA}${BOLD}        WELCOME TO DR ABHISHEK CLOUD TUTORIAL       ${RESET}"
+echo "${BG_MAGENTA}${BOLD}          WELCOME TO ARCADE WITH US TUTORIAL            ${RESET}"
 echo "${BG_MAGENTA}${BOLD}╚════════════════════════════════════════════════════════╝${RESET}"
 echo
-echo "${CYAN}${BOLD}          Expert Tutorial by Dr. Abhishek              ${RESET}"
-echo "${YELLOW}For more GCP monitoring tutorials, visit: https://www.youtube.com/@drabhishek.5460${RESET}"
+echo "${CYAN}${BOLD}          Expert Tutorial by Arcade With Us              ${RESET}"
+echo "${YELLOW}For more GCP monitoring tutorials, visit: https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET}"
 echo
 echo "${BLUE}${BOLD}⚡ Initializing GMP Cluster Setup...${RESET}"
 echo
