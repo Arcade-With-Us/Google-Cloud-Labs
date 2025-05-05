@@ -37,7 +37,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ### ⚙️ Execute the Following Commands in Cloud Shell (Data Sharing Partner Project Console)
 
 ```
-curl -LO raw.githubusercontent.com/QUICK-GCP-LAB/2-Minutes-Labs-Solutions/refs/heads/main/Consuming%20Customer%20Specific%20Datasets%20from%20Data%20Sharing%20Partners%20using%20BigQuery/GSP1043-1.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Consuming%20Customer%20Specific%20Datasets%20from%20Data%20Sharing%20Partners%20using%20BigQuery/GSP1043-1.sh
 
 sudo chmod +x GSP1043-1.sh
 
@@ -47,7 +47,7 @@ sudo chmod +x GSP1043-1.sh
 ### ⚙️ Execute the Following Commands in Cloud Shell (Data Publisher Project Console)
 
 ```
-curl -LO raw.githubusercontent.com/QUICK-GCP-LAB/2-Minutes-Labs-Solutions/refs/heads/main/Consuming%20Customer%20Specific%20Datasets%20from%20Data%20Sharing%20Partners%20using%20BigQuery/GSP1043-2.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Consuming%20Customer%20Specific%20Datasets%20from%20Data%20Sharing%20Partners%20using%20BigQuery/GSP1043-2.sh
 
 sudo chmod +x GSP1043-2.sh
 
@@ -57,7 +57,7 @@ sudo chmod +x GSP1043-2.sh
 ### ⚙️ Execute the Following Commands in Cloud Shell (Customer (Data Twin) Project Console)
 
 ```
-curl -LO raw.githubusercontent.com/QUICK-GCP-LAB/2-Minutes-Labs-Solutions/refs/heads/main/Consuming%20Customer%20Specific%20Datasets%20from%20Data%20Sharing%20Partners%20using%20BigQuery/GSP1043-3.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Consuming%20Customer%20Specific%20Datasets%20from%20Data%20Sharing%20Partners%20using%20BigQuery/GSP1043-3.sh
 
 sudo chmod +x GSP1043-3.sh
 
