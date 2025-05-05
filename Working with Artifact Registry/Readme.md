@@ -39,23 +39,45 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 export ZONE=
 ```
 ```
-curl -LO raw.githubusercontent.com/QUICK-GCP-LAB/2-Minutes-Labs-Solutions/main/Working%20with%20Artifact%20Registry/gsp1076-1.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Working%20with%20Artifact%20Registry/GSP1076-1.sh
 
-sudo chmod +x gsp1076-1.sh
+sudo chmod +x GSP1076-1.sh
 
-./gsp1076-1.sh
+./GSP1076-1.sh
 ```
 
 * *NOW FOLLOW VIDEO'S INSTRUCTIONS*
 
+## Manual Steps
+
+1. From the left menu, select **Cloud Code** and then expand the **COMPUTE ENGINE** option and click on **Select a Project** and choose the **project ID provided in the Lab Instruction**.
+
+2. Also, expand the **KUBERNETES** option. You will be able to see the cluster loading.
+
+3. Wait until you see the cluster listed under `KUBERNETES` as well as under `COMPUTE ENGINE`.
+
+4. Click Navigation menu under the Cloud Shell Editor icon **View** > **Command Palette**... and type **Run on Kubernetes** and select **Cloud Code: Run on Kubernetes**.
+
+5. Choose **`cloud-code-samples/java/java-hello-world/skaffold.yaml`** and then **dockerfile**.
+
+6. If Prompted for a context, select Yes to use the current context.
+
+7. In the prompt for the image registry select **Enter the address of an image repository** and put the address location you located below and press **Enter**.
+
+**`"REGION"-docker.pkg.dev/"PROJECT_ID"/container-dev-repo`**
+
+### Make sure to paste your code given in the lab manual.
+
+8. Press Enter and let it be run for 4-5 minutes.
+
 ### Run again the following Commands in CloudShell
 
 ```
-curl -LO raw.githubusercontent.com/QUICK-GCP-LAB/2-Minutes-Labs-Solutions/main/Working%20with%20Artifact%20Registry/gsp1076-2.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Working%20with%20Artifact%20Registry/GSP1076-2.sh
 
-sudo chmod +x gsp1076-2.sh
+sudo chmod +x GSP1076-2.sh
 
-./gsp1076-2.sh
+./GSP1076-2.sh
 ```
 ---
 
