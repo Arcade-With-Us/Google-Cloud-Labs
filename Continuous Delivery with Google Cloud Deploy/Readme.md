@@ -36,9 +36,6 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ## 💻 **Execute in Cloud Shell** 
 ```
-export zone=
-```
-```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Continuous%20Delivery%20with%20Google%20Cloud%20Deploy/GSP1079.sh
 
 sudo chmod +x GSP1079.sh
