@@ -45,6 +45,27 @@ sudo chmod +x GSP090.sh
 
 ./GSP090.sh
 ```
+
+#### For creation of **`DemoGroup`** follow these steps:
+
+1. In the left menu, click Groups, then click +Create group. Name your group **`DemoGroup`**.
+2. In the first dropdown field (Type), **`Name`** is selected by default.
+3. In the second dropdown (Operator), **`Contains`** is selected by default.
+4. In the third field (Value), type in "**`instance`**"
+5. Click Done, then click `Create`.
+
+### Uptime check for your group:
+
+1. In the left menu, click `Uptime checks`, then click `+Create uptime check`.
+2. Create your uptime check with the following information:
+3. `Protocol`: **`TCP`**
+4. `Resource Type`: **`Instance`**
+5. `Applies To`: **`Group`**, and then select **`DemoGroup`**.
+6. `Port`: **`22`**
+7. `Check frequency`: **`1 minute`**, then click `Continue`. Click `Continue` again.
+8. Leave the slider `ON` state for Create an alert option in Alert & notification section, then click `Continue`.
+9. For Title: enter **`DemoGroup uptime check`**.
+10. Click `TEST` to verify that your uptime check can connect to the resource.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
