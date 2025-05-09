@@ -39,6 +39,59 @@ sudo chmod +x ARC115.sh
 
 </div>
 
+</details>
+
+---
+
+<details>
+<summary><h3>📊 Task 1: Set Up Monitoring Dashboards</h3></summary>
+
+<div style="padding: 15px; margin: 10px 0;">
+
+1. Navigate to the [Monitoring Dashboards Console](https://console.cloud.google.com/monitoring/dashboards)
+
+2. Create a new custom dashboard with the following charts:
+
+   | Chart Type | Metric | Filter |
+   |------------|--------|--------|
+   | 📈 Line Chart | CPU Load (1m) | VM Resource Metric |
+   | 📉 Line Chart | Requests | Apache Web Server metrics |
+
+</div>
+</details>
+
+---
+
+<details>
+<summary><h3>📝 Task 2: Create a Log-Based Metric</h3></summary>
+
+<div style="padding: 15px; margin: 10px 0;">
+
+1. Navigate to the [Log-Based Metrics Console](https://console.cloud.google.com/logs/metrics/edit)
+
+2. Create a new user-defined metric with these specifications:
+   - **Metric Name:** `arcadecrew`
+
+3. Configure the log filter:
+   ```bash
+   resource.type="gce_instance"
+   logName="projects/PROJECT_ID/logs/apache-access"
+   textPayload:"200"
+   ```
+   > ⚠️ **Important:** Replace `PROJECT_ID` with your actual project ID
+
+4. Configure field extraction:
+   - **Regular Expression:**
+   ```bash
+   execution took (\d+)
+   ```
+
+5. Verify and create the metric
+
+</div>
+</details>
+
+
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
