@@ -24,7 +24,7 @@ echo
 echo -e "${YELLOW_TEXT}${BOLD_TEXT}Enter API KEY:${RESET_FORMAT}"
 read -r API_KEY
 echo
-gcloud compute ssh lab-vm --zone=$ZONE --quiet --command "curl -LO https://raw.githubusercontent.com/ArcadeCrew/Google-Cloud-Labs/refs/heads/main/Analyze%20Sentiment%20with%20Natural%20Language%20API%20Challenge%20Lab/arcadecrew.sh && sudo chmod +x arcadecrew.sh && ./arcadecrew.sh"
+gcloud compute ssh lab-vm --zone=$ZONE --quiet --command "https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Analyze%20Sentiment%20with%20Natural%20Language%20API%3A%20Challenge%20Lab/ARC130.sh"
 
 # # Safely delete the script if it exists
 # SCRIPT_NAME="arcadecrew.sh"
