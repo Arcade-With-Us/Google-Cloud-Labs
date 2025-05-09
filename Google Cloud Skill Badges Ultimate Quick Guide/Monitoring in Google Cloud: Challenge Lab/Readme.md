@@ -70,7 +70,7 @@ sudo chmod +x ARC115.sh
 1. Navigate to the [Log-Based Metrics Console](https://console.cloud.google.com/logs/metrics/edit)
 
 2. Create a new user-defined metric with these specifications:
-   - **Metric Name:** `arcadecrew`
+   - **Metric Name:** `arcadewithus`
 
 3. Configure the log filter:
    ```bash
