@@ -41,6 +41,11 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 export ZONE=
 ```
 ```
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Cloud%20Functions%202nd%20Gen%3A%20Qwik%20Start/GSP1089.sh
+
+sudo chmod +x GSP1089.sh
+
+./GSP1089.sh
 ```
 ---
 
