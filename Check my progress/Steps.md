@@ -4,9 +4,9 @@
 2. Save this above bookmark and pin it in `bookmarks bar` by typing **`Ctrl + Shift + B`**
 3. Now on the bookmarks bar right click on the bookmark that you have previously pinned in your bookmarks bar.
 4. Now change the name of the bookamark to **`Check My Progress Bar`**
+5. And the website link to the below code
 
-
-## Bookmark Code 
+## Bookmark Code:
 
 ```javascript
 javascript:(function () {
