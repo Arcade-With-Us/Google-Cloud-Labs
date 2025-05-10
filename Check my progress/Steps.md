@@ -2,7 +2,8 @@
 
 1. First Save this website as a `bookmark` by clicking the **star button** on the `right side of the website bar`: [Click](https://www.cloudskillsboost.google/)
 2. Save this above bookmark and pin it in `bookmarks bar` by typing **`Ctrl + Shift + B`**
-3. Now on the bookmarks bar right click on the bookmark that you have previously pinned in your bookmarks bar
+3. Now on the bookmarks bar right click on the bookmark that you have previously pinned in your bookmarks bar.
+4. Now change the name of the bookamark to **`Check My Progress Bar`**
 
 
 ## Bookmark Code 
