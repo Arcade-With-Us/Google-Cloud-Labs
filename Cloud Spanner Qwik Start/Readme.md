@@ -36,11 +36,11 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ## 💻 **Execute in Cloud Shell** 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Arcade%20Hero%3A%20Building%20Blocks%20Cloud%20Run%20functions%20II/ARC1221.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Cloud%20Spanner%20Qwik%20Start/GSP102.sh
 
-sudo chmod +x ARC1221.sh
+sudo chmod +x GSP102.sh
 
-./ARC1221.sh
+./GSP102.sh
 ```
 ---
 
