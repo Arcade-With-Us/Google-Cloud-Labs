@@ -47,6 +47,9 @@ sudo chmod +x GSP1089.sh
 
 ./GSP1089.sh
 ```
+* Now Check The Score Upto `Task 6` then Process Next
+---
+#### FOR TASK 7 FOLLOW VIDEO
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
