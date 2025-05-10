@@ -1,5 +1,5 @@
 <h1 align="center">
-✨ Bracketology with Google Machine Learning || GSP461 ✨
+✨ Cloud Spanner Qwik Start || GSP102 ✨
 </h1>
 
 <div align="center">
