@@ -41,6 +41,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 export ZONE=
 ```
 ```
+```
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
