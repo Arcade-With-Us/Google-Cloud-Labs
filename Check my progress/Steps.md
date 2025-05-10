@@ -48,6 +48,6 @@ javascript:(function () {
     <em>This guide is provided for educational purposes. Always follow Qwiklabs terms of service and YouTube's community guidelines.</em>
   </p>
   <p style="font-size: 24px; color: #586069;">
-    <em>**See You In Clouds**☁︎</em>
+    <em>See You In Clouds☁︎</em>
   </p>
 </div>
