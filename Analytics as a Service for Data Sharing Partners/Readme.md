@@ -142,11 +142,11 @@ Close the Incognito window used for Project A's Looker Studio.
 In the Project B Cloud Shell, set the environment variable for your **Main Lab Project ID** again:
 
 ```bash
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Analytics%20as%20a%20Service%20for%20Data%20Sharing%20Partners/GSP1042-2.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Analytics%20as%20a%20Service%20for%20Data%20Sharing%20Partners/GSP1042-3.sh
 
-sudo chmod +x GSP1042-2.sh
+sudo chmod +x GSP1042-3.sh
 
-./GSP1042-2.sh
+./GSP1042-3.sh
 ```
 
 ### 3. 📊 Connect Looker Studio (for Project B)
