@@ -35,12 +35,11 @@
 Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
 
 ## 💻 **Execute in Cloud Shell** 
+
+#### TASK 1-6
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Arcade%20Hero%3A%20Building%20Blocks%20Cloud%20Run%20functions%20II/ARC1221.sh
-
-sudo chmod +x ARC1221.sh
-
-./ARC1221.sh
+export ZONE=
+```
 ```
 ---
 
