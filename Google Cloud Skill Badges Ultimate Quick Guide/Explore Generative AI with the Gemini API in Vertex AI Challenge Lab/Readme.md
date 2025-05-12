@@ -32,7 +32,7 @@
 ```bash
 rm gemini-explorer-challenge-v2.0.0.ipynb
 
-curl -LO raw.githubusercontent.com/ArcadeCrew/Google-Cloud-Labs/refs/heads/main/Explore%20Generative%20AI%20with%20the%20Gemini%20API%20in%20Vertex%20AI%20Challenge%20Lab/gemini-explorer-challenge-v2.0.0.ipynb
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/raw/refs/heads/main/Google%20Cloud%20Skill%20Badges%20Ultimate%20Quick%20Guide/Explore%20Generative%20AI%20with%20the%20Gemini%20API%20in%20Vertex%20AI%20Challenge%20Lab/gemini-explorer-challenge-v2.0.0.ipynb
 
 ```
 
