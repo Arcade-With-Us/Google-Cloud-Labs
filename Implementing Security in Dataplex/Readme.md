@@ -52,7 +52,9 @@ sudo chmod +x GSP1157.sh
 5. Click on Edit principal (pencil icon) next to the email for User 2: User 2 ID
 6. For Role, select Dataplex Data Writer under Cloud Dataplex. Click Save.
 ---
-
+### For Task no 4
+1. Log out of the project as User 1.
+---
 **After login into 2nd Student account please upload this file into bucket**: [Download test.csv](https://storage.googleapis.com/spls/gsp1157/test.csv)
 
 ---
