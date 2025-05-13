@@ -48,7 +48,7 @@ sudo chmod +x GSP1157.sh
 1. Click Grant access.
 2. For New principals, enter the email for User 2: User 2 ID
 3. For Select a role, select Dataplex Data Reader under Cloud Dataplex. Click Save.
-4. 
+4. Click Check my progress to verify the objective.
 ---
 
 **After login into 2nd Student account please upload this file into bucket**: [Download test.csv](https://storage.googleapis.com/spls/gsp1157/test.csv)
