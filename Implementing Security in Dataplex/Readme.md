@@ -63,7 +63,7 @@ sudo chmod +x GSP1157.sh
 5. Click on the bucket that has been precreated for you: **`____-bucket`**
 6. Click **Upload files**.
 ---
-**Download file from here**: [Download test.csv](https://storage.googleapis.com/spls/gsp1157/test.csv)
+* **Download file from here**: [Download test.csv](https://storage.googleapis.com/spls/gsp1157/test.csv)
 
 ---
 
