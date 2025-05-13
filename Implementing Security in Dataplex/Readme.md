@@ -57,9 +57,11 @@ sudo chmod +x GSP1157.sh
 2. Click on the profile icon on the top right of the Google Cloud console.
 3. Click Sign out. If asked to confirm, click Leave.
 ![Demo](https://cdn.qwiklabs.com/tX2AQr6KJX8I9lhrGaZNaXJMrJGovI0%2B7Zzp%2Bf4QuXg%3D)
+4. In the Google Cloud Console, in the Navigation menu (Navigation menu), navigate to Cloud Storage > Buckets.
+5. Click on the bucket that has been precreated for you: ____-bucket
+6. Click Upload files.
 ---
-**After login into 2nd Student account please upload this file into bucket**: [Download test.csv](https://storage.googleapis.com/spls/gsp1157/test.csv)
-
+**Download file from here**: [Download test.csv](https://storage.googleapis.com/spls/gsp1157/test.csv)
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
