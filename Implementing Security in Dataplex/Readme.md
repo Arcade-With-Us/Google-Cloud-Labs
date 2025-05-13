@@ -45,21 +45,21 @@ sudo chmod +x GSP1157.sh
 ```
 ---
 ### For task no 2 & 3
-1. Click Grant access.
+1. Click **Grant access**.
 2. For New principals, enter the email for User 2: User 2 ID
-3. For Select a role, select Dataplex Data Reader under Cloud Dataplex. Click Save.
+3. For Select a role, select **`Dataplex Data Reader`** under **Cloud Dataplex**. Click **Save**.
 4. Click Check my progress to verify the objective.
 5. Click on Edit principal (pencil icon) next to the email for User 2: User 2 ID
-6. For Role, select Dataplex Data Writer under Cloud Dataplex. Click Save.
+6. For Role, select **`Dataplex Data Writer`** under **Cloud Dataplex**. Click **Save**.
 ---
 ### For Task no 4
 1. Log out of the project as User 1.
 2. Click on the profile icon on the top right of the Google Cloud console.
 3. Click Sign out. If asked to confirm, click Leave.
 ![Demo](https://cdn.qwiklabs.com/tX2AQr6KJX8I9lhrGaZNaXJMrJGovI0%2B7Zzp%2Bf4QuXg%3D)
-4. In the Google Cloud Console, in the Navigation menu (Navigation menu), navigate to Cloud Storage > Buckets.
-5. Click on the bucket that has been precreated for you: ____-bucket
-6. Click Upload files.
+4. In the Google Cloud Console, in the Navigation menu (Navigation menu),navigate to **Cloud Storage** > **Buckets**.
+5. Click on the bucket that has been precreated for you: **`____-bucket`**
+6. Click **Upload files**.
 ---
 **Download file from here**: [Download test.csv](https://storage.googleapis.com/spls/gsp1157/test.csv)
 ---
