@@ -37,9 +37,6 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-export REGION=
-```
-```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Implementing%20Security%20in%20Dataplex/GSP1157.sh
 
 sudo chmod +x GSP1157.sh
