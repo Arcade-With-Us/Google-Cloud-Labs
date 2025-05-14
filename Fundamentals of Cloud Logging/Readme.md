@@ -54,6 +54,8 @@ sudo chmod +x GSP610.sh
     * Author: Jane Doe
     * Date Published: 1/2/2003
     * Description: Log test.
+4. Your form should resemble the following:
+   ![Demo](https://cdn.qwiklabs.com/0U61r7tiq6QLQI%2FSbCyXwfBeYLBRLCLvlEzvotRe%2BO0%3D)
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
