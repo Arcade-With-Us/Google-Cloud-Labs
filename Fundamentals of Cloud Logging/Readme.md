@@ -55,7 +55,10 @@ sudo chmod +x GSP610.sh
     * Date Published: 1/2/2003
     * Description: Log test.
 4. Your form should resemble the following:
+
    ![Demo](https://cdn.qwiklabs.com/0U61r7tiq6QLQI%2FSbCyXwfBeYLBRLCLvlEzvotRe%2BO0%3D)
+
+5. Click Save.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
