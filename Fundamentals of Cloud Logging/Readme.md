@@ -45,7 +45,7 @@ sudo chmod +x GSP610.sh
 
 ### For the first task
 1. In a new tab, launch the App Engine bookshelf application. You should see the link at the top right of the App Engine Dashboard.
-2. 
+2. If you see an Internal Server Error, this is because the Datastore Index is not yet ready. Wait a minute and reload your browser.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
