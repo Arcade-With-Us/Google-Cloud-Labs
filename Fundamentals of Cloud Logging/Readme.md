@@ -51,7 +51,7 @@ sudo chmod +x GSP610.sh
 
 3. Refresh the browser and click Add book. Then fill out the form like the following:
     * **Title**: `Test Book`
-    * **Author**: Jane Doe
+    * **Author**: `Jane Doe`
     * **Date Published**: 1/2/2003
     * **Description**: Log test.
 4. Your form should resemble the following:
