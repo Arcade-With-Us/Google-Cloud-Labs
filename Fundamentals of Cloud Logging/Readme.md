@@ -58,7 +58,7 @@ sudo chmod +x GSP610.sh
 
    ![Demo](https://cdn.qwiklabs.com/0U61r7tiq6QLQI%2FSbCyXwfBeYLBRLCLvlEzvotRe%2BO0%3D)
 
-5. Click Save.
+5. Click **Save**.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
