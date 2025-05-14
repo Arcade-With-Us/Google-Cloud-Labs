@@ -35,3 +35,10 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 <div style="padding: 15px; margin: 10px 0;">
 <p><strong>☁️ Run in Cloud Shell:</strong></p>
+```
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Pub-Sub%20Qwik%20Start%20Python/GSP094.sh
+
+sudo chmod +x GSP094.sh
+
+./GSP094.sh
+```
