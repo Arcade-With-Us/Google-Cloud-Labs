@@ -37,5 +37,9 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 <p><strong>☁️ Run in Cloud Shell:</strong></p>
 
 ```
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Deploy%20Your%20Website%20on%20Cloud%20Run/GSP659.sh
 
+sudo chmod +x GSP659.sh
+
+./GSP659.sh
 ```
