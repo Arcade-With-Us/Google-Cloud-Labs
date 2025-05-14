@@ -33,7 +33,9 @@
 **🌐Launch Cloud Shell:**
 Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
 
-## 💻 **Execute in Cloud Shell** 
+<div style="padding: 15px; margin: 10px 0;">
+<p><strong>☁️ Run in Cloud Shell:</strong></p>
+  
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Pub-Sub%20Qwik%20Start%20Python/GSP094.sh
 
