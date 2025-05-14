@@ -50,11 +50,10 @@ sudo chmod +x GSP610.sh
 ![Demo](https://cdn.qwiklabs.com/DC%2BZ8FTM4sTQagu%2FIlrYOBnd4d%2BK%2FGK5nWozfS4Kfo4%3D)
 
 3. Refresh the browser and click Add book. Then fill out the form like the following:
-
-Title: Test Book
-Author: Jane Doe
-Date Published: 1/2/2003
-Description: Log test.
+    * Title: Test Book
+    * Author: Jane Doe
+    * Date Published: 1/2/2003
+    * Description: Log test.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
