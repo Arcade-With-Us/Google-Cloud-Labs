@@ -42,6 +42,10 @@ sudo chmod +x GSP610.sh
 
 ./GSP610.sh
 ```
+
+### For the first task
+1. In a new tab, launch the App Engine bookshelf application. You should see the link at the top right of the App Engine Dashboard.
+2. 
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
