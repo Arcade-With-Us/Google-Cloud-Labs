@@ -1,5 +1,5 @@
 <h1 align="center">
-✨ Pub/Sub: Qwik Start - Python || GSP094 ✨
+✨ Creating PDFs with Go and Cloud Run || GSP762 ✨
 </h1>
 
 <div align="center">
