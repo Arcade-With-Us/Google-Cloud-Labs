@@ -40,8 +40,7 @@ echo "${YELLOW_TEXT}${BOLD_TEXT}Navigating to the lab directory...${RESET_FORMAT
 cd pet-theory/lab03
 
 echo "${YELLOW_TEXT}${BOLD_TEXT}Downloading the server.go file...${RESET_FORMAT}"
-curl -LO https://raw.githubusercontent.com/ArcadeCrew/Google-Cloud-Labs/refs/heads/main/Creating%20PDFs%20with%20Go%20and%20Cloud%20Run/server.go
-
+curl -LO https://github.com/Arcade-With-Us/Google-Cloud-Labs/raw/refs/heads/main/Creating%20PDFs%20with%20Go%20and%20Cloud%20Run/server.go
 echo "${YELLOW_TEXT}${BOLD_TEXT}Building the Go application...${RESET_FORMAT}"
 go build -o server
 
