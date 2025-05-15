@@ -29,7 +29,9 @@
 > ✅ **NOTE:** *Watch Full Video to get Full Scores on Check My Progress.*
 
 **🌐Launch Cloud Shell:**
+
 Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
+
 ---
 ## 💻 **Execute in Cloud Shell** 
 ```
