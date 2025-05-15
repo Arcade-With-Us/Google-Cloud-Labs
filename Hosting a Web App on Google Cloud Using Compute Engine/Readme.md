@@ -47,7 +47,6 @@ sudo chmod +x GSP662.sh
 
 * #### NOTE : Check All Score Upto `Task 6`
 
-### Run again the following Commands in CloudShell
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
