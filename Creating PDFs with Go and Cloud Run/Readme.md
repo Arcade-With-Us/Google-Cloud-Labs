@@ -27,11 +27,11 @@
 ---
 ## 💻 **Execute in Cloud Shell** 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Fundamentals%20of%20Cloud%20Logging/GSP610.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Creating%20PDFs%20with%20Go%20and%20Cloud%20Run/GSP762.sh
 
-sudo chmod +x GSP610.sh
+sudo chmod +x GSP762.sh
 
-./GSP610.sh
+./GSP762.sh
 ```
 ---
 ## ⚙️ <ins>Lab Environment Setup</ins>
