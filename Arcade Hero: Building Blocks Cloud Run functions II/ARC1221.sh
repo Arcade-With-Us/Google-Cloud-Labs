@@ -1,114 +1,83 @@
 #!/bin/bash
-YELLOW='\033[0;33m'
-NC='\033[0m' 
-pattern=(
-"**********************************************************"
-"**                S U B S C R I B E  TO                 **"
-"**                     ARCADE WITH US                   **"
-"**                                                      **"
-"**********************************************************"
-)
-for line in "${pattern[@]}"
-do
-    echo -e "${YELLOW}${line}${NC}"
-done
-export PROJECT_ID=$(gcloud config get-value project)
+BLACK_TEXT=$'\033[0;90m'
+RED_TEXT=$'\033[0;91m'
+GREEN_TEXT=$'\033[0;92m'
+YELLOW_TEXT=$'\033[0;93m'
+BLUE_TEXT=$'\033[0;94m'
+MAGENTA_TEXT=$'\033[0;95m'
+CYAN_TEXT=$'\033[0;96m'
+WHITE_TEXT=$'\033[0;97m'
+RESET_FORMAT=$'\033[0m'
+BOLD_TEXT=$'\033[1m'
+UNDERLINE_TEXT=$'\033[4m'
+
+clear
+
 echo
-read -p "Enter your region1: " REGION1
-echo
-read -p "Enter your region2: " REGION2
-echo
-read -p "Enter your FUNCTION_NAME1: " FUNCTION_NAME1
-echo
-read -p "Enter your FUNCTION_NAME2: " FUNCTION_NAME2
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
-mkdir -p cloud-function-http-go
-cat > cloud-function-http-go/main.go <<EOF
-package p
+echo "${YELLOW_TEXT}${BOLD_TEXT}👉 Please enter the Region.${RESET_FORMAT}"
+read -p "${MAGENTA_TEXT}REGION: ${RESET_FORMAT}" REGION
+echo
+
+echo "${GREEN_TEXT}${BOLD_TEXT}🛠️  Setting up the project workspace...${RESET_FORMAT}"
+mkdir ~/hello-go && cd ~/hello-go
+
+echo "${BLUE_TEXT}${BOLD_TEXT}📝 Creating the Go source file for our HTTP function...${RESET_FORMAT}"
+cat > main.go <<EOF_END
+package function
 
 import (
-	"net/http"
+    "fmt"
+    "net/http"
 )
 
-func HelloHTTP(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Hello from Go HTTP Cloud Function!"))
+// HelloGo is the entry point
+func HelloGo(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprint(w, "Hello from Cloud Functions (Go 2nd Gen)!")
 }
-EOF
+EOF_END
 
-cat > cloud-function-http-go/go.mod <<EOF
-module cloudfunction
+echo "${BLUE_TEXT}${BOLD_TEXT}📦 Initializing the Go module...${RESET_FORMAT}"
+cat > go.mod <<EOF_END
+module example.com/hellogo
 
 go 1.21
-EOF
+EOF_END
 
-gcloud functions deploy ${FUNCTION_NAME1} \
+echo "${MAGENTA_TEXT}${BOLD_TEXT}🚀 Deploying the HTTP-triggered Go Cloud Function...${RESET_FORMAT}"
+gcloud functions deploy cf-go \
   --gen2 \
   --runtime=go121 \
-  --region=${REGION1} \
-  --source=cloud-function-http-go \
-  --entry-point=HelloHTTP \
+  --region=$REGION \
   --trigger-http \
-  --max-instances=5 \
+  --allow-unauthenticated \
+  --entry-point=HelloGo \
+  --source=. \
+  --min-instances=5
+
+
+echo "${MAGENTA_TEXT}${BOLD_TEXT}📨 Deploying the Pub/Sub-triggered Go Cloud Function...${RESET_FORMAT}"
+echo "n" | gcloud functions deploy cf-pubsub \
+  --gen2 \
+  --region=$REGION \
+  --runtime=go121 \
+  --trigger-topic=cf-pubsub \
+  --min-instances=5 \
+  --entry-point=helloWorld \
+  --source=. \
   --allow-unauthenticated
 
-mkdir -p cloud-function-pubsub-go
-cat > cloud-function-pubsub-go/main.go <<EOF
-package p
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~${RESET_FORMAT}"
+echo "${RED_TEXT}${BOLD_TEXT}🔴          IGNORE ERRORS IF ANY          🔴 ${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~${RESET_FORMAT}"
+echo
 
-import (
-	"context"
-	"log"
-)
-
-type PubSubMessage struct {
-	Data []byte \`json:"data"\`
-}
-
-func HelloPubSub(ctx context.Context, m PubSubMessage) error {
-	log.Printf("Hello, %s!", string(m.Data))
-	return nil
-}
-EOF
-
-cat > cloud-function-pubsub-go/go.mod <<EOF
-module cloudfunction
-
-go 1.21
-EOF
-
-gcloud functions deploy ${FUNCTION_NAME2} \
-  --gen2 \
-  --runtime=go121 \
-  --region=${REGION2} \
-  --source=cloud-function-pubsub-go \
-  --entry-point=HelloPubSub \
-  --trigger-topic=cf-pubsub \
-  --max-instances=5
-
-cd ~
-for file in *; do
-  if [[ "$file" == gsp* || "$file" == arc* || "$file" == shell* ]]; then
-    if [[ -f "$file" ]]; then
-      rm "$file"
-    fi
-  fi
-done
-
-pattern=(
-"**********************************************************"
-"**                 S U B S C R I B E  TO                **"
-"**                     ARCADE WITH US                   **"
-"**                                                      **"
-"**********************************************************"
-)
-for line in "${pattern[@]}"
-do
-    echo -e "${YELLOW}${line}${NC}"
-done
-
-echo "${RED}${BOLD}Congratulations${RESET}" "${WHITE}${BOLD}for${RESET}" "${GREEN}${BOLD}Completing the Lab !!!${RESET}"
-
-echo "" 
-echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe to my Channel (Arcade With Us):${RESET_FORMAT} ${BLUE_TEXT}${BOLD_TEXT}https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
+echo
+echo "${MAGENTA_TEXT}${BOLD_TEXT}💖 IF YOU FOUND THIS HELPFUL, SUBSCRIBE ARCADE WITH US! 👇${RESET_FORMAT}"
+echo "${BLUE_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
 echo
