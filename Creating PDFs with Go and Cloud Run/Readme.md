@@ -24,16 +24,6 @@
 ### ©Credit
 - **DM for credit or removal request (no copyright intended) ©All rights and credits for the original content belong to Google Cloud [Google Cloud Skill Boost website](https://www.cloudskillsboost.google/)** 🙏
 
----
-## 💻 **Execute in Cloud Shell** 
-```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Creating%20PDFs%20with%20Go%20and%20Cloud%20Run/GSP762.sh
-
-sudo chmod +x GSP762.sh
-
-./GSP762.sh
-```
----
 ## ⚙️ <ins>Lab Environment Setup</ins>
 
 > ✅ **NOTE:** *Watch Full Video to get Full Scores on Check My Progress.*
