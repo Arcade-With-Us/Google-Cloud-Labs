@@ -36,9 +36,6 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ## 💻 **Execute in Cloud Shell** 
 ```
-export ZONE=
-```
-```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Implement%20CI-CD%20Pipelines%20on%20Google%20Cloud%3A%20Challenge%20Lab/GSP393.sh
 
 sudo chmod +x GSP393.sh
