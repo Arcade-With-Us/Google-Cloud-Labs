@@ -45,7 +45,7 @@ sudo chmod +x GSP662.sh
 ./GSP662.sh
 ```
 
-* #### NOTE : Check All Score Upto `Task 6`
+* #### NOTE : IT takes time to check all the progress
 
 ---
 
