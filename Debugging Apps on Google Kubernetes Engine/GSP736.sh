@@ -1,51 +1,101 @@
 #!/bin/bash
-# Define color variables
+BLACK_TEXT=$'\033[0;90m'
+RED_TEXT=$'\033[0;91m'
+GREEN_TEXT=$'\033[0;92m'
+YELLOW_TEXT=$'\033[0;93m'
+BLUE_TEXT=$'\033[0;94m'
+MAGENTA_TEXT=$'\033[0;95m'
+CYAN_TEXT=$'\033[0;96m'
+WHITE_TEXT=$'\033[0;97m'
+RESET_FORMAT=$'\033[0m'
+BOLD_TEXT=$'\033[1m'
+UNDERLINE_TEXT=$'\033[4m'
 
-BLACK=`tput setaf 0`
-RED=`tput setaf 1`
-GREEN=`tput setaf 2`
-YELLOW=`tput setaf 3`
-BLUE=`tput setaf 4`
-MAGENTA=`tput setaf 5`
-CYAN=`tput setaf 6`
-WHITE=`tput setaf 7`
+clear
 
-BG_BLACK=`tput setab 0`
-BG_RED=`tput setab 1`
-BG_GREEN=`tput setab 2`
-BG_YELLOW=`tput setab 3`
-BG_BLUE=`tput setab 4`
-BG_MAGENTA=`tput setab 5`
-BG_CYAN=`tput setab 6`
-BG_WHITE=`tput setab 7`
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo
 
-BOLD=`tput bold`
-RESET=`tput sgr0`
-#----------------------------------------------------start--------------------------------------------------#
+echo "${BLUE_TEXT}${BOLD_TEXT}🔍 Attempting to automatically detect your default GCP compute zone...${RESET_FORMAT}"
+export ZONE=$(gcloud compute project-info describe \
+--format="value(commonInstanceMetadata.items[google-compute-default-zone])" 2>/dev/null)
 
-echo "${BG_MAGENTA}${BOLD}Starting Execution${RESET}"
+if [ -z "$ZONE" ]; then
+  echo "${YELLOW_TEXT}${BOLD_TEXT}⚠️ Could not automatically detect the default compute zone.${RESET_FORMAT}"
+  echo "${YELLOW_TEXT}${BOLD_TEXT}Please provide your desired GCP compute zone below.${RESET_FORMAT}"
+  read -p "${GREEN_TEXT}${BOLD_TEXT}➡️ Enter your GCP zone: ${RESET_FORMAT}" ZONE
+  if [ -z "$ZONE" ]; then
+    echo "${RED_TEXT}${BOLD_TEXT}🛑 Zone not provided. The script will continue, but might fail if a zone is required.${RESET_FORMAT}"
+  fi
+fi
 
-gcloud config set compute/zone $ZONE
+if [ -n "$ZONE" ]; then
+  echo "${GREEN_TEXT}${BOLD_TEXT}✅ Using GCP zone: ${ZONE}${RESET_FORMAT}"
+else
+  echo "${YELLOW_TEXT}${BOLD_TEXT}⚠️ No GCP zone specified. Subsequent commands requiring a zone may fail.${RESET_FORMAT}"
+fi
+echo
 
+echo "${BLUE_TEXT}${BOLD_TEXT}⚙️ Setting the default compute zone to '${ZONE}' for gcloud commands (if zone is set)...${RESET_FORMAT}"
+if [ -n "$ZONE" ]; then
+  gcloud config set compute/zone $ZONE
+else
+  echo "${YELLOW_TEXT}${BOLD_TEXT}⚠️ Skipping gcloud config set compute/zone as no zone is defined.${RESET_FORMAT}"
+fi
+echo
+
+echo "${BLUE_TEXT}${BOLD_TEXT}🆔 Fetching your GCP Project ID...${RESET_FORMAT}"
 export PROJECT_ID=$(gcloud info --format='value(config.project)')
+echo "${GREEN_TEXT}${BOLD_TEXT}✅ Project ID set to: ${PROJECT_ID}${RESET_FORMAT}"
+echo
 
-gcloud container clusters get-credentials central --zone $ZONE
+echo "${BLUE_TEXT}${BOLD_TEXT}🔑 Getting credentials for the GKE cluster 'central' in zone '${ZONE}' (if zone is set)...${RESET_FORMAT}"
+if [ -n "$ZONE" ]; then
+  gcloud container clusters get-credentials central --zone $ZONE
+else
+  echo "${YELLOW_TEXT}${BOLD_TEXT}⚠️ Skipping get-credentials as no zone is defined. This might cause issues.${RESET_FORMAT}"
+fi
+echo
 
+echo "${BLUE_TEXT}${BOLD_TEXT}📥 Cloning the microservices demo repository from GitHub...${RESET_FORMAT}"
 git clone https://github.com/xiangshen-dk/microservices-demo.git
+echo
 
+echo "${BLUE_TEXT}${BOLD_TEXT}📁 Navigating into the 'microservices-demo' directory...${RESET_FORMAT}"
 cd microservices-demo
+echo
 
+echo "${BLUE_TEXT}${BOLD_TEXT}🚀 Applying Kubernetes manifests to deploy the application...${RESET_FORMAT}"
 kubectl apply -f release/kubernetes-manifests.yaml
+echo
 
-sleep 30
+echo "${YELLOW_TEXT}${BOLD_TEXT}⏳ Allowing resources to initialize...${RESET_FORMAT}"
+for i in $(seq 30 -1 1); do
+  echo -ne "${YELLOW_TEXT}${BOLD_TEXT}\r⏳ $i seconds remaining... ${RESET_FORMAT}"
+  sleep 1
+done
+echo -e "${YELLOW_TEXT}${BOLD_TEXT}\r⏳ 0 seconds remaining... Done!${RESET_FORMAT}"
+echo
 
+echo "${BLUE_TEXT}${BOLD_TEXT}📊 Creating a Cloud Logging metric named 'Error_Rate_SLI' for 'recommendationservice' errors...${RESET_FORMAT}"
 gcloud logging metrics create Error_Rate_SLI \
-  --description="awesome lab" \
-  --log-filter="resource.type=\"k8s_container\" severity=ERROR labels.\"k8s-pod/app\": \"recommendationservice\"" 
+  --description="Subscribe to Arcade Crew" \
+  --log-filter="resource.type=\"k8s_container\" severity=ERROR labels.\"k8s-pod/app\": \"recommendationservice\""
+echo
 
-sleep 30
+echo "${YELLOW_TEXT}${BOLD_TEXT}⏳ Pausing for the new metric to become available...${RESET_FORMAT}"
+for i in $(seq 30 -1 1); do
+  echo -ne "${YELLOW_TEXT}${BOLD_TEXT}\r⏳ $i seconds remaining... ${RESET_FORMAT}"
+  sleep 1
+done
+echo -e "${YELLOW_TEXT}${BOLD_TEXT}\r⏳ 0 seconds remaining... Done!${RESET_FORMAT}"
+echo
 
-cat > awesome.json <<EOF_END
+echo "${BLUE_TEXT}${BOLD_TEXT}📝 Generating the 'ArcadeCrew.json' monitoring policy configuration file...${RESET_FORMAT}"
+cat > ArcadeCrew.json <<EOF_END
 {
   "displayName": "Error Rate SLI",
   "userLabels": {},
@@ -79,8 +129,12 @@ cat > awesome.json <<EOF_END
   "severity": "SEVERITY_UNSPECIFIED"
 }
 EOF_END
+echo "${GREEN_TEXT}${BOLD_TEXT}✅ 'ArcadeCrew.json' file has been successfully created.${RESET_FORMAT}"
+echo
 
-gcloud alpha monitoring policies create --policy-from-file="awesome.json"
+echo "${BLUE_TEXT}${BOLD_TEXT}🛡️ Creating the Cloud Monitoring alert policy using the 'ArcadeCrew.json' file...${RESET_FORMAT}"
+gcloud alpha monitoring policies create --policy-from-file="ArcadeCrew.json"
+echo
 
 echo "${BG_RED}${BOLD}Congratulations For Completing The Lab !!!${RESET}"
 echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe to my Channel (Arcade With Us):${RESET_FORMAT} ${BLUE_TEXT}${BOLD_TEXT}https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
