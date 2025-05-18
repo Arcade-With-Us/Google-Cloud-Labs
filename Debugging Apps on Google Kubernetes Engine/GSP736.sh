@@ -94,8 +94,8 @@ done
 echo -e "${YELLOW_TEXT}${BOLD_TEXT}\r⏳ 0 seconds remaining... Done!${RESET_FORMAT}"
 echo
 
-echo "${BLUE_TEXT}${BOLD_TEXT}📝 Generating the 'ArcadeCrew.json' monitoring policy configuration file...${RESET_FORMAT}"
-cat > ArcadeCrew.json <<EOF_END
+echo "${BLUE_TEXT}${BOLD_TEXT}📝 Generating the 'arcadewithus.json' monitoring policy configuration file...${RESET_FORMAT}"
+cat > arcadewithus.json <<EOF_END
 {
   "displayName": "Error Rate SLI",
   "userLabels": {},
@@ -129,11 +129,11 @@ cat > ArcadeCrew.json <<EOF_END
   "severity": "SEVERITY_UNSPECIFIED"
 }
 EOF_END
-echo "${GREEN_TEXT}${BOLD_TEXT}✅ 'ArcadeCrew.json' file has been successfully created.${RESET_FORMAT}"
+echo "${GREEN_TEXT}${BOLD_TEXT}✅ 'arcadewithus.json' file has been successfully created.${RESET_FORMAT}"
 echo
 
-echo "${BLUE_TEXT}${BOLD_TEXT}🛡️ Creating the Cloud Monitoring alert policy using the 'ArcadeCrew.json' file...${RESET_FORMAT}"
-gcloud alpha monitoring policies create --policy-from-file="ArcadeCrew.json"
+echo "${BLUE_TEXT}${BOLD_TEXT}🛡️ Creating the Cloud Monitoring alert policy using the 'arcadewithus.json' file...${RESET_FORMAT}"
+gcloud alpha monitoring policies create --policy-from-file="arcadewithus.json"
 echo
 
 echo "${BG_RED}${BOLD}Congratulations For Completing The Lab !!!${RESET}"
