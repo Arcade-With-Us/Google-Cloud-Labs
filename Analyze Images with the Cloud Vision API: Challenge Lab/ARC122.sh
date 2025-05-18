@@ -23,10 +23,10 @@ echo "${BLUE_TEXT}${BOLD_TEXT}         INITIATING EXECUTION...  ${RESET_FORMAT}"
 echo "${BLUE_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
 echo
 
-echo "${CYAN_TEXT} ${BOLD_TEXT}Creating an API key named 'arcadecrew'.${RESET_FORMAT}"
-gcloud alpha services api-keys create --display-name="arcadecrew"
+echo "${CYAN_TEXT} ${BOLD_TEXT}Creating an API key named 'arcadewithus'.${RESET_FORMAT}"
+gcloud alpha services api-keys create --display-name="arcadewithus"
 
-KEY_NAME=$(gcloud alpha services api-keys list --format="value(name)" --filter "displayName=arcadecrew")
+KEY_NAME=$(gcloud alpha services api-keys list --format="value(name)" --filter "displayName=arcadewithus")
 
 export API_KEY=$(gcloud alpha services api-keys get-key-string $KEY_NAME --format="value(keyString)")
 
