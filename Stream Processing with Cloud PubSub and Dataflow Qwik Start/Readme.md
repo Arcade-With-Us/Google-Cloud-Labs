@@ -23,3 +23,19 @@
 - **DM for credit or removal request (no copyright intended) ©All rights and credits for the original content belong to Google Cloud [Google Cloud Skill Boost website](https://www.cloudskillsboost.google/)** 🙏
 
 ---
+## ⚙️ <ins>Lab Environment Setup</ins>
+
+> ✅ **NOTE:** *Watch Full Video to get Full Scores on Check My Progress.*
+
+**🌐Launch Cloud Shell:**
+Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
+
+## 💻 **Execute in Cloud Shell** 
+```
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Fundamentals%20of%20Cloud%20Logging/GSP610.sh
+
+sudo chmod +x GSP610.sh
+
+./GSP610.sh
+```
+---
