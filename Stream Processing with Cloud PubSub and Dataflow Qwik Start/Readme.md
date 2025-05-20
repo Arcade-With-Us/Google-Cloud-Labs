@@ -32,10 +32,10 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ## 💻 **Execute in Cloud Shell** 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Fundamentals%20of%20Cloud%20Logging/GSP610.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Stream%20Processing%20with%20Cloud%20PubSub%20and%20Dataflow%20Qwik%20Start/GSP903.sh
 
-sudo chmod +x GSP610.sh
+sudo chmod +x GSP903.sh
 
-./GSP610.sh
+./GSP903.sh
 ```
 ---
