@@ -47,15 +47,7 @@ sudo chmod +x GSP207.sh
 
 ./GSP207.sh
 ```
-## If the task 3 not getting checked please run this sommand in **cloud shell🌐:**
-```
-python -m apache_beam.examples.wordcount --project $DEVSHELL_PROJECT_ID \
-  --runner DataflowRunner \
-  --staging_location $BUCKET/staging \
-  --temp_location $BUCKET/temp \
-  --output $BUCKET/results/output \
-  --region "filled in at lab start"
-```
+* Go to `Dataflow Jobs` from [here](https://console.cloud.google.com/dataflow/jobs?)
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
