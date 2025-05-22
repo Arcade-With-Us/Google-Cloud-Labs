@@ -36,6 +36,9 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ## 💻 **Execute in Cloud Shell** 
 ```
+export ZONE=
+```
+```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Cloud%20Armor%20Preconfigured%20WAF%20Rules/GSP879.sh
 
 sudo chmod +x GSP879.sh
