@@ -1,5 +1,5 @@
 <h1 align="center">
-✨ Pub/Sub: Qwik Start - Python || GSP094 ✨
+✨ Deploy a Modern Web App connected to a Cloud Spanner Instance || GSP1051 ✨
 </h1>
 
 <div align="center">
