@@ -36,6 +36,12 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ## 💻 **Execute in Cloud Shell** 
 ```
+export REGION=
+```
+```
+nvm install 22.6
+```
+```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Deploy%20a%20Modern%20Web%20App%20connected%20to%20a%20Cloud%20Spanner%20Instance/GSP1051.sh
 
 sudo chmod +x GSP1051.sh
