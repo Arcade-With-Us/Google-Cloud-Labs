@@ -1,32 +1,43 @@
-#!/bin/bash
-
-# Define color variables
-BLACK_TEXT=$'\033[0;90m'
-RED_TEXT=$'\033[0;91m'
-GREEN_TEXT=$'\033[0;92m'
-YELLOW_TEXT=$'\033[0;93m'
-BLUE_TEXT=$'\033[0;94m'
-MAGENTA_TEXT=$'\033[0;95m'
-CYAN_TEXT=$'\033[0;96m'
-WHITE_TEXT=$'\033[0;97m'
-
-NO_COLOR=$'\033[0m'
-RESET_FORMAT=$'\033[0m'
-BOLD_TEXT=$'\033[1m'
-UNDERLINE_TEXT=$'\033[4m'
-
-
 clear
-# Welcome message
-echo "${BLUE_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
-echo "${BLUE_TEXT}${BOLD_TEXT}         INITIATING EXECUTION...  ${RESET_FORMAT}"
-echo "${BLUE_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
-echo
 
-# Instruction 1
-echo -e "${YELLOW_TEXT}${BOLD_TEXT}Step 1: Creating redact-request.json file for de-identification.${RESET_FORMAT}"
-echo -e "${CYAN_TEXT}This file contains the data to be redacted and the configuration for the de-identification process.${RESET_FORMAT}"
+#!/bin/bash
+# Define color variables
 
+BLACK=`tput setaf 0`
+RED=`tput setaf 1`
+GREEN=`tput setaf 2`
+YELLOW=`tput setaf 3`
+BLUE=`tput setaf 4`
+MAGENTA=`tput setaf 5`
+CYAN=`tput setaf 6`
+WHITE=`tput setaf 7`
+
+BG_BLACK=`tput setab 0`
+BG_RED=`tput setab 1`
+BG_GREEN=`tput setab 2`
+BG_YELLOW=`tput setab 3`
+BG_BLUE=`tput setab 4`
+BG_MAGENTA=`tput setab 5`
+BG_CYAN=`tput setab 6`
+BG_WHITE=`tput setab 7`
+
+BOLD=`tput bold`
+RESET=`tput sgr0`
+
+# Array of color codes excluding black and white
+TEXT_COLORS=($RED $GREEN $YELLOW $BLUE $MAGENTA $CYAN)
+BG_COLORS=($BG_RED $BG_GREEN $BG_YELLOW $BG_BLUE $BG_MAGENTA $BG_CYAN)
+
+# Pick random colors
+RANDOM_TEXT_COLOR=${TEXT_COLORS[$RANDOM % ${#TEXT_COLORS[@]}]}
+RANDOM_BG_COLOR=${BG_COLORS[$RANDOM % ${#BG_COLORS[@]}]}
+
+#----------------------------------------------------start--------------------------------------------------#
+
+echo "${RANDOM_BG_COLOR}${RANDOM_TEXT_COLOR}${BOLD}Starting Execution${RESET}"
+
+# Step 1: Create redact-request.json
+echo "${BOLD}${RED}Creating redact-request.json file${RESET}"
 cat > redact-request.json <<EOF_END
 {
 	"item": {
@@ -53,78 +64,71 @@ cat > redact-request.json <<EOF_END
 }
 EOF_END
 
-# Instruction 2
-echo -e "${YELLOW_TEXT}${BOLD_TEXT}Step 2: Sending de-identification request to DLP API.${RESET_FORMAT}"
-echo -e "${CYAN_TEXT}This step sends the content of redact-request.json to the DLP API for de-identification.${RESET_FORMAT}"
-
+# Step 2: Deidentify content using DLP API
+echo "${BOLD}${GREEN}Calling DLP API to deidentify content${RESET}"
 curl -s \
   -H "Authorization: Bearer $(gcloud auth print-access-token)" \
   -H "Content-Type: application/json" \
   https://dlp.googleapis.com/v2/projects/$DEVSHELL_PROJECT_ID/content:deidentify \
   -d @redact-request.json -o redact-response.txt
 
-# Copy response to Google Cloud Storage
-echo -e "${GREEN_TEXT}${BOLD_TEXT}Uploading redact-response.txt to Google Cloud Storage...${RESET_FORMAT}"
-
+# Step 3: Upload result to Cloud Storage
+echo "${BOLD}${YELLOW}Uploading deidentified content to GCS${RESET}"
 gsutil cp redact-response.txt gs://$DEVSHELL_PROJECT_ID-redact
 
-# Instruction 3
-echo -e "${YELLOW_TEXT}${BOLD_TEXT}Step 3: Creating structured_data_template.${RESET_FORMAT}"
-echo -e "${CYAN_TEXT}This template defines how structured data should be de-identified.${RESET_FORMAT}"
-
-cat > template.json <<EOF_END
+# Step 4: Create structured data template
+echo "${BOLD}${BLUE}Creating structured data deidentify template${RESET}"
+cat <<EOF > template.json
 {
-	"deidentifyTemplate": {
-	  "deidentifyConfig": {
-		"recordTransformations": {
-		  "fieldTransformations": [
-			{
-			  "fields": [
-				{
-				  "name": "bank name"
-				},
-				{
-				  "name": "zip code"
-				}
-				
-			  ],
-			  "primitiveTransformation": {
-				"characterMaskConfig": {
-				  "maskingCharacter": "#"
-				  
-				}
-				
-			  }
-			  
-			}
-			
-		  ]
-		  
-		}
-		
-	  },
-	  "displayName": "structured_data_template"
-	  
-	},
-	"locationId": "global",
-	"templateId": "structured_data_template"
-  }
-EOF_END
+  "deidentifyTemplate": {
+    "deidentifyConfig": {
+      "recordTransformations": {
+        "fieldTransformations": [
+          {
+            "fields": [
+              { "name": "bank name" },
+              { "name": "zip code" }
+            ],
+            "primitiveTransformation": {
+              "characterMaskConfig": {
+                "maskingCharacter": "#"
+              }
+            }
+          },
+          {
+            "fields": [
+              { "name": "message" }
+            ],
+            "infoTypeTransformations": {
+              "transformations": [
+                {
+                  "primitiveTransformation": {
+                    "replaceWithInfoTypeConfig": {}
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "displayName": "structured_data_template"
+  },
+  "locationId": "us",
+  "templateId": "structured_data_template"
+}
+EOF
 
-# Send template to API
-echo -e "${YELLOW_TEXT}${BOLD_TEXT}Step 4: Sending structured_data_template to DLP API...${RESET_FORMAT}"
-echo -e "${CYAN_TEXT}This step sends the structured data template to the DLP API.${RESET_FORMAT}"
-
-curl -s \
+# Step 5: Upload structured template to DLP
+echo "${BOLD}${MAGENTA}Uploading structured template to DLP API${RESET}"
+curl -X POST -s \
 -H "Authorization: Bearer $(gcloud auth application-default print-access-token)" \
 -H "Content-Type: application/json" \
-https://dlp.googleapis.com/v2/projects/$DEVSHELL_PROJECT_ID/deidentifyTemplates \
--d @template.json
+-d @template.json \
+"https://dlp.googleapis.com/v2/projects/$DEVSHELL_PROJECT_ID/locations/us/deidentifyTemplates"
 
-# Instruction 4
-echo -e "${YELLOW_TEXT}${BOLD_TEXT}Step 5: Creating unstructured_data_template.${RESET_FORMAT}"
-echo -e "${CYAN_TEXT}This template defines how unstructured data should be de-identified.${RESET_FORMAT}"
-
+# Step 6: Create unstructured data template
+echo "${BOLD}${CYAN}Creating unstructured data template${RESET}"
 cat > template.json <<'EOF_END'
 {
   "deidentifyTemplate": {
@@ -132,65 +136,33 @@ cat > template.json <<'EOF_END'
       "infoTypeTransformations": {
         "transformations": [
           {
-            "infoTypes": [
-              {
-                "name": ""
-                
-              }
-              
-            ],
             "primitiveTransformation": {
               "replaceConfig": {
                 "newValue": {
                   "stringValue": "[redacted]"
-                  
                 }
               }
-              
             }
           }
-          
         ]
       }
-      
     },
     "displayName": "unstructured_data_template"
-    
   },
-  "templateId": "unstructured_data_template",
-  "locationId": "global"
+  "templateId": "unstructured_data_template"
 }
 EOF_END
 
-# Send template to API
-echo -e "${YELLOW_TEXT}${BOLD_TEXT}Step 6: Sending unstructured_data_template to DLP API...${RESET_FORMAT}"
-echo -e "${CYAN_TEXT}This step sends the unstructured data template to the DLP API.${RESET_FORMAT}"
-
-curl -s \
+# Step 7: Upload unstructured template to DLP
+echo "${BOLD}${RED}Uploading unstructured template to DLP API${RESET}"
+curl -X POST -s \
 -H "Authorization: Bearer $(gcloud auth application-default print-access-token)" \
 -H "Content-Type: application/json" \
-https://dlp.googleapis.com/v2/projects/$DEVSHELL_PROJECT_ID/deidentifyTemplates \
--d @template.json
+-d @template.json \
+"https://dlp.googleapis.com/v2/projects/$DEVSHELL_PROJECT_ID/locations/us/deidentifyTemplates"
 
-# Output the URLs for the templates
-echo -e "${GREEN_TEXT}${BOLD_TEXT}Structured Data Template URL:${RESET_FORMAT}"
-
-echo -e "${BLUE_TEXT}https://console.cloud.google.com/security/sensitive-data-protection/projects/$DEVSHELL_PROJECT_ID/locations/global/deidentifyTemplates/structured_data_template/edit?project=$DEVSHELL_PROJECT_ID${RESET_FORMAT}"
-
-echo -e "${GREEN_TEXT}${BOLD_TEXT}Unstructured Data Template URL:${RESET_FORMAT}"
-
-echo -e "${BLUE_TEXT}https://console.cloud.google.com/security/sensitive-data-protection/projects/$DEVSHELL_PROJECT_ID/locations/global/deidentifyTemplates/unstructured_data_template/edit?project=$DEVSHELL_PROJECT_ID${RESET_FORMAT}"
-
-# Display the message with colors
-echo -e "${CYAN_TEXT}${BOLD_TEXT}Now follow steps in video.${RESET_FORMAT}"
-echo
-
-read -p "${MAGENTA_TEXT}${BOLD_TEXT}Press Enter after completing above steps...${RESET_FORMAT}"
-
-# Instruction 5
-echo -e "${YELLOW_TEXT}${BOLD_TEXT}Step 7: Creating job-configuration.json file for DLP job.${RESET_FORMAT}"
-echo -e "${CYAN_TEXT}This file contains the configuration for the DLP job, including the infoTypes to inspect and the actions to take.${RESET_FORMAT}"
-
+# Step 8: Create job-configuration.json
+echo "${BOLD}${GREEN}Creating job-configuration.json for scheduled DLP job${RESET}"
 cat > job-configuration.json << EOM
 {
   "triggerId": "dlp_job",
@@ -214,8 +186,8 @@ cat > job-configuration.json << EOM
             ],
             "transformationDetailsStorageConfig": {},
             "transformationConfig": {
-              "deidentifyTemplate": "projects/$DEVSHELL_PROJECT_ID/locations/global/deidentifyTemplates/unstructured_data_template",
-              "structuredDeidentifyTemplate": "projects/$DEVSHELL_PROJECT_ID/locations/global/deidentifyTemplates/structured_data_template"
+              "deidentifyTemplate": "projects/$DEVSHELL_PROJECT_ID/locations/us/deidentifyTemplates/unstructured_data_template",
+              "structuredDeidentifyTemplate": "projects/$DEVSHELL_PROJECT_ID/locations/us/deidentifyTemplates/structured_data_template"
             },
             "cloudStorageOutput": "gs://$DEVSHELL_PROJECT_ID-output"
           }
@@ -498,34 +470,127 @@ cat > job-configuration.json << EOM
 }
 EOM
 
-# Step 2: Send job configuration to DLP API
-echo -e "${YELLOW_TEXT}${BOLD_TEXT}Step 8: Sending job configuration to DLP API...${RESET_FORMAT}"
-echo -e "${CYAN_TEXT}This step sends the job configuration to the DLP API to create a new job trigger.${RESET_FORMAT}"
-
+# Step 9: Send job configuration to DLP API
+echo "${BOLD}${YELLOW}Sending job configuration to DLP API...${RESET}"
 curl -s \
 -H "Authorization: Bearer $(gcloud auth application-default print-access-token)" \
 -H "Content-Type: application/json" \
-https://dlp.googleapis.com/v2/projects/$DEVSHELL_PROJECT_ID/locations/global/jobTriggers \
+https://dlp.googleapis.com/v2/projects/$DEVSHELL_PROJECT_ID/locations/us/jobTriggers \
 -d @job-configuration.json
 
-# Step 3: Wait for job trigger activation
-echo -e "${BLUE_TEXT}${BOLD_TEXT}Step 9: Waiting 15 seconds before activating the job trigger...${RESET_FORMAT}"
-sleep 15
+# Step 10: Wait for 15 seconds to ensure the job trigger is ready
+echo "${BOLD}${MAGENTA}Waiting 60 seconds to ensure job trigger is ready${RESET}"
+echo
+for ((i=60; i>=0; i--)); do
+  echo -ne "\r${BOLD}${CYAN}Time remaining${RESET} $i ${BOLD}${CYAN}seconds${RESET}"
+  sleep 1
+done
+echo -e "\n${BOLD}${GREEN}Done!${RESET}"
+echo
 
-# Step 4: Activate the job trigger
-echo -e "${BLUE_TEXT}${BOLD_TEXT}Step 10: Activating the job trigger...${RESET_FORMAT}"
-
+# Step 11: Activate DLP job trigger
+echo "${BOLD}${BLUE}Activating DLP job trigger...${RESET}"
 curl --request POST \
   -H "Content-Type: application/json" \
   -H "Accept: application/json" \
   -H "Authorization: Bearer $(gcloud auth print-access-token)" \
   -H "X-Goog-User-Project: $DEVSHELL_PROJECT_ID" \
-  "https://dlp.googleapis.com/v2/projects/$DEVSHELL_PROJECT_ID/locations/global/jobTriggers/dlp_job:activate"
+  "https://dlp.googleapis.com/v2/projects/$DEVSHELL_PROJECT_ID/locations/us/jobTriggers/dlp_job:activate"
 
 echo
-echo "${GREEN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}              LAB COMPLETED SUCCESSFULLY!              ${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
+
+# Function to display a random congratulatory message
+function random_congrats() {
+    MESSAGES=(
+        "${GREEN}Congratulations For Completing The Lab! Keep up the great work!${RESET}"
+        "${CYAN}Well done! Your hard work and effort have paid off!${RESET}"
+        "${YELLOW}Amazing job! You’ve successfully completed the lab!${RESET}"
+        "${BLUE}Outstanding! Your dedication has brought you success!${RESET}"
+        "${MAGENTA}Great work! You’re one step closer to mastering this!${RESET}"
+        "${RED}Fantastic effort! You’ve earned this achievement!${RESET}"
+        "${CYAN}Congratulations! Your persistence has paid off brilliantly!${RESET}"
+        "${GREEN}Bravo! You’ve completed the lab with flying colors!${RESET}"
+        "${YELLOW}Excellent job! Your commitment is inspiring!${RESET}"
+        "${BLUE}You did it! Keep striving for more successes like this!${RESET}"
+        "${MAGENTA}Kudos! Your hard work has turned into a great accomplishment!${RESET}"
+        "${RED}You’ve smashed it! Completing this lab shows your dedication!${RESET}"
+        "${CYAN}Impressive work! You’re making great strides!${RESET}"
+        "${GREEN}Well done! This is a big step towards mastering the topic!${RESET}"
+        "${YELLOW}You nailed it! Every step you took led you to success!${RESET}"
+        "${BLUE}Exceptional work! Keep this momentum going!${RESET}"
+        "${MAGENTA}Fantastic! You’ve achieved something great today!${RESET}"
+        "${RED}Incredible job! Your determination is truly inspiring!${RESET}"
+        "${CYAN}Well deserved! Your effort has truly paid off!${RESET}"
+        "${GREEN}You’ve got this! Every step was a success!${RESET}"
+        "${YELLOW}Nice work! Your focus and effort are shining through!${RESET}"
+        "${BLUE}Superb performance! You’re truly making progress!${RESET}"
+        "${MAGENTA}Top-notch! Your skill and dedication are paying off!${RESET}"
+        "${RED}Mission accomplished! This success is a reflection of your hard work!${RESET}"
+        "${CYAN}You crushed it! Keep pushing towards your goals!${RESET}"
+        "${GREEN}You did a great job! Stay motivated and keep learning!${RESET}"
+        "${YELLOW}Well executed! You’ve made excellent progress today!${RESET}"
+        "${BLUE}Remarkable! You’re on your way to becoming an expert!${RESET}"
+        "${MAGENTA}Keep it up! Your persistence is showing impressive results!${RESET}"
+        "${RED}This is just the beginning! Your hard work will take you far!${RESET}"
+        "${CYAN}Terrific work! Your efforts are paying off in a big way!${RESET}"
+        "${GREEN}You’ve made it! This achievement is a testament to your effort!${RESET}"
+        "${YELLOW}Excellent execution! You’re well on your way to mastering the subject!${RESET}"
+        "${BLUE}Wonderful job! Your hard work has definitely paid off!${RESET}"
+        "${MAGENTA}You’re amazing! Keep up the awesome work!${RESET}"
+        "${RED}What an achievement! Your perseverance is truly admirable!${RESET}"
+        "${CYAN}Incredible effort! This is a huge milestone for you!${RESET}"
+        "${GREEN}Awesome! You’ve done something incredible today!${RESET}"
+        "${YELLOW}Great job! Keep up the excellent work and aim higher!${RESET}"
+        "${BLUE}You’ve succeeded! Your dedication is your superpower!${RESET}"
+        "${MAGENTA}Congratulations! Your hard work has brought great results!${RESET}"
+        "${RED}Fantastic work! You’ve taken a huge leap forward today!${RESET}"
+        "${CYAN}You’re on fire! Keep up the great work!${RESET}"
+        "${GREEN}Well deserved! Your efforts have led to success!${RESET}"
+        "${YELLOW}Incredible! You’ve achieved something special!${RESET}"
+        "${BLUE}Outstanding performance! You’re truly excelling!${RESET}"
+        "${MAGENTA}Terrific achievement! Keep building on this success!${RESET}"
+        "${RED}Bravo! You’ve completed the lab with excellence!${RESET}"
+        "${CYAN}Superb job! You’ve shown remarkable focus and effort!${RESET}"
+        "${GREEN}Amazing work! You’re making impressive progress!${RESET}"
+        "${YELLOW}You nailed it again! Your consistency is paying off!${RESET}"
+        "${BLUE}Incredible dedication! Keep pushing forward!${RESET}"
+        "${MAGENTA}Excellent work! Your success today is well earned!${RESET}"
+        "${RED}You’ve made it! This is a well-deserved victory!${RESET}"
+        "${CYAN}Wonderful job! Your passion and hard work are shining through!${RESET}"
+        "${GREEN}You’ve done it! Keep up the hard work and success will follow!${RESET}"
+        "${YELLOW}Great execution! You’re truly mastering this!${RESET}"
+        "${BLUE}Impressive! This is just the beginning of your journey!${RESET}"
+        "${MAGENTA}You’ve achieved something great today! Keep it up!${RESET}"
+        "${RED}You’ve made remarkable progress! This is just the start!${RESET}"
+    )
+
+    RANDOM_INDEX=$((RANDOM % ${#MESSAGES[@]}))
+    echo -e "${BOLD}${MESSAGES[$RANDOM_INDEX]}"
+}
+
+# Display a random congratulatory message
+random_congrats
+
+echo -e "\n"  # Adding one blank line
+
+cd
+
+remove_files() {
+    # Loop through all files in the current directory
+    for file in *; do
+        # Check if the file name starts with "gsp", "arc", or "shell"
+        if [[ "$file" == gsp* || "$file" == arc* || "$file" == shell* ]]; then
+            # Check if it's a regular file (not a directory)
+            if [[ -f "$file" ]]; then
+                # Remove the file and echo the file name
+                rm "$file"
+                echo "File removed: $file"
+            fi
+        fi
+    done
+}
+
+remove_files
 echo ""
 echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe to my Channel (Arcade With Us):${RESET_FORMAT} ${BLUE_TEXT}${BOLD_TEXT}https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
 echo
