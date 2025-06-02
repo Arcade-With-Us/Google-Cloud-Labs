@@ -35,7 +35,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/APIs%20Explorer%3A%20Compute%20Engine/GSP293.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/APIs%20Explorer%3A%20Compute%20Engine/GSP293.sh
 
 sudo chmod +x GSP293.sh
 
