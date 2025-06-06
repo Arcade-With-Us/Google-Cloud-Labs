@@ -71,6 +71,18 @@ sudo chmod +x GSP767.sh
 jsonPayload.src_instance.zone AS src_zone, jsonPayload.src_instance.vm_name AS src_vm, jsonPayload.dest_instance.zone AS dest_zone, jsonPayload.dest_instance.vm_name
 ```
 18. Click **Run**.
+19. Back to Cloud Shell and Run this command to edit the pod-2 manifest:
+```
+sed -i 's/podAntiAffinity/podAffinity/g' pod-2.yaml
+```
+20. Delete the current running pod-2:
+```
+kubectl delete pod pod-2
+```
+21. With pod-2 deleted, recreate it using the newly edited manifest:
+```
+kubectl create -f pod-2.yaml
+```
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
