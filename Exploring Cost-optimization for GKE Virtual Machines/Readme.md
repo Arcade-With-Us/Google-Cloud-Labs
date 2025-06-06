@@ -60,6 +60,7 @@ sudo chmod +x GSP767.sh
 10. For your BigQuery Dataset, select `Create new BigQuery dataset`.
 11. Name your dataset as '**`us_flow_logs`**', and click **CREATE DATASET**.
 12. Everything else can be left as-is. Click **Create Sink**.
+13. Now, inspect your newly created dataset. In the Cloud Console, from the Navigation Menu in the Analytics section, click **BigQuery**.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
