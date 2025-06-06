@@ -65,6 +65,12 @@ sudo chmod +x GSP767.sh
 #### **`If no table is there, you may need to refresh until it has been created`**.
 15. Click on the `compute_googleapis_com_vpc_flows_xxx` table under your `us_flow_logs` dataset.
 [Check](https://cdn.qwiklabs.com/uwtUC8ICO7mh8nZe3m%2B13Ekzf8nOyqcOVZRPp3Arf%2Bk%3D)
+16. Click on Query > In new tab.
+17. In the BigQuery Editor, paste this in between `SELECT` and `FROM`:
+```
+jsonPayload.src_instance.zone AS src_zone, jsonPayload.src_instance.vm_name AS src_vm, jsonPayload.dest_instance.zone AS dest_zone, jsonPayload.dest_instance.vm_name
+```
+18. Click **Run**.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
