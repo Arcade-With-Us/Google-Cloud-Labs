@@ -38,9 +38,6 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ## 💻 **Execute in Cloud Shell** 
 ```
-export ZONE=
-```
-```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Exploring%20Cost-optimization%20for%20GKE%20Virtual%20Machines/GSP767.sh
 
 sudo chmod +x GSP767.sh
