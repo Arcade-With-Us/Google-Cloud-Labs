@@ -52,7 +52,7 @@ sudo chmod +x GSP767.sh
 4. Select Click Edit at the top of the screen.
 5. Select **Flow Logs** to be **On**. Then, click Save.
 6. Next, click **`View Flow Logs in Logs Explorer`**.
-[Check](https://cdn.qwiklabs.com/xFI8yhMOxwEucp1R5py3R6jDFuUkR%2FP5XmZQ9bdJfgs%3D)
+![Check](https://cdn.qwiklabs.com/xFI8yhMOxwEucp1R5py3R6jDFuUkR%2FP5XmZQ9bdJfgs%3D)
 7. Click on **Actions** > **Create Sink**.
 [Check](https://cdn.qwiklabs.com/cSR9%2FGXOiDMFUvOBLXf9YlCW4r9TMdJKE%2BS%2BVi0cTu4%3D)
 8. Name your sink **`FlowLogsSample`**. Click Next.
