@@ -61,6 +61,10 @@ sudo chmod +x GSP767.sh
 11. Name your dataset as '**`us_flow_logs`**', and click **CREATE DATASET**.
 12. Everything else can be left as-is. Click **Create Sink**.
 13. Now, inspect your newly created dataset. In the Cloud Console, from the Navigation Menu in the Analytics section, click **BigQuery**.
+14. Select your project name, and then select the `us_flow_logs` to see the newly created table.
+#### **`If no table is there, you may need to refresh until it has been created`**.
+15. Click on the `compute_googleapis_com_vpc_flows_xxx` table under your `us_flow_logs` dataset.
+16. 
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
