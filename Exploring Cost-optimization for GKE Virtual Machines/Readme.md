@@ -52,9 +52,13 @@ sudo chmod +x GSP767.sh
 4. Select Click Edit at the top of the screen.
 5. Select **Flow Logs** to be **On**. Then, click Save.
 6. Next, click **`View Flow Logs in Logs Explorer`**.
+
 ![Check](https://cdn.qwiklabs.com/xFI8yhMOxwEucp1R5py3R6jDFuUkR%2FP5XmZQ9bdJfgs%3D)
+
 7. Click on **Actions** > **Create Sink**.
-[Check](https://cdn.qwiklabs.com/cSR9%2FGXOiDMFUvOBLXf9YlCW4r9TMdJKE%2BS%2BVi0cTu4%3D)
+
+![Check](https://cdn.qwiklabs.com/cSR9%2FGXOiDMFUvOBLXf9YlCW4r9TMdJKE%2BS%2BVi0cTu4%3D)
+
 8. Name your sink **`FlowLogsSample`**. Click Next.
 9. For your Sink Service, select `BigQuery Dataset`.
 10. For your BigQuery Dataset, select `Create new BigQuery dataset`.
@@ -64,7 +68,9 @@ sudo chmod +x GSP767.sh
 14. Select your project name, and then select the `us_flow_logs` to see the newly created table.
 #### **`If no table is there, you may need to refresh until it has been created`**.
 15. Click on the `compute_googleapis_com_vpc_flows_xxx` table under your `us_flow_logs` dataset.
-[Check](https://cdn.qwiklabs.com/uwtUC8ICO7mh8nZe3m%2B13Ekzf8nOyqcOVZRPp3Arf%2Bk%3D)
+
+![Check](https://cdn.qwiklabs.com/uwtUC8ICO7mh8nZe3m%2B13Ekzf8nOyqcOVZRPp3Arf%2Bk%3D)
+
 16. Click on Query > In new tab.
 17. In the BigQuery Editor, paste this in between `SELECT` and `FROM`:
 ```
