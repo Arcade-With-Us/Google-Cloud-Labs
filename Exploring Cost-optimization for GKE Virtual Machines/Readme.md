@@ -44,6 +44,18 @@ sudo chmod +x GSP767.sh
 
 ./GSP767.sh
 ```
+
+### After opening the link please follow these steps:
+1. In the Cloud Console, open the **Navigation Menu** and select **VPC Network** in the **Networking** section.
+2. Click on the default network. Under Subnets tab locate the default subnet in the **Region** defined in terminal and click on it.
+3. Click Edit at the top of the screen.
+4. Select Click Edit at the top of the screen.
+5. Select **Flow Logs** to be **On**. Then, click Save.
+6. Next, click **`View Flow Logs in Logs Explorer`**.
+
+[Check](https://cdn.qwiklabs.com/xFI8yhMOxwEucp1R5py3R6jDFuUkR%2FP5XmZQ9bdJfgs%3D)
+
+7. 
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
