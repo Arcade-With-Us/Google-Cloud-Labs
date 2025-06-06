@@ -64,7 +64,7 @@ sudo chmod +x GSP767.sh
 14. Select your project name, and then select the `us_flow_logs` to see the newly created table.
 #### **`If no table is there, you may need to refresh until it has been created`**.
 15. Click on the `compute_googleapis_com_vpc_flows_xxx` table under your `us_flow_logs` dataset.
-16. 
+[Check](https://cdn.qwiklabs.com/uwtUC8ICO7mh8nZe3m%2B13Ekzf8nOyqcOVZRPp3Arf%2Bk%3D)
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
