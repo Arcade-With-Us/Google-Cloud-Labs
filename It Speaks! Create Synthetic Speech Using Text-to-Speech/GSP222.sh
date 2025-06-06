@@ -21,7 +21,6 @@ gcloud iam service-accounts create tts-qwiklab
 gcloud iam service-accounts keys create tts-qwiklab.json --iam-account tts-qwiklab@$PROJECT_ID.iam.gserviceaccount.com
 
 export GOOGLE_APPLICATION_CREDENTIALS=tts-qwiklab.json
-
 # Completion message
 echo "${RED}${BOLD}Congratulations${RESET}" "${WHITE}${BOLD}for${RESET}" "${GREEN}${BOLD}Completing the Lab !!!${RESET}"
 
