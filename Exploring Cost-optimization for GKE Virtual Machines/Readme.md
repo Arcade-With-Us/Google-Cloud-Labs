@@ -56,6 +56,10 @@ sudo chmod +x GSP767.sh
 7. Click on **Actions** > **Create Sink**.
 [Check](https://cdn.qwiklabs.com/cSR9%2FGXOiDMFUvOBLXf9YlCW4r9TMdJKE%2BS%2BVi0cTu4%3D)
 8. Name your sink **`FlowLogsSample`**. Click Next.
+9. For your Sink Service, select `BigQuery Dataset`.
+10. For your BigQuery Dataset, select `Create new BigQuery dataset`.
+11. Name your dataset as '**`us_flow_logs`**', and click **CREATE DATASET**.
+12. Everything else can be left as-is. Click **Create Sink**.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
