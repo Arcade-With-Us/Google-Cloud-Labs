@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Using Role-based Access Control in Kubernetes Engine || GSP493 ✨
+✨ Using Role-based Access Control in Kubernetes Engine || GSP493 ✨
 </h1>
 
 <div align="center">
