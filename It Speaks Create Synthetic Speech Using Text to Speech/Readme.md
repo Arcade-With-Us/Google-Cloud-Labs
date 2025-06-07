@@ -41,16 +41,6 @@ sudo chmod +x GSP222.sh
 
 ./GSP222.sh
 ```
-
-## 💻 **If you don't get full score then run these commands**  
-
-```
-gcloud iam service-accounts create tts-qwiklab
-
-gcloud iam service-accounts keys create tts-qwiklab.json --iam-account tts-qwiklab@$PROJECT_ID.iam.gserviceaccount.com
-
-export GOOGLE_APPLICATION_CREDENTIALS=tts-qwiklab.json
-```
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
