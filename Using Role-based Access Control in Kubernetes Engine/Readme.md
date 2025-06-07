@@ -36,7 +36,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ## 💻 **Execute in Cloud Shell** 
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Using%20Role-based%20Access%20Control%20in%20Kubernetes%20Engine/GSP493.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Using%20Role-based%20Access%20Control%20in%20Kubernetes%20Engine/GSP493.sh
 
 sudo chmod +x GSP493.sh
 
