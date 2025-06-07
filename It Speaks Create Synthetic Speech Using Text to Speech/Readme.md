@@ -35,7 +35,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/It%20Speaks!%20Create%20Synthetic%20Speech%20Using%20Text-to-Speech/GSP222.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/It%20Speaks%20Create%20Synthetic%20Speech%20Using%20Text%20to%20Speech/GSP222.sh
 
 sudo chmod +x GSP222.sh
 
