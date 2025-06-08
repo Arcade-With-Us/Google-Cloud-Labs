@@ -30,7 +30,7 @@
 ## 💻 **Execute in Cloud Shell**  
 Run the following commands in **Cloud Shell**:
 ```bash
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Web%20Security%20Scanner%3A%20Qwik%20Start/GSP112.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Web%20Security%20Scanner%3A%20Qwik%20Start/GSP112.sh
 
 sudo chmod +x GSP112.sh
 
