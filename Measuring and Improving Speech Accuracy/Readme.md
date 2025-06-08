@@ -51,7 +51,8 @@ gsutil cp gs://spls/gsp758/notebook/measuring-accuracy.ipynb .
 gsutil cp gs://spls/gsp758/notebook/speech_adaptation.ipynb .
 gsutil cp gs://spls/gsp758/notebook/simple_wer_v2.py .
 ```
-</div>---
+</div>
+---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
 
