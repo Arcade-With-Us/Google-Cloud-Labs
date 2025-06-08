@@ -36,7 +36,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ## 💻 **Execute in Cloud Shell** 
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Exploring%20Dataset%20Metadata%20Between%20Projects%20with%20Data%20Catalog/GSP789.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Exploring%20Dataset%20Metadata%20Between%20Projects%20with%20Data%20Catalog/GSP789.sh
 
 sudo chmod +x GSP789.sh
 
