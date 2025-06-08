@@ -36,7 +36,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ### Run the following Commands in CloudShell
 ```bash
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Measuring%20and%20Improving%20Speech%20Accuracy/GSP758.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Measuring%20and%20Improving%20Speech%20Accuracy/GSP758.sh
 
 sudo chmod +x GSP758.sh
 
