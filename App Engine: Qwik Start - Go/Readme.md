@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  App Engine: Qwik Start - Go || [GSP070]  ✨
+🌐  App Engine: Qwik Start - Go || GSP070 🌐
 </h1>
 
 <div align="center">
@@ -34,7 +34,7 @@ Run the following commands in **Cloud Shell**:
 export REGION=
 ```
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/App%20Engine%3A%20Qwik%20Start%20-%20Go/GSP070.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/App%20Engine%3A%20Qwik%20Start%20-%20Go/GSP070.sh
 
 sudo chmod +x GSP070.sh
 
