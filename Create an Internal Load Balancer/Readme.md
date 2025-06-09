@@ -33,7 +33,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 Run the following commands in **Cloud Shell**:
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Create%20an%20Internal%20Load%20Balancer/GSP216.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Create%20an%20Internal%20Load%20Balancer/GSP216.sh
 
 sudo chmod +x GSP216.sh
 
