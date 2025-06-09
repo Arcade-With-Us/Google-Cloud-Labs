@@ -43,7 +43,7 @@ sudo chmod +x GSP212.sh
 
 ./GSP212.sh
 ```
-## * Sink Name:
+### Sink Name:
   ```
   vpc-flows
   ```
