@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Interact with Terraform Modules || GSP751 ✨
+🌐  Interact with Terraform Modules || GSP751 🌐
 </h1>
 
 <div align="center">
