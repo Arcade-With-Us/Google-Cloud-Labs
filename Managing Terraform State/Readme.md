@@ -39,7 +39,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 export REGION=
 ```
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Managing%20Terraform%20State/GSP752.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Managing%20Terraform%20State/GSP752.sh
 
 sudo chmod +x GSP752.sh
 
