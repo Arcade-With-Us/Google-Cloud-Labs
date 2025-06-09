@@ -33,7 +33,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 Run the following commands in **Cloud Shell**:
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/VPC%20Networks%20-%20Controlling%20Access/GSP213.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/VPC%20Networks%20-%20Controlling%20Access/GSP213.sh
 
 sudo chmod +x GSP213.sh
 
