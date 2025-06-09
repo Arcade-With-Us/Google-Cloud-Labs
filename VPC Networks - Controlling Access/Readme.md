@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  VPC Networks - Controlling Access || GSP213  ✨
+🌐  VPC Networks - Controlling Access || GSP213  🌐
 </h1>
 
 <div align="center">
