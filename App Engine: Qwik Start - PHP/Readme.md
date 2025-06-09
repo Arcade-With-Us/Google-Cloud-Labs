@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  App Engine: Qwik Start - PHP || [GSP069]  ✨
+🌐  App Engine: Qwik Start - PHP || GSP069 🌐
 </h1>
 
 <div align="center">
