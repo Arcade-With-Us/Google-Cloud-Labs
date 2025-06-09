@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Create an Internal Load Balancer|| [GSP216]  ✨
+✨🌐  Create an Internal Load Balancer|| GSP216  ✨
 </h1>
 
 <div align="center">
