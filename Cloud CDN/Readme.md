@@ -36,9 +36,6 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ## 💻 **Execute in Cloud Shell** 
 ```
-export REGION=
-```
-```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Cloud%20CDN/GSP217.sh
 
 sudo chmod +x GSP217.sh
