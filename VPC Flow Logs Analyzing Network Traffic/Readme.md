@@ -47,6 +47,7 @@ sudo chmod +x GSP212.sh
   ```
   vpc-flows
   ```
+* You need to wait 2-3 minutes for getting green tick in the last task.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
