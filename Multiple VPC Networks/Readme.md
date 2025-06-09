@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Multiple VPC Networks || GSP211  ✨
+🌐  Multiple VPC Networks || GSP211  🌐
 </h1>
 
 <div align="center">
