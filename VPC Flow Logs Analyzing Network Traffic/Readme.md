@@ -43,6 +43,7 @@ sudo chmod +x GSP212.sh
 
 ./GSP212.sh
 ```
+* Sink Name: ```vpc-flows```
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
