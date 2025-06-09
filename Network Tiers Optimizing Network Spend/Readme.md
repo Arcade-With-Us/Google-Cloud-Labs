@@ -39,7 +39,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 export ZONE=
 ```
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Network%20Tiers%20Optimizing%20Network%20Spend/GSP219.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Network%20Tiers%20Optimizing%20Network%20Spend/GSP219.sh
 
 sudo chmod +x GSP219.sh
 
