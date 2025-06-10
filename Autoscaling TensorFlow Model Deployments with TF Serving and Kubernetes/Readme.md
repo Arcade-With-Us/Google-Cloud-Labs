@@ -43,6 +43,7 @@ sudo chmod +x GSP777.sh
 
 ./GSP777.sh
 ```
+> Note✅: YOu just need to get 90/100 points to get green tick in this lab
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
