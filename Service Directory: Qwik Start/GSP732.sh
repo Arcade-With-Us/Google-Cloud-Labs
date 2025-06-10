@@ -19,3 +19,28 @@ echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}
 echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORMAT}"
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
+
+gcloud services enable servicedirectory.googleapis.com
+
+sleep 15
+
+gcloud service-directory namespaces create example-namespace \
+   --location $LOCATION
+
+gcloud service-directory services create example-service \
+   --namespace example-namespace \
+   --location $LOCATION
+
+gcloud service-directory endpoints create example-endpoint \
+   --address 0.0.0.0 \
+   --port 80 \
+   --service example-service \
+   --namespace example-namespace \
+   --location $LOCATION
+
+gcloud dns managed-zones create example-zone-name \
+   --dns-name myzone.example.com \
+   --description quickgcplab \
+   --visibility private \
+   --networks https://www.googleapis.com/compute/v1/projects/$DEVSHELL_PROJECT_ID/global/networks/default \
+   --service-directory-namespace https://servicedirectory.googleapis.com/v1/projects/$DEVSHELL_PROJECT_ID/locations/$LOCATION/namespaces/example-namespace
