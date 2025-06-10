@@ -43,6 +43,7 @@ sudo chmod +x GSP873-1.sh
 
 ./GSP873-1.sh
 ```
+* Open Vm instances from here: [Click](https://console.cloud.google.com/compute/instances)
 * Run this script in your VM instance:
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Block%20one%3A%20Getting%20Started%20with%20The%20EOSIO%20Blockchain/GSP873-2.sh
