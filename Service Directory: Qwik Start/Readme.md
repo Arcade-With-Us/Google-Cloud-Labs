@@ -34,8 +34,11 @@
 **🌐Launch Cloud Shell:**
 Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
 
-## 💻 **Execute in Cloud Shell** 
+## 💻 Execute in Cloud Shell 
 
+```
+export LOCATION=
+```
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Service%20Directory:%20Qwik%20Start/GSP732.sh
 
