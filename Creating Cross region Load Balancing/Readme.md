@@ -43,6 +43,7 @@ sudo chmod +x GSP157.sh
 
 ./GSP157.sh
 ```
+> Note🚨: **Export the Zone names correctly!**
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
