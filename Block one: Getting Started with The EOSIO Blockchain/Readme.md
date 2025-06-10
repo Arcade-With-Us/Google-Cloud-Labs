@@ -43,7 +43,22 @@ sudo chmod +x GSP873-1.sh
 
 ./GSP873-1.sh
 ```
+</div>
 
+<div style="padding: 15px; margin: 10px 0;">
+<p><strong>>> Run this command after creating VM instance : </strong></p>
+
+```
+gcloud compute ssh my-vm-1 --zone ZONE
+```
+* Run this script in your VM instance:
+```
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Block%20one%3A%20Getting%20Started%20with%20The%20EOSIO%20Blockchain/GSP873-2.sh
+
+sudo chmod +x GSP873-2.sh
+
+./GSP873-2.sh
+```
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
