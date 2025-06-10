@@ -51,7 +51,7 @@ sudo chmod +x GSP873-1.sh
 ```
 gcloud compute ssh my-vm-1 --zone ZONE
 ```
-* Run this script in your VM instance:
+* Run this script in your Cloud Shell:
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Block%20one%3A%20Getting%20Started%20with%20The%20EOSIO%20Blockchain/GSP873-2.sh
 
