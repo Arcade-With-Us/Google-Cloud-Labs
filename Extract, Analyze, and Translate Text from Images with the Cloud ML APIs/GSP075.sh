@@ -102,7 +102,7 @@ touch translation-request.json
 
 tee translation-request.json <<EOF
 {
-  "q": "My Name is MD_SOHRAB",	
+  "q": "My Name is Abir_Dey",	
   "target": "en"
 }
 EOF
