@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Color Definitions
 BLUE='\033[0;34m'
 GREEN='\033[0;32m'
@@ -94,6 +93,7 @@ echo -e "${BLUE}${BOLD}🚀 Step 8: Deploying Load Balancer...${NC}"
 yes | terraform apply --auto-approve
 
 # Completion Message
+
 echo "${RED}${BOLD}Congratulations${RESET}" "${WHITE}${BOLD}for${RESET}" "${GREEN}${BOLD}Completing the Lab !!!${RESET}"
 
 echo "" 
