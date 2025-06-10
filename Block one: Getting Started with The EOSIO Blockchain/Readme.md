@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Block.one: Getting Started with The EOSIO Blockchain || GSP873 ✨
+✨ Block.one: Getting Started with The EOSIO Blockchain || GSP873 ✨
 </h1>
 
 <div align="center">
