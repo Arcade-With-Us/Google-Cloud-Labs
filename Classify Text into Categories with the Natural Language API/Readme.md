@@ -35,7 +35,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 
 ```bash
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Classify%20Text%20into%20Categories%20with%20the%20Natural%20Language%20API/GSP063.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Classify%20Text%20into%20Categories%20with%20the%20Natural%20Language%20API/GSP063.sh
 
 sudo chmod +x GSP063.sh
 
