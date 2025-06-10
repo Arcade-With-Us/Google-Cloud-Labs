@@ -154,7 +154,12 @@ gcloud compute addresses list
 
 EXTERNAL_IP=$(gcloud compute addresses list --format="get(ADDRESS)")
 
+echo "${RED}${BOLD}Congratulations${RESET}" "${WHITE}${BOLD}for${RESET}" "${GREEN}${BOLD}Completing the Lab !!!${RESET}"
 
+echo "" 
+echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe to my Channel (Arcade With Us):${RESET_FORMAT}" 
+echo -e "${BLUE_TEXT}${BOLD_TEXT}https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
+echo
     gcloud compute forwarding-rules create http-cr-rule \
     --address $EXTERNAL_IP \
     --global \
