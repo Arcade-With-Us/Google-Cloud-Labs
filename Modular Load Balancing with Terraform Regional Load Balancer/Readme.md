@@ -43,6 +43,7 @@ sudo chmod +x GSP191.sh
 
 ./GSP191.sh
 ```
+* You need to wait 2-3 minutes for getting green tick.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
