@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Setting up Jenkins on Kubernetes Engine || GSP117 ✨
+🌐  Setting up Jenkins on Kubernetes Engine || GSP117 🌐
 </h1>
 
 <div align="center">
