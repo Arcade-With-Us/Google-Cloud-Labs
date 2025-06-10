@@ -21,7 +21,7 @@ clear
 
 echo
 echo "${CYAN_TEXT}${BOLD_TEXT}==============================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}            Solution From Curio Bytes         ${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}         🚀  Starting Execution  🚀          ${RESET_FORMAT}"
 echo "${CYAN_TEXT}${BOLD_TEXT}==============================================${RESET_FORMAT}"
 echo
 
