@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Distributed Load Testing Using Kubernetes || GSP777 ✨
+✨  Distributed Load Testing Using Kubernetes || GSP182 ✨
 </h1>
 
 <div align="center">
