@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Service Directory: Qwik Start || GSP732 ✨
+🌐  Service Directory: Qwik Start || GSP732 🌐
 </h1>
 
 <div align="center">
