@@ -37,11 +37,11 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Creating%20Cross%20region%20Load%20Balancing/GSP157.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Visualizing%20Billing%20Data%20with%20Looker%20Studio/GSP622.sh
 
-sudo chmod +x GSP157.sh
+sudo chmod +x GSP622.sh
 
-./GSP157.sh
+./GSP622.sh
 ```
 ---
 
