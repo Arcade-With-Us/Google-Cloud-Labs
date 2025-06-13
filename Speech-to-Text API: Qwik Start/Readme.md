@@ -46,7 +46,7 @@ gcloud compute ssh linux-instance --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --
 Once connected to the VM, download and run the setup script:
 
 ```bash
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Speech-to-Text%20API%3A%20Qwik%20Start/GSP119.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Speech-to-Text%20API%3A%20Qwik%20Start/GSP119.sh
 
 sudo chmod +x GSP119.sh
 
