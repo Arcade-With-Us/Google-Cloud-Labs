@@ -30,7 +30,7 @@
 ## 💻 **Execute in Cloud Shell**  
 Run the following commands in **Cloud Shell**:
 ```bash
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Dataflow%3A%20Qwik%20Start%20-%20Templates/GSP192.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Dataflow%3A%20Qwik%20Start%20-%20Templates/GSP192.sh
 
 sudo chmod +x GSP192.sh
 
