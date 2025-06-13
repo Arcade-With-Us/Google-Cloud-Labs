@@ -41,7 +41,7 @@ cd ~/terraform-google-lb-http/examples/multi-backend-multi-mig-bucket-https-lb |
 # Download configuration
 echo -e "${GREEN}${BOLD}⚙️ Downloading Load Balancer configuration...${RESET}"
 rm -rf main.tf
-wget -q https://raw.githubusercontent.com/quiccklabs/Labs_solutions/master/HTTPS%20Content-Based%20Load%20Balancer%20with%20Terraform/main.tf
+wget -q https://github.com/Arcade-With-Us/Google-Cloud-Labs/raw/refs/heads/main/HTTPS%20Content-Based%20Load%20Balancer%20with%20Terraform/main.tf
 
 # Create variables file
 echo -e "${GREEN}${BOLD}📝 Generating Terraform variables file...${RESET}"
