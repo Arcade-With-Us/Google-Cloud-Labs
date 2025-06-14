@@ -36,7 +36,7 @@ sudo chmod +x GSP345.sh
 
 ./GSP345.sh
 ```
-
+* When it pop up to enter a value: `Just hit Enter in both times`
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
