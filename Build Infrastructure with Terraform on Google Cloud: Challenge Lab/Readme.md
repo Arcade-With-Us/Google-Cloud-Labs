@@ -30,7 +30,7 @@
 ## 💻 **Execute in Cloud Shell**  
 Run the following commands in **Cloud Shell**:
 ```bash
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Google%20Cloud%20Skill%20Badges%20Ultimate%20Quick%20Guide/Build%20Infrastructure%20with%20Terraform%20on%20Google%20Cloud%3A%20Challenge%20Lab/GSP345.sh
+curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Build%20Infrastructure%20with%20Terraform%20on%20Google%20Cloud%3A%20Challenge%20Lab/GSP345.sh
 
 sudo chmod +x GSP345.sh
 
