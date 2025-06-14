@@ -21,15 +21,7 @@ echo "${BLUE_TEXT}${BOLD_TEXT}         INITIATING EXECUTION...  ${RESET_FORMAT}"
 echo "${BLUE_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
 echo
 
-# Instruction for Region Input
-read -p "${BLUE_TEXT}${BOLD_TEXT}Enter REGION: ${RESET_FORMAT}" REGION
-echo
-
-# Displaying confirmation of user input
-echo "${GREEN_TEXT}${BOLD_TEXT}You have entered the region: ${REGION}${RESET_FORMAT}"
-echo
-
-ID="$(gcloud projects list --format='value(PROJECT_ID)')"
+D="$(gcloud projects list --format='value(PROJECT_ID)')"
 
 cat > GenerateImage.py <<EOF_END
 import argparse
@@ -71,9 +63,7 @@ generate_image(
 )
 EOF_END
 
-echo "${YELLOW_TEXT}${BOLD_TEXT}Generating an image... Please wait.${RESET_FORMAT}"
 /usr/bin/python3 /home/student/GenerateImage.py
-echo "${GREEN_TEXT}${BOLD_TEXT}Image generated successfully! Check 'image.jpeg' in your working directory.${RESET_FORMAT}"
 
 ID="$(gcloud projects list --format='value(PROJECT_ID)')"
 
@@ -107,16 +97,18 @@ response = generate_text(project_id, location)
 print(response)
 EOF_END
 
+/usr/bin/python3 /home/student/genai.py
+
+sleep 30
+
+/usr/bin/python3 /home/student/genai.py
+
 echo "${YELLOW_TEXT}${BOLD_TEXT}Processing text with multimodal model first time... Please wait.${RESET_FORMAT}"
 /usr/bin/python3 /home/student/genai.py
 echo "${GREEN_TEXT}${BOLD_TEXT}Text process completed, see output above.${RESET_FORMAT}"
 
 echo "${YELLOW_TEXT}${BOLD_TEXT}Waiting 30 seconds before running the process again...${RESET_FORMAT}"
 sleep 30
-
-echo "${YELLOW_TEXT}${BOLD_TEXT}Processing text with multimodal model second time... Please wait.${RESET_FORMAT}"
-/usr/bin/python3 /home/student/genai.py
-echo "${GREEN_TEXT}${BOLD_TEXT}Text process completed, see output above.${RESET_FORMAT}"
 
 echo
 echo "${GREEN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
