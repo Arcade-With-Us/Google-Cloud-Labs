@@ -40,7 +40,7 @@ API_KEY=$(gcloud alpha services api-keys get-key-string $KEY_NAME --format="valu
 
 echo $API_KEY
 
-cat <<EOF > request.json
+cat > request.json <<EOF
 {
   "document":{
     "type":"PLAIN_TEXT",
@@ -52,11 +52,7 @@ EOF
 
 curl "https://language.googleapis.com/v1/documents:analyzeEntities?key=${API_KEY}" \
   -s -X POST -H "Content-Type: application/json" --data-binary @request.json > result.json
-
-cat result.json
-
-EOF_END
-
+  
 gcloud compute scp prepare_disk.sh linux-instance:/tmp --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet
 
 gcloud compute ssh linux-instance --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet --command="bash /tmp/prepare_disk.sh"
