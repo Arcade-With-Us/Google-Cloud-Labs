@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐   Classify Text into Categories with the Natural Language API || GSP063 ✨
+🌐   Classify Text into Categories with the Natural Language API || GSP063 🌐
 </h1>
 
 <div align="center">
