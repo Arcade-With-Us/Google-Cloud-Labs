@@ -37,8 +37,6 @@ sudo chmod +x GSP345.sh
 ./GSP345.sh
 ```
 
-</div>
-
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
