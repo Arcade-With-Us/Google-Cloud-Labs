@@ -35,11 +35,11 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Analyze%20Sentiment%20with%20Natural%20Language%20API%3A%20Challenge%20Lab/ARC130.sh
+curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Analyze%20Sentiment%20with%20Natural%20Language%20API%3A%20Challenge%20Lab/ARC130-1.sh
 
-sudo chmod +x ARC130.sh
+sudo chmod +x ARC130-1.sh
 
-./ARC130.sh
+./ARC130-1.sh
 ```
 1. **_For GCP ZONE_**--->Go to **VM INSTANCE**--->**Check lab-VM Zone**--->**Paste it in Cloud Shell**
 2. **_For API-KEY_**--->Go to **API & SERVICES**--->**CREDENTIALS**--->**CREATE API KEY**
