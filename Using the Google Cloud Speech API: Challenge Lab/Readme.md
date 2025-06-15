@@ -33,10 +33,7 @@
 
 ## ⚙️ Lab Environment Setup:
 
-**🌐Launch Cloud Shell:**
-Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
-
-## 💻 **Execute in Cloud Shell** 
+## 💻 **Execute in VM instance SSH terminal** 
 ```
 curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Using%20the%20Google%20Cloud%20Speech%20API%3A%20Challenge%20Lab/ARC131.sh
 
