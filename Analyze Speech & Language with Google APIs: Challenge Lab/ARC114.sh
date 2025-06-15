@@ -22,12 +22,6 @@ echo "${BLUE_TEXT}${BOLD_TEXT}         INITIATING EXECUTION...  ${RESET_FORMAT}"
 echo "${BLUE_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
 echo
 
-read -p "${CYAN_TEXT}${BOLD_TEXT}Enter your API Key: ${RESET_FORMAT}" API_KEY_INPUT
-export API_KEY="$API_KEY_INPUT"
-
-echo "${GREEN_TEXT}${BOLD_TEXT}API Key set successfully!${RESET_FORMAT}"
-echo
-
 cat > nl_request.json <<EOF_CP
 {
   "document":{
@@ -38,10 +32,8 @@ cat > nl_request.json <<EOF_CP
 }
 EOF_CP
 
-echo "${YELLOW_TEXT}${BOLD_TEXT}Sending Natural Language API request...${RESET_FORMAT}"
 curl "https://language.googleapis.com/v1/documents:analyzeEntities?key=${API_KEY}" \
   -s -X POST -H "Content-Type: application/json" --data-binary @nl_request.json > nl_response.json
-echo "${GREEN_TEXT}${BOLD_TEXT}Natural Language API response saved to nl_response.json${RESET_FORMAT}"
 
 cat > speech_request.json <<EOF_CP
 {
@@ -55,10 +47,8 @@ cat > speech_request.json <<EOF_CP
 }
 EOF_CP
 
-echo "${YELLOW_TEXT}${BOLD_TEXT}Sending Speech-to-Text API request...${RESET_FORMAT}"
 curl -s -X POST -H "Content-Type: application/json" --data-binary @speech_request.json \
 "https://speech.googleapis.com/v1/speech:recognize?key=${API_KEY}" > speech_response.json
-echo "${GREEN_TEXT}${BOLD_TEXT}Speech-to-Text API response saved to speech_response.json${RESET_FORMAT}"
 
 cat > sentiment_analysis.py <<EOF_CP
 
@@ -113,14 +103,11 @@ if __name__ == "__main__":
 
 EOF_CP
 
-echo "${YELLOW_TEXT}${BOLD_TEXT}Downloading sentiment analysis sample files...${RESET_FORMAT}"
 gsutil cp gs://cloud-samples-tests/natural-language/sentiment-samples.tgz .
 
-echo "${YELLOW_TEXT}${BOLD_TEXT}Unzipping and extracting files...${RESET_FORMAT}"
 gunzip sentiment-samples.tgz
 tar -xvf sentiment-samples.tar
 
-echo "${YELLOW_TEXT}${BOLD_TEXT}Running sentiment analysis on reviews/bladerunner-pos.txt...${RESET_FORMAT}"
 python3 sentiment_analysis.py reviews/bladerunner-pos.txt
 
 echo
