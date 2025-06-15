@@ -39,7 +39,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Data%20Catalog%3A%20Qwik%20Start/GSP729.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Data%20Catalog%3A%20Qwik%20Start/GSP729.sh
 
 sudo chmod +x GSP729.sh
 
