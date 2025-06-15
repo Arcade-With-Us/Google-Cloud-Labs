@@ -36,7 +36,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Streaming%20Analytics%20into%20BigQuery%3A%20Challenge%20Lab/ARC106.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Streaming%20Analytics%20into%20BigQuery%3A%20Challenge%20Lab/ARC106.sh
 
 sudo chmod +x ARC106.sh
 
