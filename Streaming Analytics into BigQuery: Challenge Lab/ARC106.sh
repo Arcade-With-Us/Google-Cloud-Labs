@@ -94,14 +94,14 @@ done
 echo
 echo "${GREEN_TEXT}${BOLD_TEXT} ========================== Starting Another Dataflow  Job ========================== ${RESET_FORMAT}"
 echo
-gcloud dataflow jobs run $JOB-arcadecrew --gcs-location gs://dataflow-templates-$REGION/latest/PubSub_to_BigQuery --region=$REGION --project=$PROJECT_ID --staging-location gs://$PROJECT_ID/temp --parameters inputTopic=projects/$PROJECT_ID/topics/$TOPIC,outputTableSpec=$PROJECT_ID:$DATASET.$TABLE
+gcloud dataflow jobs run $JOB-arcadewithus --gcs-location gs://dataflow-templates-$REGION/latest/PubSub_to_BigQuery --region=$REGION --project=$PROJECT_ID --staging-location gs://$PROJECT_ID/temp --parameters inputTopic=projects/$PROJECT_ID/topics/$TOPIC,outputTableSpec=$PROJECT_ID:$DATASET.$TABLE
 
 echo
 echo "${GREEN_TEXT}${BOLD_TEXT} ========================== Monitoring and Interacting with Second Dataflow Job ========================== ${RESET_FORMAT}"
 echo
 
 while true; do
-    STATUS=$(gcloud dataflow jobs list --region=$REGION --project=$PROJECT_ID --filter="name:$JOB-arcadecrew AND state:Running" --format="value(state)")
+    STATUS=$(gcloud dataflow jobs list --region=$REGION --project=$PROJECT_ID --filter="name:$JOB-arcadewithus AND state:Running" --format="value(state)")
     
     if [ "$STATUS" == "Running" ]; then
         echo "The Dataflow job is running successfully"
