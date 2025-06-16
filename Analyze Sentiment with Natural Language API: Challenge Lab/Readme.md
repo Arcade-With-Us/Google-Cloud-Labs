@@ -41,8 +41,7 @@ sudo chmod +x ARC130-1.sh
 
 ./ARC130-1.sh
 ```
-1. **_For GCP ZONE_**--->Go to **VM INSTANCE**--->**Check lab-VM Zone**--->**Paste it in Cloud Shell**
-2. **_For API-KEY_**--->Go to **API & SERVICES**--->**CREDENTIALS**--->**CREATE API KEY**
+*  **_For API-KEY_**--->Go to **API & SERVICES**--->**CREDENTIALS**--->**CREATE API KEY**
 
 **🌐For Task no. 2:**
 Open Google Docs By this [link](https://docs.google.com/document/create) in incognito and **paste this command**:
