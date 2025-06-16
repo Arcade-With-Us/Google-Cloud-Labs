@@ -45,7 +45,7 @@ sudo chmod +x ARC130-1.sh
 
 **🌐For Task no. 2:**
 Open Google Docs By this [link](https://docs.google.com/document/create) in incognito and **paste this command**:
-```
+```cpp
   /**
   * @OnlyCurrentDoc
   *
