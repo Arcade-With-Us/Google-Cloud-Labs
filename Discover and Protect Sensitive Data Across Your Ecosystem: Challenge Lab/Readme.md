@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Discover and Protect Sensitive Data Across Your Ecosystem: Challenge Lab || GSP522  ✨
+🌐  Discover and Protect Sensitive Data Across Your Ecosystem: Challenge Lab || GSP522  🌐
 </h1>
 
 <div align="center">
