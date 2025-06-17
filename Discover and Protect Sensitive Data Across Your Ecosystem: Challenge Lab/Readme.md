@@ -32,7 +32,7 @@
 ## 💻 **Execute in Cloud Shell**  
 Run the following commands in **Cloud Shell**:
 ```bash
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Google%20Cloud%20Skill%20Badges%20Ultimate%20Quick%20Guide/Discover%20and%20Protect%20Sensitive%20Data%20Across%20Your%20Ecosystem%3A%20Challenge%20Lab/GSP522.sh
+curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Discover%20and%20Protect%20Sensitive%20Data%20Across%20Your%20Ecosystem%3A%20Challenge%20Lab/GSP522.sh
 
 sudo chmod +x GSP522.sh
 
@@ -40,10 +40,10 @@ sudo chmod +x GSP522.sh
 ```
 ### ⚙️ Execute the Following Commands in Notebook Terminal
 
-```
+```cpp
 rm deidentify-model-response-challenge-lab-v1.0.0.ipynb
 
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Google%20Cloud%20Skill%20Badges%20Ultimate%20Quick%20Guide/Discover%20and%20Protect%20Sensitive%20Data%20Across%20Your%20Ecosystem%3A%20Challenge%20Lab/deidentify-model-response-challenge-lab-v1.0.0.ipynb
+curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Discover%20and%20Protect%20Sensitive%20Data%20Across%20Your%20Ecosystem%3A%20Challenge%20Lab/deidentify-model-response-challenge-lab-v1.0.0.ipynb
 ```
 </div>
 
