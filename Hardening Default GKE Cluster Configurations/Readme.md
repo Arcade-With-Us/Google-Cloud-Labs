@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨ Hardening Default GKE Cluster Configurations || GSP496 ✨
 </h1>
 
 <div align="center">
