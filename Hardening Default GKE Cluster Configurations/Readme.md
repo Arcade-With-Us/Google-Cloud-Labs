@@ -29,3 +29,17 @@
 ## ⚙️ <ins>Lab Environment Setup</ins>
 
 > ✅ **NOTE:** *Watch Full Video to get Full Scores on Check My Progress.*
+
+**🌐Launch Cloud Shell:**
+Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
+
+## 💻 **Execute in Cloud Shell** 
+
+```
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Hardening%20Default%20GKE%20Cluster%20Configurations/GSP496.sh
+
+sudo chmod +x GSP496.sh
+
+./GSP496.sh
+```
+---
