@@ -34,8 +34,10 @@
 Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
 
 ## 💻 **Execute in Cloud Shell** 
-
+```bash
+export ZONE=
 ```
+```cpp
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Terraform%20Fundamentals/GSP156.sh
 
 sudo chmod +x GSP156.sh
