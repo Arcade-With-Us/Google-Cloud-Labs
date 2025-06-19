@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Awwvision: Cloud Vision API from a Kubernetes Cluster || GSP066 ✨
 </h1>
 
 <div align="center">
