@@ -34,7 +34,9 @@
 Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
 
 ## 💻 **Execute in Cloud Shell** 
-
+```bash
+export ZONE=
+```
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Deploy%20Kubernetes%20Load%20Balancer%20Service%20with%20Terraform/GSP233.sh
 
