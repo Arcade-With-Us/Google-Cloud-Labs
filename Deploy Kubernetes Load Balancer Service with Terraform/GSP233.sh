@@ -20,8 +20,6 @@ echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORM
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
-export ZONE=
-
 export REGION="${ZONE%-*}"
 
 gsutil -m cp -r gs://spls/gsp233/* .
