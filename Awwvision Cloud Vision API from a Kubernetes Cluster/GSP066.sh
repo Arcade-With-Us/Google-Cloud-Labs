@@ -94,3 +94,9 @@ kubectl get deployments -o wide
 echo
 echo "${BLUE}${BOLD}Service information:${RESET}"
 kubectl get svc awwvision-webapp
+
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀  LAB COMPLETED SUCCESSFULLY  🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo
