@@ -19,3 +19,15 @@ echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}
 echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORMAT}"
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
+
+export ZONE=
+
+export REGION="${ZONE%-*}"
+
+gsutil -m cp -r gs://spls/gsp233/* .
+
+cd tf-gke-k8s-service-lb
+
+terraform init
+
+terraform apply -var="region=$REGION" -var="location=$ZONE" --auto-approve
