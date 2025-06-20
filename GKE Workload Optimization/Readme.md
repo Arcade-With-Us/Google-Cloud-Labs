@@ -46,8 +46,9 @@ sudo chmod +x GSP769.sh
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
 
-##### You've successfully completed the lab. **Way to go!** 🚀
-
+<h1 align="center">
+You've successfully completed the lab. **Way to go!** 🚀
+</h1>
 
 <div align="center" style="padding: 5px;">
   <h3>📱 Join the Arcade With Us Community</h3>
