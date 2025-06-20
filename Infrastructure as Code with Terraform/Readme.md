@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Infrastructure as Code with Terraform || GSP750 ✨
 </h1>
 
 <div align="center">
