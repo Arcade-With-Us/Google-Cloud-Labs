@@ -35,7 +35,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Set%20Up%20Network%20and%20Application%20Load%20Balancers/GSP007.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Set%20Up%20Network%20and%20Application%20Load%20Balancers/GSP007.sh
 
 sudo chmod +x GSP007.sh
 
