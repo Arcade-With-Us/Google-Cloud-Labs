@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Cloud Storage: Qwik Start - CLI/SDK || GSP074  ✨
+✨🌐  Cloud Storage: Qwik Start - CLI/SDK || GSP074  🌐✨
 </h1>
 
 <div align="center">
@@ -30,7 +30,7 @@
 ## 💻 **Execute in Cloud Shell**  
 Run the following commands in **Cloud Shell**:
 ```bash
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Cloud%20Storage%3A%20Qwik%20Start-CLI-SDK/GSP074.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Cloud%20Storage%3A%20Qwik%20Start-CLI-SDK/GSP074.sh
 
 sudo chmod +x GSP074.sh
 
