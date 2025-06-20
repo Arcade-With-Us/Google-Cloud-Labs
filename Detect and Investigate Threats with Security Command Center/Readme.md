@@ -35,7 +35,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Detect%20and%20Investigate%20Threats%20with%20Security%20Command%20Center/GSP1125.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Detect%20and%20Investigate%20Threats%20with%20Security%20Command%20Center/GSP1125.sh
 
 sudo chmod +x GSP1125.sh
 
