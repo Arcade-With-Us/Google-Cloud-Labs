@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐   Detect and Investigate Threats with Security Command Center || GSP1125 ✨
+✨🌐   Detect and Investigate Threats with Security Command Center || GSP1125 🌐✨
 </h1>
 
 <div align="center">
