@@ -46,8 +46,8 @@ sudo chmod +x GSP769.sh
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
 
-Your hard work and determination paid off! 💻
-You've successfully completed the lab. **Way to go!** 🚀
+### Your hard work and determination paid off! 💻
+### You've successfully completed the lab. **Way to go!** 🚀
 
 
 <div align="center" style="padding: 5px;">
