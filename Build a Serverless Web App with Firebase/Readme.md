@@ -43,12 +43,10 @@
 #### Follow these Steps:
 
 1. Click on the Build dropdown button in the left-hand navigation panel.
-
-Select Authentication tile and then click on Get Started:
-
-Click on Sign-in method tab and then, click on the Google item.
-
-Click the enable toggle in the top right corner and for the Support email for project select your lab account from the drop down list.
+2. Select Authentication tile and then click on Get Started:
+3. Click on Sign-in method tab and then, click on the Google item.
+4. Click the enable toggle in the top right corner and for the Support email for project select your lab account from the drop down list.
+5. 
 
 ### Step 3: Run in Terminal: [Open](https://ide-service-rs5smkw3ba-ue.a.run.app) 
 
