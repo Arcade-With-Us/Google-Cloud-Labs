@@ -48,7 +48,11 @@
 4. Click the enable toggle in the top right corner and for the Support email for project select your lab account from the drop down list.
 5. Your page should now resemble the following:
 ![Demo](https://cdn.qwiklabs.com/wzLcWPT%2BlNf6jxJtjkmE3OdSlCGqrjrvGoBqDXHNCTc%3D)
-
+6. Once you have verified the above, click on the Save button.
+7. Click the Settings tab
+8. Under the Domains heading, click the Authorized domains menu item
+9. Your page should now resemble the following:
+![Demo](https://cdn.qwiklabs.com/7Ifu%2B9cIFk3UDNQ%2BWgo5YEI75AQXi4WsfDYUGYDFgxQ%3D)
 ### Step 3: Run in Terminal: [Open](https://ide-service-rs5smkw3ba-ue.a.run.app) 
 
 ```bash
