@@ -46,7 +46,8 @@
 2. Select Authentication tile and then click on Get Started:
 3. Click on Sign-in method tab and then, click on the Google item.
 4. Click the enable toggle in the top right corner and for the Support email for project select your lab account from the drop down list.
-5. 
+5. Your page should now resemble the following:
+![Demo](https://cdn.qwiklabs.com/wzLcWPT%2BlNf6jxJtjkmE3OdSlCGqrjrvGoBqDXHNCTc%3D)
 
 ### Step 3: Run in Terminal: [Open](https://ide-service-rs5smkw3ba-ue.a.run.app) 
 
