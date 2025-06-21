@@ -54,6 +54,8 @@
 9. Your page should now resemble the following:
 ![Demo](https://cdn.qwiklabs.com/7Ifu%2B9cIFk3UDNQ%2BWgo5YEI75AQXi4WsfDYUGYDFgxQ%3D)
 10. Click the Add domain button and add your given domain
+11. Click the Add button
+
 
 ### Step 3: Run in Terminal: [Open](https://ide-service-rs5smkw3ba-ue.a.run.app) 
 
