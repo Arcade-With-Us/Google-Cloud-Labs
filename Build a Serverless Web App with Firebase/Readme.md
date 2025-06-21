@@ -43,27 +43,33 @@
 #### Follow these Steps:
 
 1. Click on the Build dropdown button in the left-hand navigation panel.
-2. Select Authentication tile and then click on Get Started:
-3. Click on Sign-in method tab and then, click on the Google item.
+2. Select Authentication tile and then click on **Get Started**:
+3. Click on Sign-in method tab and then, click on the **Google item**.
 4. Click the enable toggle in the top right corner and for the Support email for project select your lab account from the drop down list.
 5. Your page should now resemble the following:
+
 ![Demo](https://cdn.qwiklabs.com/wzLcWPT%2BlNf6jxJtjkmE3OdSlCGqrjrvGoBqDXHNCTc%3D)
-6. Once you have verified the above, click on the Save button.
+
+6. Once you have verified the above, click on the **Save** button.
 7. Click the Settings tab
-8. Under the Domains heading, click the Authorized domains menu item
+8. Under the Domains heading, click the **Authorized domains** menu item
 9. Your page should now resemble the following:
+
 ![Demo](https://cdn.qwiklabs.com/7Ifu%2B9cIFk3UDNQ%2BWgo5YEI75AQXi4WsfDYUGYDFgxQ%3D)
-10. Click the Add domain button and add your given domain
-11. Click the Add button
+
+10. Click the **Add domain** button and add your given domain
+11. Click the **Add button**
+---
 
 ### Now Set up rules:
 
 1. Click on the Build dropdown button in the left-hand navigation panel.
-2. Select Firestore Database tile and then click on Create database:
-3. Accept the default settings and click Next
+2. Select Firestore Database tile and then click on **Create database**:
+3. Accept the default settings and click **Next**
 4. Click Create to provision Cloud Firestore
-5. Click the Rules tab
+5. Click the **Rules tab**
 6. Update the rules as follows:
+
 ```cpp
 rules_version = '2';
 service cloud.firestore {
@@ -77,6 +83,7 @@ service cloud.firestore {
   }
 }
 ```
+---
 
 ### Step 3: Run in Terminal: [Open](https://ide-service-rs5smkw3ba-ue.a.run.app) 
 
@@ -85,6 +92,7 @@ curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/m
 sed -i 's/\r$//' GSP643.sh
 source GSP643.sh
 ```
+---
 
 ### Now follow the steps:
 
@@ -111,6 +119,7 @@ source GSP643.sh
     * Press Enter to `Set up automatic builds and deploys with GitHub?` and press **N**.
     * Enter in **N** when prompted to o`verwrite your 404.html file`.
     * Enter in **N** when prompted to `overwrite your index.html file`.
+---
 
 ### ▶️ **NOW FOLLOW STEPS IN THE VIDEO**
 
