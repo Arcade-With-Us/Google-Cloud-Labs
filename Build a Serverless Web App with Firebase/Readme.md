@@ -91,7 +91,16 @@ source GSP643.sh
 1. We need the following products:
   * Firestore
   * Hosting
-2. 
+2. Use the arrow keys and the spacebar to select Firestore and Hosting. Ensure your shell matches the following and then hit Enter:
+```cpp
+? Which Firebase CLI features do you want to set up for this folder? Press Space to select features, then Enter to confirm your choices.
+ ◯ Realtime Database: Configure a security rules file for Realtime Database and (optionally) provision default insta
+ ◉ Firestore: Configure security rules and indexes files for Firestore
+ ◯ Functions: Configure a Cloud Functions directory and its files
+❯◉ Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys
+ ◯ Hosting: Set up GitHub Action deploys
+ ◯ Storage: Configure a security rules file for Cloud Storage
+```
 ### ▶️ **NOW FOLLOW STEPS IN THE VIDEO**
 
 #### Customer name: ```John``` 
