@@ -18,9 +18,10 @@ UNDERLINE_TEXT=$'\033[4m'
 clear
 
 # Welcome message
-echo "${BLUE_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
-echo "${BLUE_TEXT}${BOLD_TEXT}         INITIATING EXECUTION...  ${RESET_FORMAT}"
-echo "${BLUE_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
 # Instruction for entering the region
