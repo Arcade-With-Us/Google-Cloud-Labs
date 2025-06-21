@@ -101,7 +101,8 @@ source GSP643.sh
  ◯ Hosting: Set up GitHub Action deploys
  ◯ Storage: Configure a security rules file for Cloud Storage
 ```
-3. Run through the rest of the steps to configure Firebase:
+3. **Run through the rest of the steps to configure Firebase:**
+
     * Key down to **Use an existing project** and press Enter
     * Select your **Project ID** from the list PROJECT_ID then Enter.
     * Press Enter and then **N** to keep your `firestore.rules file`.
