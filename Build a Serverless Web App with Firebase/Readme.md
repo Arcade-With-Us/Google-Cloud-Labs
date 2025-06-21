@@ -56,6 +56,27 @@
 10. Click the Add domain button and add your given domain
 11. Click the Add button
 
+### Now Set up rules:
+
+1. Click on the Build dropdown button in the left-hand navigation panel.
+2. Select Firestore Database tile and then click on Create database:
+3. Accept the default settings and click Next
+4. Click Create to provision Cloud Firestore
+5. Click the Rules tab
+6. Update the rules as follows:
+```cpp
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+  match /customers/{email} {
+    allow read, write: if request.auth.token.email == email;
+    }
+  match /customers/{email}/{document=**} {
+    allow read, write: if request.auth.token.email == email;
+    }
+  }
+}
+```
 
 ### Step 3: Run in Terminal: [Open](https://ide-service-rs5smkw3ba-ue.a.run.app) 
 
