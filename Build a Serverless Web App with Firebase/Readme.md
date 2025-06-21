@@ -85,6 +85,13 @@ curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/m
 sed -i 's/\r$//' GSP643.sh
 source GSP643.sh
 ```
+
+### Now follow the steps:
+
+1. We need the following products:
+  * Firestore
+  * Hosting
+2. 
 ### ▶️ **NOW FOLLOW STEPS IN THE VIDEO**
 
 #### Customer name: ```John``` 
