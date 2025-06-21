@@ -102,13 +102,13 @@ source GSP643.sh
  ◯ Storage: Configure a security rules file for Cloud Storage
 ```
 3. Run through the rest of the steps to configure Firebase:
-    * Key down to Use an existing project and press Enter
-    * Select your Project ID from the list PROJECT_ID then Enter.
-    * Press Enter and then **N** to keep your firestore.rules file.
-    * Press Enter and then **N** to keep your firestore.indexes.json file.
-    * Press Enter to keep your public directory and then N to disallow rewrites to your /index.html file.
-    * Press Enter to Set up automatic builds and deploys with GitHub? and press N.
-    * Enter in **N** when prompted to overwrite your 404.html file.\
+    * Key down to **Use an existing project** and press Enter
+    * Select your **Project ID** from the list PROJECT_ID then Enter.
+    * Press Enter and then **N** to keep your `firestore.rules file`.
+    * Press Enter and then **N** to keep your `firestore.indexes.json file`.
+    * Press Enter to keep your public directory and then **N** to `disallow rewrites to your /index.html file`.
+    * Press Enter to `Set up automatic builds and deploys with GitHub?` and press **N**.
+    * Enter in **N** when prompted to o`verwrite your 404.html file`.
     * Enter in **N** when prompted to `overwrite your index.html file`.
 
 ### ▶️ **NOW FOLLOW STEPS IN THE VIDEO**
