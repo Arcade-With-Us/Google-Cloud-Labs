@@ -42,7 +42,7 @@
 
 #### FOLLOW VIDEO FOR CREATING DATABASE...
 
-### Step 3: Run in Terminal:[Open](https://ide-service-rs5smkw3ba-ue.a.run.app) 
+### Step 3: Run in Terminal: [Open](https://ide-service-rs5smkw3ba-ue.a.run.app) 
 
 ```bash
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Build%20a%20Serverless%20Web%20App%20with%20Firebase/GSP643.sh
