@@ -85,7 +85,7 @@ sudo chmod +x ARC113-2.sh
 <p><strong>☁️ Run in Cloud Shell:</strong></p>
 
 ```bash
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Get%20Started%20with%20Pub-Sub%3A%20Challenge%20Lab/ARC113-1.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Get%20Started%20with%20Pub-Sub%3A%20Challenge%20Lab/ARC113-1.sh
 
 sudo chmod +x ARC113-3.sh
 
