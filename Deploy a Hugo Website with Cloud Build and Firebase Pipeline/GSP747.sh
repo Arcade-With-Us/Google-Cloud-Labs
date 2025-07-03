@@ -344,16 +344,19 @@ else
 fi
 echo
 
-# # Step 28: Sleep for 15 seconds to allow build logs to update further
-# echo "${MAGENTA_TEXT}${BOLD_TEXT}⏱️ Step 28: Pausing briefly again to allow build logs to fully populate...${RESET_FORMAT}"
-# show_progress 15 "Allowing logs to update"
-# echo
-
-# # Step 29: Extract and display the Hosting URL from Cloud Build logs (if build found)
-# echo "${CYAN_TEXT}${BOLD_TEXT}🔗 Step 29: Attempting to extract the Firebase Hosting URL from the build logs...${RESET_FORMAT}"
-# gcloud builds log "$(gcloud builds list --format='value(ID)' --filter=$(git rev-parse HEAD) --region=$REGION)" --region=$REGION | grep "Hosting URL"
-# echo
-
+Step 28: Sleep for 15 seconds to allow build logs to update further
+echo "${MAGENTA_TEXT}${BOLD_TEXT}⏱️ Step 28: Pausing briefly again to allow build logs to fully populate...${RESET_FORMAT}"
+show_progress 15 "Allowing logs to update"
+echo
+Step 29: Extract and display the Hosting URL from Cloud Build logs (if build found)
+echo "${CYAN_TEXT}${BOLD_TEXT}🔗 Step 29: Attempting to extract the Firebase Hosting URL from the build logs...${RESET_FORMAT}"
+gcloud builds log "$(gcloud builds list --format='value(ID)' --filter=$(git rev-parse HEAD) --region=$REGION)" --region=$REGION | grep "Hosting URL"
+echo
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀  LAB COMPLETED SUCCESSFULLY  🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo
 
 echo
 echo "${MAGENTA_TEXT}${BOLD_TEXT}💖 Enjoyed the setup? Consider subscribing to Arcade With Us! 👇${RESET_FORMAT}"
