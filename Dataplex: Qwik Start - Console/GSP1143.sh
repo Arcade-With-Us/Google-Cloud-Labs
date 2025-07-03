@@ -1,17 +1,24 @@
 #!/bin/bash
+BLACK_TEXT=$'\033[0;90m'
+RED_TEXT=$'\033[0;91m'
+GREEN_TEXT=$'\033[0;92m'
+YELLOW_TEXT=$'\033[0;93m'
+BLUE_TEXT=$'\033[0;94m'
+MAGENTA_TEXT=$'\033[0;95m'
+CYAN_TEXT=$'\033[0;96m'
+WHITE_TEXT=$'\033[0;97m'
+DIM_TEXT=$'\033[2m'
+STRIKETHROUGH_TEXT=$'\033[9m'
+BOLD_TEXT=$'\033[1m'
+RESET_FORMAT=$'\033[0m'
 
-# Define color variables
-YELLOW_TEXT=$'\033[0;33m'
-MAGENTA_TEXT=$'\033[0;35m'
-NO_COLOR=$'\033[0m'
-GREEN_TEXT=$'\033[0;32m'
-RED_TEXT=$'\033[0;31m'
-CYAN_TEXT=$'\033[0;36m'
-BOLD_TEXT=`tput bold`
-RESET_FORMAT=`tput sgr0`
-BLUE_TEXT=$'\033[0;34m'
+clear
 
-echo "${BOLD_TEXT}${CYAN_TEXT}Starting the process...${RESET_FORMAT}"
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo
 
 # Prompt user for region input
 echo "${BOLD_TEXT}${GREEN_TEXT}Enter REGION:${RESET_FORMAT}"
