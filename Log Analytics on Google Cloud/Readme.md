@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Log Analytics on Google Cloud || GSP1088 ✨
 </h1>
 
 <div align="center">
