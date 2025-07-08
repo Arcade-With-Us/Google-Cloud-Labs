@@ -58,7 +58,12 @@ gcloud compute scp techcps.sh linux-instance:/tmp --project=$DEVSHELL_PROJECT_ID
 
 gcloud compute ssh linux-instance --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet --command="bash /tmp/GSP038.sh"
 
-echo "${RED}${BOLD}Congratulations${RESET}" "${WHITE}${BOLD}for${RESET}" "${GREEN}${BOLD}Completing the Lab !!!${RESET}" 
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀  LAB COMPLETED SUCCESSFULLY  🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo
+
 echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe to my Channel (Arcade With Us):${RESET_FORMAT} ${BLUE_TEXT}${BOLD_TEXT}https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
 echo
 #-----------------------------------------------------end----------------------------------------------------------#
