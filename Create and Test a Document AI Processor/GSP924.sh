@@ -17,9 +17,9 @@ clear # Clear the terminal screen
 
 # --- Script Header ---
 echo
-echo "${YELLOW_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
-echo "${YELLOW_TEXT}${BOLD_TEXT}         STARTING EXECUTION...       ${RESET_FORMAT}"
-echo "${YELLOW_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
 # Instruction for entering the Processor ID
