@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Deploy a Static Site with Nginx on Google Cloud Run using Artifact Registry ✨
 </h1>
 
 <div align="center">
