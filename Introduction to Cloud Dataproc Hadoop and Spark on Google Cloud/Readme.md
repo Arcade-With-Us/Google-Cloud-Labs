@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Introduction to Cloud Dataproc: Hadoop and Spark on Google Cloud || GSP123 ✨
 </h1>
 
 <div align="center">
