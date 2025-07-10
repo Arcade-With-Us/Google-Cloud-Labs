@@ -83,7 +83,7 @@ while [ "$cp_success" = false ]; do
     else
       echo "Unknown errors. Retrying in 10 seconds"
     fi
-    echo "Please subscribe to techcps [https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l]"
+    echo "Please subscribe to Arcade With Us [https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l]"
     sleep 10
   fi
 done
