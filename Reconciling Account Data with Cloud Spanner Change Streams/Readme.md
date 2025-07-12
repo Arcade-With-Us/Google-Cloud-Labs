@@ -53,7 +53,7 @@ sudo chmod +x GSP1097.sh
 | Dataflow Template|Cloud Spanner change streams to BigQuery |
 | Spanner instance ID| bitfoon-dev |
 | Spanner database|finance|
-| 3.|Jesse |
+| Spanner change stream|AccountUpdateStream |
 | 1.| Jamie |
 | 2.|Leslie|
 | 3.|Jesse |
