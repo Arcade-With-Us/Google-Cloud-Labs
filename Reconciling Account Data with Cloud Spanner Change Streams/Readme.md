@@ -46,11 +46,11 @@ sudo chmod +x GSP1097.sh
 ---
 ## Create a Dataflow change stream pipeline:
 
-| **`No.`** | **`First Name`** | **`Last Name`** | **`Primary Email`** | **`OU Name`** | **`Description`** |
-|----:|------------|-----------|---------------|---------|-------------|
-| 1.| Jamie | Marketeer | jamie.marketeer | Marketing | The Marketing team |
-| 2.|Leslie| Compliance | leslie.compliance | Compliance | The Marketing team |
-| 3.|Jesse | Contractor | jesse.contractor | Contractors | The Marketing team |
+| **`Point`** | **`Name`** | 
+|----:|------------|
+| 1.| Jamie |
+| 2.|Leslie|
+| 3.|Jesse |
 ---
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
 
