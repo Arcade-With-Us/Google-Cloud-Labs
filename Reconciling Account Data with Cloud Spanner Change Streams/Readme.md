@@ -49,7 +49,7 @@ sudo chmod +x GSP1097.sh
 fill the details
 
   |**Job name**|change-stream-pipeline|
-  |Regional Endpoint|<filled in at lab start>|
+  |Regional Endpoint|filled in at lab start|
   |----:|-----------|
   |----:|-----------|
   |----:|-----------|
