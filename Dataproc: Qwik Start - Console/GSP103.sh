@@ -22,13 +22,13 @@ echo
 
 gcloud auth list
 
-export REGION="${ZONE%-*}"
-
-gcloud config set dataproc/region $REGION
+export ZONE=$(gcloud compute project-info describe --format="value(commonInstanceMetadata.items[google-compute-default-zone])")
+export REGION=$(gcloud compute project-info describe --format="value(commonInstanceMetadata.items[google-compute-default-region])")
 
 export PROJECT_ID=$(gcloud config get-value project)
 
-export PROJECT_ID=$DEVSHELL_PROJECT_ID
+gcloud config set compute/zone "$ZONE"
+gcloud config set compute/region "$REGION"
 
 export PROJECT_NUMBER="$(gcloud projects describe $DEVSHELL_PROJECT_ID --format='get(projectNumber)')"
 
