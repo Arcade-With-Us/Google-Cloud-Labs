@@ -48,8 +48,8 @@ sudo chmod +x GSP1097.sh
 
 | **`Point`** | **`Name`** | 
 |----:|------------|
-| 1.| Jamie |
-| 2.|Leslie|
+| Job name| change-stream-pipeline |
+| Regional Endpoint|<filled in at lab start>|
 | 3.|Jesse |
 | 1.| Jamie |
 | 2.|Leslie|
