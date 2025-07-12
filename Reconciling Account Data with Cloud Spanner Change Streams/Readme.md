@@ -44,6 +44,7 @@ sudo chmod +x GSP1097.sh
 ./GSP1097.sh
 ```
 ---
+## Create a Dataflow change stream pipeline:
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
 
