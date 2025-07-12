@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Create a Maven Artifact Registry and Upload Code || gem-artifact-registry-maven ✨
 </h1>
 
 <div align="center">
