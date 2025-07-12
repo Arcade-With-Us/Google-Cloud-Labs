@@ -51,7 +51,7 @@ sudo chmod +x GSP1097.sh
 | Job name| change-stream-pipeline |
 | Regional Endpoint|filled in at lab start|
 | Dataflow Template|Cloud Spanner change streams to BigQuery |
-| 1.| Jamie |
+| Spanner instance ID| bitfoon-dev |
 | 2.|Leslie|
 | 3.|Jesse |
 | 1.| Jamie |
