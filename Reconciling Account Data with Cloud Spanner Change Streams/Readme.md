@@ -45,7 +45,9 @@ sudo chmod +x GSP1097.sh
 ```
 ---
 ## Create a Dataflow change stream pipeline:
-*  Click **Create job from template**.
+
+-> Click **Create job from template**.
+
 |----:|------------|
 | Job name| change-stream-pipeline |
 | Regional Endpoint|filled in at lab start|
@@ -56,6 +58,8 @@ sudo chmod +x GSP1097.sh
 | BigQuery dataset| changestream |
 | Spanner metadata instance ID|bitfoon-dev|
 | Spanner metadata database|finance |
+
+-> Click Run Job.
 ---
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
 
