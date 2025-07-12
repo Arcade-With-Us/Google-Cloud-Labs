@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Using BigQuery in the Google Cloud Console || GSP406 ✨
 </h1>
 
 <div align="center">
