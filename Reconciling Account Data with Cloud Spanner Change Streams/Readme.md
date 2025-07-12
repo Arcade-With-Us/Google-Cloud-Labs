@@ -48,7 +48,6 @@ sudo chmod +x GSP1097.sh
 * Click **Create job from template**
 
   
-  |Regional Endpoint|filled in at lab start|
   |Job name|change-stream-pipeline|
   |----:|-----------|
   |----:|-----------|
@@ -58,6 +57,7 @@ sudo chmod +x GSP1097.sh
   |----:|-----------|
   |----:|-----------|
   |----:|-----------|
+---
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
 
 Your hard work and determination paid off! 💻
