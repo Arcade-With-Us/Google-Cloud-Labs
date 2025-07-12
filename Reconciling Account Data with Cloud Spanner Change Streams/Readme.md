@@ -55,8 +55,8 @@ sudo chmod +x GSP1097.sh
 | Spanner database|finance|
 | Spanner change stream|AccountUpdateStream |
 | BigQuery dataset| changestream |
-| 2.|Leslie|
-| 3.|Jesse |
+| Spanner metadata instance ID|bitfoon-dev|
+| Spanner metadata database|finance |
 ---
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
 
