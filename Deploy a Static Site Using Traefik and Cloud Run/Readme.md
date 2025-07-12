@@ -37,11 +37,11 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Introduction%20to%20Cloud%20Dataproc%20Hadoop%20and%20Spark%20on%20Google%20Cloud/GSP123.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Deploy%20a%20Static%20Site%20Using%20Traefik%20and%20Cloud%20Run/gem-cloud-run-traefik-website.sh
 
-sudo chmod +x GSP123.sh
+sudo chmod +x gem-cloud-run-traefik-website.sh
 
-./GSP123.sh
+./gem-cloud-run-traefik-website.sh
 ```
 ---
 
