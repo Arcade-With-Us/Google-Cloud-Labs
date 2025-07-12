@@ -52,7 +52,7 @@ sudo chmod +x GSP1097.sh
 | Regional Endpoint|filled in at lab start|
 | Dataflow Template|Cloud Spanner change streams to BigQuery |
 | Spanner instance ID| bitfoon-dev |
-| 2.|Leslie|
+| Spanner database|finance|
 | 3.|Jesse |
 | 1.| Jamie |
 | 2.|Leslie|
