@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨ Deploy a Static Site Using Traefik and Cloud Run || gem-cloud-run-traefik-website ✨
 </h1>
 
 <div align="center">
