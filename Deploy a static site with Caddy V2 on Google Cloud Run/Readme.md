@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨ Deploy a static site with Caddy V2 on Google Cloud Run ✨
 </h1>
 
 <div align="center">
