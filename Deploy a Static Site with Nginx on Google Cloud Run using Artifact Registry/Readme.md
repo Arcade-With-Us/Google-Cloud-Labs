@@ -37,8 +37,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Deploy%20a%20static%20site%20with%20Caddy%20V2%20on%20Google%20Cloud%20Run/arcadewithus.sh
-
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Deploy%20a%20Static%20Site%20with%20Nginx%20on%20Google%20Cloud%20Run%20using%20Artifact%20Registry/arcadewithus.sh
 sudo chmod +x arcadewithus.sh
 
 ./arcadewithus.sh
