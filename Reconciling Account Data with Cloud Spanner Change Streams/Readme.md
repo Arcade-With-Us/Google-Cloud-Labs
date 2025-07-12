@@ -44,20 +44,6 @@ sudo chmod +x GSP1097.sh
 ./GSP1097.sh
 ```
 ---
-| **`No.`** | **`First Name`** | **`Last Name`** | **`Primary Email`** | **`OU Name`** | **`Description`** |
-|----:|------------|-----------|---------------|---------|-------------|
-| 1.| Job name | change-stream-pipeline |
-| 2.| Regional Endpoint|filled in at lab start|
-| 3.| Dataflow Template|Cloud Spanner change streams to BigQuery |
-| 4.| Spanner instance ID| bitfoon-dev |
-|1|| Spanner database||finance|
-|1|| Spanner change stream||AccountUpdateStream |
-|1|| BigQuery dataset||changestream |
-|1|| Spanner metadata instance ID||bitfoon-dev|
-|1|| Spanner metadata database||finance |
-
--> Click Run Job.
----
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
 
 Your hard work and determination paid off! 💻
