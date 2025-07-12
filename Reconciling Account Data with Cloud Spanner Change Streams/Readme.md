@@ -49,8 +49,8 @@ sudo chmod +x GSP1097.sh
 | **`Point`** | **`Name`** | 
 |----:|------------|
 | Job name| change-stream-pipeline |
-| Regional Endpoint|<filled in at lab start>|
-| 3.|Jesse |
+| Regional Endpoint|filled in at lab start|
+| Dataflow Template|Cloud Spanner change streams to BigQuery |
 | 1.| Jamie |
 | 2.|Leslie|
 | 3.|Jesse |
