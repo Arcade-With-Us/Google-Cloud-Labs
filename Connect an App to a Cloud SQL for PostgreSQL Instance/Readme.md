@@ -44,6 +44,11 @@ sudo chmod +x GSP919.sh
 ./GSP919.sh
 ```
 ---
+### 🚨 When prompted, enter the password: 
+```
+supersecret!
+```
+---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
 
