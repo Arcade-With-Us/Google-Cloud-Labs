@@ -45,9 +45,6 @@ sudo chmod +x GSP1097.sh
 ```
 ---
 ## Create a Dataflow change stream pipeline:
-* Click **Create job from template**
-
-  
   |Job name|change-stream-pipeline|
   |Regional Endpoint|Your lab region|
   |----:|-----------|
