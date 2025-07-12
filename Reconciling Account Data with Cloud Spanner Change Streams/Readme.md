@@ -44,17 +44,17 @@ sudo chmod +x GSP1097.sh
 ./GSP1097.sh
 ```
 ---
-| **`No.`** | **`First Name`** |
-|----:|------------|
-| Job name| change-stream-pipeline |
-| Regional Endpoint|filled in at lab start|
-| Dataflow Template|Cloud Spanner change streams to BigQuery |
-| Spanner instance ID| bitfoon-dev |
-| Spanner database|finance|
-| Spanner change stream|AccountUpdateStream |
-| BigQuery dataset| changestream |
-| Spanner metadata instance ID|bitfoon-dev|
-| Spanner metadata database|finance |
+| **`No.`** | **`First Name`** |**`Name`**|
+|----:|------------|--------|
+|1|| Job name| change-stream-pipeline |
+|1|| Regional Endpoint|filled in at lab start|
+|1|| Dataflow Template|Cloud Spanner change streams to BigQuery |
+|1|| Spanner instance ID| bitfoon-dev |
+|1|| Spanner database|finance|
+|1|| Spanner change stream|AccountUpdateStream |
+|1|| BigQuery dataset| changestream |
+|1|| Spanner metadata instance ID|bitfoon-dev|
+|1|| Spanner metadata database|finance |
 
 -> Click Run Job.
 ---
