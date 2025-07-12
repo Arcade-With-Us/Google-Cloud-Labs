@@ -45,15 +45,16 @@ sudo chmod +x GSP1097.sh
 ```
 ---
 ## Create a Dataflow change stream pipeline:
-  |Job name|change-stream-pipeline|
-  |Regional Endpoint|Your lab region|
-  |----:|-----------|
-  |----:|-----------|
-  |----:|-----------|
-  |----:|-----------|
-  |----:|-----------|
-  |----:|-----------|
-  |----:|-----------|
+| **`No.`** | **`First Name`** |
+|Job name|change-stream-pipeline|
+|Regional Endpoint|Your lab region|
+|----:|-----------|
+|----:|-----------|
+|----:|-----------|
+|----:|-----------|
+|----:|-----------|
+|----:|-----------|
+|----:|-----------|
 ---
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
 
