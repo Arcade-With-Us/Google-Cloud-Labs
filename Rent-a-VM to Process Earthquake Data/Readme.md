@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Rent-a-VM to Process Earthquake Data || GSP008 ✨
 </h1>
 
 <div align="center">
