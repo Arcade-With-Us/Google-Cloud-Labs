@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Deploy Microsoft SQL Server to Compute Engine || GSP038 ✨
 </h1>
 
 <div align="center">
