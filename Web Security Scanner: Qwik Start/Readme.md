@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Web Security Scanner: Qwik Start || GSP112  ✨
+✨  Web Security Scanner: Qwik Start || GSP112  ✨
 </h1>
 
 <div align="center">
