@@ -37,11 +37,11 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Hello%20Node%20Kubernetes/GSP006.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Hello%20Node%20Kubernetes/GSP005.sh
 
-sudo chmod +x GSP006.sh
+sudo chmod +x GSP005.sh
 
-./GSP006.sh
+./GSP005.sh
 ```
 ---
 
