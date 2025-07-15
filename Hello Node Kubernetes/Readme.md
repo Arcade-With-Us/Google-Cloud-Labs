@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Hello Node Kubernetes || GSP006 ✨
+✨  Hello Node Kubernetes || GSP005 ✨
 </h1>
 
 <div align="center">
