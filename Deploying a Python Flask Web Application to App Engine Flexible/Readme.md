@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Deploying a Python Flask Web Application to App Engine Flexible || GSP023 ✨
 </h1>
 
 <div align="center">
