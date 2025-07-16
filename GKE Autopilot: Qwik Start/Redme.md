@@ -47,7 +47,7 @@ https://github.com/subfuzion/voting-demo.git
 ### 🚨Copy and run the below commands in Terminal:
 
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/GKE%20Autopilot:%20Qwik%20Start/GSP957.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/GKE%20Autopilot:%20Qwik%20Start/GSP957.sh
 
 source GSP957.sh
 ```
