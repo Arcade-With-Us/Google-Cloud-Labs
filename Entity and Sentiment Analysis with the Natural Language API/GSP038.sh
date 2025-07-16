@@ -28,11 +28,11 @@ export ZONE=$(gcloud compute instances list --filter="name=('linux-instance')" -
 
 gcloud alpha services api-keys create --display-name="techcps"
 
-KEY_NAME=$(gcloud alpha services api-keys list --format="value(name)" --filter="displayName=techcps")
+KEY_NAME=$(gcloud alpha services api-keys list --format="value(name)" --filter="displayName=arcadewithus")
 API_KEY=$(gcloud alpha services api-keys get-key-string $KEY_NAME --format="value(keyString)")
 
-cat > techcps.sh <<EOF_CP
-KEY_NAME=$(gcloud alpha services api-keys list --format="value(name)" --filter="displayName=techcps")
+cat > GSP038.sh <<EOF_CP
+KEY_NAME=$(gcloud alpha services api-keys list --format="value(name)" --filter="displayName=arcadewithus")
 
 API_KEY=$(gcloud alpha services api-keys get-key-string $KEY_NAME --format="value(keyString)")
 
