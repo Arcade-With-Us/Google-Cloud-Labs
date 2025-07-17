@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Build a Resilient, Asynchronous System with Cloud Run and PubSub || GSP650  ✨
+✨  Build a Resilient, Asynchronous System with Cloud Run and PubSub || GSP650  ✨
 </h1>
 
 <div align="center">
@@ -30,7 +30,7 @@
 ## 💻 **Execute in Cloud Shell**  
 Run the following commands in **Cloud Shell**:
 ```bash
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Build%20a%20Resilient%2C%20Asynchronous%20System%20with%20Cloud%20Run%20and%20Pub-Sub/GSP650.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Build%20a%20Resilient%2C%20Asynchronous%20System%20with%20Cloud%20Run%20and%20Pub-Sub/GSP650.sh
 
 sudo chmod +x GSP650.sh
 
