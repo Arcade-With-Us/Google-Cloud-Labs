@@ -35,7 +35,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 Run the following commands in **Cloud Shell**:
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Managing%20Deployments%20Using%20Kubernetes%20Engine/GSP053.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Managing%20Deployments%20Using%20Kubernetes%20Engine/GSP053.sh
 
 sudo chmod +x GSP053.sh
 
