@@ -44,7 +44,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 https://github.com/subfuzion/voting-demo.git
 ```
 
-### 🚨Copy and run the below commands in Terminal:
+### 🚨Copy and run the below commands in IDE Terminal:
 
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/GKE%20Autopilot:%20Qwik%20Start/GSP957.sh
