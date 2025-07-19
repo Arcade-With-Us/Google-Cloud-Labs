@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  App Engine: 3 Ways: Challenge Lab || [ARC112]  ✨
+✨  App Engine: 3 Ways: Challenge Lab || [ARC112]  ✨
 </h1>
 
 <div align="center">
