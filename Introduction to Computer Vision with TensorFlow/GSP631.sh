@@ -20,12 +20,6 @@ echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORM
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
-# Display welcome message
-welcome_message
-
-echo "${BG_MAGENTA}${BOLD}Starting Execution${RESET}"
-echo
-
 # Check Python version
 echo "${BLUE}${BOLD}Checking Python version...${RESET}"
 python --version
