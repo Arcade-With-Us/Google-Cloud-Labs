@@ -35,9 +35,9 @@ echo
 
 # Download lab notebooks
 echo "${BLUE}${BOLD}Downloading lab notebooks...${RESET}"
-wget https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/blob/main/Introduction%20to%20Computer%20Vision%20with%20TensorFlow/model%20(1).ipynb
-wget https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/blob/main/Introduction%20to%20Computer%20Vision%20with%20TensorFlow/callback_model.ipynb
-wget https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/blob/main/Introduction%20to%20Computer%20Vision%20with%20TensorFlow/updated_model.ipynb
+wget https://github.com/Arcade-With-Us/Google-Cloud-Labs/raw/refs/heads/main/Introduction%20to%20Computer%20Vision%20with%20TensorFlow/model%20(1).ipynb
+wget https://github.com/Arcade-With-Us/Google-Cloud-Labs/raw/refs/heads/main/Introduction%20to%20Computer%20Vision%20with%20TensorFlow/callback_model.ipynb
+wget https://github.com/Arcade-With-Us/Google-Cloud-Labs/raw/refs/heads/main/Introduction%20to%20Computer%20Vision%20with%20TensorFlow/updated_model.ipynb
 echo
 
 echo
