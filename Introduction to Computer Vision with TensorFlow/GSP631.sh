@@ -20,6 +20,32 @@ echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORM
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
+# Display welcome message
+welcome_message
+
+echo "${BG_MAGENTA}${BOLD}Starting Execution${RESET}"
+echo
+
+# Check Python version
+echo "${BLUE}${BOLD}Checking Python version...${RESET}"
+python --version
+echo
+
+# Install TensorFlow and dependencies
+echo "${BLUE}${BOLD}Installing TensorFlow and dependencies...${RESET}"
+pip3 install --upgrade pip
+pip3 install tensorflow
+pip install -U pylint --user
+pip install -r requirements.txt
+echo
+
+# Download lab notebooks
+echo "${BLUE}${BOLD}Downloading lab notebooks...${RESET}"
+wget https://raw.githubusercontent.com/
+wget https://raw.githubusercontent.com/
+wget https://raw.githubusercontent.com/
+echo
+
 echo
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo "${CYAN_TEXT}${BOLD_TEXT}🚀  LAB COMPLETED SUCCESSFULLY  🚀${RESET_FORMAT}"
