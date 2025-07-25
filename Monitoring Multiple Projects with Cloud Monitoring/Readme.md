@@ -39,7 +39,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Monitoring%20Multiple%20Projects%20with%20Cloud%20Monitoring/GSP090.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Monitoring%20Multiple%20Projects%20with%20Cloud%20Monitoring/GSP090.sh
 
 sudo chmod +x GSP090.sh
 
