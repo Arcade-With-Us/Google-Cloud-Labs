@@ -91,7 +91,7 @@ while true; do
         echo "Server is serving requests."
         break  
     else
-        echo "Subscribe to Arcade Helper"
+        echo "Subscribe to Arcade With Us"
         sleep 7
     fi
 done
