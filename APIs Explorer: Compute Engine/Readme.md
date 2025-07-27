@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐   APIs Explorer: Compute Engine || GSP293 ✨
+✨   APIs Explorer: Compute Engine || GSP293 ✨
 </h1>
 
 <div align="center">
