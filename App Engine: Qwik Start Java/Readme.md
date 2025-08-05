@@ -43,6 +43,7 @@ sudo chmod +x GSP068.sh
 
 ./GSP068.sh
 ```
+* Reminder: **`Press CTRL + C to start the deploymnet`**
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
