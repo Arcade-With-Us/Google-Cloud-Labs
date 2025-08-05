@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨ Creating Dynamic Secrets for Google Cloud with Vault || GSP1007 ✨
 </h1>
 
 <div align="center">
