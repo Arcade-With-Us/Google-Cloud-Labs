@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  App Engine: Qwik Start - Java || GSP068 ✨
 </h1>
 
 <div align="center">
