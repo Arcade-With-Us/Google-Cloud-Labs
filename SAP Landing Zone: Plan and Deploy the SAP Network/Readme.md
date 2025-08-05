@@ -36,6 +36,12 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ## 💻 **Execute in Cloud Shell** 
 
+```bash
+export Your_Project_Id=
+```
+```bash
+export region=
+```
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/SAP%20Landing%20Zone:%20Plan%20and%20Deploy%20the%20SAP%20Network/GSP1068.sh
 
