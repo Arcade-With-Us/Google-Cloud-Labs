@@ -37,11 +37,11 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Introduction%20to%20Cloud%20Dataproc%20Hadoop%20and%20Spark%20on%20Google%20Cloud/GSP123.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/SAP%20Landing%20Zone:%20Plan%20and%20Deploy%20the%20SAP%20Network/GSP1068.sh
 
-sudo chmod +x GSP123.sh
+sudo chmod +x GSP1068.sh
 
-./GSP123.sh
+./GSP1068.sh
 ```
 ---
 
