@@ -134,12 +134,12 @@ gsutil iam ch \
 mkdir mpc-ethereum-demo
 cd mpc-ethereum-demo
 
-curl -LO https://raw.githubusercontent.com/
-curl -LO https://raw.githubusercontent.com/
-curl -LO https://raw.githubusercontent.com/
-curl -LO https://raw.githubusercontent.com/
-curl -LO https://raw.githubusercontent.com/
-curl -LO https://raw.githubusercontent.com/
+curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/head/main/Transacting%20Digital%20Assets%20with%20Multi-Party%20Computation%20and%20Confidential%20Space/mpc-ethereum-demo/Dockerfile
+curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/head/main/Transacting%20Digital%20Assets%20with%20Multi-Party%20Computation%20and%20Confidential%20Space/mpc-ethereum-demo/credential-config.js
+curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/head/main/Transacting%20Digital%20Assets%20with%20Multi-Party%20Computation%20and%20Confidential%20Space/mpc-ethereum-demo/index.js
+curl -LO https://github.com/Arcade-With-Us/Google-Cloud-Labs/raw/refs/heads/main/Transacting%20Digital%20Assets%20with%20Multi-Party%20Computation%20and%20Confidential%20Space/mpc-ethereum-demo/kms-decrypt.js
+curl -LO https://github.com/Arcade-With-Us/Google-Cloud-Labs/raw/refs/heads/main/Transacting%20Digital%20Assets%20with%20Multi-Party%20Computation%20and%20Confidential%20Space/mpc-ethereum-demo/mpc.js
+curl -LO https://github.com/Arcade-With-Us/Google-Cloud-Labs/raw/refs/heads/main/Transacting%20Digital%20Assets%20with%20Multi-Party%20Computation%20and%20Confidential%20Space/mpc-ethereum-demo/package.json
 
 cd ..
 
