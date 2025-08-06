@@ -43,6 +43,10 @@ sudo chmod +x GSP911.sh
 
 ./GSP911.sh
 ```
+* You just have to edit the previous firewall for the last task.
+  1. Just open the 1st link and ckick edit
+  2. Add protocalls section, Along with TCP, check the box OTHERS and write `icmp` on the box.
+  3. Follow the same for the next firewall
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
