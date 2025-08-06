@@ -70,7 +70,6 @@ You've successfully completed the lab. **Way to go!** 🚀
 </div>
 
 ---
-# <img src="https://github.com/user-attachments/assets/6ee41001-c795-467c-8d96-06b56c246b9c" alt="icon" width="45" height="45"> [Arcade With Us](https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l) Don't Forget to like share & subscribe
 
 <div align="center">
   <p style="font-size: 12px; color: #586069;">
