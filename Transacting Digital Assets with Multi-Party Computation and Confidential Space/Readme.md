@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Transacting Digital Assets with Multi-Party Computation and Confidential Space || GSP1128 ✨
 </h1>
 
 <div align="center">
