@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Autoscaling an Instance Group with Custom Cloud Monitoring Metrics || GSP7087 ✨
 </h1>
 
 <div align="center">
