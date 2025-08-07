@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Deploying a Fault-Tolerant Microsoft Active Directory Environment || GSP118 ✨
 </h1>
 
 <div align="center">
