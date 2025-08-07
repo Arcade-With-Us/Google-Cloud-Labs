@@ -43,6 +43,7 @@ sudo chmod +x GSP1139.sh
 
 ./GSP1139.sh
 ```
+* Open link: [Click Here](https://console.cloud.google.com/ai/document-ai?inv=1&invt=Ab4lxg)
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
