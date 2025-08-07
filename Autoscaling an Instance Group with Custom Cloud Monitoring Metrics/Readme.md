@@ -79,6 +79,6 @@ You've successfully completed the lab. **Way to go!** 🚀
     <em>This guide is provided for educational purposes. Always follow Qwiklabs terms of service and YouTube's community guidelines.</em>
   </p>
   <p style="font-size: 12px; color: #586069;">
-    <em>Last updated: June 2025</em>
+    <em>Last updated: August 2025</em>
   </p>
 </div>
