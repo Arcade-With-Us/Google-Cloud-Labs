@@ -36,7 +36,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ## 💻 **Execute in Cloud Shell** 
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Speech%20to%20Text%20Transcription%20with%20the%20Cloud%20Speech%20API/GSP048.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Speech%20to%20Text%20Transcription%20with%20the%20Cloud%20Speech%20API/GSP048.sh
 
 sudo chmod +x GSP048.sh
 
