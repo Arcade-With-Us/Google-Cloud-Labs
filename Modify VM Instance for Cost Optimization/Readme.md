@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨ Modify VM Instance for Cost Optimization ✨
 </h1>
 
 <div align="center">
