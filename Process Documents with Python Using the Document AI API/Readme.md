@@ -56,6 +56,10 @@ sudo chmod +x GSP925-2.sh
 
 ./GSP925-2.sh
 ```
+`Note:` If you do not see notebooks in JupyterLab, please follow these additional steps to reset the instance:
+> 1. Close the browser tab for JupyterLab, and return to the Workbench home page.
+> 2. Select the checkbox next to the instance name, and click Reset.
+> 3. After the Open JupyterLab button is enabled again, wait one minute, and then click **Open JupyterLab**.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
