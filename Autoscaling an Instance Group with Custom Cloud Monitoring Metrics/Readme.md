@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling an Instance Group with Custom Cloud Monitoring Metrics || GSP7087 ✨
+✨  Autoscaling an Instance Group with Custom Cloud Monitoring Metrics || GSP087 ✨
 </h1>
 
 <div align="center">
