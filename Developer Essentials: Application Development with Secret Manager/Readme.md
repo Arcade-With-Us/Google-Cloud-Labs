@@ -1,9 +1,9 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨ Developer Essentials: Application Development with Secret Manager✨
 </h1>
 
 <div align="center">
-  <a href="https://www.cloudskillsboost.google/focuses/49749?parent=catalog"_blank" rel="noopener noreferrer">
+  <a href=""_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/Open_Lab-Cloud_Skills_Boost-4285F4?style=for-the-badge&logo=google&logoColor=white&labelColor=34A853" alt="Open Lab Badge">
   </a>
 </div>
@@ -37,7 +37,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Introduction%20to%20Cloud%20Dataproc%20Hadoop%20and%20Spark%20on%20Google%20Cloud/GSP123.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Developer%20Essentials%3A%20Application%20Development%20with%20Secret%20Manager/ArcadeWithUs.sh
 
 sudo chmod +x GSP123.sh
 
