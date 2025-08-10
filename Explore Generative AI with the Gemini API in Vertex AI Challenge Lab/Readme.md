@@ -20,6 +20,7 @@
 
 </div>
 ---
+
 ## 🛠️ Configuration Steps 🚀
 
 > 💡 **Pro Tip:** *Watch the full video to ensure you achieve full scores on all "Check My Progress" steps!*
