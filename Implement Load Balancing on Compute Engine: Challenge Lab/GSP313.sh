@@ -1,26 +1,25 @@
 #!/bin/bash
-
-# Define color variables
-YELLOW_TEXT=$'\033[0;33m'
-MAGENTA_TEXT=$'\033[0;35m'
-NO_COLOR=$'\033[0m'
-GREEN_TEXT=$'\033[0;32m'
-RED_TEXT=$'\033[0;31m'
-CYAN_TEXT=$'\033[0;36m'
+BLACK_TEXT=$'\033[0;90m'
+RED_TEXT=$'\033[0;91m'
+GREEN_TEXT=$'\033[0;92m'
+YELLOW_TEXT=$'\033[0;93m'
+BLUE_TEXT=$'\033[0;94m'
+MAGENTA_TEXT=$'\033[0;95m'
+CYAN_TEXT=$'\033[0;96m'
+WHITE_TEXT=$'\033[0;97m'
+DIM_TEXT=$'\033[2m'
+STRIKETHROUGH_TEXT=$'\033[9m'
 BOLD_TEXT=$'\033[1m'
 RESET_FORMAT=$'\033[0m'
-BLUE_TEXT=$'\033[0;34m'
 
-# Start of the script
+clear
+
 echo
-echo "${CYAN_TEXT}${BOLD_TEXT}Starting the process...${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
-# Collect user inputs
-read -p "${YELLOW_TEXT}${BOLD_TEXT}Enter INSTANCE_NAME: ${RESET_FORMAT}" INSTANCE_NAME
-read -p "${YELLOW_TEXT}${BOLD_TEXT}Enter FIREWALL_RULE: ${RESET_FORMAT}" FIREWALL_RULE
-
-#!/bin/bash
 
 # Fetch zone and region
 ZONE=$(gcloud compute project-info describe \
