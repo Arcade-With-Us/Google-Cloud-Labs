@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Perform Predictive Data Analysis in BigQuery: Challenge Lab || GSP374  ✨
+✨  Perform Predictive Data Analysis in BigQuery: Challenge Lab || GSP374  ✨
 </h1>
 
 <div align="center">
