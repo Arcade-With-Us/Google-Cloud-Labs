@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Create and Manage Cloud Spanner Instances Challenge Lab || GSP381 ✨
 </h1>
 
 <div align="center">
