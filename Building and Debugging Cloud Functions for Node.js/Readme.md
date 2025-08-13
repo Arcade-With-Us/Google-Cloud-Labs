@@ -35,9 +35,7 @@
 
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Building%20and%20Debugging%20Cloud%20Functions%20for%20Node.js/GSP880.sh
-
 chmod +x GSP880.sh
-
 ./GSP880.sh
 ```
 ---
