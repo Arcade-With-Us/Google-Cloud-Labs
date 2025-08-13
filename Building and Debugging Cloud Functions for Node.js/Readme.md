@@ -31,10 +31,7 @@
 
 > ✅ **NOTE:** *Watch Full Video to get Full Scores on Check My Progress.*
 
-**🌐Launch Cloud Shell:**
-Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
-
-## 💻 **Execute in Cloud Shell** 
+## 💻 **Execute in IDE Terminal** 
 
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Building%20and%20Debugging%20Cloud%20Functions%20for%20Node.js/GSP880.sh
