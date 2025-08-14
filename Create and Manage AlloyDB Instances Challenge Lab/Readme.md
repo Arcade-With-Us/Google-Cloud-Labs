@@ -1,5 +1,5 @@
 <h1 align="center">
-✨ Create and Manage AlloyDB Instances Challenge Lab || GSP395 ✨
+✨ Create & Manage AlloyDB Instances Challenge Lab || GSP395 ✨
 </h1>
 
 <div align="center">
