@@ -26,6 +26,12 @@
 
 > 💡 **Pro Tip:** *Watch the full video to ensure you achieve full scores on all "Check My Progress" steps!*
 
+### 🚀 Copy and run the below commands in Cloud Shell:
+
+```
+pip3 install --upgrade --user google-cloud-aiplatform && gcloud auth list && gcloud services enable compute.googleapis.com iam.googleapis.com iamcredentials.googleapis.com monitoring.googleapis.com logging.googleapis.com notebooks.googleapis.com aiplatform.googleapis.com bigquery.googleapis.com artifactregistry.googleapis.com cloudbuild.googleapis.com container.googleapis.com
+```
+
 * Open **Vertex AI Workbench** from [HERE](https://console.cloud.google.com/vertex-ai/workbench?)
 
 <div style="padding: 15px; margin: 10px 0;">
