@@ -1,6 +1,4 @@
 #!/bin/bash
-
-# Bright Foreground Colors
 BLACK_TEXT=$'\033[0;90m'
 RED_TEXT=$'\033[0;91m'
 GREEN_TEXT=$'\033[0;92m'
@@ -9,24 +7,18 @@ BLUE_TEXT=$'\033[0;94m'
 MAGENTA_TEXT=$'\033[0;95m'
 CYAN_TEXT=$'\033[0;96m'
 WHITE_TEXT=$'\033[0;97m'
-
-NO_COLOR=$'\033[0m'
-RESET_FORMAT=$'\033[0m'
+DIM_TEXT=$'\033[2m'
+STRIKETHROUGH_TEXT=$'\033[9m'
 BOLD_TEXT=$'\033[1m'
-UNDERLINE_TEXT=$'\033[4m'
+RESET_FORMAT=$'\033[0m'
 
-# Displaying start message
-echo
-echo "${CYAN_TEXT}${BOLD_TEXT}╔════════════════════════════════════════════════════════╗${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}                  Starting the process...                   ${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}╚════════════════════════════════════════════════════════╝${RESET_FORMAT}"
-echo
+clear
 
-echo "${YELLOW_TEXT}${BOLD_TEXT}================================================================${RESET_FORMAT}"
-echo "${YELLOW_TEXT}${BOLD_TEXT}  Please provide the following details for the setup:       ${RESET_FORMAT}"
-echo "${YELLOW_TEXT}${BOLD_TEXT}================================================================${RESET_FORMAT}"
 echo
-
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo
 
 read -p "${MAGENTA_TEXT}${BOLD_TEXT}Enter BUCKET_NAME: ${RESET_FORMAT}" BUCKET_NAME
 echo "${BLUE_TEXT}${BOLD_TEXT}You entered BUCKET_NAME: $BUCKET_NAME ${RESET_FORMAT}"
@@ -231,10 +223,13 @@ echo
 
 gsutil cp wildlife.jpg gs://$BUCKET_NAME
 echo
-echo "${GREEN_TEXT}${BOLD_TEXT}╔════════════════════════════════════════════════════════╗${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}              Lab Completed Successfully!               ${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}╚════════════════════════════════════════════════════════╝${RESET_FORMAT}"
-echo "" 
-echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe to my Channel (Arcade With Us):${RESET_FORMAT} ${BLUE_TEXT}${BOLD_TEXT}https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀  LAB COMPLETED SUCCESSFULLY  🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo
+
+echo ""
+echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe to my Channel (Arcade With Us):${RESET_FORMAT}"
+echo -e "${BLUE_TEXT}${BOLD_TEXT}https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
 echo
 #-----------------------------------------------------end----------------------------------------------------------#
