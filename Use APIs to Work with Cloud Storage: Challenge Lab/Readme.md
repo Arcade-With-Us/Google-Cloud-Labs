@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Use APIs to Work with Cloud Storage: Challenge Lab || ARC125  ✨
+✨  Use APIs to Work with Cloud Storage: Challenge Lab || ARC125  ✨
 </h1>
 
 <div align="center">
