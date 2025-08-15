@@ -1,6 +1,4 @@
 #!/bin/bash
-
-# Define color variables
 BLACK_TEXT=$'\033[0;90m'
 RED_TEXT=$'\033[0;91m'
 GREEN_TEXT=$'\033[0;92m'
@@ -9,45 +7,18 @@ BLUE_TEXT=$'\033[0;94m'
 MAGENTA_TEXT=$'\033[0;95m'
 CYAN_TEXT=$'\033[0;96m'
 WHITE_TEXT=$'\033[0;97m'
-
-NO_COLOR=$'\033[0m'
-RESET_FORMAT=$'\033[0m'
+DIM_TEXT=$'\033[2m'
+STRIKETHROUGH_TEXT=$'\033[9m'
 BOLD_TEXT=$'\033[1m'
-UNDERLINE_TEXT=$'\033[4m'
+RESET_FORMAT=$'\033[0m'
 
-# Function for error handling
-function error_handler() {
-    echo "${RED_TEXT}${BOLD_TEXT}ERROR: $1${RESET_FORMAT}"
-    exit 1
-}
-
-# Function to display task headers
-function display_task() {
-    echo "${BLUE_TEXT}${BOLD_TEXT}$1${RESET_FORMAT}"
-    echo "${CYAN_TEXT}${BOLD_TEXT}$2${RESET_FORMAT}"
-    echo ""
-}
-
-# Function to display success messages
-function success() {
-    echo "${GREEN_TEXT}${BOLD_TEXT}✓ $1${RESET_FORMAT}"
-    echo ""
-}
-
-# Function to display manual step instructions
-function manual_step() {
-    echo "${YELLOW_TEXT}${BOLD_TEXT}MANUAL STEP REQUIRED:${RESET_FORMAT}"
-    echo "${MAGENTA_TEXT}${BOLD_TEXT}$1${RESET_FORMAT}"
-    echo ""
-}
-
-# Clear the screen
 clear
-# Welcome message
-echo "${CYAN_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}         INITIATING EXECUTION...  ${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
-echo ""
+
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo
 
 # Task 1: Create an API key (Manual step)
 display_task "TASK 1" "Create an API key"
