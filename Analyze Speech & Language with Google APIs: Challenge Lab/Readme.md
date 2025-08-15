@@ -33,7 +33,7 @@
 
 ## ⚙️ Lab Environment Setup:
 
-## 💻 **Run this in your SSH terminal:** 
+## 💻 **Run this in your VM instance SSH terminal:** 
 ```
 export API_KEY=
 ```
