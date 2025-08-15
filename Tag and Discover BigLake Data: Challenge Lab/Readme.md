@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Tag and Discover BigLake Data: Challenge Lab || ARC123  ✨
+✨  Tag and Discover BigLake Data: Challenge Lab || ARC123  ✨
 </h1>
 
 <div align="center">
