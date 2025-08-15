@@ -43,7 +43,6 @@ curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/m
 sudo chmod +x GSP064.sh
 
 ./GSP064.sh
-
 ```
 ---
 
