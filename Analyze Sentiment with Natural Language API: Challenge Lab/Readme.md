@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐   Analyze Sentiment with Natural Language API: Challenge Lab || ARC130 ✨
+✨   Analyze Sentiment with Natural Language API: Challenge Lab || ARC130 ✨
 </h1>
 
 <div align="center">
@@ -35,11 +35,11 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Analyze%20Sentiment%20with%20Natural%20Language%20API%3A%20Challenge%20Lab/ARC130-1.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Analyze%20Sentiment%20with%20Natural%20Language%20API%3A%20Challenge%20Lab/ARC130.sh
 
-sudo chmod +x ARC130-1.sh
+sudo chmod +x ARC130.sh
 
-./ARC130-1.sh
+./ARC130.sh
 ```
 *  **_For API-KEY_**--->Go to **API & SERVICES**--->**CREDENTIALS**--->**CREATE API KEY**
 
