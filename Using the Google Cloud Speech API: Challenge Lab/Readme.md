@@ -40,7 +40,6 @@ curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs
 sudo chmod +x ARC131.sh
 
 ./ARC131.sh
-
 ```
 ---
 
