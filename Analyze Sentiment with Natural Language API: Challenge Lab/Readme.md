@@ -32,7 +32,7 @@
 **🌐Launch Cloud Shell:**
 Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
 
-## 💻 **Execute in Cloud Shell**  
+## 💻 **Execute in SSH Terminal**  
 
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Analyze%20Sentiment%20with%20Natural%20Language%20API%3A%20Challenge%20Lab/ARC130.sh
