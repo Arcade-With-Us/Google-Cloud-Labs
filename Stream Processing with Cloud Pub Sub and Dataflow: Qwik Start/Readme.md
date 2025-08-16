@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Stream Processing with Cloud Pub/Sub and Dataflow: Qwik Start || GSP903 ✨
 </h1>
 
 <div align="center">
