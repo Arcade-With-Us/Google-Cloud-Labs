@@ -21,109 +21,74 @@ echo "${BLUE_TEXT}${BOLD_TEXT}         INITIATING EXECUTION...  ${RESET_FORMAT}"
 echo "${BLUE_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
 echo
 
-# Get user inputs with validation
-print_message "$ACTION_COLOR" "📝" "Please provide the following configuration details:"
-
-read -p "${PROMPT_COLOR}${BOLD_TEXT}Enter Pub/Sub Topic Name: ${RESET_FORMAT}" TOPIC_ID
-print_message "$SUCCESS_COLOR" "✓" "Topic Name: $TOPIC_ID"
-
-read -p "${PROMPT_COLOR}${BOLD_TEXT}Enter Test Message: ${RESET_FORMAT}" MESSAGE
-print_message "$SUCCESS_COLOR" "✓" "Message: $MESSAGE"
-
-read -p "${PROMPT_COLOR}${BOLD_TEXT}Enter Region (e.g., us-central1): ${RESET_FORMAT}" REGION
-print_message "$SUCCESS_COLOR" "✓" "Region: $REGION"
-
 PROJECT_ID=$(gcloud config get-value project)
-print_message "$ACTION_COLOR" "🆔" "Using Project ID: $PROJECT_ID"
 
 export BUCKET_NAME="${PROJECT_ID}-bucket"
-print_message "$ACTION_COLOR" "🪣" "Bucket Name: $BUCKET_NAME"
-echo
 
-# API Management
-print_message "$ACTION_COLOR" "⚙️" "Configuring required APIs..."
-gcloud services disable dataflow.googleapis.com --quiet
-gcloud services enable dataflow.googleapis.com cloudscheduler.googleapis.com --quiet
-print_success "APIs configured successfully"
-echo
+export TOPIC_ID=
 
-# Resource Creation
-print_message "$ACTION_COLOR" "🛠️" "Creating infrastructure resources..."
+export REGION=
 
-print_message "$TEXT_COLOR" "🪣" "Creating Cloud Storage bucket..."
-gsutil mb -l $REGION gs://$BUCKET_NAME
+export MESSAGE=""
 
-print_message "$TEXT_COLOR" "📨" "Creating Pub/Sub topic..."
+gcloud services disable dataflow.googleapis.com
+
+gcloud services enable dataflow.googleapis.com
+
+gsutil mb gs://$BUCKET_NAME
+
 gcloud pubsub topics create $TOPIC_ID
 
-print_message "$TEXT_COLOR" "🚀" "Creating App Engine application..."
-gcloud app create --region=$REGION --quiet
+gcloud app create --region=$REGION
 
-print_message "$WARNING_COLOR" "⏳" "Waiting for App Engine initialization..."
 sleep 100
-print_success "Infrastructure resources created successfully"
-echo
 
-# Scheduler Configuration
-print_message "$ACTION_COLOR" "⏰" "Configuring Cloud Scheduler..."
-gcloud scheduler jobs create pubsub data-pipeline-trigger \
-  --schedule="* * * * *" \
-  --topic=$TOPIC_ID \
-  --message-body="$MESSAGE" \
-  --quiet
+gcloud scheduler jobs create pubsub quicklab --schedule="* * * * *" \
+    --topic=$TOPIC_ID --message-body="$MESSAGE"
 
-print_message "$WARNING_COLOR" "⏳" "Waiting for Scheduler initialization..."
-sleep 20
 
-print_message "$TEXT_COLOR" "🔧" "Testing Scheduler configuration..."
-gcloud scheduler jobs run data-pipeline-trigger --quiet
-print_success "Scheduler configured successfully"
-echo
+gcloud scheduler jobs run quicklab
 
-# Dataflow Pipeline Setup
-print_message "$ACTION_COLOR" "🌊" "Preparing Dataflow pipeline..."
+sleep 30
 
-cat > run_pipeline.sh <<EOF
+cat > run_pubsub_to_gcs_quicklab.sh <<EOF_CP
 #!/bin/bash
 
-# Environment configuration
+# Set environment variables
 export PROJECT_ID=$PROJECT_ID
 export REGION=$REGION
 export TOPIC_ID=$TOPIC_ID
 export BUCKET_NAME=$BUCKET_NAME
 
-# Clone samples repository
+# Clone the repository and navigate to the required directory
 git clone https://github.com/GoogleCloudPlatform/python-docs-samples.git
 cd python-docs-samples/pubsub/streaming-analytics
 
 # Install dependencies
 pip install -U -r requirements.txt
 
-# Execute pipeline
-python PubSubToGCS.py \\
-  --project=\$PROJECT_ID \\
-  --region=\$REGION \\
-  --input_topic=projects/\$PROJECT_ID/topics/\$TOPIC_ID \\
-  --output_path=gs://\$BUCKET_NAME/samples/output \\
-  --runner=DataflowRunner \\
-  --window_size=2 \\
-  --num_shards=2 \\
-  --temp_location=gs://\$BUCKET_NAME/temp
-EOF
+# Run the Python script with parameters
+python PubSubToGCS.py \
+  --project=$PROJECT_ID \
+  --region=$REGION \
+  --input_topic=projects/$PROJECT_ID/topics/$TOPIC_ID \
+  --output_path=gs://$BUCKET_NAME/samples/output \
+  --runner=DataflowRunner \
+  --window_size=2 \
+  --num_shards=2 \
+  --temp_location=gs://$BUCKET_NAME/temp
+EOF_CP
 
-chmod +x run_pipeline.sh
-print_success "Pipeline script prepared"
-echo
+chmod +x run_pubsub_to_gcs_quicklab.sh
 
-# Docker Execution
-print_message "$ACTION_COLOR" "🐳" "Running pipeline in Docker container..."
+gcloud scheduler jobs run quicklab
+
+
 docker run -it \
   -e DEVSHELL_PROJECT_ID=$DEVSHELL_PROJECT_ID \
-  -v "$(pwd)/run_pipeline.sh:/run_pipeline.sh" \
+  -v "$(pwd)/run_pubsub_to_gcs_quicklab.sh:/run_pubsub_to_gcs_quicklab.sh" \
   python:3.7 \
-  /bin/bash -c "/run_pipeline.sh"
-print_success "Pipeline execution initiated"
-echo
+  /bin/bash -c "/run_pubsub_to_gcs_quicklab.sh"
 
 echo
 echo "${GREEN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
