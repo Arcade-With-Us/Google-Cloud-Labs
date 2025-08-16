@@ -1,17 +1,25 @@
 #!/bin/bash
-YELLOW='\033[0;33m'
-NC='\033[0m' 
-pattern=(
-"**********************************************************"
-"**                 S U B S C R I B E  TO                **"
-"**                     ARCADE WITH US                   **"
-"**                                                      **"
-"**********************************************************"
-)
-for line in "${pattern[@]}"
-do
-    echo -e "${YELLOW}${line}${NC}"
-done
+BLACK_TEXT=$'\033[0;90m'
+RED_TEXT=$'\033[0;91m'
+GREEN_TEXT=$'\033[0;92m'
+YELLOW_TEXT=$'\033[0;93m'
+BLUE_TEXT=$'\033[0;94m'
+MAGENTA_TEXT=$'\033[0;95m'
+CYAN_TEXT=$'\033[0;96m'
+WHITE_TEXT=$'\033[0;97m'
+DIM_TEXT=$'\033[2m'
+STRIKETHROUGH_TEXT=$'\033[9m'
+BOLD_TEXT=$'\033[1m'
+RESET_FORMAT=$'\033[0m'
+
+clear
+
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo
+
   echo "Please enter the ZONE:"
   read ZONE
   export ZONE
@@ -30,19 +38,14 @@ gcloud compute ssh "speaking-with-a-webpage" --zone "$ZONE" --project "$DEVSHELL
 sleep 5
 echo
 gcloud compute ssh "speaking-with-a-webpage" --zone "$ZONE" --project "$DEVSHELL_PROJECT_ID" --quiet --command "cd ~/speaking-with-a-webpage/02-webaudio && mvn clean jetty:run"
-pattern=(
-"**********************************************************"
-"**                 S U B S C R I B E  TO                **"
-"**                     ARCADE WITH US                   **"
-"**                                                      **"
-"**********************************************************"
-)
-for line in "${pattern[@]}"
-do
-    echo -e "${YELLOW}${line}${NC}"
-done
-echo "${RED}${BOLD}Congratulations${RESET}" "${WHITE}${BOLD}for${RESET}" "${GREEN}${BOLD}Completing the Lab !!!${RESET}"
-
-echo "" 
-echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe to my Channel (Arcade With Us):${RESET_FORMAT} ${BLUE_TEXT}${BOLD_TEXT}https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
 echo
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀  LAB COMPLETED SUCCESSFULLY  🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo
+
+echo ""
+echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe to my Channel (Arcade With Us):${RESET_FORMAT}"
+echo -e "${BLUE_TEXT}${BOLD_TEXT}https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
+echo
+#-----------------------------------------------------end----------------------------------------------------------#
