@@ -21,90 +21,109 @@ echo "${BLUE_TEXT}${BOLD_TEXT}         INITIATING EXECUTION...  ${RESET_FORMAT}"
 echo "${BLUE_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
 echo
 
-echo -n "${CYAN_TEXT}${BOLD_TEXT}Enter TOPIC Name: ${RESET_FORMAT}"
-read TOPIC_ID
-echo "${GREEN_TEXT}${BOLD_TEXT}You entered TOPIC Name: ${RESET_FORMAT}${TOPIC_ID}"
-echo
-echo -n "${CYAN_TEXT}${BOLD_TEXT}Enter MESSAGE: ${RESET_FORMAT}"
-read MESSAGE
-echo "${GREEN_TEXT}${BOLD_TEXT}You entered MESSAGE: ${RESET_FORMAT}${MESSAGE}"
-echo
-echo -n "${CYAN_TEXT}${BOLD_TEXT}Enter REGION: ${RESET_FORMAT}"
-read REGION
-echo "${GREEN_TEXT}${BOLD_TEXT}You entered REGION: ${RESET_FORMAT}${REGION}"
-echo
+# Get user inputs with validation
+print_message "$ACTION_COLOR" "📝" "Please provide the following configuration details:"
+
+read -p "${PROMPT_COLOR}${BOLD_TEXT}Enter Pub/Sub Topic Name: ${RESET_FORMAT}" TOPIC_ID
+print_message "$SUCCESS_COLOR" "✓" "Topic Name: $TOPIC_ID"
+
+read -p "${PROMPT_COLOR}${BOLD_TEXT}Enter Test Message: ${RESET_FORMAT}" MESSAGE
+print_message "$SUCCESS_COLOR" "✓" "Message: $MESSAGE"
+
+read -p "${PROMPT_COLOR}${BOLD_TEXT}Enter Region (e.g., us-central1): ${RESET_FORMAT}" REGION
+print_message "$SUCCESS_COLOR" "✓" "Region: $REGION"
+
 PROJECT_ID=$(gcloud config get-value project)
-echo "${CYAN_TEXT}${BOLD_TEXT}Using PROJECT_ID: ${RESET_FORMAT}${PROJECT_ID}"
+print_message "$ACTION_COLOR" "🆔" "Using Project ID: $PROJECT_ID"
 
 export BUCKET_NAME="${PROJECT_ID}-bucket"
-echo "${CYAN_TEXT}${BOLD_TEXT}Bucket Name will be: ${RESET_FORMAT}${BUCKET_NAME}"
+print_message "$ACTION_COLOR" "🪣" "Bucket Name: $BUCKET_NAME"
+echo
 
-echo "${YELLOW_TEXT}${BOLD_TEXT}Disabling Dataflow API if already enabled...${RESET_FORMAT}"
-gcloud services disable dataflow.googleapis.com
+# API Management
+print_message "$ACTION_COLOR" "⚙️" "Configuring required APIs..."
+gcloud services disable dataflow.googleapis.com --quiet
+gcloud services enable dataflow.googleapis.com cloudscheduler.googleapis.com --quiet
+print_success "APIs configured successfully"
+echo
 
-echo "${YELLOW_TEXT}${BOLD_TEXT}Enabling required APIs: Dataflow and Cloud Scheduler...${RESET_FORMAT}"
-gcloud services enable dataflow.googleapis.com
-gcloud services enable cloudscheduler.googleapis.com
+# Resource Creation
+print_message "$ACTION_COLOR" "🛠️" "Creating infrastructure resources..."
 
-echo "${YELLOW_TEXT}${BOLD_TEXT}Creating a Cloud Storage bucket: ${RESET_FORMAT}gs://${BUCKET_NAME}"
-gsutil mb gs://$BUCKET_NAME
+print_message "$TEXT_COLOR" "🪣" "Creating Cloud Storage bucket..."
+gsutil mb -l $REGION gs://$BUCKET_NAME
 
-echo "${YELLOW_TEXT}${BOLD_TEXT}Creating Pub/Sub topic: ${RESET_FORMAT}${TOPIC_ID}"
+print_message "$TEXT_COLOR" "📨" "Creating Pub/Sub topic..."
 gcloud pubsub topics create $TOPIC_ID
 
-echo "${YELLOW_TEXT}${BOLD_TEXT}Creating App Engine application in region: ${RESET_FORMAT}${REGION}"
-gcloud app create --region=$REGION
+print_message "$TEXT_COLOR" "🚀" "Creating App Engine application..."
+gcloud app create --region=$REGION --quiet
 
-echo "${MAGENTA_TEXT}${BOLD_TEXT}Waiting for App Engine setup to complete...${RESET_FORMAT}"
+print_message "$WARNING_COLOR" "⏳" "Waiting for App Engine initialization..."
 sleep 100
+print_success "Infrastructure resources created successfully"
+echo
 
-echo "${YELLOW_TEXT}${BOLD_TEXT}Creating a Cloud Scheduler job to publish messages to the topic...${RESET_FORMAT}"
-gcloud scheduler jobs create pubsub arcadewithus --schedule="* * * * *" \
-  --topic=$TOPIC_ID --message-body="$MESSAGE"
+# Scheduler Configuration
+print_message "$ACTION_COLOR" "⏰" "Configuring Cloud Scheduler..."
+gcloud scheduler jobs create pubsub data-pipeline-trigger \
+  --schedule="* * * * *" \
+  --topic=$TOPIC_ID \
+  --message-body="$MESSAGE" \
+  --quiet
 
-echo "${MAGENTA_TEXT}${BOLD_TEXT}Waiting for the Scheduler job to be ready...${RESET_FORMAT}"
+print_message "$WARNING_COLOR" "⏳" "Waiting for Scheduler initialization..."
 sleep 20
 
-echo "${YELLOW_TEXT}${BOLD_TEXT}Running the Cloud Scheduler job manually for testing...${RESET_FORMAT}"
-gcloud scheduler jobs run arcadewithus
+print_message "$TEXT_COLOR" "🔧" "Testing Scheduler configuration..."
+gcloud scheduler jobs run data-pipeline-trigger --quiet
+print_success "Scheduler configured successfully"
+echo
 
-echo "${YELLOW_TEXT}${BOLD_TEXT}Creating a script to run Pub/Sub to GCS pipeline...${RESET_FORMAT}"
-cat > run_pubsub_to_gcs_arcadewithus.sh <<EOF_CP
+# Dataflow Pipeline Setup
+print_message "$ACTION_COLOR" "🌊" "Preparing Dataflow pipeline..."
+
+cat > run_pipeline.sh <<EOF
 #!/bin/bash
 
-# Set environment variables
+# Environment configuration
 export PROJECT_ID=$PROJECT_ID
 export REGION=$REGION
 export TOPIC_ID=$TOPIC_ID
 export BUCKET_NAME=$BUCKET_NAME
 
-# Clone the repository and navigate to the required directory
+# Clone samples repository
 git clone https://github.com/GoogleCloudPlatform/python-docs-samples.git
 cd python-docs-samples/pubsub/streaming-analytics
 
 # Install dependencies
 pip install -U -r requirements.txt
 
-# Run the Python script with parameters
-python PubSubToGCS.py \
-  --project=$PROJECT_ID \
-  --region=$REGION \
-  --input_topic=projects/$PROJECT_ID/topics/$TOPIC_ID \
-  --output_path=gs://$BUCKET_NAME/samples/output \
-  --runner=DataflowRunner \
-  --window_size=2 \
-  --num_shards=2 \
-  --temp_location=gs://$BUCKET_NAME/temp
-EOF_CP
+# Execute pipeline
+python PubSubToGCS.py \\
+  --project=\$PROJECT_ID \\
+  --region=\$REGION \\
+  --input_topic=projects/\$PROJECT_ID/topics/\$TOPIC_ID \\
+  --output_path=gs://\$BUCKET_NAME/samples/output \\
+  --runner=DataflowRunner \\
+  --window_size=2 \\
+  --num_shards=2 \\
+  --temp_location=gs://\$BUCKET_NAME/temp
+EOF
 
-chmod +x run_pubsub_to_gcs_arcadecrew.sh
+chmod +x run_pipeline.sh
+print_success "Pipeline script prepared"
+echo
 
-echo "${YELLOW_TEXT}${BOLD_TEXT}Running the Pub/Sub to GCS pipeline script inside a Docker container...${RESET_FORMAT}"
+# Docker Execution
+print_message "$ACTION_COLOR" "🐳" "Running pipeline in Docker container..."
 docker run -it \
   -e DEVSHELL_PROJECT_ID=$DEVSHELL_PROJECT_ID \
-  -v "$(pwd)/run_pubsub_to_gcs_arcadecrew.sh:/run_pubsub_to_gcs_arcadecrew.sh" \
+  -v "$(pwd)/run_pipeline.sh:/run_pipeline.sh" \
   python:3.7 \
-  /bin/bash -c "/run_pubsub_to_gcs_arcadecrew.sh"
+  /bin/bash -c "/run_pipeline.sh"
+print_success "Pipeline execution initiated"
+echo
 
 echo
 echo "${GREEN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
