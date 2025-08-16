@@ -59,17 +59,17 @@ echo "${MAGENTA_TEXT}${BOLD_TEXT}Waiting for App Engine setup to complete...${RE
 sleep 100
 
 echo "${YELLOW_TEXT}${BOLD_TEXT}Creating a Cloud Scheduler job to publish messages to the topic...${RESET_FORMAT}"
-gcloud scheduler jobs create pubsub arcadecrew --schedule="* * * * *" \
+gcloud scheduler jobs create pubsub arcadewithus --schedule="* * * * *" \
   --topic=$TOPIC_ID --message-body="$MESSAGE"
 
 echo "${MAGENTA_TEXT}${BOLD_TEXT}Waiting for the Scheduler job to be ready...${RESET_FORMAT}"
 sleep 20
 
 echo "${YELLOW_TEXT}${BOLD_TEXT}Running the Cloud Scheduler job manually for testing...${RESET_FORMAT}"
-gcloud scheduler jobs run arcadecrew
+gcloud scheduler jobs run arcadewithus
 
 echo "${YELLOW_TEXT}${BOLD_TEXT}Creating a script to run Pub/Sub to GCS pipeline...${RESET_FORMAT}"
-cat > run_pubsub_to_gcs_arcadecrew.sh <<EOF_CP
+cat > run_pubsub_to_gcs_arcadewithus.sh <<EOF_CP
 #!/bin/bash
 
 # Set environment variables
@@ -97,14 +97,14 @@ python PubSubToGCS.py \
   --temp_location=gs://$BUCKET_NAME/temp
 EOF_CP
 
-chmod +x run_pubsub_to_gcs_arcadecrew.sh
+chmod +x run_pubsub_to_gcs_arcadewithus.sh
 
 echo "${YELLOW_TEXT}${BOLD_TEXT}Running the Pub/Sub to GCS pipeline script inside a Docker container...${RESET_FORMAT}"
 docker run -it \
   -e DEVSHELL_PROJECT_ID=$DEVSHELL_PROJECT_ID \
-  -v "$(pwd)/run_pubsub_to_gcs_arcadecrew.sh:/run_pubsub_to_gcs_arcadecrew.sh" \
+  -v "$(pwd)/run_pubsub_to_gcs_arcadewithus.sh:/run_pubsub_to_gcs_arcadewithus.sh" \
   python:3.7 \
-  /bin/bash -c "/run_pubsub_to_gcs_arcadecrew.sh"
+  /bin/bash -c "/run_pubsub_to_gcs_arcadewithus.sh"
 
 echo
 echo "${GREEN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
