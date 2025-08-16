@@ -37,6 +37,9 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
+export REGION=
+```
+```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Stream%20Processing%20with%20Cloud%20Pub%20Sub%20and%20Dataflow:%20Qwik%20Start/GSP903.sh
 
 sudo chmod +x GSP903.sh
