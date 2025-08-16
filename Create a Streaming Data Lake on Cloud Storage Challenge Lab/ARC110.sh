@@ -97,14 +97,14 @@ python PubSubToGCS.py \
   --temp_location=gs://$BUCKET_NAME/temp
 EOF_CP
 
-chmod +x run_pubsub_to_gcs_arcadewithus.sh
+chmod +x run_pubsub_to_gcs_arcadecrew.sh
 
 echo "${YELLOW_TEXT}${BOLD_TEXT}Running the Pub/Sub to GCS pipeline script inside a Docker container...${RESET_FORMAT}"
 docker run -it \
   -e DEVSHELL_PROJECT_ID=$DEVSHELL_PROJECT_ID \
-  -v "$(pwd)/run_pubsub_to_gcs_arcadewithus.sh:/run_pubsub_to_gcs_arcadewithus.sh" \
+  -v "$(pwd)/run_pubsub_to_gcs_arcadecrew.sh:/run_pubsub_to_gcs_arcadecrew.sh" \
   python:3.7 \
-  /bin/bash -c "/run_pubsub_to_gcs_arcadewithus.sh"
+  /bin/bash -c "/run_pubsub_to_gcs_arcadecrew.sh"
 
 echo
 echo "${GREEN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
