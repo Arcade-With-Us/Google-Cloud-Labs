@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Prepare Data for ML APIs on Google Cloud: Challenge Lab || [GSP323]  ✨
+✨🌐  Prepare Data for ML APIs on Google Cloud: Challenge Lab || GSP323  ✨
 </h1>
 
 <div align="center">
