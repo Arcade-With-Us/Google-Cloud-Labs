@@ -42,6 +42,19 @@ sudo chmod +x GSP001.sh
 
 ./GSP001.sh
 ```
+### After creating both instances follow these steps:
+1. Go to Compute Engine-->VM instances
+2. Click SSH bu8tton next to the **`gcelab`** instance.
+3. Run these commands
+   ```
+   sudo apt-get update
+   ```
+   ```
+   sudo apt-get install -y nginx
+   ```
+   ```
+   ps auwx | grep nginx
+   ```
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
