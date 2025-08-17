@@ -34,7 +34,7 @@ Run the following commands in **Cloud Shell**:
 export MESSAGE=""
 ```
 ```
-curl -LO github.com/Arcade-With-Us/Google-Cloud-Labs/blob/main/App%20Engine%3A%203%20Ways%3A%20Challenge%20Lab/ARC112.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/raw/refs/heads/main/App%20Engine:%203%20Ways:%20Challenge%20Lab/ARC112.sh
 
 sudo chmod +x ARC112.sh
 
