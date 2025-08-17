@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Creating a Virtual Machine|| GSP001 ✨
+✨🌐  Creating a Virtual Machine|| GSP001 🌐✨
 </h1>
 
 <div align="center">
@@ -36,7 +36,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ### Run the following Commands in CloudShell
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Create%20a%20Virtual%20Machine/GSP001.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Create%20a%20Virtual%20Machine/GSP001.sh
 
 sudo chmod +x GSP001.sh
 
