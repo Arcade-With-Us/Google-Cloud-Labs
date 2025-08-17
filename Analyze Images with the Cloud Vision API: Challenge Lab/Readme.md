@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐 Analyze Images with the Cloud Vision API: Challenge Lab || ARC122 ✨
+✨ Analyze Images with the Cloud Vision API: Challenge Lab || ARC122 ✨
 <div align="center">
 <a href="https://www.cloudskillsboost.google/focuses/64748?parent=catalog" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/Open_Lab-Cloud_Skills_Boost-4285F4?style=for-the-badge&logo=google&logoColor=white&labelColor=34A853" alt="Open Lab Badge">
@@ -33,7 +33,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Analyze%20Images%20with%20the%20Cloud%20Vision%20API%3A%20Challenge%20Lab/ARC122.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Analyze%20Images%20with%20the%20Cloud%20Vision%20API%3A%20Challenge%20Lab/ARC122.sh
 
 sudo chmod +x ARC122.sh
 
