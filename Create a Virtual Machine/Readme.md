@@ -46,6 +46,7 @@ sudo chmod +x GSP001.sh
 1. Go to Compute Engine-->VM instances
 2. Click SSH bu8tton next to the **`gcelab`** instance.
 3. Run these commands
+
    ```
    sudo apt-get update
    ```
