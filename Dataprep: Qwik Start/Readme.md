@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Dataprep: Qwik Start || [GSP105]  ✨
+✨🌐  Dataprep: Qwik Start || GSP105  ✨
 </h1>
 
 <div align="center">
