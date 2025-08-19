@@ -64,7 +64,7 @@ gcloud dataplex assets create customer-online-sessions --location=$REGION \
 
 echo
 echo "${YELLOW_TEXT}${BOLD_TEXT}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}🎥         NOW FOLLOW VIDEO STEPS         🎥${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}   🎥      NOW FOLLOW VIDEO STEPS      🎥   ${RESET_FORMAT}"
 echo "${YELLOW_TEXT}${BOLD_TEXT}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~${RESET_FORMAT}"
 echo
 
