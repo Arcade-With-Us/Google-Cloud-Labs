@@ -46,6 +46,8 @@ sudo chmod +x GSP1145.sh
 ## Fpr the last atsk:
 
 * Click on the **customer_details** table.
+* Click Attach tags.
+* For Choose what to tag, enable the checkboxes for the following columns:
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
