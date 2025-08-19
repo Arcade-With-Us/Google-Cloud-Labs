@@ -43,11 +43,24 @@ sudo chmod +x GSP1145.sh
 ./GSP1145.sh
 ```
 
-## Fpr the last atsk:
+## Fpr the last task:
 
 * Click on the **customer_details** table.
 * Click Attach tags.
 * For Choose what to tag, enable the checkboxes for the following columns:
+    1. zip
+    2. state
+    3. last_name
+    4. country
+    5. email
+    6. latitude
+    7. first_name
+    8. city
+    9. longitude
+* Click OK.
+* For Choose the tag templates, select **Protected data template**.
+* For Protected data flag, select **YES**.
+* Click Save.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
