@@ -42,6 +42,10 @@ sudo chmod +x GSP1145.sh
 
 ./GSP1145.sh
 ```
+
+## Fpr the last atsk:
+
+* Click on the **customer_details** table.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
