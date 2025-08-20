@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Introduction to SQL for BigQuery and Cloud SQL|| [GSP281]  ✨
+✨  Introduction to SQL for BigQuery and Cloud SQL|| GSP281  ✨
 </h1>
 
 <div align="center">
@@ -33,7 +33,7 @@ Run the following commands in **Cloud Shell**:
 export REGION=
 ```
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Introduction%20to%20SQL%20for%20BigQuery%20and%20Cloud%20SQL/GSP281.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Introduction%20to%20SQL%20for%20BigQuery%20and%20Cloud%20SQL/GSP281.sh
 
 sudo chmod +x GSP281.sh
 
