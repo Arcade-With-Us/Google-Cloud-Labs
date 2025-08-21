@@ -1,4 +1,4 @@
-1 align="center">
+<h1 align="center">
 ✨ User Authentication: Identity-Aware Proxy || GSP499 ✨
 </h1>
 
