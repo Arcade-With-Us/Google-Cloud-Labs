@@ -30,8 +30,7 @@
 ## 💻 **Execute in Cloud Shell**  
 Run the following commands in **Cloud Shell**:
 ```bash
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Google%20Cloud%20Skill%20Badges%20Ultimate%20Quick%20Guide/Deploy%20Kubernetes%20Applications%20on%20Google%20Cloud%20Challenge%20Lab/GSP318.sh
-
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Deploy%20Kubernetes%20Applications%20on%20Google%20Cloud%20Challenge%20Lab/GSP318.sh
 sudo chmod +x GSP318.sh
 
 ./GSP318.sh
