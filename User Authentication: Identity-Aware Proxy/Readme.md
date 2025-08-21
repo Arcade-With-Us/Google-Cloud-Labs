@@ -56,6 +56,12 @@ sudo chmod +x GSP499.sh
     * Click Checkbox to agree the User Data Policy and click Continue and then click Create.
 
 * Go to `Identity-Aware Proxy` from [here](https://console.cloud.google.com/security/iap?)
+    * Return to the Identity-Aware Proxy page and refresh it. You should now see a list of resources you can protect.
+    * Click the toggle button in the IAP column in the App Engine app row to turn IAP on.
+    * The domain will be protected by IAP. Click Turn On.
+    * Click Add Principal.
+    * Enter your Student email address.
+    * Then, pick the Cloud IAP > IAP-Secured Web App User role to assign to that address.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
