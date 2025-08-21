@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Deploy Kubernetes Applications on Google Cloud Challenge Lab || GSP318  ✨
+✨  Deploy Kubernetes Applications on Google Cloud Challenge Lab || GSP318  ✨
 </h1>
 
 <div align="center">
