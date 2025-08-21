@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Troubleshooting Common SQL Errors with BigQuery|| [GSP408]  ✨
+✨🌐  Troubleshooting Common SQL Errors with BigQuery|| GSP408  ✨
 </h1>
 
 <div align="center">
@@ -30,7 +30,7 @@
 ## 💻 **Execute in Cloud Shell**  
 Run the following commands in **Cloud Shell**:
 ```bash
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Troubleshooting%20Common%20SQL%20Errors%20with%20BigQuery/GSP408.sh
+curl -LOraw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Troubleshooting%20Common%20SQL%20Errors%20with%20BigQuery/GSP408.sh
 
 sudo chmod +x GSP408.sh
 
