@@ -33,7 +33,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 Run the following commands in **Cloud Shell**:
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Derive%20Insights%20from%20BigQuery%20Data%3A%20Challenge%20Lab/GSP787.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Derive%20Insights%20from%20BigQuery%20Data%3A%20Challenge%20Lab/GSP787.sh
 
 sudo chmod +x GSP787.sh
 
