@@ -1,5 +1,5 @@
 <h1 align="center">
-✨ Monitoring and Logging for Cloud Run Functions || GSP092 || ✨
+✨ Monitoring and Logging for Cloud Run Functions || GSP092 ✨
 </h1>
 
 <div align="center">
