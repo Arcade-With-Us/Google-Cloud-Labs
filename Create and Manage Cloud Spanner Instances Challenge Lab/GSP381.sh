@@ -20,7 +20,7 @@ echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORM
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
-gcloud spanner instances create banking-ops-instance --config=regional-$REGION --description="cloudwalabanda" --nodes=1
+gcloud spanner instances create banking-ops-instance --config=regional-$REGION --description="arcadewithus" --nodes=1
 
 gcloud spanner databases create banking-ops-db --instance=banking-ops-instance
 
@@ -103,9 +103,9 @@ EOF_CP
 
 gsutil mb gs://$DEVSHELL_PROJECT_ID
 
-touch cloudwalabanda
+touch arcadewithus
 
-gsutil cp emptyfile gs://$DEVSHELL_PROJECT_ID/tmp/cloudwalabanda
+gsutil cp emptyfile gs://$DEVSHELL_PROJECT_ID/tmp/arcadewithus
 
 gsutil cp Customer_List_500.csv gs://$DEVSHELL_PROJECT_ID
 
