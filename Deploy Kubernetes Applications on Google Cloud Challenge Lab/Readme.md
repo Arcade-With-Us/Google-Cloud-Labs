@@ -31,6 +31,7 @@
 Run the following commands in **Cloud Shell**:
 ```bash
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Deploy%20Kubernetes%20Applications%20on%20Google%20Cloud%20Challenge%20Lab/GSP318.sh
+
 sudo chmod +x GSP318.sh
 
 ./GSP318.sh
