@@ -30,7 +30,7 @@
 ## 💻 **Execute in Cloud Shell**  
 Run the following commands in **Cloud Shell**:
 ```bash
-curl -LOraw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Troubleshooting%20Common%20SQL%20Errors%20with%20BigQuery/GSP408.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Troubleshooting%20Common%20SQL%20Errors%20with%20BigQuery/GSP408.sh
 
 sudo chmod +x GSP408.sh
 
