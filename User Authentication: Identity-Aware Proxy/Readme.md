@@ -46,6 +46,14 @@ sudo chmod +x GSP499.sh
 ./GSP499.sh
 ```
 * Go to `OAuth consent screen` from [here](https://console.cloud.google.com/apis/credentials/consent?)
+    * Click Get Started.
+    * For App name, enter IAP Example.
+    * Click User support email, and then click the student email and then click Next.
+    * For Audience, select Internal, and then click Next.
+    * On the left panel of the lab instructions, copy the Username.
+    * For Contact information, paste the copied username.
+    * Click Next.
+    * Click Checkbox to agree the User Data Policy and click Continue and then click Create.
 
 * Go to `Identity-Aware Proxy` from [here](https://console.cloud.google.com/security/iap?)
 ---
