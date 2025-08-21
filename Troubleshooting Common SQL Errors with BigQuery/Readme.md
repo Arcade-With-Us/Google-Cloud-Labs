@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Troubleshooting Common SQL Errors with BigQuery|| GSP408  ✨
+✨ Troubleshooting Common SQL Errors with BigQuery|| GSP408  ✨
 </h1>
 
 <div align="center">
