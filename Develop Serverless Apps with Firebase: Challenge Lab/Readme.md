@@ -1,5 +1,5 @@
 <h1 align="center">
-✨ Develop Serverless Apps with Firebase: Challenge Lab || GSP344 ✨
+✨ Develop Serverless Apps with Firebase: Challenge Lab | GSP344 ✨
 </h1>
 
 <div align="center">
