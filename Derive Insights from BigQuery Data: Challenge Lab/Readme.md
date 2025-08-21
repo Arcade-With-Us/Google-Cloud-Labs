@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Derive Insights from BigQuery Data: Challenge Lab|| [GSP787]  ✨
+✨🌐  Derive Insights from BigQuery Data: Challenge Lab|| GSP787  ✨
 </h1>
 
 <div align="center">
