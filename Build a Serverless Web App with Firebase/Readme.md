@@ -63,7 +63,7 @@
 
 ### Now Set up rules:
 
-1. Click on the Build dropdown button in the left-hand navigation panel.
+1. Click on the **Build** dropdown button in the left-hand navigation panel.
 2. Select Firestore Database tile and then click on **Create database**:
 3. Accept the default settings and click **Next**
 4. Click Create to provision Cloud Firestore
