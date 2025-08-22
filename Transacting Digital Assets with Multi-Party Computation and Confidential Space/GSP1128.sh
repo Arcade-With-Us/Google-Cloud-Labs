@@ -21,21 +21,14 @@ echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}
 echo
 
 # Export variables after collecting input
+read -p "${YELLOW}${BOLD}Enter your ZONE: " ZONE
 export ZONE
-
-
 gcloud auth list
-
 export REGION=${ZONE%-*}
-
 export MPC_PROJECT_ID=$(gcloud config get-value core/project)
-
 echo $MPC_PROJECT_ID
-
 gcloud services enable cloudkms.googleapis.com compute.googleapis.com confidentialcomputing.googleapis.com iamcredentials.googleapis.com artifactregistry.googleapis.com
-
 gcloud kms keyrings create mpc-keys --location=global
-
 gcloud kms keys create mpc-key --location=global \
   --keyring=mpc-keys --purpose=encryption --protection-level=hsm
 
@@ -45,7 +38,6 @@ gcloud kms keys add-iam-policy-binding \
   --role='roles/cloudkms.cryptoKeyEncrypter' 
 
 echo -n "00000000000000000000000000000000" >> alice-key-share
-
 echo -n "00000000000000000000000000000001" >> bob-key-share
 
 gcloud kms encrypt \
@@ -63,10 +55,8 @@ gcloud kms encrypt \
     --ciphertext-file bob-encrypted-key-share
 
 gcloud storage buckets create gs://$MPC_PROJECT_ID-mpc-encrypted-keys --location=$REGION
-
 gcloud storage cp alice-encrypted-key-share gs://$MPC_PROJECT_ID-mpc-encrypted-keys/
 gcloud storage cp bob-encrypted-key-share gs://$MPC_PROJECT_ID-mpc-encrypted-keys/
-
 gcloud iam service-accounts create trusted-mpc-account
 
 gcloud kms keys add-iam-policy-binding mpc-key \
@@ -75,7 +65,6 @@ gcloud kms keys add-iam-policy-binding mpc-key \
 --role='roles/cloudkms.cryptoKeyDecrypter'
 
 gcloud iam workload-identity-pools create trusted-workload-pool --location="global"
-
 gcloud iam workload-identity-pools providers create-oidc attestation-verifier \
   --location="global" \
   --workload-identity-pool="trusted-workload-pool" \
@@ -95,7 +84,6 @@ trusted-mpc-account@$MPC_PROJECT_ID.iam.gserviceaccount.com \
 --member="principalSet://iam.googleapis.com/projects/$(gcloud projects describe $MPC_PROJECT_ID --format="value(projectNumber)")/locations/global/workloadIdentityPools/trusted-workload-pool/*"
 
 gcloud iam service-accounts create run-confidential-vm
-
 gcloud iam service-accounts add-iam-policy-binding \
   run-confidential-vm@$MPC_PROJECT_ID.iam.gserviceaccount.com \
   --member="user:$(gcloud config get-value account)" \
@@ -116,11 +104,7 @@ gcloud compute instances create-with-container mpc-lab-ethereum-node  \
   --container-arg=--wallet.accounts=\"0x0000000000000000000000000000000000000000000000000000000000000001,0x21E19E0C9BAB2400000\" \
   --container-arg=--port=80
 
-
-
-
 gcloud storage buckets create gs://$MPC_PROJECT_ID-mpc-results-storage --location=$REGION
-
 
 gsutil iam ch \
   serviceAccount:run-confidential-vm@$MPC_PROJECT_ID.iam.gserviceaccount.com:objectCreator \
