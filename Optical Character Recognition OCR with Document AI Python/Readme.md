@@ -52,7 +52,7 @@ sudo chmod +x GSP1138.sh
 
     ![Image](https://cdn.qwiklabs.com/g1eajodw6E%2B28ey6qXXgkVzV0ZPz0uPvD6NkUmk1Mco%3D)
 
-  * [Download the PDF file](https://github.com/Arcade-With-Us/Google-Cloud-Labs/raw/refs/head/main/Optical%20Character%20Recognition%20OCR%20with%20Document%20AI%20Python/Winnie_the_Pooh_3_Pages.pdf), which contains the first 3 pages of the novel "**Winnie the Pooh**" by A.A. Milne.
+  * [Download the PDF file](https://github.com/Arcade-With-Us/Google-Cloud-Labs/refs/head/main/Optical%20Character%20Recognition%20OCR%20with%20Document%20AI%20Python/Winnie_the_Pooh_3_Pages.pdf), which contains the first 3 pages of the novel "**Winnie the Pooh**" by A.A. Milne.
   * Click **Upload Test Document** and select the PDF file you downloaded.
 ---
 
