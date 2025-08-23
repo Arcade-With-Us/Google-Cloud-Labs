@@ -51,6 +51,8 @@ sudo chmod +x GSP1138.sh
   * Copy your **Processor ID**. You must use this in your code later.
 
     ![Image](https://cdn.qwiklabs.com/g1eajodw6E%2B28ey6qXXgkVzV0ZPz0uPvD6NkUmk1Mco%3D)
+
+  * [Download the PDF file](), which contains the first 3 pages of the novel "**Winnie the Pooh**" by A.A. Milne.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
