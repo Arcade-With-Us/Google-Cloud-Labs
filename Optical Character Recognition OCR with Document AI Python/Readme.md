@@ -45,6 +45,8 @@ sudo chmod +x GSP1138.sh
 ```
 ### For the Processor_id:
   * From the Navigation Menu, click **View all Products**. Under **Artificial Intelligence**, select **Document AI**.
+  * Click **Explore Processors**, and click **Document OCR**.
+  * 
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
