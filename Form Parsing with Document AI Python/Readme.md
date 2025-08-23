@@ -44,6 +44,7 @@ sudo chmod +x GSP1139.sh
 ./GSP1139.sh
 ```
 * Open link: [Click Here](https://console.cloud.google.com/ai/document-ai?inv=1&invt=Ab4lxg)
+* Click **Explore Processors**, and inside **General** click **Form Parser** to open Create Processor page.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
