@@ -50,7 +50,7 @@ sudo chmod +x GSP1138.sh
   * Click **Create** to create your processor.
   * Copy your **Processor ID**. You must use this in your code later.
 
-    [Image]()
+    ![Image](https://cdn.qwiklabs.com/g1eajodw6E%2B28ey6qXXgkVzV0ZPz0uPvD6NkUmk1Mco%3D)
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
