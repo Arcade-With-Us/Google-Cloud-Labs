@@ -44,7 +44,7 @@ sudo chmod +x GSP1138.sh
 ./GSP1138.sh
 ```
 ### For the Processor_id:
-  * From the Navigation Menu, click **View all Products**. Under **Artificial Intelligence**, select **Document AI**.
+  * Open link: [Document Ai](https://console.cloud.google.com/ai/document-ai?inv=1&invt=Ab4lxg)
   * Click **Explore Processors**, and click **Document OCR**.
   * Give it the name `lab-ocr` and select the **closest region** on the list.
   * Click **Create** to create your processor.
