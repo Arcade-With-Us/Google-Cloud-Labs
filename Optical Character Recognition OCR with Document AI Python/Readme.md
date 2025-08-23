@@ -43,6 +43,8 @@ sudo chmod +x GSP1138.sh
 
 ./GSP1138.sh
 ```
+### For the Processor_id:
+  * From the Navigation Menu, click **View all Products**. Under **Artificial Intelligence**, select **Document AI**.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
