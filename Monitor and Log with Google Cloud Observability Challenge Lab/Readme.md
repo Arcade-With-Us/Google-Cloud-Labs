@@ -37,11 +37,15 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Introduction%20to%20Cloud%20Dataproc%20Hadoop%20and%20Spark%20on%20Google%20Cloud/GSP123.sh
+export METRIC=
+export VALUE=
+```
+```
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Monitor%20and%20Log%20with%20Google%20Cloud%20Observability%20Challenge%20Lab/GSP338.sh
 
-sudo chmod +x GSP123.sh
+sudo chmod +x GSP338.sh
 
-./GSP123.sh
+./GSP338.sh
 ```
 ---
 
@@ -76,6 +80,6 @@ You've successfully completed the lab. **Way to go!** 🚀
     <em>This guide is provided for educational purposes. Always follow Qwiklabs terms of service and YouTube's community guidelines.</em>
   </p>
   <p style="font-size: 12px; color: #586069;">
-    <em>Last updated: June 2025</em>
+    <em>Last updated: August 2025</em>
   </p>
 </div>
