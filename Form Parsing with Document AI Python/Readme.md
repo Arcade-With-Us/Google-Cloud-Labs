@@ -45,6 +45,9 @@ sudo chmod +x GSP1139.sh
 ```
 * Open link: [Click Here](https://console.cloud.google.com/ai/document-ai?inv=1&invt=Ab4lxg)
 * Click **Explore Processors**, and inside **General** click **Form Parser** to open Create Processor page.
+* Give it the name `lab-form-parser` and select the **closest region** on the list.
+* Click **Create** to create your processor.
+* **Copy** your Processor ID. You must use this in your code later.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
