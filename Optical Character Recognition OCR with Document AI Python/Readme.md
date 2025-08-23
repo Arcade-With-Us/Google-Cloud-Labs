@@ -46,7 +46,11 @@ sudo chmod +x GSP1138.sh
 ### For the Processor_id:
   * From the Navigation Menu, click **View all Products**. Under **Artificial Intelligence**, select **Document AI**.
   * Click **Explore Processors**, and click **Document OCR**.
-  * 
+  * Give it the name `lab-ocr` and select the **closest region** on the list.
+  * Click **Create** to create your processor.
+  * Copy your **Processor ID**. You must use this in your code later.
+
+    [Image]()
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
