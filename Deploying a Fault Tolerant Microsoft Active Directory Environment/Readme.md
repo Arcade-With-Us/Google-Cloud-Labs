@@ -36,6 +36,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ## 💻 **Execute in Cloud Shell** 
 
+* **Make sure to run the first command from task no 1 before running the script in cloudshell.**
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Deploying%20a%20Fault%20Tolerant%20Microsoft%20Active%20Directory%20Environment/GSP118.sh
 
