@@ -1,4 +1,4 @@
-<h1 align="center">
+ <h1 align="center">
 ✨  Dataproc: Qwik Start - Command Line || GSP104 ✨
 </h1>
 
@@ -40,7 +40,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 export REGION=
 ```
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Dataproc%3A%20Qwik%20Start%20-%20Command%20Line/GSP104.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Dataproc%20Qwik%20Start%20Command%20Line/GSP104.sh
 
 sudo chmod +x GSP104.sh
 
