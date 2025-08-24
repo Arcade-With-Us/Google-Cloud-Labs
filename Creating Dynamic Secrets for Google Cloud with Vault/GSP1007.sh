@@ -20,6 +20,45 @@ echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORM
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
+#!/bin/bash
+
+# HashiCorp Vault with GCP Integration - Complete Lab Script
+# Based on Google Cloud Skills Boost Lab Instructions
+
+# Color codes for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+WHITE='\033[1;37m'
+BOLD='\033[1m'
+NC='\033[0m' # No Color
+
+# Function to print colored status messages
+print_status() {
+    echo -e "${BLUE}[INFO]${NC} $1"
+}
+
+print_success() {
+    echo -e "${GREEN}[SUCCESS]${NC} $1"
+}
+
+print_warning() {
+    echo -e "${YELLOW}[WARNING]${NC} $1"
+}
+
+print_error() {
+    echo -e "${RED}[ERROR]${NC} $1"
+}
+
+print_step() {
+    echo -e "\n${PURPLE}════════════════════════════════════════════════════════════════════════${NC}"
+    echo -e "${BOLD}$1${NC}"
+    echo -e "${PURPLE}════════════════════════════════════════════════════════════════════════${NC}"
+}
+
 print_task() {
     echo -e "\n${CYAN}▶ TASK: $1${NC}"
     echo -e "${CYAN}════════════════════════════════════════════════════════════${NC}"
@@ -341,6 +380,8 @@ vault write gcp/static-account/my-key-account \
 print_success "Static account for service account keys configured successfully!"
 
 echo -e "\n${GREEN}✓ TASK 6 COMPLETED: Static accounts configuration successful!${NC}"
+
+print_success "All lab tasks completed successfully! 🎉"
 
 echo
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
