@@ -37,7 +37,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/mainManaging%20Vault%20Tokens/GSP1006.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Managing%20Vault%20Tokens/GSP1006.sh
 
 sudo chmod +x GSP1006.sh
 
