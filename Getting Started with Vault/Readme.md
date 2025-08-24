@@ -39,9 +39,9 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Getting%20Started%20with%20Vault/GSP1003.sh
 
-sudo chmod +x GSP123.sh
+sudo chmod +x GSP1003.sh
 
-./GSP123.sh
+./GSP1003.sh
 ```
 ---
 
@@ -76,6 +76,6 @@ You've successfully completed the lab. **Way to go!** 🚀
     <em>This guide is provided for educational purposes. Always follow Qwiklabs terms of service and YouTube's community guidelines.</em>
   </p>
   <p style="font-size: 12px; color: #586069;">
-    <em>Last updated: June 2025</em>
+    <em>Last updated: August 2025</em>
   </p>
 </div>
