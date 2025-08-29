@@ -35,7 +35,7 @@ sudo chmod +x GSP345.sh
 
 ./GSP345.sh
 ```
-* When it pop up to enter a value: `Just hit **Yes** and press Enter`
+* When it pop up to enter a value: `Just hit Yes and press Enter`
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
