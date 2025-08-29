@@ -39,7 +39,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Configure%20Service%20Accounts%20and%20IAM%20for%20Google%20Cloud%3A%20Challenge%20Lab/ARC134.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Configure%20Service%20Accounts%20and%20IAM%20for%20Google%20Cloud%3A%20Challenge%20Lab/ARC134.sh
 
 sudo chmod +x ARC134.sh
 
