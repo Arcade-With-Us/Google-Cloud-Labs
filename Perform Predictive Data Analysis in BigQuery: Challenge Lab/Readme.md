@@ -30,7 +30,7 @@
 ## 💻 **Execute in Cloud Shell**  
 Run the following commands in **Cloud Shell**:
 ```bash
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Perform%20Predictive%20Data%20Analysis%20in%20BigQuery%3A%20Challenge%20Lab/GSP374.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Perform%20Predictive%20Data%20Analysis%20in%20BigQuery%3A%20Challenge%20Lab/GSP374.sh
 
 sudo chmod +x GSP374.sh
 
