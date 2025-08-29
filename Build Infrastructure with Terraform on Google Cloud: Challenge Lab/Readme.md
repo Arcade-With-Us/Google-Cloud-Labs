@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Build Infrastructure with Terraform on Google Cloud: Challenge Lab || GSP345  ✨
+✨  Build Infrastructure with Terraform on Google Cloud: Challenge Lab || GSP345  ✨
 </h1>
 
 <div align="center">
