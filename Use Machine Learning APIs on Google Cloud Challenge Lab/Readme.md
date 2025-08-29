@@ -43,6 +43,7 @@ sudo chmod +x GSP329.sh
 
 ./GSP329.sh
 ```
+* This solution only works in **Japanese** language, so if you dont get that language please try to end the lab and start it again
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
