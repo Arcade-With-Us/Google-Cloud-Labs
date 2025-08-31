@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Explore Generative AI with the Gemini API in Vertex AI Challenge Lab || GSP515  ✨
+✨  Explore Generative AI with the Gemini API in Vertex AI Challenge Lab || GSP515  ✨
 </h1>
 
 <div align="center">
