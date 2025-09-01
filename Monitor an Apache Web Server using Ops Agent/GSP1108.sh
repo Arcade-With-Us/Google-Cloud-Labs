@@ -1,6 +1,5 @@
-#!/bin/bash
 
-# Define color variables
+#!/bin/bash
 BLACK_TEXT=$'\033[0;90m'
 RED_TEXT=$'\033[0;91m'
 GREEN_TEXT=$'\033[0;92m'
@@ -9,19 +8,17 @@ BLUE_TEXT=$'\033[0;94m'
 MAGENTA_TEXT=$'\033[0;95m'
 CYAN_TEXT=$'\033[0;96m'
 WHITE_TEXT=$'\033[0;97m'
-
-NO_COLOR=$'\033[0m'
-RESET_FORMAT=$'\033[0m'
+DIM_TEXT=$'\033[2m'
+STRIKETHROUGH_TEXT=$'\033[9m'
 BOLD_TEXT=$'\033[1m'
-UNDERLINE_TEXT=$'\033[4m'
+RESET_FORMAT=$'\033[0m'
 
-# Clear the screen
 clear
 
-# Print the welcome message
-echo "${BLUE_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
-echo "${BLUE_TEXT}${BOLD_TEXT}         INITIATING EXECUTION...  ${RESET_FORMAT}"
-echo "${BLUE_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
 # Instruction for user input
@@ -160,16 +157,14 @@ EOF_CP
 
 gcloud alpha monitoring policies create --policy-from-file=stopped-vm-alert-policy.json
 
-# Completion message
 echo
-echo "${GREEN_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}            LAB COMPLETED!             ${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
-
-# Subscription message
-
-# Subscription message
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀  LAB COMPLETED SUCCESSFULLY  🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
-echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe to my Channel (Arcade With Us):${RESET_FORMAT} ${BLUE_TEXT}${BOLD_TEXT}https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
+
+echo ""
+echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe to my Channel (Arcade With Us):${RESET_FORMAT}"
+echo -e "${BLUE_TEXT}${BOLD_TEXT}https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
 echo
 #-----------------------------------------------------end----------------------------------------------------------#
