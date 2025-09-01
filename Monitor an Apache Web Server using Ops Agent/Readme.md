@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐   Monitor an Apache Web Server using Ops Agent || GSP1108 ✨
+✨   Monitor an Apache Web Server using Ops Agent || GSP1108 ✨
 </h1>
 
 <div align="center">
@@ -35,7 +35,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Monitor%20an%20Apache%20Web%20Server%20using%20Ops%20Agent/GSP1108.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Monitor%20an%20Apache%20Web%20Server%20using%20Ops%20Agent/GSP1108.sh
 
 sudo chmod +x GSP1108.sh
 
