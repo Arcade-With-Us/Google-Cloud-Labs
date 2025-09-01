@@ -20,6 +20,9 @@ echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORM
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
+read -p "Enter the region (e.g. us-central1): " REGION
+gcloud compute instance-groups managed create dev-instance-group --region=$REGION --template=dev-instance-template --size=1 && gcloud compute instance-groups managed set-autoscaling dev-instance-group --region=$REGION --min-num-replicas=1 --max-num-replicas=3 --target-cpu-utilization=0.6
+
 echo
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo "${CYAN_TEXT}${BOLD_TEXT}🚀  LAB COMPLETED SUCCESSFULLY  🚀${RESET_FORMAT}"
