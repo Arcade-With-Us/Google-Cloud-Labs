@@ -20,6 +20,19 @@ echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORM
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
+#!/bin/bash
+
+# Take inputs
+read -p "Enter the machine image name: " IMAGE_NAME
+read -p "Enter the VM instance name: " VM_NAME
+read -p "Enter the VM zone (e.g. us-west1-a, us-central-1): " VM_ZONE
+
+# Run the one-liner command with inputs
+gcloud compute machine-images create "$IMAGE_NAME" --source-instance="$VM_NAME" --source-instance-zone="$VM_ZONE"
+
+echo "✅ Machine image '$IMAGE_NAME' created from VM '$VM_NAME' in zone '$VM_ZONE'"
+
+
 echo
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo "${CYAN_TEXT}${BOLD_TEXT}🚀  LAB COMPLETED SUCCESSFULLY  🚀${RESET_FORMAT}"
