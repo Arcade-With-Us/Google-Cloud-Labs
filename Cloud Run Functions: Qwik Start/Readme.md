@@ -50,6 +50,15 @@ sudo chmod +x GSP1089.sh
   * Click **Edit & Deploy** New Revision.
   * Under the Revision scaling section, set `Minimum number` of instances to **1** and `Maximum number` of instances to **4**.
   * Leave the rest of the fields as their defaults and click **Deploy**.
+
+## For Task no 7:
+  * From the Navigation menu, go to **Cloud Run**.
+  * Click the **slow-concurrent-function** service.
+  * Click **Edit & Deploy** New Revision.
+  * Under the Resources section, set the `CPU` to **1**.
+  * Under **Requests**, set the `Maximum concurrent requests` per instance to **100**.
+  * Under **Revision scaling**, set the `Maximum number` of instances to **4**.
+  * Leave the rest of the fields as their defaults and click **Deploy**.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
