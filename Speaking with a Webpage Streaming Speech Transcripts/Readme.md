@@ -47,8 +47,35 @@ sudo chmod +x GSP125-1.sh
 ```
 
 ### **Note: Check my progress for task 1 once you got score then only run below command in your VM instance.**
+```
+# Update package lists
+sudo apt-get update
 
+# Install Git
+sudo apt-get install -y git
 
+sudo apt-get install -y maven openjdk-11-jdk
+
+# Verify installation
+git --version
+
+# Clone the repository
+git clone https://github.com/googlecodelabs/speaking-with-a-webpage.git
+```
+```
+gcloud compute firewall-rules create dev-ports \
+    --allow=tcp:8443 \
+    --source-ranges=0.0.0.0/0
+```
+```
+cd ~/speaking-with-a-webpage/01-hello-https
+mvn clean jetty:run
+```
+## Check Score upto 3rd task then press Ctrl+C and run this command:
+```
+cd ~/speaking-with-a-webpage/02-webaudio
+mvn clean jetty:run
+```
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
