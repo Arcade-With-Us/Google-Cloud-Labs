@@ -35,9 +35,9 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ```
 curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Classify%20Images%20of%20Clouds%20in%20the%20Cloud%20with%20AutoML%20Images/GSP223.sh
 
-sudo chmod +x gsp223.sh
+sudo chmod +x GSP223.sh
 
-./gsp223.sh
+./GSP223.sh
 ```
 ---
 
