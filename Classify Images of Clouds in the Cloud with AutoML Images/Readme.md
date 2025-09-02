@@ -39,6 +39,11 @@ sudo chmod +x GSP223.sh
 
 ./GSP223.sh
 ```
+## For task 2 follow these steps:
+    * In the Navigation menu, click Vertex AI > Datasets.
+    * At the top of the console, click Create.
+    * Set Dataset Name to clouds.
+    * Select Single-label classification.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
