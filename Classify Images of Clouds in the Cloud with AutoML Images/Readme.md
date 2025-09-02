@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐   Classify Images of Clouds in the Cloud with AutoML Images || GSP223 ✨
+✨   Classify Images of Clouds in the Cloud with AutoML Images || GSP223 ✨
 <div align="center">
 <a href="https://www.cloudskillsboost.google/focuses/8406?parent=catalog" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/Open_Lab-Cloud_Skills_Boost-4285F4?style=for-the-badge&logo=google&logoColor=white&labelColor=34A853" alt="Open Lab Badge">
@@ -33,7 +33,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Classify%20Images%20of%20Clouds%20in%20the%20Cloud%20with%20AutoML%20Images/GSP223.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Classify%20Images%20of%20Clouds%20in%20the%20Cloud%20with%20AutoML%20Images/GSP223.sh
 
 sudo chmod +x GSP223.sh
 
