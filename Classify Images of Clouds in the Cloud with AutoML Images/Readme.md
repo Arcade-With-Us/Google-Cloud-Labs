@@ -48,7 +48,7 @@ sudo chmod +x GSP223.sh
  * Choose Select import files from Cloud Storage and then click Browse > Project_id-vcm > data.csv. Click Select.
  * Click Continue.
 
-It will take 2 - 5 minutes for your images to import.
+It will take 10 minutes for your images to import.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
