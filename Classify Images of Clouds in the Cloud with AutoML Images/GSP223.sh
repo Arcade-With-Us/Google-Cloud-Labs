@@ -7,15 +7,17 @@ BLUE_TEXT=$'\033[0;94m'
 MAGENTA_TEXT=$'\033[0;95m'
 CYAN_TEXT=$'\033[0;96m'
 WHITE_TEXT=$'\033[0;97m'
-RESET_FORMAT=$'\033[0m'
+DIM_TEXT=$'\033[2m'
+STRIKETHROUGH_TEXT=$'\033[9m'
 BOLD_TEXT=$'\033[1m'
-UNDERLINE_TEXT=$'\033[4m'
+RESET_FORMAT=$'\033[0m'
+
 clear
 
 echo
-echo "${CYAN_TEXT}${BOLD_TEXT}==============================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}             INITIATING EXECUTION          ${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}==============================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
 echo "${YELLOW_TEXT}${BOLD_TEXT}Step 1:${RESET_FORMAT} ${WHITE_TEXT}Creating a storage bucket in your GCP project.${RESET_FORMAT}"
