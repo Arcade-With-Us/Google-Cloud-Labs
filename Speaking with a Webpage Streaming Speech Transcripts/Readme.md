@@ -39,7 +39,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 ### Task 1:  Run below Command in CloudShell
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Speaking%20with%20a%20Webpage%20Streaming%20Speech%20Transcripts/GSP125-1.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Speaking%20with%20a%20Webpage%20Streaming%20Speech%20Transcripts/GSP125-1.sh
 
 sudo chmod +x GSP125-1.sh
 
@@ -49,7 +49,7 @@ sudo chmod +x GSP125-1.sh
 ### **Note: Check my progress till task 3 once you got score then only run below command.**
 
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Speaking%20with%20a%20Webpage%20Streaming%20Speech%20Transcripts/GSP125-2.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Speaking%20with%20a%20Webpage%20Streaming%20Speech%20Transcripts/GSP125-2.sh
 
 sudo chmod +x GSP125-2.sh
 
