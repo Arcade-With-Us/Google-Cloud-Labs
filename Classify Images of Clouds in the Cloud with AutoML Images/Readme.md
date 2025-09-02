@@ -40,10 +40,15 @@ sudo chmod +x GSP223.sh
 ./GSP223.sh
 ```
 ## For task 2 follow these steps:
-    * In the Navigation menu, click Vertex AI > Datasets.
-    * At the top of the console, click Create.
-    * Set Dataset Name to clouds.
-    * Select Single-label classification.
+ * In the Navigation menu, click Vertex AI > Datasets.
+ * At the top of the console, click Create.
+ * Set Dataset Name to clouds.
+ * Select Single-label classification.
+ * Click Create.
+ * Choose Select import files from Cloud Storage and then click Browse > Project_id-vcm > data.csv. Click Select.
+ * Click Continue.
+
+It will take 2 - 5 minutes for your images to import.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
