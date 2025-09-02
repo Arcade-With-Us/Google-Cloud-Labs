@@ -45,6 +45,11 @@ sudo chmod +x GSP1089.sh
 
 ./GSP1089.sh
 ```
+## For Task no 6:
+  * Navigate to the Cloud Run page in the console and click the **slow-function** service.
+  * Click **Edit & Deploy** New Revision.
+  * Under the Revision scaling section, set `Minimum number` of instances to **1** and `Maximum number` of instances to **4**.
+  * Leave the rest of the fields as their defaults and click **Deploy**.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
