@@ -1,9 +1,9 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Product Search for Marketing with BigQuery ✨
 </h1>
 
 <div align="center">
-  <a href="https://www.cloudskillsboost.google/focuses/49749?parent=catalog"_blank" rel="noopener noreferrer">
+  <a href=""_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/Open_Lab-Cloud_Skills_Boost-4285F4?style=for-the-badge&logo=google&logoColor=white&labelColor=34A853" alt="Open Lab Badge">
   </a>
 </div>
@@ -31,18 +31,19 @@
 
 > ✅ **NOTE:** *Watch Full Video to get Full Scores on Check My Progress.*
 
-**🌐Launch Cloud Shell:**
-Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
-
 ## 💻 **Execute in Cloud Shell** 
 
-```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Introduction%20to%20Cloud%20Dataproc%20Hadoop%20and%20Spark%20on%20Google%20Cloud/GSP123.sh
+```bash
 
-sudo chmod +x GSP123.sh
-
-./GSP123.sh
+bq load --source_format=CSV --skip_leading_rows=1 --autodetect products.products_information gs://qwiklabs-gcp-04-2ca0d3863f4c-bucket/products.csv
 ```
+```
+bq query --use_legacy_sql=false 'CREATE SEARCH INDEX product_search_index ON products.products_information(ALL COLUMNS)'
+```
+```
+bq query --use_legacy_sql=false 'SELECT * FROM products.products_information WHERE SEARCH(products_information, "22 oz Water Bottle")'
+```
+
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
@@ -76,6 +77,6 @@ You've successfully completed the lab. **Way to go!** 🚀
     <em>This guide is provided for educational purposes. Always follow Qwiklabs terms of service and YouTube's community guidelines.</em>
   </p>
   <p style="font-size: 12px; color: #586069;">
-    <em>Last updated: June 2025</em>
+    <em>Last updated: September 2025</em>
   </p>
 </div>
