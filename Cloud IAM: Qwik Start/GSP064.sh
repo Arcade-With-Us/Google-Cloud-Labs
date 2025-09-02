@@ -1,14 +1,25 @@
-# Define color codes for output formatting
-YELLOW_COLOR=$'\033[0;33m'
-NO_COLOR=$'\033[0m'
-BACKGROUND_RED=`tput setab 1`
-GREEN_TEXT=`tput setab 2`
-RED_TEXT=`tput setaf 1`
+#!/bin/bash
+BLACK_TEXT=$'\033[0;90m'
+RED_TEXT=$'\033[0;91m'
+GREEN_TEXT=$'\033[0;92m'
+YELLOW_TEXT=$'\033[0;93m'
+BLUE_TEXT=$'\033[0;94m'
+MAGENTA_TEXT=$'\033[0;95m'
+CYAN_TEXT=$'\033[0;96m'
+WHITE_TEXT=$'\033[0;97m'
+DIM_TEXT=$'\033[2m'
+STRIKETHROUGH_TEXT=$'\033[9m'
+BOLD_TEXT=$'\033[1m'
+RESET_FORMAT=$'\033[0m'
 
-BOLD_TEXT=`tput bold`
-RESET_FORMAT=`tput sgr0`
+clear
 
-echo "${BACKGROUND_RED}${BOLD_TEXT}Initiating Execution...${RESET_FORMAT}"
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo
+
 
 # Prompt user for their username
 read -p "${YELLOW_COLOR}Enter USERNAME 2: ${NO_COLOR}" USERNAME_2
