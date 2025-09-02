@@ -46,15 +46,9 @@ sudo chmod +x GSP125-1.sh
 ./GSP125-1.sh
 ```
 
-### **Note: Check my progress till task 3 once you got score then only run below command.**
+### **Note: Check my progress for task 1 once you got score then only run below command in your VM instance.**
 
-```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Speaking%20with%20a%20Webpage%20Streaming%20Speech%20Transcripts/GSP125-2.sh
 
-sudo chmod +x GSP125-2.sh
-
-./GSP125-2.sh
-```
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
