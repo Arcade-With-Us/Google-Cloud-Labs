@@ -268,15 +268,9 @@ EOF
 
 echo "module example.com/mod" > go.mod
 
-deploy_with_retry slow-function \
-  --gen2 \
-  --runtime go121 \
-  --entry-point HelloWorld \
-  --source . \
-  --region $REGION \
-  --trigger-http \
-  --allow-unauthenticated \
-  --max-instances 4
+module example.com/mod
+
+go 1.23
 
 # Test Slow Function
 echo
@@ -292,12 +286,15 @@ export my_region=$(echo "$REGION" | sed 's/-/--/g; s/$/__/g')
 export full_path="$REGION-docker.pkg.dev/$PROJECT_ID/gcf-artifacts/$spcl_project$my_region"
 export full_path="${full_path}slow--function:version_1"
 
-gcloud run deploy slow-function \
---image=$full_path \
---min-instances=1 \
---max-instances=4 \
---region=$REGION \
---project=$PROJECT_ID
+gcloud functions deploy slow-function \
+  --gen2 \
+  --runtime go123 \
+  --entry-point HelloWorld \
+  --source . \
+  --region Region \
+  --trigger-http \
+  --allow-unauthenticated \
+  --max-instances 4
 
 # Test Again
 gcloud functions call slow-function --gen2 --region $REGION
@@ -345,12 +342,12 @@ gcloud run services delete slow-function --region $REGION --quiet
 echo
 echo "${COLOR_BLUE}${BOLD}🚀 Deploying Concurrent Function...${COLOR_RESET}"
 
-deploy_with_retry slow-concurrent-function \
+gcloud functions deploy slow-concurrent-function \
   --gen2 \
-  --runtime go121 \
+  --runtime go123 \
   --entry-point HelloWorld \
   --source . \
-  --region $REGION \
+  --region Region \
   --trigger-http \
   --allow-unauthenticated \
   --min-instances 1 \
