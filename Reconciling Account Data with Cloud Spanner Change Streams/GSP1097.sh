@@ -93,7 +93,7 @@ while true; do
     echo "Dataflow job is running."
     break
   else
-    echo -e "Waiting for job to start, Subscribe to Techcps."
+    echo -e "Waiting for job to start, Subscribe to ArcadeWithUs."
     sleep 10
   fi
 done
