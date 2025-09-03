@@ -20,6 +20,13 @@ echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORM
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
+gcloud sql instances create myinstance \
+  --database-version=POSTGRES_15 \
+  --cpu=2 \
+  --memory=7680MB \
+  --edition=ENTERPRISE \
+  --region=$REGION --root-password=Passw0rd
+
 echo
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo "${CYAN_TEXT}${BOLD_TEXT}🚀  LAB COMPLETED SUCCESSFULLY  🚀${RESET_FORMAT}"
