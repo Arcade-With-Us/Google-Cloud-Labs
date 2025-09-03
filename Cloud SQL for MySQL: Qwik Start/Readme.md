@@ -37,7 +37,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/mainCloud%20SQL%20for%20MySQL%3A%20Qwik%20Start/GSP151.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Cloud%20SQL%20for%20MySQL%3A%20Qwik%20Start/GSP151.sh
 
 sudo chmod +x GSP151.sh
 
