@@ -1,3 +1,24 @@
+#!/bin/bash
+BLACK_TEXT=$'\033[0;90m'
+RED_TEXT=$'\033[0;91m'
+GREEN_TEXT=$'\033[0;92m'
+YELLOW_TEXT=$'\033[0;93m'
+BLUE_TEXT=$'\033[0;94m'
+MAGENTA_TEXT=$'\033[0;95m'
+CYAN_TEXT=$'\033[0;96m'
+WHITE_TEXT=$'\033[0;97m'
+DIM_TEXT=$'\033[2m'
+STRIKETHROUGH_TEXT=$'\033[9m'
+BOLD_TEXT=$'\033[1m'
+RESET_FORMAT=$'\033[0m'
+
+clear
+
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo
 
 gcloud auth list
 
@@ -28,4 +49,15 @@ gcloud data-catalog tag-templates create protected_data_template --location=$REG
 echo
 echo -e "\033[1;33mOpen this link\033[0m \033[1;34mhttps://console.cloud.google.com/dataplex/search?project=$DEVSHELL_PROJECT_ID&q=customer_details%20\033[0m"
 echo
-echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe to my Channel (Arcade With Us):${RESET_FORMAT} ${BLUE_TEXT}${BOLD_TEXT}https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
+
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀  LAB COMPLETED SUCCESSFULLY  🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo
+
+echo ""
+echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe to my Channel (Arcade With Us):${RESET_FORMAT}"
+echo -e "${BLUE_TEXT}${BOLD_TEXT}https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
+echo
+#-----------------------------------------------------end----------------------------------------------------------#
