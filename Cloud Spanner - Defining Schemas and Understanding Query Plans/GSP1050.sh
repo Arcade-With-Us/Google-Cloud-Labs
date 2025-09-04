@@ -7,15 +7,17 @@ BLUE_TEXT=$'\033[0;94m'
 MAGENTA_TEXT=$'\033[0;95m'
 CYAN_TEXT=$'\033[0;96m'
 WHITE_TEXT=$'\033[0;97m'
-RESET_FORMAT=$'\033[0m'
+DIM_TEXT=$'\033[2m'
+STRIKETHROUGH_TEXT=$'\033[9m'
 BOLD_TEXT=$'\033[1m'
-UNDERLINE_TEXT=$'\033[4m'
+RESET_FORMAT=$'\033[0m'
+
 clear
 
 echo
-echo "${CYAN_TEXT}${BOLD_TEXT}==============================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}             INITIATING EXECUTION          ${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}==============================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
 echo "${YELLOW_TEXT}Step 1:${RESET_FORMAT} ${BOLD_TEXT}Inserting data into the Portfolio table.${RESET_FORMAT}"
@@ -87,9 +89,13 @@ python snippets.py banking-ops-instance --database-id  banking-ops-db query_data
 python snippets.py banking-ops-instance --database-id  banking-ops-db add_index
 
 echo
-echo "${RED}${BOLD}Congratulations${RESET}" "${WHITE}${BOLD}for${RESET}" "${GREEN}${BOLD}Completing the Lab !!!${RESET}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀  LAB COMPLETED SUCCESSFULLY  🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo
 
-echo "" 
-echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe to my Channel (Arcade With Us):${RESET_FORMAT} ${BLUE_TEXT}${BOLD_TEXT}https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
+echo ""
+echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe to my Channel (Arcade With Us):${RESET_FORMAT}"
+echo -e "${BLUE_TEXT}${BOLD_TEXT}https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
 echo
 #-----------------------------------------------------end----------------------------------------------------------#
