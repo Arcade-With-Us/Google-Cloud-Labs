@@ -34,7 +34,7 @@
 ## 💻 **Execute in Terminal** 
 
 
-* Replace `[enter zone ,  [enter Machine Image Name , [enter VM Name]]` with region given
+* Replace `[enter zone ,  [enter Machine Image Name , [enter VM Name]` with region given
 
 
 ```
