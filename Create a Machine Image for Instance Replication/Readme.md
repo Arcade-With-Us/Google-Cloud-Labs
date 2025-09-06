@@ -33,12 +33,13 @@
 
 ## 💻 **Execute in Terminal** 
 
+
+* Replace `[enter zone ,  [enter Machine Image Name , [enter VM Name]]` with region given
+
+
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/ICreate%20a%20Machine%20Image%20for%20Instance%20Replication/ArcadeWithUs.sh
+gcloud compute machine-images create [enter Machine Image Name] --source-instance=[enter VM Name] --source-instance-zone=[enter zone here]
 
-sudo chmod +x ArcadeWithUs.sh
-
-./ArcadeWithUs.sh
 ```
 ---
 
