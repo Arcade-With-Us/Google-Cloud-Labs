@@ -31,17 +31,13 @@
 
 > ✅ **NOTE:** *Watch Full Video to get Full Scores on Check My Progress.*
 
-**🌐Launch Cloud Shell:**
-Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
-
 ## 💻 **Execute in Cloud Shell** 
 
+* Replace `[enter region]` with region given
+
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Enhance%20Scalability%20Using%20Managed%20Instance%20Groups/ArcadeWithUs.sh
+gcloud compute instance-groups managed create dev-instance-group --template=dev-instance-template --size=1 --region=[enter region] && gcloud compute instance-groups managed set-autoscaling dev-instance-group --region=[enter region] --min-num-replicas=1 --max-num-replicas=3 --target-cpu-utilization=0.6 --mode=on
 
-sudo chmod +x ArcadeWithUs.sh
-
-./ArcadeWithUs.sh
 ```
 ---
 
