@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  SingleStore on Google Cloud || GSP1096  ✨
+✨  SingleStore on Google Cloud || GSP1096  ✨
 </h1>
 
 <div align="center">
