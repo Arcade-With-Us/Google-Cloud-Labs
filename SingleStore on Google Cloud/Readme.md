@@ -36,8 +36,7 @@ sudo chmod +x GSP1096.sh
 
 ./GSP1096.sh
 ```
-
-</div>
+### For Task 7 follow these steps:
 
 ---
 
