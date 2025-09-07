@@ -41,6 +41,7 @@ sudo chmod +x GSP1096.sh
 * Click Create a job from template and name it **pstogcs** (PubSub to GCS).
 * Select the Regional endpoint as `your lab region`
 * Select the following Dataflow template: `Pub/Sub Subscription or Topic to Text Files on Cloud Storage`
+* For **Target**, click **Browse**, and select the **bucket** you created earlier, called `Project ID`. You want the output of this job to land in the bucket you created earlier in the lab. Click **Select**.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
