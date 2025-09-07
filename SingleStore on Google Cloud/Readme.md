@@ -42,6 +42,8 @@ sudo chmod +x GSP1096.sh
 * Select the Regional endpoint as `your lab region`
 * Select the following Dataflow template: `Pub/Sub Subscription or Topic to Text Files on Cloud Storage`
 * For **Target**, click **Browse**, and select the **bucket** you created earlier, called `Project ID`. You want the output of this job to land in the bucket you created earlier in the lab. Click **Select**.
+* Expand `Optional Source Parameters`. For **Pub/Sub input subscription**, select the `Taxi-sub` that you just saw messages coming into. **No need to include input topic**.
+* Leave the defaults for everything else, then go to the bottom of the page, and click **RUN JOB**.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
