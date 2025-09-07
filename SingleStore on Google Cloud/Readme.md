@@ -37,7 +37,9 @@ sudo chmod +x GSP1096.sh
 ./GSP1096.sh
 ```
 ### For Task 7 follow these steps:
-
+* Navigate back to Dataflow.
+* Click Create a job from template and name it **pstogcs** (PubSub to GCS).
+* Select the Regional endpoint as `your lab region`
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
