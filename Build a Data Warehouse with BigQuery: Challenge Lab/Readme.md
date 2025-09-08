@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Build a Data Warehouse with BigQuery Challenge Lab || GSP340 ✨
+✨  Build a Data Warehouse with BigQuery: Challenge Lab || GSP340 ✨
 </h1>
 
 <div align="center">
@@ -36,12 +36,15 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ## 💻 **Execute in Cloud Shell** 
 
+### Make sure to check Task 2 Shows Like this if it doesn't then simply restart the lab
+<img width="505" height="486" alt="image" src="https://github.com/user-attachments/assets/98da5a3f-1ae3-4126-be12-be4fa5214dfe" />
+
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Introduction%20to%20Cloud%20Dataproc%20Hadoop%20and%20Spark%20on%20Google%20Cloud/GSP123.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Build%20a%20Data%20Warehouse%20with%20BigQuery:%20Challenge%20Lab/GSP340.sh
 
-sudo chmod +x GSP123.sh
+sudo chmod +x GSP340.sh
 
-./GSP123.sh
+./GSP340.sh
 ```
 ---
 
@@ -76,6 +79,6 @@ You've successfully completed the lab. **Way to go!** 🚀
     <em>This guide is provided for educational purposes. Always follow Qwiklabs terms of service and YouTube's community guidelines.</em>
   </p>
   <p style="font-size: 12px; color: #586069;">
-    <em>Last updated: June 2025</em>
+    <em>Last updated: September 2025</em>
   </p>
 </div>
