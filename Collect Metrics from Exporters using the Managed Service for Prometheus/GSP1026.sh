@@ -1,34 +1,25 @@
 #!/bin/bash
+BLACK_TEXT=$'\033[0;90m'
+RED_TEXT=$'\033[0;91m'
+GREEN_TEXT=$'\033[0;92m'
+YELLOW_TEXT=$'\033[0;93m'
+BLUE_TEXT=$'\033[0;94m'
+MAGENTA_TEXT=$'\033[0;95m'
+CYAN_TEXT=$'\033[0;96m'
+WHITE_TEXT=$'\033[0;97m'
+DIM_TEXT=$'\033[2m'
+STRIKETHROUGH_TEXT=$'\033[9m'
+BOLD_TEXT=$'\033[1m'
+RESET_FORMAT=$'\033[0m'
 
-# Enhanced Color Definitions
-BLACK=$'\033[0;90m'
-RED=$'\033[0;91m'
-GREEN=$'\033[0;92m'
-YELLOW=$'\033[0;93m'
-BLUE=$'\033[0;94m'
-MAGENTA=$'\033[0;95m'
-CYAN=$'\033[0;96m'
-WHITE=$'\033[0;97m'
+clear
 
-BG_BLACK=`tput setab 0`
-BG_RED=`tput setab 1`
-BG_GREEN=`tput setab 2`
-BG_YELLOW=`tput setab 3`
-BG_BLUE=`tput setab 4`
-BG_MAGENTA=`tput setab 5`
-BG_CYAN=`tput setab 6`
-BG_WHITE=`tput setab 7`
-
-BOLD=`tput bold`
-RESET=`tput sgr0`
-
-# Header Section
-echo "${BG_MAGENTA}${BOLD}╔════════════════════════════════════════════════════════╗${RESET}"
-echo "${BG_MAGENTA}${BOLD}          WELCOME TO ARCADE WITH US TUTORIAL            ${RESET}"
-echo "${BG_MAGENTA}${BOLD}╚════════════════════════════════════════════════════════╝${RESET}"
 echo
-echo "${CYAN}${BOLD}          Expert Tutorial by Arcade With Us              ${RESET}"
-echo "${YELLOW}For more GCP monitoring tutorials, visit: https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo
+
 echo
 echo "${BLUE}${BOLD}⚡ Initializing GMP Cluster Setup...${RESET}"
 echo
