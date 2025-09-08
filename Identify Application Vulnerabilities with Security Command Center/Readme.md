@@ -47,7 +47,7 @@ sudo chmod +x GSP1262-1.sh
 ```
 * Go to `Cloud Web Security Scanner` from [here](https://console.cloud.google.com/security/web-scanner/scanConfigs?)
 
-* #### NOTE : Check All Score Upto `Task 2`
+* #### NOTE : Check All Score Upto `Task 4`
 
 ### Run again the following Commands in CloudShell
 
