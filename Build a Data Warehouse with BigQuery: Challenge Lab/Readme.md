@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Build a Data Warehouse with BigQuery: Challenge Lab || GSP340 ✨
 </h1>
 
 <div align="center">
