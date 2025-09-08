@@ -57,11 +57,6 @@ gsutil cp redacted-string.txt gs://$BUCKET_NAME
 gsutil cp redacted-phone.png gs://$BUCKET_NAME
 gsutil cp redacted-email.png gs://$BUCKET_NAME
 
-echo
-echo -e "\e[1;31mDeleting the script (GSP864.sh) for safety purposes...\e[0m"
-rm -- "$0"
-echo
-echo
 # Completion message
 echo
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
