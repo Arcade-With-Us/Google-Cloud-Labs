@@ -388,6 +388,6 @@ gcloud deploy targets rollback cd-staging \
    --quiet
 
 echo
-echo "${MAGENTA_TEXT}${BOLD_TEXT}💖 IF YOU FOUND THIS HELPFUL, SUBSCRIBE arcadewithus! 👇${RESET_FORMAT}"
+echo "${MAGENTA_TEXT}${BOLD_TEXT}💖 IF YOU FOUND THIS HELPFUL, SUBSCRIBE Arcade With Us! 👇${RESET_FORMAT}"
 echo "${BLUE_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://youtube.com/@arcadewithus_we?${RESET_FORMAT}"
 echo
