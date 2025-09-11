@@ -20,8 +20,16 @@ echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORM
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
-export REGION=$(gcloud compute project-info describe \
---format="value(commonInstanceMetadata.items[google-compute-default-region])")
+# Set text styles
+YELLOW=$(tput setaf 3)
+BOLD=$(tput bold)
+RESET=$(tput sgr0)
+
+gcloud auth list
+
+export ZONE=$(gcloud compute project-info describe --format="value(commonInstanceMetadata.items[google-compute-default-zone])")
+
+export REGION=$(gcloud compute project-info describe --format="value(commonInstanceMetadata.items[google-compute-default-region])")
 
 export PROJECT_ID=$(gcloud config get-value project)
 export PROJECT_NUMBER=$(gcloud projects describe $PROJECT_ID --format='value(projectNumber)')
@@ -33,12 +41,12 @@ gcloud services enable container.googleapis.com \
     secretmanager.googleapis.com \
     containeranalysis.googleapis.com
 
-
 gcloud artifacts repositories create my-repository \
   --repository-format=docker \
   --location=$REGION
 
 gcloud container clusters create hello-cloudbuild --num-nodes 1 --region $REGION
+
 
 curl -sS https://webi.sh/gh | sh 
 gh auth login 
@@ -50,9 +58,12 @@ echo ${GITHUB_USERNAME}
 echo ${USER_EMAIL}
 
 
+
 gh repo create  hello-cloudbuild-app --private 
 
+
 gh repo create  hello-cloudbuild-env --private
+
 
 cd ~
 mkdir hello-cloudbuild-app
@@ -62,6 +73,7 @@ gcloud storage cp -r gs://spls/gsp1077/gke-gitops-tutorial-cloudbuild/* hello-cl
 cd ~/hello-cloudbuild-app
 
 
+export REGION=$(gcloud compute project-info describe --format="value(commonInstanceMetadata.items[google-compute-default-region])")
 sed -i "s/us-central1/$REGION/g" cloudbuild.yaml
 sed -i "s/us-central1/$REGION/g" cloudbuild-delivery.yaml
 sed -i "s/us-central1/$REGION/g" cloudbuild-trigger-cd.yaml
@@ -131,6 +143,8 @@ gcloud storage cp -r gs://spls/gsp1077/gke-gitops-tutorial-cloudbuild/* hello-cl
 
 
 cd hello-cloudbuild-env
+
+export REGION=$(gcloud compute project-info describe --format="value(commonInstanceMetadata.items[google-compute-default-region])")
 sed -i "s/us-central1/$REGION/g" cloudbuild.yaml
 sed -i "s/us-central1/$REGION/g" cloudbuild-delivery.yaml
 sed -i "s/us-central1/$REGION/g" cloudbuild-trigger-cd.yaml
@@ -151,10 +165,12 @@ git checkout -b production
 
 rm cloudbuild.yaml
 
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Google%20Kubernetes%20Engine%20Pipeline%20using%20Cloud%20Build/env-cloudbuild.yaml
+wget https://raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Google%20Kubernetes%20Engine%20Pipeline%20using%20Cloud%20Build/env-cloudbuild.yaml
 
 mv env-cloudbuild.yaml cloudbuild.yaml
 
+
+export REGION=$(gcloud compute project-info describe --format="value(commonInstanceMetadata.items[google-compute-default-region])")
 sed -i "s/REGION-/$REGION/g" cloudbuild.yaml
 sed -i "s/GITHUB-USERNAME/${GITHUB_USERNAME}/g" cloudbuild.yaml
 
@@ -168,28 +184,44 @@ git push google production
 
 git push google candidate
 
+
 cd ~/hello-cloudbuild-app
 ssh-keyscan -t rsa github.com > known_hosts.github
 chmod +x known_hosts.github
+
 
 git add .
 git commit -m "Adding known_host file."
 git push google master
 
+
 rm cloudbuild.yaml
 
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Google%20Kubernetes%20Engine%20Pipeline%20using%20Cloud%20Build/app-cloudbuild.yaml
+
+wget https://raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Google%20Kubernetes%20Engine%20Pipeline%20using%20Cloud%20Build/app-cloudbuild.yaml
+
 
 mv app-cloudbuild.yaml cloudbuild.yaml
 
+
+export REGION=$(gcloud compute project-info describe --format="value(commonInstanceMetadata.items[google-compute-default-region])")
 sed -i "s/REGION/$REGION/g" cloudbuild.yaml
 sed -i "s/GITHUB-USERNAME/${GITHUB_USERNAME}/g" cloudbuild.yaml
 
 git add cloudbuild.yaml
 
+
 git commit -m "Trigger CD pipeline"
 
+
 git push google master
+
+
+echo ""
+
+echo "Click this link to create trigger: ""${YELLOW}${BOLD}"https://console.cloud.google.com/cloud-build/triggers?project=$DEVSHELL_PROJECT_ID"${RESET}" 
+
+echo ""
 
 echo
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
