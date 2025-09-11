@@ -36,7 +36,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ### Run the following Commands in CloudShell
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Detect%20Manufacturing%20Defects%20using%20Visual%20Inspection%20AI%3A%20Challenge%20Lab/GSP366.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Detect%20Manufacturing%20Defects%20using%20Visual%20Inspection%20AI%3A%20Challenge%20Lab/GSP366.sh
 
 sudo chmod +x GSP366.sh
 
