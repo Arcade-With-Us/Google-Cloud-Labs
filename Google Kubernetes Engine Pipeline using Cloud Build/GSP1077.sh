@@ -165,7 +165,7 @@ git checkout -b production
 
 rm cloudbuild.yaml
 
-wget https://raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Google%20Kubernetes%20Engine%20Pipeline%20using%20Cloud%20Build/env-cloudbuild.yaml
+wget https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Google%20Kubernetes%20Engine%20Pipeline%20using%20Cloud%20Build/env-cloudbuild.yaml
 
 mv env-cloudbuild.yaml cloudbuild.yaml
 
@@ -198,7 +198,7 @@ git push google master
 rm cloudbuild.yaml
 
 
-wget https://raw.githubusercontent.com/Techcps/Google-Cloud-Skills-Boost/master/Google%20Kubernetes%20Engine%20Pipeline%20using%20Cloud%20Build/app-cloudbuild.yaml
+wget https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Google%20Kubernetes%20Engine%20Pipeline%20using%20Cloud%20Build/app-cloudbuild.yaml
 
 
 mv app-cloudbuild.yaml cloudbuild.yaml
