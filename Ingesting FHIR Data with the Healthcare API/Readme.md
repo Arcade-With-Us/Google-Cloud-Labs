@@ -35,7 +35,7 @@
 Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
 
 ## 💻 **Execute in Cloud Shell** 
-
+* At first Run the command from task no 4.
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Ingesting%20FHIR%20Data%20with%20the%20Healthcare%20API/GSP457.sh
 
