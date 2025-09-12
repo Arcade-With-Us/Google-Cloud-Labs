@@ -43,7 +43,7 @@ export REGION_2=
 export REGION_3=
 ```
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/raw/refs/heads/main/Networking%20101/GSP016.sh
+curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Networking%20101/GSP016.sh
 
 sudo chmod +x GSP016.sh
 
