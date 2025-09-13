@@ -1,4 +1,4 @@
-<h1 allign='cener'>
+<h1 allign="center">
     ✨ Cloud Spanner - Database Fundamentals || GSP1048 ✨
 <h1>
 <div align="center">
