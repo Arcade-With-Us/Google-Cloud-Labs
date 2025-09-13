@@ -44,6 +44,7 @@ sudo chmod +x GSP1097.sh
 ./GSP1097.sh
 ```
 * If you dont get score for the last task because of the the streaming of dataflow job. Then follow this:
+1. Open a new tab in cloud shell by clicking the `+` icon and paste this command
 ```
 ```
 ---
