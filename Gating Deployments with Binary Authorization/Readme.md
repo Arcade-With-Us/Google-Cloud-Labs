@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐   Gating Deployments with Binary Authorization || GSP1183 ✨
+✨ Gating Deployments with Binary Authorization || GSP1183 ✨
 </h1>
 
 <div align="center">
@@ -35,7 +35,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 
 ```bash
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Gating%20Deployments%20with%20Binary%20Authorization/GSP1183.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Gating%20Deployments%20with%20Binary%20Authorization/GSP1183.sh
 
 sudo chmod +x GSP1183.sh
 
