@@ -1,4 +1,4 @@
-<h1>
+<h1 align="center">
     ✨ ETL Processing on Google Cloud Using Dataflow and BigQuery (Python) || GSP290 ✨
 <h1>
 <div align="center">
