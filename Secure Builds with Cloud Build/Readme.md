@@ -42,6 +42,7 @@ sudo chmod +x GSP1184.sh
 
 ./GSP1184.sh
 ```
+* You may have to run the code again if it shows error
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
