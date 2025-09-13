@@ -43,6 +43,7 @@ sudo chmod +x GSP659.sh
 
 ./GSP659.sh
 ```
+* If you don't get score on Task 3 & 4, Then, Go to Cloud Run-->Delete `Monolith`--> Run the code again.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
