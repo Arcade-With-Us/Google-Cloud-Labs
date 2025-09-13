@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Connecting Cloud Networks with NCC: Challenge Lab || GSP528 ✨
 </h1>
 
 <div align="center">
