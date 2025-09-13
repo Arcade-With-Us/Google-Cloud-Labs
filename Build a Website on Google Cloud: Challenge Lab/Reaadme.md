@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨ Build a Website on Google Cloud: Challenge Lab || GSP319 ✨
 </h1>
 
 <div align="center">
