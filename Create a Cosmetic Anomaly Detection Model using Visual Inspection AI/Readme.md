@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨Create a Cosmetic Anomaly Detection Model using Visual Inspection AI || GSP897✨
 </h1>
 
 <div align="center">
