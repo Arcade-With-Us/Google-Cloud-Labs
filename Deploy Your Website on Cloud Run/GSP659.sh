@@ -107,16 +107,15 @@ echo "${MAGENTA_TEXT}${BOLD_TEXT}   Image will be tagged as: ${WHITE_TEXT}$REGIO
 gcloud builds submit --tag $REGION-docker.pkg.dev/${GOOGLE_CLOUD_PROJECT}/monolith-demo/monolith:2.0.0
 
 echo
-echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}🚀  LAB COMPLETED SUCCESSFULLY  🚀${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
-echo
-
-echo
 echo "${CYAN_TEXT}${BOLD_TEXT}🚀 Deploying the updated monolith application (version 2.0.0) to Cloud Run...${RESET_FORMAT}"
 echo "${CYAN_TEXT}${BOLD_TEXT}   Service name: monolith, Region: ${WHITE_TEXT}${REGION}${CYAN_TEXT}, Allow unauthenticated access.${RESET_FORMAT}"
 gcloud run deploy monolith --image $REGION-docker.pkg.dev/${GOOGLE_CLOUD_PROJECT}/monolith-demo/monolith:2.0.0 --allow-unauthenticated --region $REGION
 
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀  LAB COMPLETED SUCCESSFULLY  🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo
 echo
 echo "${MAGENTA_TEXT}${BOLD_TEXT}💖 Consider subscribing to ARCADE WITH US for more! 👇${RESET_FORMAT}"
 echo "${BLUE_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@Arcade61432${RESET_FORMAT}"
