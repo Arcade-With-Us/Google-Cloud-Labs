@@ -20,75 +20,127 @@ echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORM
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
-export REGION="${ZONE%-*}"
 
-gcloud services disable dataflow.googleapis.com
 
-gcloud services enable dataflow.googleapis.com
+gcloud auth list
 
-gcloud bigtable instances create ecommerce-recommendations \
-  --display-name=ecommerce-recommendations \
-  --cluster-storage-type=SSD \
-  --cluster-config="id=ecommerce-recommendations-c1,zone=$ZONE"
+export ZONE=$(gcloud compute project-info describe --format="value(commonInstanceMetadata.items[google-compute-default-zone])")
 
-gcloud bigtable clusters update ecommerce-recommendations-c1 \
-    --instance=ecommerce-recommendations \
-    --autoscaling-max-nodes=5 \
-    --autoscaling-min-nodes=1 \
-    --autoscaling-cpu-target=60 
+export REGION=$(gcloud compute project-info describe --format="value(commonInstanceMetadata.items[google-compute-default-region])")
 
-gsutil mb gs://$DEVSHELL_PROJECT_ID
+gcloud services disable dataflow.googleapis.com --project $DEVSHELL_PROJECT_ID
 
-gcloud bigtable instances tables create SessionHistory \
-    --instance=ecommerce-recommendations \
-    --project=$DEVSHELL_PROJECT_ID \
-    --column-families=Engagements,Sales
+export PROJECT_ID=$(gcloud config get-value project)
 
-gcloud bigtable instances tables create PersonalizedProducts \
-    --instance=ecommerce-recommendations \
-    --project=$DEVSHELL_PROJECT_ID \
-    --column-families=Recommendations
+gcloud config set compute/zone "$ZONE"
 
-gcloud dataflow jobs run import-sessions --gcs-location gs://dataflow-templates-$REGION/latest/GCS_SequenceFile_to_Cloud_Bigtable --region $REGION --staging-location gs://$DEVSHELL_PROJECT_ID/temp --parameters bigtableProject=$DEVSHELL_PROJECT_ID,bigtableInstanceId=ecommerce-recommendations,bigtableTableId=SessionHistory,sourcePattern=gs://cloud-training/OCBL377/retail-engagements-sales-00000-of-00001,mutationThrottleLatencyMs=0
+gcloud config set compute/region "$REGION"
 
-gcloud dataflow jobs run import-recommendations --gcs-location gs://dataflow-templates-$REGION/latest/GCS_SequenceFile_to_Cloud_Bigtable --region $REGION --staging-location gs://$DEVSHELL_PROJECT_ID/temp --parameters bigtableProject=$DEVSHELL_PROJECT_ID,bigtableInstanceId=ecommerce-recommendations,bigtableTableId=PersonalizedProducts,sourcePattern=gs://cloud-training/OCBL377/retail-recommendations-00000-of-00001
+gcloud services enable dataflow.googleapis.com --project $DEVSHELL_PROJECT_ID
 
-gcloud bigtable clusters create ecommerce-recommendations-c2 \
-    --instance=ecommerce-recommendations \
-    --zone=$ZONE2
+echo
+echo -e "\033[1;33mCreate Bigtable instance\033[0m \033[1;34mhttps://console.cloud.google.com/bigtable/create-instance?inv=1&invt=AbzGZg&project=$DEVSHELL_PROJECT_ID\033[0m"
+echo
 
-gcloud bigtable clusters update ecommerce-recommendations-c2 \
-    --instance=ecommerce-recommendations \
-    --autoscaling-max-nodes=5 \
-    --autoscaling-min-nodes=1 \
-    --autoscaling-cpu-target=60 
+while true; do
+    echo -ne "\e[1;93mDo you Want to proceed? (Y/n): \e[0m"
+    read confirm
+    case "$confirm" in
+        [Yy]) 
+            echo -e "\e[34mRunning the command...\e[0m"
+            break
+            ;;
+        [Nn]|"") 
+            echo "Operation canceled."
+            break
+            ;;
+        *) 
+            echo -e "\e[31mInvalid input. Please enter Y or N.\e[0m" 
+            ;;
+    esac
+done
 
-gcloud bigtable backups create PersonalizedProducts_7 --instance=ecommerce-recommendations \
-  --cluster=ecommerce-recommendations-c1 \
-  --table=PersonalizedProducts \
-  --retention-period=7d 
+gsutil mb gs://$PROJECT_ID
 
-gcloud bigtable instances tables restore \
---source=projects/$DEVSHELL_PROJECT_ID/instances/ecommerce-recommendations/clusters/ecommerce-recommendations-c1/backups/PersonalizedProducts_7 \
---async \
---destination=PersonalizedProducts_7_restored \
---destination-instance=ecommerce-recommendations \
---project=$DEVSHELL_PROJECT_ID
+export PROJECT_ID=$(gcloud config get-value project)
 
-sleep 100
+gcloud bigtable instances tables create SessionHistory --instance=ecommerce-recommendations --project=$PROJECT_ID --column-families=Engagements,Sales
 
-gcloud dataflow jobs run import-sessions --gcs-location gs://dataflow-templates-$REGION/latest/GCS_SequenceFile_to_Cloud_Bigtable --region $REGION --staging-location gs://$DEVSHELL_PROJECT_ID/temp --parameters bigtableProject=$DEVSHELL_PROJECT_ID,bigtableInstanceId=ecommerce-recommendations,bigtableTableId=SessionHistory,sourcePattern=gs://cloud-training/OCBL377/retail-engagements-sales-00000-of-00001,mutationThrottleLatencyMs=0
+sleep 20
 
-gcloud dataflow jobs run import-recommendations --gcs-location gs://dataflow-templates-$REGION/latest/GCS_SequenceFile_to_Cloud_Bigtable --region $REGION --staging-location gs://$DEVSHELL_PROJECT_ID/temp --parameters bigtableProject=$DEVSHELL_PROJECT_ID,bigtableInstanceId=ecommerce-recommendations,bigtableTableId=PersonalizedProducts,sourcePattern=gs://cloud-training/OCBL377/retail-recommendations-00000-of-00001
+#!/bin/bash
 
-echo "${YELLOW}${BOLD}NOW${RESET}" "${WHITE}${BOLD}Check The Score${RESET}" "${GREEN}${BOLD}Upto Task 4${RESET}"
+while true; do
+    gcloud dataflow jobs run import-sessions --region=$REGION --project=$PROJECT_ID --gcs-location gs://dataflow-templates-$REGION/latest/GCS_SequenceFile_to_Cloud_Bigtable --staging-location gs://$PROJECT_ID/temp --parameters bigtableProject=$PROJECT_ID,bigtableInstanceId=ecommerce-recommendations,bigtableTableId=SessionHistory,sourcePattern=gs://cloud-training/OCBL377/retail-engagements-sales-00000-of-00001,mutationThrottleLatencyMs=0
 
-sleep 150
+    if [ $? -eq 0 ]; then
+        echo -e "\033[1;33mJob has completed successfully. now just wait for succeeded\033[0m \033[1;34mhttps://www.youtube.com/@techcps\033[0m"
+        break
+    else
+        echo -e "\033[1;33mJob retrying. please like share and subscribe to techcps\033[0m \033[1;34mhttps://www.youtube.com/@techcps\033[0m"
+        sleep 10
+    fi
+done
 
-gcloud bigtable backups delete PersonalizedProducts_7 --instance=ecommerce-recommendations \
-  --cluster=ecommerce-recommendations-c1  --quiet
 
-gcloud bigtable instances delete ecommerce-recommendations --quiet
+gcloud bigtable instances tables create PersonalizedProducts --project=$PROJECT_ID --instance=ecommerce-recommendations --column-families=Recommendations
+
+sleep 20
+
+#!/bin/bash
+
+while true; do
+    gcloud dataflow jobs run import-recommendations --region=$REGION --project=$PROJECT_ID --gcs-location gs://dataflow-templates-$REGION/latest/GCS_SequenceFile_to_Cloud_Bigtable --staging-location gs://$PROJECT_ID/temp --parameters bigtableProject=$PROJECT_ID,bigtableInstanceId=ecommerce-recommendations,bigtableTableId=PersonalizedProducts,sourcePattern=gs://cloud-training/OCBL377/retail-recommendations-00000-of-00001,mutationThrottleLatencyMs=0
+
+    if [ $? -eq 0 ]; then
+        echo -e "\033[1;33mJob has completed successfully. now just wait for succeeded\033[0m \033[1;34mhttps://www.youtube.com/@techcps\033[0m"
+        break
+    else
+        echo -e "\033[1;33mJob retrying. please like share and subscribe to techcps\033[0m \033[1;34mhttps://www.youtube.com/@techcps\033[0m"
+        sleep 10
+    fi
+done
+
+
+gcloud beta bigtable backups create PersonalizedProducts_7 --instance=ecommerce-recommendations --cluster=ecommerce-recommendations-c1 --table=PersonalizedProducts --retention-period=7d 
+
+
+gcloud beta bigtable instances tables restore --source=projects/$PROJECT_ID/instances/ecommerce-recommendations/clusters/ecommerce-recommendations-c1/backups/PersonalizedProducts_7 --async --destination=PersonalizedProducts_7_restored --destination-instance=ecommerce-recommendations --project=$PROJECT_ID
+
+echo
+echo -e "\033[1;33mCheck job status\033[0m \033[1;34mhttps://console.cloud.google.com/dataflow/jobs?referrer=search&inv=1&invt=AbzGZg&project=$DEVSHELL_PROJECT_ID\033[0m"
+echo
+
+while true; do
+    echo -ne "\e[1;93mDo you Want to proceed? (Y/n): \e[0m"
+    read confirm
+    case "$confirm" in
+        [Yy]) 
+            echo -e "\e[34mRunning the command...\e[0m"
+            break
+            ;;
+        [Nn]|"") 
+            echo "Operation canceled."
+            break
+            ;;
+        *) 
+            echo -e "\e[31mInvalid input. Please enter Y or N.\e[0m" 
+            ;;
+    esac
+done
+
+
+gcloud bigtable instances tables delete PersonalizedProducts --instance=ecommerce-recommendations --quiet
+
+gcloud bigtable instances tables delete PersonalizedProducts_7_restored --instance=ecommerce-recommendations --quiet
+
+gcloud bigtable instances tables delete SessionHistory --instance=ecommerce-recommendations --quiet
+
+gcloud bigtable backups delete PersonalizedProducts_7 \
+  --instance=ecommerce-recommendations \
+  --cluster=ecommerce-recommendations-c1 --quiet
+
+# gcloud bigtable instances delete ecommerce-recommendations --quiet
 
 echo
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
