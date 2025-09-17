@@ -43,6 +43,8 @@ sudo chmod +x GSP380.sh
 
 ./GSP380.sh
 ```
+* `Note:` **End and restart lab if you are getting regions like us-east.. resources are mostly exhausted in those regions..**
+
 ### If your score don't get updated just wait for 5-6 minutes and again check you will surely get full score
 ---
 
