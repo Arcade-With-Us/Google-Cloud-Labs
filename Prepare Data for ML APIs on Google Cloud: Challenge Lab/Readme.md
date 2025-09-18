@@ -30,7 +30,7 @@
 ## 💻 **Execute in Cloud Shell**  
 Run the following commands in **Cloud Shell**:
 ```bash
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Prepare%20Data%20for%20ML%20APIs%20on%20Google%20Cloud%3A%20Challenge%20Lab/GSP323.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Prepare%20Data%20for%20ML%20APIs%20on%20Google%20Cloud%3A%20Challenge%20Lab/GSP323.sh
 
 sudo chmod +x GSP323.sh
 
