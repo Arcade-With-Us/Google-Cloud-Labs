@@ -34,6 +34,11 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ## 💻 **Execute in Cloud Shell** 
 ```
+export TOPIC_ID=
+export REGION=
+export MESSAGE=""
+```
+```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Create%20a%20Streaming%20Data%20Lake%20on%20Cloud%20Storage%20Challenge%20Lab/ARC110.sh
 
 sudo chmod +x ARC110.sh
