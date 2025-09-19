@@ -25,6 +25,25 @@ PROJECT_ID=$(gcloud config get-value project)
 
 export BUCKET_NAME="${PROJECT_ID}-bucket"
 
+echo
+echo "${YELLOW_TEXT}${BOLD_TEXT} Enter REGION: ${RESET_FORMAT}"
+read -r REGION
+export REGION=$REGION
+echo "${BLUE_TEXT}${BOLD_TEXT} User selected region : $REGION ${RESET_FORMAT}"
+
+echo
+echo "${YELLOW_TEXT}${BOLD_TEXT} Enter TOPIC_ID: ${RESET_FORMAT}"
+read -r TOPIC_ID
+export TOPIC_ID=$TOPIC_ID
+echo "${BLUE_TEXT}${BOLD_TEXT} User selected TOPIC_ID : $REGION ${RESET_FORMAT}"
+
+echo
+echo "${YELLOW_TEXT}${BOLD_TEXT} Enter MESSAGE: ${RESET_FORMAT}"
+read -r MESSAGE
+export MESSAGE=$MESSAGE
+echo "${BLUE_TEXT}${BOLD_TEXT} User selected MESSAGE : $REGION ${RESET_FORMAT}"
+
+
 gcloud services disable dataflow.googleapis.com
 
 gcloud services enable dataflow.googleapis.com
