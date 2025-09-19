@@ -25,12 +25,6 @@ PROJECT_ID=$(gcloud config get-value project)
 
 export BUCKET_NAME="${PROJECT_ID}-bucket"
 
-export TOPIC_ID=
-
-export REGION=
-
-export MESSAGE=""
-
 gcloud services disable dataflow.googleapis.com
 
 gcloud services enable dataflow.googleapis.com
