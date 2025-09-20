@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐   The Basics of Google Cloud Compute: Challenge Lab || ARC120 ✨
+✨   The Basics of Google Cloud Compute: Challenge Lab || ARC120 ✨
 </h1>
 
 <div align="center">
