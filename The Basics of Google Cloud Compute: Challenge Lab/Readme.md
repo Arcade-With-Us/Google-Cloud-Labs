@@ -35,7 +35,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/The%20Basics%20of%20Google%20Cloud%20Compute%3A%20Challenge%20Lab/ARC120.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/The%20Basics%20of%20Google%20Cloud%20Compute%3A%20Challenge%20Lab/ARC120.sh
 
 sudo chmod +x ARC120.sh
 
