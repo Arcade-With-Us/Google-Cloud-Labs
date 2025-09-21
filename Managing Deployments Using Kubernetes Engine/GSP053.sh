@@ -22,98 +22,92 @@ echo "${BLUE_TEXT}${BOLD_TEXT}         INITIATING EXECUTION...  ${RESET_FORMAT}"
 echo "${BLUE_TEXT}${BOLD_TEXT}=======================================${RESET_FORMAT}"
 echo
 
-echo "${MAGENTA_TEXT}${BOLD_TEXT}Enter the ZONE:${RESET_FORMAT}"
-read ZONE
+#!/bin/bash
+
+# Fetch zone and region
+ZONE=$(gcloud compute project-info describe \
+  --format="value(commonInstanceMetadata.items[google-compute-default-zone])")
+REGION=$(gcloud compute project-info describe \
+  --format="value(commonInstanceMetadata.items[google-compute-default-region])")
+PROJECT_ID=$(gcloud config get-value project)
+
+
 gcloud config set compute/zone $ZONE
 
-echo "${YELLOW_TEXT}${BOLD_TEXT}Copying required files from the GCS bucket...${RESET_FORMAT}"
 gsutil -m cp -r gs://spls/gsp053/orchestrate-with-kubernetes .
-
 cd orchestrate-with-kubernetes/kubernetes
 
-echo "${CYAN_TEXT}${BOLD_TEXT}Creating a Kubernetes cluster named 'bootcamp'...${RESET_FORMAT}"
+
 gcloud container clusters create bootcamp \
-        --machine-type e2-small \
-        --num-nodes 3 \
-        --scopes "https://www.googleapis.com/auth/projecthosting,storage-rw"
+  --machine-type e2-small \
+  --num-nodes 3 \
+  --scopes "https://www.googleapis.com/auth/projecthosting,storage-rw"
 
-echo "${GREEN_TEXT}${BOLD_TEXT}Updating the image version in the auth deployment file...${RESET_FORMAT}"
-sed -i 's/image: "kelseyhightower\/auth:2.0.0"/image: "kelseyhightower\/auth:1.0.0"/' deployments/auth.yaml
+kubectl explain deployment
 
-echo "${BLUE_TEXT}${BOLD_TEXT}Creating the auth deployment...${RESET_FORMAT}"
+kubectl explain deployment --recursive
+
+kubectl explain deployment.metadata.name
+
+
+
+sed -i "s/auth:2.0.0/auth:1.0.0/" deployments/auth.yaml
+
 kubectl create -f deployments/auth.yaml
 
-echo "${CYAN_TEXT}${BOLD_TEXT}Fetching the list of deployments...${RESET_FORMAT}"
 kubectl get deployments
 
-echo "${YELLOW_TEXT}${BOLD_TEXT}Fetching the list of pods...${RESET_FORMAT}"
+kubectl get replicasets
+
 kubectl get pods
 
-echo "${MAGENTA_TEXT}${BOLD_TEXT}Creating the auth service...${RESET_FORMAT}"
 kubectl create -f services/auth.yaml
 
-echo "${GREEN_TEXT}${BOLD_TEXT}Creating the hello deployment and service...${RESET_FORMAT}"
 kubectl create -f deployments/hello.yaml
 kubectl create -f services/hello.yaml
 
-echo "${CYAN_TEXT}${BOLD_TEXT}Creating a secret for TLS certificates...${RESET_FORMAT}"
+
 kubectl create secret generic tls-certs --from-file tls/
-
-echo "${BLUE_TEXT}${BOLD_TEXT}Creating a ConfigMap for the Nginx frontend configuration...${RESET_FORMAT}"
 kubectl create configmap nginx-frontend-conf --from-file=nginx/frontend.conf
-
-echo "${YELLOW_TEXT}${BOLD_TEXT}Deploying the frontend application...${RESET_FORMAT}"
 kubectl create -f deployments/frontend.yaml
 kubectl create -f services/frontend.yaml
 
-echo "${MAGENTA_TEXT}${BOLD_TEXT}Fetching the frontend service details...${RESET_FORMAT}"
 kubectl get services frontend
 
-echo "${CYAN_TEXT}${BOLD_TEXT}Scaling the hello deployment to 5 replicas...${RESET_FORMAT}"
-sleep 10
-kubectl scale deployment hello --replicas=5
 
-echo "${BLUE_TEXT}${BOLD_TEXT}Counting the hello pods...${RESET_FORMAT}"
-kubectl get pods | grep hello- | wc -l
+sed -i "s/auth:1.0.0/auth:2.0.0/" deployments/auth.yaml
 
-echo "${YELLOW_TEXT}${BOLD_TEXT}Scaling the hello deployment back to 3 replicas...${RESET_FORMAT}"
-kubectl scale deployment hello --replicas=3
+# kubectl get replicaset
 
-echo "${MAGENTA_TEXT}${BOLD_TEXT}Counting the hello pods again...${RESET_FORMAT}"
-kubectl get pods | grep hello- | wc -l
+# kubectl rollout history deployment/hello
 
-echo "${GREEN_TEXT}${BOLD_TEXT}Updating the image version in the hello deployment file...${RESET_FORMAT}"
-sed -i 's/image: "kelseyhightower\/auth:1.0.0"/image: "kelseyhightower\/auth:2.0.0"/' deployments/hello.yaml
+# kubectl rollout pause deployment/hello
 
-echo "${CYAN_TEXT}${BOLD_TEXT}Fetching the list of ReplicaSets...${RESET_FORMAT}"
-kubectl get replicaset
+# kubectl rollout status deployment/hello
 
-echo "${BLUE_TEXT}${BOLD_TEXT}Checking the rollout history of the hello deployment...${RESET_FORMAT}"
-kubectl rollout history deployment/hello
+# kubectl get pods -o jsonpath --template='{range .items[*]}{.metadata.name}{"\t"}{"\t"}{.spec.containers[0].image}{"\n"}{end}'
 
-echo "${YELLOW_TEXT}${BOLD_TEXT}Fetching pod names and their images...${RESET_FORMAT}"
-kubectl get pods -o jsonpath --template='{range .items[*]}{.metadata.name}{"\t"}{"\t"}{.spec.containers[0].image}{"\n"}{end}'
+# kubectl rollout resume deployment/hello
 
-echo "${MAGENTA_TEXT}${BOLD_TEXT}Resuming the rollout of the hello deployment...${RESET_FORMAT}"
-kubectl rollout resume deployment/hello
+# kubectl rollout status deployment/hello
 
-echo "${GREEN_TEXT}${BOLD_TEXT}Checking the rollout status of the hello deployment...${RESET_FORMAT}"
-kubectl rollout status deployment/hello
+# kubectl rollout undo deployment/hello
 
-echo "${CYAN_TEXT}${BOLD_TEXT}Undoing the last rollout of the hello deployment...${RESET_FORMAT}"
-kubectl rollout undo deployment/hello
+# kubectl rollout history deployment/hello
 
-echo "${BLUE_TEXT}${BOLD_TEXT}Checking the rollout history again...${RESET_FORMAT}"
-kubectl rollout history deployment/hello
 
-echo "${YELLOW_TEXT}${BOLD_TEXT}Fetching pod names and their images again...${RESET_FORMAT}"
-kubectl get pods -o jsonpath --template='{range .items[*]}{.metadata.name}{"\t"}{"\t"}{.spec.containers[0].image}{"\n"}{end}'
-
-echo "${MAGENTA_TEXT}${BOLD_TEXT}Creating the hello-canary deployment...${RESET_FORMAT}"
 kubectl create -f deployments/hello-canary.yaml
 
-echo "${GREEN_TEXT}${BOLD_TEXT}Fetching the list of deployments...${RESET_FORMAT}"
 kubectl get deployments
+
+
+kubectl apply -f services/hello-blue.yaml
+
+kubectl create -f deployments/hello-green.yaml
+
+curl -ks https://`kubectl get svc frontend -o=jsonpath="{.status.loadBalancer.ingress[0].ip}"`/version
+
+kubectl apply -f services/hello-green.yaml
 
 echo "${RED}${BOLD}Congratulations${RESET}" "${WHITE}${BOLD}for${RESET}" "${GREEN}${BOLD}Completing the Lab !!!${RESET}"
 
