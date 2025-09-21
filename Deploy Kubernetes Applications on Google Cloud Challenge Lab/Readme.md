@@ -43,16 +43,17 @@ sudo chmod +x GSP123.sh
 source <(gsutil cat gs://spls/gsp318/script.sh) 
 ```
 2. Copy the app source code:
-```gsutil cp gs://spls/gsp318/valkyrie-app.tgz .
+```cpp
+gsutil cp gs://spls/gsp318/valkyrie-app.tgz .
 tar -xzf valkyrie-app.tgz
 cd valkyrie-app
 ```
 3. Create the Dockerfile inside the valkyrie-app directory:
-```
+```cpp
 nano Dockerfile
 ```
 4. Paste this:
-```
+```cpp
 FROM golang:1.10
 WORKDIR /go/src/app
 COPY source .
@@ -61,15 +62,15 @@ ENTRYPOINT ["app","-single=true","-port=8080"]
 ```
 5. Press [**Ctrl X--> Y--> Enter**] to Save and exit.
 6. Build the Docker image (Change the required name and version):
-```
+```cpp
 docker build -t Image_Name:Tag_Name .
 ```
 7. Verify the image exists:
-```
+```cpp
 docker images
 ```
 8. You should see:
-```
+```cpp
 REPOSITORY      TAG       IMAGE ID       CREATED          SIZE
 valkyrie-app    v0.0.3    <some_id>      <a few seconds>  ...
 ```
