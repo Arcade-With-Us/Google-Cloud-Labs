@@ -116,8 +116,9 @@ kubectl get svc
 NAME            TYPE           CLUSTER-IP     EXTERNAL-IP     PORT(S)        AGE
 valkyrie-dev    LoadBalancer   10.12.34.56    34.123.45.67    80:30563/TCP   1m
 ```
-Now hit “Check my progress” on the lab page.
-If the deployment is applied with the correct image path, you’ll get the ✅.
+####Now hit “Check my progress” on the lab page.
+####If the deployment is applied with the correct image path, you’ll get the ✅.
+
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
