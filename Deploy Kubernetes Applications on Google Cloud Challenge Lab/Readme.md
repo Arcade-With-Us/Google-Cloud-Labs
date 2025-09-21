@@ -89,11 +89,12 @@ cd ~/valkyrie-app/k8s
 ```cpp
 nano deployment.yaml
 ```
-4. Find the image field (it probably has a placeholder like IMAGE_PLACEHOLDER/IMAGE_HERE
+4. Find the image field (it probably has a placeholder like IMAGE_PLACEHOLDER/IMAGE_HERE)
 ```cpp
 ⚠️ Format must be exact → LOCATION-docker.pkg.dev/PROJECT-ID/REPOSITORY/IMAGE:TAG
 ```
 [Change Location as your region, Projrct-Id as your given lab project id, Repository, Imaage, Tag]
+
 5. Replace it with your Artifact Registry image path, Save and exit.
 ```cpp
 Example: [us-central1-docker.pkg.dev/qwiklabs-gcp-04-34becb816a10/valkyrie-docker/valkyrie-app:v0.0.3]
