@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Managing Deployments Using Kubernetes Engine || GSP053  ✨
+✨  Managing Deployments Using Kubernetes Engine || GSP053  ✨
 </h1>
 
 <div align="center">
