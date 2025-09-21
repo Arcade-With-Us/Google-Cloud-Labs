@@ -98,6 +98,26 @@ nano deployment.yaml
 ```cpp
 Example: [us-central1-docker.pkg.dev/qwiklabs-gcp-04-34becb816a10/valkyrie-docker/valkyrie-app:v0.0.3]
 ```
+6. Apply the manifests:
+```cpp
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+```
+7. Verify deployment & service
+```cpp
+kubectl get pods
+```
+8. Check service:
+```cpp
+kubectl get svc
+```
+9. You’ll see something like:
+```cpp
+NAME            TYPE           CLUSTER-IP     EXTERNAL-IP     PORT(S)        AGE
+valkyrie-dev    LoadBalancer   10.12.34.56    34.123.45.67    80:30563/TCP   1m
+```
+Now hit “Check my progress” on the lab page.
+If the deployment is applied with the correct image path, you’ll get the ✅.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
