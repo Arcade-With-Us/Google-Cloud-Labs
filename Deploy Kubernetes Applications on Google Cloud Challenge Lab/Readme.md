@@ -34,27 +34,23 @@ Run the following commands in **Cloud Shell**:
 source <(gsutil cat gs://spls/gsp318/script.sh) 
 ```
 2. Copy the app source code:
-
-gsutil cp gs://spls/gsp318/valkyrie-app.tgz .
+```gsutil cp gs://spls/gsp318/valkyrie-app.tgz .
 tar -xzf valkyrie-app.tgz
 cd valkyrie-app
-
-
-Create the Dockerfile inside the valkyrie-app directory:
-
+```
+3. Create the Dockerfile inside the valkyrie-app directory:
+```
 nano Dockerfile
-
-
-Paste this:
-
+```
+4. Paste this:
+```
 FROM golang:1.10
 WORKDIR /go/src/app
 COPY source .
 RUN go install -v
 ENTRYPOINT ["app","-single=true","-port=8080"]
-
-
-Save and exit.
+```
+5. Press [Ctrl X--> Y--> Enter] to Save and exit.
 
 Build the Docker image (note the required name and version):
 
