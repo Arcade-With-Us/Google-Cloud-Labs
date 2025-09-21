@@ -24,10 +24,8 @@
 
 > ✅ **NOTE:** *Watch Full Video to get Full Scores on Check My Progress.*
 
-<div style="padding: 15px; margin: 10px 0;">
-<p><strong>**🌐Launch Cloud Shell:**
+**🌐Launch Cloud Shell:**
 Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
-</strong></p>
 
 ## 💻 **Execute in Cloud Shell**  
 ### For Task No. 1:
