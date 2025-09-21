@@ -74,6 +74,30 @@ docker images
 REPOSITORY      TAG       IMAGE ID       CREATED          SIZE
 valkyrie-app    v0.0.3    <some_id>      <a few seconds>  ...
 ```
+
+### For Task No. 1:
+#### Run the following commands in **Cloud Shell**:
+1. Get cluster credentials
+```cpp
+gcloud container clusters get-credentials valkyrie-dev --zone us-central1-f
+```
+2. Update the deployment.yaml, Navigate to the Kubernetes manifests folder:
+```cpp
+cd ~/valkyrie-app/k8s
+```
+3. Open deployment.yaml:
+```cpp
+nano deployment.yaml
+```
+4. Find the image field (it probably has a placeholder like IMAGE_PLACEHOLDER/IMAGE_HERE
+```cpp
+⚠️ Format must be exact → LOCATION-docker.pkg.dev/PROJECT-ID/REPOSITORY/IMAGE:TAG
+```
+[Change Location as your region, Projrct-Id as your given lab project id, Repository, Imaage, Tag]
+5. Replace it with your Artifact Registry image path, Save and exit.
+```cpp
+Example: [us-central1-docker.pkg.dev/qwiklabs-gcp-04-34becb816a10/valkyrie-docker/valkyrie-app:v0.0.3]
+```
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
