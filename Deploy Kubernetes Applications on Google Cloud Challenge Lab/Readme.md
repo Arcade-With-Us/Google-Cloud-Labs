@@ -28,6 +28,7 @@
 <p><strong>☁️ Run in Cloud Shell:</strong></p>
 
 ## 💻 **Execute in Cloud Shell**  
+### For Task No. 1:
 Run the following commands in **Cloud Shell**:
 1. Load the validation script (already provided in your instructions):
 ```bash
@@ -50,12 +51,15 @@ COPY source .
 RUN go install -v
 ENTRYPOINT ["app","-single=true","-port=8080"]
 ```
-5. Press [Ctrl X--> Y--> Enter] to Save and exit.
-
-Build the Docker image (note the required name and version):
-
-</div>
-
+5. Press [**Ctrl X--> Y--> Enter**] to Save and exit.
+6. Build the Docker image (Change the required name and version):
+```
+docker build -t Image_Name:Tag_Name .
+```
+7. Verify the image exists:
+```
+docker images
+```
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
