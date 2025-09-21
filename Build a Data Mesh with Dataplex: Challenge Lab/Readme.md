@@ -40,11 +40,11 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 export USER_2=
 ```
 ```
-curl -LO raw.githubusercontent.com/QUICK-GCP-LAB/2-Minutes-Labs-Solutions/refs/heads/main/Build%20a%20Data%20Mesh%20with%20Dataplex%20Challenge%20Lab/gsp514.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Build%20a%20Data%20Mesh%20with%20Dataplex%3A%20Challenge%20Lab/GSP514.sh
 
-sudo chmod +x gsp514.sh
+sudo chmod +x GSP514.sh
 
-./gsp514.sh
+./GSP514.sh
 ```
 
 * For the display name enter, **`Customer Orders Data Quality Job`**
