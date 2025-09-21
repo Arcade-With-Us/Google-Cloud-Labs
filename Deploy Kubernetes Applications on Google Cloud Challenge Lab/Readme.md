@@ -69,6 +69,11 @@ docker build -t Image_Name:Tag_Name .
 ```
 docker images
 ```
+8. You should see:
+```
+REPOSITORY      TAG       IMAGE ID       CREATED          SIZE
+valkyrie-app    v0.0.3    <some_id>      <a few seconds>  ...
+```
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
