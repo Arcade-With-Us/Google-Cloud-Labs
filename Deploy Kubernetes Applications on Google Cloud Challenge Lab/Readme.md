@@ -36,9 +36,8 @@ sudo chmod +x GSP123.sh
 ./GSP123.sh
 ```
 ### If you don't get score from the script then you can do manually from below:
-```
 ### For Task No. 1:
-Run the following commands in **Cloud Shell**:
+#### Run the following commands in **Cloud Shell**:
 1. Load the validation script (already provided in your instructions):
 ```bash
 source <(gsutil cat gs://spls/gsp318/script.sh) 
