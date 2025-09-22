@@ -35,7 +35,9 @@
 Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
 
 ## 💻 **Execute in Cloud Shell** 
-
+```
+export ZONE=
+```
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/App%20Dev:%20Setting%20up%20a%20Development%20Environment%20-%20Python/GSP183.sh
 
