@@ -31,17 +31,27 @@
 
 > ✅ **NOTE:** *Watch Full Video to get Full Scores on Check My Progress.*
 
+* Navigate to **Workbench** from [here](https://console.cloud.google.com/vertex-ai/workbench/instances?)
+
+### Run it on jupyter noteboosk terminal
+
+```
+rm prompt-v1.0.0.ipynb
+
+curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Develop%20GenAI%20Apps%20with%20Gemini%20and%20Streamlit%20Challenge%20Lab/prompt-v1.0.0.ipynb
+```
+
 **🌐Launch Cloud Shell:**
 Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
 
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Build%20a%20Data%20Mesh%20with%20Dataplex%3A%20Challenge%20Lab/GSP514.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Develop%20GenAI%20Apps%20with%20Gemini%20and%20Streamlit%20Challenge%20Lab/GSP517.sh
 
-sudo chmod +x GSP514.sh
+sudo chmod +x GSP517.sh
 
-./GSP514.sh
+./GSP517.sh
 ```
 ---
 
