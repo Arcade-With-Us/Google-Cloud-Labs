@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Scaling Microservices Applications: Migration to Redis Enterprise on Google Cloud || GSP1177 ✨
 </h1>
 
 <div align="center">
