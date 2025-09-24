@@ -42,6 +42,7 @@ sudo chmod +x GSP1049.sh
 
 ./GSP1049.sh
 ```
+* If you don't get score for the last task please try to do that manually
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
