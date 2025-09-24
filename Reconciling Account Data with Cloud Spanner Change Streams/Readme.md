@@ -43,42 +43,57 @@ sudo chmod +x GSP1097.sh
 
 ./GSP1097.sh
 ```
-* If you dont get score for the last task because of the the streaming of dataflow job. Then follow this:
-1. Open a new tab in cloud shell by clicking the `+` icon and paste this command
+* If you dont get score for the last task because of the the streaming of dataflow job. Then do it manually:
+* ### Now Paste in spanner studio 
 ```cpp
-ACCOUNT_ID="ACCOUNTID98765"
-ENCODED_ID=$(echo -n "$ACCOUNT_ID" | base64)
-gcloud spanner databases execute-sql finance \
-  --instance=bitfoon-dev \
-  --sql="INSERT INTO Account (
-           AccountId,
-           CreationTimestamp,
-           AccountStatus,
-           Balance
-         ) VALUES (
-           FROM_BASE64('$ENCODED_ID'),
-           PENDING_COMMIT_TIMESTAMP(),
-           1,
-           22
-         );"
+INSERT INTO
+ Account (AccountId,
+   CreationTimestamp,
+   AccountStatus,
+   Balance)
+VALUES
+ (FROM_BASE64('ACCOUNTID11123'),
+   PENDING_COMMIT_TIMESTAMP(),
+   1,
+   22);
 
+ UPDATE
+ Account
+SET
+ CreationTimestamp=PENDING_COMMIT_TIMESTAMP(),
+ AccountStatus=4,
+ Balance=255
+WHERE
+ AccountId=FROM_BASE64('ACCOUNTID11123');
 
-TARGET_ID="ACCOUNTID11123"
-ENCODED_TARGET=$(echo -n "$TARGET_ID" | base64)
-BALANCES=(255 300 500 600)
+ UPDATE
+ Account
+SET
+ CreationTimestamp=PENDING_COMMIT_TIMESTAMP(),
+ AccountStatus=4,
+ Balance=300
+WHERE
+ AccountId=FROM_BASE64('ACCOUNTID11123');
 
-for BALANCE in "${BALANCES[@]}"; do
-  gcloud spanner databases execute-sql finance \
-    --instance=bitfoon-dev \
-    --sql="UPDATE Account
-           SET CreationTimestamp = PENDING_COMMIT_TIMESTAMP(),
-               AccountStatus = 4,
-               Balance = $BALANCE
-           WHERE AccountId = FROM_BASE64('$ENCODED_TARGET');"
-  echo "Updated balance to $BALANCE"
-  sleep 1
-done
+ UPDATE
+ Account
+SET
+ CreationTimestamp=PENDING_COMMIT_TIMESTAMP(),
+ AccountStatus=4,
+ Balance=500
+WHERE
+ AccountId=FROM_BASE64('ACCOUNTID11123');
+
+ UPDATE
+ Account
+SET
+ CreationTimestamp=PENDING_COMMIT_TIMESTAMP(),
+ AccountStatus=4,
+ Balance=600
+WHERE
+ AccountId=FROM_BASE64('ACCOUNTID11123');
 ```
+
 ---
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
 
