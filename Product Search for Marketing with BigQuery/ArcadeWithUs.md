@@ -33,9 +33,9 @@
 
 ## 💻 **Execute in Cloud Shell** 
 
+* Kindly change the [projet-id] part with yours
 ```bash
-
-bq load --source_format=CSV --skip_leading_rows=1 --autodetect products.products_information gs://qwiklabs-gcp-04-2ca0d3863f4c-bucket/products.csv
+bq load --source_format=CSV --skip_leading_rows=1 --autodetect products.products_information gs://[project-id]-bucket/products.csv
 ```
 ```
 bq query --use_legacy_sql=false 'CREATE SEARCH INDEX product_search_index ON products.products_information(ALL COLUMNS)'
