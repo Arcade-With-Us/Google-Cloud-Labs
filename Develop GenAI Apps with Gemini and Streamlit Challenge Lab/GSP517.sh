@@ -1,26 +1,4 @@
 #!/bin/bash
-BLACK_TEXT=$'\033[0;90m'
-RED_TEXT=$'\033[0;91m'
-GREEN_TEXT=$'\033[0;92m'
-YELLOW_TEXT=$'\033[0;93m'
-BLUE_TEXT=$'\033[0;94m'
-MAGENTA_TEXT=$'\033[0;95m'
-CYAN_TEXT=$'\033[0;96m'
-WHITE_TEXT=$'\033[0;97m'
-DIM_TEXT=$'\033[2m'
-STRIKETHROUGH_TEXT=$'\033[9m'
-BOLD_TEXT=$'\033[1m'
-RESET_FORMAT=$'\033[0m'
-
-clear
-
-echo
-echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
-echo
-
-#!/bin/bash
 # Define color variables
 
 BLACK=`tput setaf 0`
@@ -53,6 +31,12 @@ RANDOM_TEXT_COLOR=${TEXT_COLORS[$RANDOM % ${#TEXT_COLORS[@]}]}
 RANDOM_BG_COLOR=${BG_COLORS[$RANDOM % ${#BG_COLORS[@]}]}
 
 #----------------------------------------------------start--------------------------------------------------#
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo
+
 # Step 1: Enable Cloud Run API
 echo "${CYAN}${BOLD}Enabling Cloud Run API...${RESET}"
 gcloud services enable run.googleapis.com
