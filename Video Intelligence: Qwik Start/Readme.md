@@ -30,7 +30,7 @@
 ## 💻 **Execute in Cloud Shell**  
 Run the following commands in **Cloud Shell**:
 ```bash
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Video%20Intelligence%3A%20Qwik%20Start/GSP154.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Video%20Intelligence%3A%20Qwik%20Start/GSP154.sh
 
 sudo chmod +x GSP154.sh
 
