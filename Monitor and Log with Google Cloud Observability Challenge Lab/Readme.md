@@ -47,6 +47,7 @@ sudo chmod +x GSP338.sh
 
 ./GSP338.sh
 ```
+* Type or paste **input_queue_size**
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
