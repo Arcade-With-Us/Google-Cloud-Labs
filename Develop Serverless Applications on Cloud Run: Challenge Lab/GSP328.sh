@@ -55,7 +55,7 @@ $(gcloud projects list --format='value(PROJECT_ID)' \
 gcloud config set run/region $REGION
 gcloud config set run/platform managed
 echo "${GREEN_TEXT}✓ Project configuration complete${RESET_FORMAT}"
-echo "${BLUE_TEXT}Learn more at: https://www.youtube.com/@drabhishek.5460${RESET_FORMAT}"
+echo "${BLUE_TEXT}Learn more at: https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
 
 echo "${BOLD_TEXT}${CYAN_TEXT}Fetching the source code repository...${RESET_FORMAT}"
 git clone https://github.com/rosera/pet-theory.git && cd pet-theory/lab07
