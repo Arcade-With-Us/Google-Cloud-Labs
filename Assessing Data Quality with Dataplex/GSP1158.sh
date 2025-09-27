@@ -52,51 +52,20 @@ gcloud dataplex assets create contact-info \
 --discovery-enabled 
 
 cat > dq-customer-raw-data.yaml <<EOF_END
-metadata_registry_defaults:
-  dataplex:
-    projects: $DEVSHELL_PROJECT_ID
-    locations: $REGION
-    lakes: ecommerce-lake
-    zones: customer-contact-raw-zone
-row_filters:
-  NONE:
-    filter_sql_expr: |-
-      True
-  INTERNATIONAL_ITEMS:
-    filter_sql_expr: |-
-      REGEXP_CONTAINS(item_id, 'INTNL')
-rule_dimensions:
-  - consistency
-  - correctness
-  - duplication
-  - completeness
-  - conformance
-  - integrity
-  - timeliness
-  - accuracy
 rules:
-  NOT_NULL:
-    rule_type: NOT_NULL
-    dimension: completeness
-  VALID_EMAIL:
-    rule_type: REGEX
-    dimension: conformance
-    params:
-      pattern: |-
-        ^[^@]+[@]{1}[^@]+$
-rule_bindings:
-  VALID_CUSTOMER:
-    entity_uri: bigquery://projects/$DEVSHELL_PROJECT_ID/datasets/customers/tables/contact_info
-    column_id: id
-    row_filter_id: NONE
-    rule_ids:
-      - NOT_NULL
-  VALID_EMAIL_ID:
-    entity_uri: bigquery://projects/$DEVSHELL_PROJECT_ID/datasets/customers/tables/contact_info
-    column_id: email
-    row_filter_id: NONE
-    rule_ids:
-      - VALID_EMAIL
+- nonNullExpectation: {}
+  column: id
+  dimension: COMPLETENESS
+  threshold: 1
+- regexExpectation:
+    regex: '^[^@]+[@]{1}[^@]+$'
+  column: email
+  dimension: CONFORMANCE
+  ignoreNull: true
+  threshold: .85
+postScanActions:
+  bigqueryExport:
+    resultsTable: projects/qwiklabs-gcp-01-696f88f06988/datasets/customers_dq_dataset/tables/dq_results
 EOF_END
 
 gsutil cp dq-customer-raw-data.yaml gs://$DEVSHELL_PROJECT_ID-bucket
