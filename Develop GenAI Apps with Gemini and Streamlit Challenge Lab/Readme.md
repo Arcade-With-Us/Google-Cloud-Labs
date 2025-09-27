@@ -53,6 +53,8 @@ sudo chmod +x GSP517.sh
 
 ./GSP517.sh
 ```
+* You have to score **95/100** to get success in this lab.
+* If you dont get full score in one try running the script couple oftimes
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
