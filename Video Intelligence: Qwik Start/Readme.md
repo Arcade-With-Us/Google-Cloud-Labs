@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Video Intelligence: Qwik Start || GSP154  ✨
+✨🌐  Video Intelligence: Qwik Start || GSP154  🌐✨
 </h1>
 
 <div align="center">
