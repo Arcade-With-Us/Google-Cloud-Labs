@@ -55,6 +55,7 @@ sudo chmod +x gsp1158.sh
   ORDER BY id
   LIMIT 50
 ```
+* Task number you need to do manually
 
 * Return to the console. You should still be in the **Dataplex Universal Catalog**.
 
