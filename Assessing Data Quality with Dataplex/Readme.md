@@ -56,7 +56,13 @@ sudo chmod +x gsp1158.sh
   LIMIT 50
 ```
 
-* Go to `Create task` from [here](https://console.cloud.google.com/dataplex/process/create-task/data-quality?)
+* Return to the console. You should still be in the **Dataplex Universal Catalog**.
+
+* Under Govern, click **Data profiling & quality**.
+
+* Click **customer-orders-data-quality-job**.
+
+* Click **Run Now**.
 
 ---
 
