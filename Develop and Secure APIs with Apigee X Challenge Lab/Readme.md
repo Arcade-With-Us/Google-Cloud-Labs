@@ -1,5 +1,5 @@
 <h1 align="center">
-✨ Develop & Secure APIs with Apigee X: Challenge Lab || GSP363 ✨
+✨ Develop & Secure APIs with Apigee X Challenge Lab || GSP363 ✨
 </h1>
 
 <div align="center">
