@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Dataflow: Qwik Start - Templates || GSP192  ✨
+✨🌐  Dataflow: Qwik Start - Templates || GSP192  🌐✨
 </h1>
 
 <div align="center">
