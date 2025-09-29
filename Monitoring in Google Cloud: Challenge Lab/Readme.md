@@ -30,7 +30,7 @@
 ## 💻 **Execute in Cloud Shell**  
 Run the following commands in **Cloud Shell**:
 ```bash
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Monitoring%20in%20Google%20Cloud%3A%20Challenge%20Lab/ARC115.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Monitoring%20in%20Google%20Cloud%3A%20Challenge%20Lab/ARC115.sh
 
 sudo chmod +x ARC115.sh
 
