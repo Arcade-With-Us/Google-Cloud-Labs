@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Monitoring in Google Cloud: Challenge Lab || ARC115  ✨
+✨  Monitoring in Google Cloud: Challenge Lab || ARC115  ✨
 </h1>
 
 <div align="center">
