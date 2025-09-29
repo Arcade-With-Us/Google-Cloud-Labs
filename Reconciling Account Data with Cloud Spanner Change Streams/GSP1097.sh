@@ -55,11 +55,26 @@ gcloud spanner databases ddl update finance \
   --instance=bitfoon-dev \
   --ddl="CREATE CHANGE STREAM AccountUpdateStream FOR Account(AccountStatus, Balance);"
 
-
 bq --location="$REGION" mk --dataset "$PROJECT_ID:changestream"
 
+# Get the default region from project metadata
+export REGION=$(gcloud compute project-info describe \
+  --format="value(commonInstanceMetadata.items[google-compute-default-region])")
+
+# Run the Dataflow flex template
+gcloud dataflow flex-template run change-stream-pipeline \
+  --template-file-gcs-location=gs://dataflow-templates-$REGION/latest/flex/Spanner_Change_Streams_to_BigQuery \
+  --region=$REGION \
+  --parameters \
+spannerInstanceId=bitfoon-dev,\
+spannerDatabase=finance,\
+spannerChangeStreamName=AccountUpdateStream,\
+spannerMetadataInstanceId=bitfoon-dev,\
+spannerMetadataDatabase=finance,\
+bigQueryDataset=changestream
+
 echo
-echo -e "\033[1;33mCreate a Dataflow\033[0m \033[1;34mhttps://console.cloud.google.com/dataflow/createjob?inv=1&invt=Ab2T9A&project=$DEVSHELL_PROJECT_ID\033[0m"
+echo -e "\033[1;33mCheck the Dataflow Job\033[0m \033[1;34mhttps://console.cloud.google.com/dataflow/createjob?inv=1&invt=Ab2T9A&project=$DEVSHELL_PROJECT_ID\033[0m"
 echo
 
 echo
