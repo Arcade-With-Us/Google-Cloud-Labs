@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Get Started with Eventarc: Challenge Lab ✨
+✨🌐  Get Started with Eventarc: Challenge Lab 🌐✨
 </h1>
 
 <div align="center">
