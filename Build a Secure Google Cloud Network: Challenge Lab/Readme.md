@@ -39,7 +39,7 @@ export HTTP_NET_TAG=
 export ZONE=
 ```
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Build%20a%20Secure%20Google%20Cloud%20Network%3A%20Challenge%20Lab/GSP322.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Build%20a%20Secure%20Google%20Cloud%20Network%3A%20Challenge%20Lab/GSP322.sh
 
 sudo chmod +x GSP322.sh
 
