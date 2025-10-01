@@ -71,10 +71,10 @@ while true; do
     gcloud dataflow jobs run import-sessions --region=$REGION --project=$PROJECT_ID --gcs-location gs://dataflow-templates-$REGION/latest/GCS_SequenceFile_to_Cloud_Bigtable --staging-location gs://$PROJECT_ID/temp --parameters bigtableProject=$PROJECT_ID,bigtableInstanceId=ecommerce-recommendations,bigtableTableId=SessionHistory,sourcePattern=gs://cloud-training/OCBL377/retail-engagements-sales-00000-of-00001,mutationThrottleLatencyMs=0
 
     if [ $? -eq 0 ]; then
-        echo -e "\033[1;33mJob has completed successfully. now just wait for succeeded\033[0m \033[1;34mhttps://www.youtube.com/@techcps\033[0m"
+        echo -e "\033[1;33mJob has completed successfully. now just wait for succeeded\033[0m \033[1;34mhttps://youtube.com/@arcadewithus_we\033[0m"
         break
     else
-        echo -e "\033[1;33mJob retrying. please like share and subscribe to techcps\033[0m \033[1;34mhttps://www.youtube.com/@techcps\033[0m"
+        echo -e "\033[1;33mJob retrying. please like share and subscribe to techcps\033[0m \033[1;34mhhttps://youtube.com/@arcadewithus_we\033[0m"
         sleep 10
     fi
 done
@@ -90,10 +90,10 @@ while true; do
     gcloud dataflow jobs run import-recommendations --region=$REGION --project=$PROJECT_ID --gcs-location gs://dataflow-templates-$REGION/latest/GCS_SequenceFile_to_Cloud_Bigtable --staging-location gs://$PROJECT_ID/temp --parameters bigtableProject=$PROJECT_ID,bigtableInstanceId=ecommerce-recommendations,bigtableTableId=PersonalizedProducts,sourcePattern=gs://cloud-training/OCBL377/retail-recommendations-00000-of-00001,mutationThrottleLatencyMs=0
 
     if [ $? -eq 0 ]; then
-        echo -e "\033[1;33mJob has completed successfully. now just wait for succeeded\033[0m \033[1;34mhttps://www.youtube.com/@techcps\033[0m"
+        echo -e "\033[1;33mJob has completed successfully. now just wait for succeeded\033[0m \033[1;34mhttps://youtube.com/@arcadewithus_we\033[0m"
         break
     else
-        echo -e "\033[1;33mJob retrying. please like share and subscribe to techcps\033[0m \033[1;34mhttps://www.youtube.com/@techcps\033[0m"
+        echo -e "\033[1;33mJob retrying. please like share and subscribe to techcps\033[0m \033[1;34mhttps://youtube.com/@arcadewithus_we\033[0m"
         sleep 10
     fi
 done
