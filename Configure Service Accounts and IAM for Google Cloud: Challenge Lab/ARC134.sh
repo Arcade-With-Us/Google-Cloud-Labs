@@ -1,5 +1,4 @@
 #!/bin/bash
-# Define text formatting variables
 BLACK_TEXT=$'\033[0;90m'
 RED_TEXT=$'\033[0;91m'
 GREEN_TEXT=$'\033[0;92m'
