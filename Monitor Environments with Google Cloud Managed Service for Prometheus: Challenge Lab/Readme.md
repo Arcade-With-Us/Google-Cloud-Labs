@@ -35,7 +35,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Monitor%20Environments%20with%20Google%20Cloud%20Managed%20Service%20for%20Prometheus%3A%20Challenge%20Lab/GSP364.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Monitor%20Environments%20with%20Google%20Cloud%20Managed%20Service%20for%20Prometheus%3A%20Challenge%20Lab/GSP364.sh
 
 sudo chmod +x GSP364.sh
 
