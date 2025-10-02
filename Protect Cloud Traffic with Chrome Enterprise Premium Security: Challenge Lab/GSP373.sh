@@ -81,18 +81,18 @@ echo -e "\n"  # Adding one blank line
 # Function to display a random congratulatory message
 function random_congrats() {
     MESSAGES=(
-        "${GREEN}Congratulations For Completing The Lab! Keep up the great work!${RESET}"
+        "${GREEN}Congratulations For Completing The Us! Keep up the great work!${RESET}"
         "${CYAN}Well done! Your hard work and effort have paid off!${RESET}"
-        "${YELLOW}Amazing job! You’ve successfully completed the lab!${RESET}"
+        "${YELLOW}Amazing job! You’ve successfully completed the Us!${RESET}"
         "${BLUE}Outstanding! Your dedication has brought you success!${RESET}"
         "${MAGENTA}Great work! You’re one step closer to mastering this!${RESET}"
         "${RED}Fantastic effort! You’ve earned this achievement!${RESET}"
         "${CYAN}Congratulations! Your persistence has paid off brilliantly!${RESET}"
-        "${GREEN}Bravo! You’ve completed the lab with flying colors!${RESET}"
+        "${GREEN}Bravo! You’ve completed the Us with flying colors!${RESET}"
         "${YELLOW}Excellent job! Your commitment is inspiring!${RESET}"
         "${BLUE}You did it! Keep striving for more successes like this!${RESET}"
         "${MAGENTA}Kudos! Your hard work has turned into a great accomplishment!${RESET}"
-        "${RED}You’ve smashed it! Completing this lab shows your dedication!${RESET}"
+        "${RED}You’ve smashed it! Completing this Us shows your dedication!${RESET}"
         "${CYAN}Impressive work! You’re making great strides!${RESET}"
         "${GREEN}Well done! This is a big step towards mastering the topic!${RESET}"
         "${YELLOW}You nailed it! Every step you took led you to success!${RESET}"
@@ -148,22 +148,22 @@ function random_question() {
 # Function to display the "Please Subscribe" message with variety
 function random_subscribe_message() {
     MESSAGES=(
-        "${BOLD}${RED}Please ${GREEN}Subscribe ${YELLOW}to ${BLUE}QUICK ${MAGENTA}GCP ${CYAN}LAB!${RESET}"
-        "${BOLD}${CYAN}Don’t miss out! Subscribe to ${MAGENTA}QUICK ${GREEN}GCP ${BLUE}LAB!${RESET}"
-        "${BOLD}${RED}Hit that subscribe button for more amazing content from ${CYAN}QUICK ${GREEN}GCP ${MAGENTA}LAB!${RESET}"
-        "${BOLD}${YELLOW}Join the ${GREEN}QUICK ${CYAN}GCP ${MAGENTA}LAB community! Subscribe now!${RESET}"
-        "${BOLD}${BLUE}Want more tutorials? ${MAGENTA}SUBSCRIBE ${YELLOW}to ${CYAN}QUICK ${GREEN}GCP ${BLUE}LAB!${RESET}"
-        "${BOLD}${RED}Your subscription helps us bring more tutorials to you! Please ${CYAN}subscribe to ${MAGENTA}QUICK ${GREEN}GCP ${BLUE}LAB!${RESET}"
-        "${BOLD}${YELLOW}Subscribe to ${CYAN}QUICK ${MAGENTA}GCP ${GREEN}LAB to stay updated on all our tutorials!${RESET}"
-        "${BOLD}${CYAN}Keep learning with us! ${GREEN}Subscribe to ${MAGENTA}QUICK ${YELLOW}GCP ${RED}LAB!${RESET}"
-        "${BOLD}${MAGENTA}Support us and get access to exclusive tutorials by subscribing to ${CYAN}QUICK ${GREEN}GCP ${BLUE}LAB!${RESET}"
-        "${BOLD}${BLUE}Love the content? Subscribe to ${MAGENTA}QUICK ${CYAN}GCP ${GREEN}LAB!${RESET}"
-        "${BOLD}${RED}Help us grow by subscribing to ${CYAN}QUICK ${MAGENTA}GCP ${YELLOW}LAB! Your support is crucial!${RESET}"
-        "${BOLD}${GREEN}Don’t forget to hit subscribe to stay up to date with ${CYAN}QUICK ${MAGENTA}GCP ${BLUE}LAB!${RESET}"
-        "${BOLD}${YELLOW}Want to join the ${BLUE}QUICK ${MAGENTA}GCP ${CYAN}LAB family? Hit subscribe!${RESET}"
-        "${BOLD}${MAGENTA}We appreciate your support! Please ${CYAN}subscribe to ${GREEN}QUICK ${RED}GCP ${BLUE}LAB!${RESET}"
-        "${BOLD}${CYAN}Your subscription makes a difference! Help us grow by subscribing to ${MAGENTA}QUICK ${YELLOW}GCP ${GREEN}LAB!${RESET}"
-        "${BOLD}${RED}Every click counts! Please subscribe to ${BLUE}QUICK ${MAGENTA}GCP ${CYAN}LAB!${RESET}"
+        "${BOLD}${RED}Please ${GREEN}Subscribe ${YELLOW}to ${BLUE}Arcade ${MAGENTA}With ${CYAN}Us!${RESET}"
+        "${BOLD}${CYAN}Don’t miss out! Subscribe to ${MAGENTA}Arcade ${GREEN}With ${BLUE}Us!${RESET}"
+        "${BOLD}${RED}Hit that subscribe button for more amazing content from ${CYAN}Arcade ${GREEN}With ${MAGENTA}Us!${RESET}"
+        "${BOLD}${YELLOW}Join the ${GREEN}Arcade ${CYAN}With ${MAGENTA}Us community! Subscribe now!${RESET}"
+        "${BOLD}${BLUE}Want more tutorials? ${MAGENTA}SUBSCRIBE ${YELLOW}to ${CYAN}Arcade ${GREEN}With ${BLUE}Us!${RESET}"
+        "${BOLD}${RED}Your subscription helps us bring more tutorials to you! Please ${CYAN}subscribe to ${MAGENTA}Arcade ${GREEN}With ${BLUE}Us!${RESET}"
+        "${BOLD}${YELLOW}Subscribe to ${CYAN}Arcade ${MAGENTA}With ${GREEN}Us to stay updated on all our tutorials!${RESET}"
+        "${BOLD}${CYAN}Keep learning with us! ${GREEN}Subscribe to ${MAGENTA}Arcade ${YELLOW}With ${RED}Us!${RESET}"
+        "${BOLD}${MAGENTA}Support us and get access to exclusive tutorials by subscribing to ${CYAN}Arcade ${GREEN}With ${BLUE}Us!${RESET}"
+        "${BOLD}${BLUE}Love the content? Subscribe to ${MAGENTA}Arcade ${CYAN}With ${GREEN}Us!${RESET}"
+        "${BOLD}${RED}Help us grow by subscribing to ${CYAN}Arcade ${MAGENTA}With ${YELLOW}Us! Your support is crucial!${RESET}"
+        "${BOLD}${GREEN}Don’t forget to hit subscribe to stay up to date with ${CYAN}Arcade ${MAGENTA}With ${BLUE}Us!${RESET}"
+        "${BOLD}${YELLOW}Want to join the ${BLUE}Arcade ${MAGENTA}With ${CYAN}Us family? Hit subscribe!${RESET}"
+        "${BOLD}${MAGENTA}We appreciate your support! Please ${CYAN}subscribe to ${GREEN}Arcade ${RED}With ${BLUE}Us!${RESET}"
+        "${BOLD}${CYAN}Your subscription makes a difference! Help us grow by subscribing to ${MAGENTA}Arcade ${YELLOW}With ${GREEN}Us!${RESET}"
+        "${BOLD}${RED}Every click counts! Please subscribe to ${BLUE}Arcade ${MAGENTA}With ${CYAN}Us!${RESET}"
     )
     RANDOM_INDEX=$((RANDOM % ${#MESSAGES[@]}))
     echo -e "${BOLD}${MESSAGES[$RANDOM_INDEX]}"
@@ -220,7 +220,7 @@ remove_files
 
 echo
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}🚀  LAB COMPLETED SUCCESSFULLY  🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀  Us COMPLETED SUCCESSFULLY  🚀${RESET_FORMAT}"
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
