@@ -30,7 +30,7 @@
 ## 💻 **Execute in Cloud Shell**  
 Run the following commands in **Cloud Shell**:
 ```bash
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Tag%20and%20Discover%20BigLake%20Data%3A%20Challenge%20Lab/ARC123.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Tag%20and%20Discover%20BigLake%20Data%3A%20Challenge%20Lab/ARC123.sh
 
 sudo chmod +x ARC123.sh
 
