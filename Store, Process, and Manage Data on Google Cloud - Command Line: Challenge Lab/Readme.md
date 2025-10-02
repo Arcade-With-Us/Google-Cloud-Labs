@@ -44,7 +44,6 @@ curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/m
 sudo chmod +x ARC102.sh
 
 ./ARC102.sh
-
 ```
 ---
 
