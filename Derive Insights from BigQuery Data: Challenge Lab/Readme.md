@@ -39,6 +39,29 @@ sudo chmod +x GSP787.sh
 
 ./GSP787.sh
 ```
+#### For Task no 5 Paste the command in Bigquery tab:
+```cpp
+SELECT
+  DATE(date) AS date
+FROM (
+  SELECT
+    date,
+    SUM(cumulative_deceased) AS total_deaths
+  FROM
+    `bigquery-public-data.covid19_open_data.covid19_open_data`
+  WHERE
+    country_name = 'Italy'
+    AND date >= '2020-01-01'
+  GROUP BY
+    date
+)
+WHERE
+  total_deaths > [Value]
+ORDER BY
+  date ASC
+LIMIT 1;
+```
+### Just change the [value] according to your lab instructions
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
