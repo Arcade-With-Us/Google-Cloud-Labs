@@ -20,6 +20,13 @@ echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORM
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
+echo "Please set the below values correctly"
+read -p "Enter the BUCKET_NAME: " BUCKET_NAME
+
+curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/master/main/mini%20lab%20%3A%20Cloud%20Storage%20%3A%202/lifecycle.json
+
+gsutil lifecycle set lifecycle.json gs://$BUCKET_NAME
+
 echo
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo "${CYAN_TEXT}${BOLD_TEXT}🚀  LAB COMPLETED SUCCESSFULLY  🚀${RESET_FORMAT}"
