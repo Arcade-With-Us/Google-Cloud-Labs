@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  mini lab : Cloud Storage : 1 ✨
 </h1>
 
 <div align="center">
@@ -36,12 +36,16 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ## 💻 **Execute in Cloud Shell** 
 
-```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Build%20a%20Data%20Mesh%20with%20Dataplex%3A%20Challenge%20Lab/GSP514.sh
+```sql
+export PROJECT=$(gcloud projects list --format="value(PROJECT_ID)")
 
-sudo chmod +x GSP514.sh
+gcloud storage buckets update gs://$PROJECT-bucket --no-uniform-bucket-level-access
 
-./GSP514.sh
+gcloud storage buckets update gs://$PROJECT-bucket --web-main-page-suffix=index.html --web-error-page=error.html
+
+gcloud storage objects update gs://$PROJECT-bucket/index.html --add-acl-grant=entity=AllUsers,role=READER
+
+gcloud storage objects update gs://$PROJECT-bucket/error.html --add-acl-grant=entity=AllUsers,role=READER
 ```
 ---
 
