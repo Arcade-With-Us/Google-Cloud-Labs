@@ -20,12 +20,63 @@ echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORM
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
-echo "Please set the below values correctly"
-read -p "Enter the BUCKET_NAME: " BUCKET_NAME
+cat > lifecycle.json << EOF
+{
+    "rule": [
+      {
+        "action": {
+          "storageClass": "NEARLINE",
+          "type": "SetStorageClass"
+        },
+        "condition": {
+          "daysSinceNoncurrentTime": 30,
+          "matchesPrefix": [
+            "/projects/active/"
+          ]
+        }
+      },
+      {
+        "action": {
+          "storageClass": "NEARLINE",
+          "type": "SetStorageClass"
+        },
+        "condition": {
+          "daysSinceNoncurrentTime": 90,
+          "matchesPrefix": [
+            "/archive/"
+          ]
+        }
+      },
+      {
+        "action": {
+          "storageClass": "COLDLINE",
+          "type": "SetStorageClass"
+        },
+        "condition": {
+          "daysSinceNoncurrentTime": 180,
+          "matchesPrefix": [
+            "/archive/"
+          ]
+        }
+      },
+      {
+        "action": {
+          "type": "Delete"
+        },
+        "condition": {
+          "age": 7,
+          "matchesPrefix": [
+            "/processing/temp_logs/"
+          ]
+        }
+      }
+    ]
+  }
+EOF
 
-curl -LO https://raw.githubusercontent.com/Techcps/GSP/master/mini%20lab%20%3A%20Cloud%20Storage%20%3A%202/lifecycle.json
+export PROJECT_ID=$(gcloud config get-value project)
 
-gsutil lifecycle set lifecycle.json gs://$BUCKET_NAME
+gsutil lifecycle set lifecycle.json gs://$PROJECT_ID-bucket
 
 echo
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
