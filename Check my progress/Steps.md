@@ -21,7 +21,7 @@ javascript:(function () {
 ### Now you just need to refresh your page and simply click on the **`Check My Progress Bar`** bookmark.
 #### You will see the **`Check My Progress Bar`** will come as a pop up in the lab.
 
-## Now just click on the bookmark each and every time you doing arcade games and you are good to go.
+### Now just click on the bookmark each and every time you doing arcade games and you are good to go.
 
 <div align="center" style="padding: 5px;">
   <h3>📱 Join the Arcade With Us Community</h3>
