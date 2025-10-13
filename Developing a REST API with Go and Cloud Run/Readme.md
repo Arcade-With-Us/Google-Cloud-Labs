@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Developing a REST API with Go and Cloud Run || GSP761 ✨
 </h1>
 
 <div align="center">
