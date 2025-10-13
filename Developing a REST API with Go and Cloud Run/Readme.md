@@ -37,11 +37,11 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Build%20a%20Data%20Mesh%20with%20Dataplex%3A%20Challenge%20Lab/GSP514.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Developing%20a%20REST%20API%20with%20Go%20and%20Cloud%20Run/GSP761.sh
 
-sudo chmod +x GSP514.sh
+sudo chmod +x GSP761.sh
 
-./GSP514.sh
+./GSP761.sh
 ```
 ---
 
