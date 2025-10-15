@@ -37,11 +37,17 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Build%20a%20Data%20Mesh%20with%20Dataplex%3A%20Challenge%20Lab/GSP514.sh
+export ZONE_1=
+```
+```
+export ZONE_2=
+```
+```
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Building%20a%20High-throughput%20VPN/GSP062.sh
 
-sudo chmod +x GSP514.sh
+sudo chmod +x GSP062.sh
 
-./GSP514.sh
+./GSP062.sh
 ```
 ---
 
@@ -76,6 +82,6 @@ You've successfully completed the lab. **Way to go!** 🚀
     <em>This guide is provided for educational purposes. Always follow Qwiklabs terms of service and YouTube's community guidelines.</em>
   </p>
   <p style="font-size: 12px; color: #586069;">
-    <em>Last updated: June 2025</em>
+    <em>Last updated: October 2025</em>
   </p>
 </div>
