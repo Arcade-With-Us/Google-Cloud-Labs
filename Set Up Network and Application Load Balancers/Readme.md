@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐   Set Up Network and Application Load Balancers || GSP007 ✨
+✨   Set Up Network and Application Load Balancers || GSP007 ✨
 </h1>
 
 <div align="center">
