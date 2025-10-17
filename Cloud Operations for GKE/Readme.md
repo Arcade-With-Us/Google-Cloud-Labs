@@ -3,7 +3,7 @@
 </h1>
 
 <div align="center">
-  <a href=""_blank" rel="noopener noreferrer">
+  <a href="https://www.cloudskillsboost.google/games/6557/labs/41137"_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/Open_Lab-Cloud_Skills_Boost-4285F4?style=for-the-badge&logo=google&logoColor=white&labelColor=34A853" alt="Open Lab Badge">
   </a>
 </div>
@@ -37,11 +37,11 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Build%20a%20Data%20Mesh%20with%20Dataplex%3A%20Challenge%20Lab/GSP514.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Cloud%20Operations%20for%20GKE/GSP497.sh
 
-sudo chmod +x GSP514.sh
+sudo chmod +x GSP497.sh
 
-./GSP514.sh
+./GSP497.sh
 ```
 ---
 
@@ -76,6 +76,6 @@ You've successfully completed the lab. **Way to go!** 🚀
     <em>This guide is provided for educational purposes. Always follow Qwiklabs terms of service and YouTube's community guidelines.</em>
   </p>
   <p style="font-size: 12px; color: #586069;">
-    <em>Last updated: June 2025</em>
+    <em>Last updated: October 2025</em>
   </p>
 </div>
