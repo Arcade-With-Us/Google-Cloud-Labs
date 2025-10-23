@@ -42,7 +42,7 @@ gcloud compute ssh centos-clean --zone=$(gcloud compute project-info describe --
 ```  
 
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Configuring%20IAM%20Permissions%20with%20gcloud/GSP647.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Configuring%20IAM%20Permissions%20with%20gcloud/GSP647.sh
 
 sudo chmod +x GSP647.sh
 
