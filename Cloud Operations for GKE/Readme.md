@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Cloud Operations for GKE || GSP496 ✨
+✨  Cloud Operations for GKE || GSP497 ✨
 </h1>
 
 <div align="center">
