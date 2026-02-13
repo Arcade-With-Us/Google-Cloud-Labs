@@ -21,24 +21,38 @@ echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}
 echo
 
 
-
-
+# ------------------------------------------------------
+echo "${YELLOW_TEXT}${BOLD_TEXT}👉 Checking current gcloud authentication...${RESET_FORMAT}"
+# ------------------------------------------------------
 gcloud auth list
 
-export ZONE=$(gcloud compute project-info describe --format="value(commonInstanceMetadata.items[google-compute-default-zone])")
 
+# ------------------------------------------------------
+echo "${MAGENTA_TEXT}${BOLD_TEXT}👉 Fetching ZONE and REGION automatically...${RESET_FORMAT}"
+# ------------------------------------------------------
+export ZONE=$(gcloud compute project-info describe --format="value(commonInstanceMetadata.items[google-compute-default-zone])")
 export REGION=$(gcloud compute project-info describe --format="value(commonInstanceMetadata.items[google-compute-default-region])")
 
 
-gcloud compute networks create vpc-net --project=$DEVSHELL_PROJECT_ID --description="Subscribe to Techcps" --subnet-mode=custom
+# ------------------------------------------------------
+echo "${GREEN_TEXT}${BOLD_TEXT}👉 Creating VPC Network vpc-net...${RESET_FORMAT}"
+# ------------------------------------------------------
+gcloud compute networks create vpc-net --project=$DEVSHELL_PROJECT_ID --description="Subscribe to Dr. Abhishek's YouTube Channel" --subnet-mode=custom
 
 
+# ------------------------------------------------------
+echo "${LIME_TEXT}${BOLD_TEXT}👉 Creating VPC Subnet vpc-subnet with custom range...${RESET_FORMAT}"
+# ------------------------------------------------------
 gcloud compute networks subnets create vpc-subnet --project=$DEVSHELL_PROJECT_ID --network=vpc-net --region=$REGION --range=10.1.3.0/24 --enable-flow-logs
 
 
+echo "${TEAL_TEXT}${BOLD_TEXT}⏳ Waiting 100 seconds for network propagation...${RESET_FORMAT}"
 sleep 100
 
 
+# ------------------------------------------------------
+echo "${BLUE_TEXT}${BOLD_TEXT}👉 Creating Firewall Rule allow-http-ssh...${RESET_FORMAT}"
+# ------------------------------------------------------
 gcloud compute firewall-rules create allow-http-ssh \
   --project=$DEVSHELL_PROJECT_ID \
   --direction=INGRESS \
@@ -50,6 +64,9 @@ gcloud compute firewall-rules create allow-http-ssh \
   --target-tags=http-server
 
 
+# ------------------------------------------------------
+echo "${GOLD_TEXT}${BOLD_TEXT}👉 Creating Apache Web Server VM: web-server...${RESET_FORMAT}"
+# ------------------------------------------------------
 gcloud compute instances create web-server \
   --zone=$ZONE \
   --project=$DEVSHELL_PROJECT_ID \
@@ -66,6 +83,9 @@ gcloud compute instances create web-server \
   --labels=server=apache
 
 
+# ------------------------------------------------------
+echo "${GREEN_TEXT}${BOLD_TEXT}👉 Adding alternate HTTP firewall rule...${RESET_FORMAT}"
+# ------------------------------------------------------
 gcloud compute firewall-rules create allow-http-alt \
     --allow=tcp:80 \
     --source-ranges=0.0.0.0/0 \
@@ -73,16 +93,24 @@ gcloud compute firewall-rules create allow-http-alt \
     --description="Allow HTTP traffic on alternate rule"
 
 
+# ------------------------------------------------------
+echo "${CYAN_TEXT}${BOLD_TEXT}👉 Creating BigQuery dataset for VPC Flow Logs...${RESET_FORMAT}"
+# ------------------------------------------------------
+bq mk bq_vpcflows
 
-bq mk bq_vpc_flows
 
-
-
+# ------------------------------------------------------
+echo "${PURPLE_TEXT}${BOLD_TEXT}👉 Fetching Public IP of web-server...${RESET_FORMAT}"
+# ------------------------------------------------------
 CP_IP=$(gcloud compute instances describe web-server --zone=$ZONE --format='get(networkInterfaces[0].accessConfigs[0].natIP)')
-
 export MY_SERVER=$CP_IP
 
+
+# ------------------------------------------------------
+echo "${RED_TEXT}${BOLD_TEXT}👉 Generating sample traffic (50 HTTP requests)...${RESET_FORMAT}"
+# ------------------------------------------------------
 for ((i=1;i<=50;i++)); do curl $MY_SERVER; done
+
 
 echo
 echo -e "\e[1;33mEdit Firewall\e[0m \e[1;34mhttps://console.cloud.google.com/net-security/firewall-manager/firewall-policies/details/allow-http-ssh?project=$DEVSHELL_PROJECT_ID\e[0m"
@@ -91,6 +119,9 @@ echo -e "\e[1;33mCreate an export sink\e[0m \e[1;34mhttps://console.cloud.google
 echo
 
 
+# ------------------------------------------------------
+echo "${YELLOW_TEXT}${BOLD_TEXT}👉 Asking user to continue...${RESET_FORMAT}"
+# ------------------------------------------------------
 while true; do
     echo -ne "\e[1;93mDo you Want to proceed? (Y/n): \e[0m"
     read confirm
@@ -110,22 +141,25 @@ while true; do
 done
 
 
+# ------------------------------------------------------
+echo "${RED_TEXT}${BOLD_TEXT}👉 Generating more sample traffic (50 requests x 2)...${RESET_FORMAT}"
+# ------------------------------------------------------
 CP_IP=$(gcloud compute instances describe web-server --zone=$ZONE --format='get(networkInterfaces[0].accessConfigs[0].natIP)')
-
 export MY_SERVER=$CP_IP
-
 for ((i=1;i<=50;i++)); do curl $MY_SERVER; done
 
-
 CP_IP=$(gcloud compute instances describe web-server --zone=$ZONE --format='get(networkInterfaces[0].accessConfigs[0].natIP)')
-
 export MY_SERVER=$CP_IP
-
 for ((i=1;i<=50;i++)); do curl $MY_SERVER; done
 
-echo "${RED}${BOLD}Congratulations${RESET}" "${WHITE}${BOLD}for${RESET}" "${GREEN}${BOLD}Completing the Lab !!!${RESET}"
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀  LAB COMPLETED SUCCESSFULLY  🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo
 
-echo "" 
-echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe to my Channel (Arcade With Us):${RESET_FORMAT} ${BLUE_TEXT}${BOLD_TEXT}https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
+echo ""
+echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe to my Channel (Arcade With Us):${RESET_FORMAT}"
+echo -e "${BLUE_TEXT}${BOLD_TEXT}https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
 echo
 #-----------------------------------------------------end----------------------------------------------------------#
