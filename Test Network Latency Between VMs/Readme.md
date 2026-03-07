@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐   Test Network Latency Between VMs || GSP161 ✨
+✨🌐   Test Network Latency Between VMs || GSP161 🌐✨
 </h1>
 
 <div align="center">
