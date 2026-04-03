@@ -35,7 +35,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 
 ```bash
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Setting%20Up%20Cost%20Control%20with%20Quota/GSP651.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Setting%20Up%20Cost%20Control%20with%20Quota/GSP651.sh
 
 sudo chmod +x GSP651.sh
 
