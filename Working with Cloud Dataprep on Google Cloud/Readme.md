@@ -36,7 +36,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ## 💻 **Execute in Cloud Shell** 
 
-## Download 👉[Here]()
+## Download 👉[Here](https://drive.google.com/uc?export=download&id=1KnhYDNrhY2LxpIlmo-u9fz8xqvkC-QzS)
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
