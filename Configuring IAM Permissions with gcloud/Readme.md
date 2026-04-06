@@ -42,6 +42,7 @@ export ZONE=$(gcloud compute project-info describe \
 --format="value(commonInstanceMetadata.items[google-compute-default-zone])")
 gcloud compute ssh centos-clean --zone=$ZONE --quiet```  
 ```
+```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Configuring%20IAM%20Permissions%20with%20gcloud/GSP647.sh
 
 sudo chmod +x GSP647.sh
