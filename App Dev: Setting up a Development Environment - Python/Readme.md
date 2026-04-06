@@ -34,17 +34,44 @@
 **🌐Launch Cloud Shell:**
 Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
 
-## 💻 **Execute in Cloud Shell** 
-```
+## 💻 **Execute in Cloud Shell**
+
+✅ Step 1: **Create VM exactly like lab**
+```cpp
 export ZONE=
 ```
-```
+```cpp
 gcloud compute instances create dev-instance \
 --project=$DEVSHELL_PROJECT_ID \
 --zone=$ZONE \
 --machine-type=e2-medium \
 --scopes=https://www.googleapis.com/auth/cloud-platform \
 --tags=http-server
+```
+✅ Step 2: **Allow HTTP traffic on port 80**
+```cpp
+gcloud compute firewall-rules create default-allow-http \
+--network=default \
+--allow=tcp:80 \
+--target-tags=http-server \
+--source-ranges=0.0.0.0/0
+```
+✅ Step 3: **SSH into VM**
+```cpp
+gcloud compute ssh dev-instance --zone=$ZONE
+```
+✅ Step 4: **Inside VM run exact lab commands**
+```cpp
+sudo apt-get update
+sudo apt-get install git -y
+sudo apt-get install python3-setuptools python3-dev build-essential -y
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+sudo python3 get-pip.py --break-system-packages
+python3 --version
+pip3 --version
+git clone https://github.com/GoogleCloudPlatform/training-data-analyst
+cd ~/training-data-analyst/courses/developingapps/python/devenv/
+sudo python3 server.py
 ```
 ---
 
