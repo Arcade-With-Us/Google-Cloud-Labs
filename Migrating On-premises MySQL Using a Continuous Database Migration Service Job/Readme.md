@@ -46,6 +46,8 @@ sudo chmod +x GSP860.sh
 
 ./GSP860.sh
 ```
+
+## ✨For Database Migration: Click [Here](https://console.cloud.google.com/dbmigration/migrations?)
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
