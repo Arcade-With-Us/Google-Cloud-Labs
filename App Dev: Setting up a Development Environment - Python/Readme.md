@@ -39,11 +39,12 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 export ZONE=
 ```
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/App%20Dev:%20Setting%20up%20a%20Development%20Environment%20-%20Python/GSP183.sh
-
-sudo chmod +x GSP183.sh
-
-./GSP183.sh
+gcloud compute instances create dev-instance \
+--project=$DEVSHELL_PROJECT_ID \
+--zone=$ZONE \
+--machine-type=e2-medium \
+--scopes=https://www.googleapis.com/auth/cloud-platform \
+--tags=http-server
 ```
 ---
 
