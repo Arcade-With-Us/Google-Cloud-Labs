@@ -35,7 +35,7 @@
 
 2. Once loaded, you will make a copy of the sample Inventory Manager app to your lab AppSheet account.
 
-3. In the left navigation menu, click Copy app (copy app).
+3. In the left navigation menu, click Copy app (**copy app**).
 
 4. In the Copy app form, for App name, type *`Inventory Manager`*.
 
