@@ -1,5 +1,5 @@
 <h1 align="center">
-✨ AppSheet to Google Chat using Webhooks from Automation Bots ✨
+ AppSheet to Google Chat using Webhooks from Automation Bots 
 </h1>
 
 <div align="center">
