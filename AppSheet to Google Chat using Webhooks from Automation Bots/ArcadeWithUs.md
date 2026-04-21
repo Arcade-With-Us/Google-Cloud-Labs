@@ -31,7 +31,7 @@
 
 > ✅ **NOTE:** *Watch Full Video to get Full Scores on Check My Progress.*
 
-1. Enter the following link into a new tab of your browser:[click](https://www.appsheet.com/Template/AppDef?appName=Lab8-InventoryManager-3856613&copy=1)
+1. Enter the following link into a new tab of your browser: [click](https://www.appsheet.com/Template/AppDef?appName=Lab8-InventoryManager-3856613&copy=1)
 
 2. Once loaded, you will make a copy of the sample Inventory Manager app to your lab AppSheet account.
 
