@@ -31,18 +31,8 @@
 
 > ✅ **NOTE:** *Watch Full Video to get Full Scores on Check My Progress.*
 
-**🌐Launch Cloud Shell:**
-Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
+## 💻 **Download this file** : [Download](https://github.com/Arcade-With-Us/Google-Cloud-Labs/raw/refs/heads/main/AppSheet%20to%20Google%20Chat%20using%20Webhooks%20from%20Automation%20Bots/Products.xlsx)
 
-## 💻 **Execute in Cloud Shell** 
-
-```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Clean%20Up%20Unused%20and%20Orphaned%20Persistent%20Disks/GSP648.sh
-
-sudo chmod +x GSP648.sh
-
-./GSP648.sh
-```
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
