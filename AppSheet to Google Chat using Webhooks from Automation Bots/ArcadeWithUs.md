@@ -39,8 +39,13 @@
 
 4. In the Copy app form, for App name, type *`Inventory Manager`*.
 
-Leave the remaining settings as their defaults, click Copy app.
-## 💻 **Download this file** : [Download](https://github.com/Arcade-With-Us/Google-Cloud-Labs/raw/refs/heads/main/AppSheet%20to%20Google%20Chat%20using%20Webhooks%20from%20Automation%20Bots/Products.xlsx)
+5. Leave the remaining settings as their defaults, click Copy app.
+
+6. Open Google sheeets, Go to the Home page and then click **Products**
+
+7. 💻 **Download this file** : [Download](https://github.com/Arcade-With-Us/Google-Cloud-Labs/raw/refs/heads/main/AppSheet%20to%20Google%20Chat%20using%20Webhooks%20from%20Automation%20Bots/Products.xlsx)
+
+8. Click Import then choose the downloaded file and choose **replace with spreadsheet**
 
 ---
 
