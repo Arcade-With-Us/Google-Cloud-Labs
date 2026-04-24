@@ -1,9 +1,9 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Create Firewall Rule to Enable SSH Access ✨
 </h1>
 
 <div align="center">
-  <a href="https://www.cloudskillsboost.google/focuses/49749?parent=catalog"_blank" rel="noopener noreferrer">
+  <a href=""_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/Open_Lab-Cloud_Skills_Boost-4285F4?style=for-the-badge&logo=google&logoColor=white&labelColor=34A853" alt="Open Lab Badge">
   </a>
 </div>
@@ -31,17 +31,10 @@
 
 > ✅ **NOTE:** *Watch Full Video to get Full Scores on Check My Progress.*
 
-**🌐Launch Cloud Shell:**
-Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
-
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Clean%20Up%20Unused%20and%20Orphaned%20Persistent%20Disks/GSP648.sh
-
-sudo chmod +x GSP648.sh
-
-./GSP648.sh
+VPC=$(gcloud compute instances describe $(gcloud compute instances list --format="value(name)") --zone=$(gcloud compute instances list --format="value(zone)") --format="value(networkInterfaces[0].network.basename())"); gcloud compute firewall-rules create allow-ssh --network=$VPC --allow=tcp:22 --source-ranges=0.0.0.0/0 --target-tags=http-server
 ```
 ---
 
