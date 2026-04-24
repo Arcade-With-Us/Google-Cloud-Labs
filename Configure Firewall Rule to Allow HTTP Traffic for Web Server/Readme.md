@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨Configure Firewall Rule to Allow HTTP Traffic for Web Server✨
 </h1>
 
 <div align="center">
@@ -31,17 +31,10 @@
 
 > ✅ **NOTE:** *Watch Full Video to get Full Scores on Check My Progress.*
 
-**🌐Launch Cloud Shell:**
-Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
-
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Clean%20Up%20Unused%20and%20Orphaned%20Persistent%20Disks/GSP648.sh
-
-sudo chmod +x GSP648.sh
-
-./GSP648.sh
+gcloud compute firewall-rules update allow-http-rule --allow=tcp:80 --source-ranges=0.0.0.0/0 --target-tags=allow-http
 ```
 ---
 
