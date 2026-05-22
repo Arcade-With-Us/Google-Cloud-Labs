@@ -20,52 +20,171 @@ echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORM
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
-export SERVICE_NAME=netflix-dataset-service
+gcloud auth list
 
-export FRNT_STG_SRV=frontend-staging-service
+# ── Project Setup ────────────────────────────────────────────
+gcloud config set project $(gcloud projects list \
+  --format='value(PROJECT_ID)' --filter='qwiklabs-gcp')
 
-export FRNT_PRD_SRV=frontend-production-service
+export DEVSHELL_PROJECT_ID=$(gcloud config get-value project)
 
-gcloud config set project $(gcloud projects list --format='value(PROJECT_ID)' --filter='qwiklabs-gcp')
+# ── Dynamically Fetch Region from Lab ────────────────────────
+REGION=$(gcloud compute project-info describe \
+  --format="value(commonInstanceMetadata.items.google-compute-default-region)")
 
-gcloud services enable run.googleapis.com
+# Fallback if region not detected
+if [[ -z "$REGION" ]]; then
+  REGION="us-east4"
+fi
 
-gcloud firestore databases create --location=$REGION
+export REGION
 
+export DATASET_SERVICE=netflix-dataset-service
+export FRONTEND_STAGING_SERVICE=frontend-staging-service
+export FRONTEND_PRODUCTION_SERVICE=frontend-production-service
+export AR_REPO=rest-api-repo
+export FRONTEND_REPO=frontend-repo
+
+echo "${YELLOW_TEXT}${BOLD_TEXT}Project : $DEVSHELL_PROJECT_ID${RESET_FORMAT}"
+echo "${YELLOW_TEXT}${BOLD_TEXT}Region  : $REGION${RESET_FORMAT}"
+echo
+
+# Enable required APIs
+echo "${BLUE_TEXT}${BOLD_TEXT}Enabling APIs...${RESET_FORMAT}"
+gcloud services enable \
+  run.googleapis.com \
+  artifactregistry.googleapis.com \
+  cloudbuild.googleapis.com \
+  firestore.googleapis.com
+
+# Task 1 : Create Firestore database
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}[Task 1] Creating Firestore database in $REGION...${RESET_FORMAT}"
+gcloud firestore databases create \
+  --location=$REGION \
+  --project=$DEVSHELL_PROJECT_ID || true
+sleep 10
+
+# Task 2 : Import CSV into Firestore
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}[Task 2] Importing Netflix CSV into Firestore...${RESET_FORMAT}"
+rm -rf ~/pet-theory
 git clone https://github.com/rosera/pet-theory.git
 
-cd pet-theory/lab06/firebase-import-csv/solution
+cd ~/pet-theory/lab06/firebase-import-csv/solution || exit
 npm install
 node index.js netflix_titles_original.csv
 
-cd ~/pet-theory/lab06/firebase-rest-api/solution-01
+# Create Artifact Registry repository
+echo
+echo "${BLUE_TEXT}${BOLD_TEXT}Creating Artifact Registry repository: $AR_REPO...${RESET_FORMAT}"
+gcloud artifacts repositories create $AR_REPO \
+  --repository-format=docker \
+  --location=$REGION \
+  --description="REST API repo" || true
+
+gcloud auth configure-docker ${REGION}-docker.pkg.dev --quiet
+
+# Task 3 : Deploy REST API v0.1
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}[Task 3] Building & Deploying REST API v0.1...${RESET_FORMAT}"
+cd ~/pet-theory/lab06/firebase-rest-api/solution-01 || exit
 npm install
-gcloud builds submit --tag gcr.io/$GOOGLE_CLOUD_PROJECT/rest-api:0.1
-gcloud beta run deploy $SERVICE_NAME --image gcr.io/$GOOGLE_CLOUD_PROJECT/rest-api:0.1 --allow-unauthenticated --region=$REGION
 
-cd ~/pet-theory/lab06/firebase-rest-api/solution-02
+gcloud builds submit \
+  --tag ${REGION}-docker.pkg.dev/$DEVSHELL_PROJECT_ID/$AR_REPO/rest-api:0.1 .
+
+gcloud run deploy $DATASET_SERVICE \
+  --image ${REGION}-docker.pkg.dev/$DEVSHELL_PROJECT_ID/$AR_REPO/rest-api:0.1 \
+  --allow-unauthenticated \
+  --max-instances=1 \
+  --region=$REGION \
+  --quiet
+
+SERVICE_URL=$(gcloud run services describe $DATASET_SERVICE \
+  --region=$REGION \
+  --format='value(status.url)')
+
+echo "${GREEN_TEXT}Service URL: $SERVICE_URL${RESET_FORMAT}"
+echo "${YELLOW_TEXT}Testing v0.1 endpoint...${RESET_FORMAT}"
+curl -s $SERVICE_URL
+echo
+
+# Task 4 : Deploy REST API v0.2
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}[Task 4] Building & Deploying REST API v0.2...${RESET_FORMAT}"
+cd ~/pet-theory/lab06/firebase-rest-api/solution-02 || exit
 npm install
-gcloud builds submit --tag gcr.io/$GOOGLE_CLOUD_PROJECT/rest-api:0.2
-gcloud beta run deploy $SERVICE_NAME --image gcr.io/$GOOGLE_CLOUD_PROJECT/rest-api:0.2 --allow-unauthenticated --region=$REGION
 
-SERVICE_URL=$(gcloud run services describe $SERVICE_NAME --platform=managed --region=$REGION --format="value(status.url)")
+gcloud builds submit \
+  --tag ${REGION}-docker.pkg.dev/$DEVSHELL_PROJECT_ID/$AR_REPO/rest-api:0.2 .
 
-curl -X GET $SERVICE_URL/2019
+gcloud run deploy $DATASET_SERVICE \
+  --image ${REGION}-docker.pkg.dev/$DEVSHELL_PROJECT_ID/$AR_REPO/rest-api:0.2 \
+  --allow-unauthenticated \
+  --max-instances=1 \
+  --region=$REGION \
+  --quiet
 
-cd ~/pet-theory/lab06/firebase-frontend/public
+SERVICE_URL=$(gcloud run services describe $DATASET_SERVICE \
+  --region=$REGION \
+  --format='value(status.url)')
 
-sed -i 's/^const REST_API_SERVICE = "data\/netflix\.json"/\/\/ const REST_API_SERVICE = "data\/netflix.json"/' app.js
+echo "${GREEN_TEXT}Service URL: $SERVICE_URL${RESET_FORMAT}"
+echo "${YELLOW_TEXT}Testing v0.2 /2019 endpoint...${RESET_FORMAT}"
+curl -s $SERVICE_URL/2019
+echo
 
-sed -i "1i const REST_API_SERVICE = \"$SERVICE_URL/2020\"" app.js
+# Task 5 : Deploy Staging Frontend
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}[Task 5] Building & Deploying Staging Frontend...${RESET_FORMAT}"
 
-npm install
-cd ~/pet-theory/lab06/firebase-frontend
-gcloud builds submit --tag gcr.io/$GOOGLE_CLOUD_PROJECT/frontend-staging:0.1
-gcloud beta run deploy $FRNT_STG_SRV --image gcr.io/$GOOGLE_CLOUD_PROJECT/frontend-staging:0.1 --region=$REGION --quiet
+gcloud artifacts repositories create $FRONTEND_REPO \
+  --repository-format=docker \
+  --location=$REGION \
+  --description="Repository for Frontend images" || true
 
-gcloud builds submit --tag gcr.io/$GOOGLE_CLOUD_PROJECT/frontend-production:0.1
-gcloud beta run deploy $FRNT_PRD_SRV --image gcr.io/$GOOGLE_CLOUD_PROJECT/frontend-production:0.1 --region=$REGION --quiet
+cd ~/pet-theory/lab06/firebase-frontend || exit
 
+gcloud builds submit \
+  --tag ${REGION}-docker.pkg.dev/$DEVSHELL_PROJECT_ID/$FRONTEND_REPO/frontend-staging:0.1 .
+
+gcloud run deploy $FRONTEND_STAGING_SERVICE \
+  --image=${REGION}-docker.pkg.dev/$DEVSHELL_PROJECT_ID/$FRONTEND_REPO/frontend-staging:0.1 \
+  --platform=managed \
+  --region=$REGION \
+  --allow-unauthenticated \
+  --max-instances=1 \
+  --quiet
+
+STAGING_URL=$(gcloud run services describe $FRONTEND_STAGING_SERVICE \
+  --region=$REGION \
+  --format='value(status.url)')
+
+# Task 6 : Deploy Production Frontend
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}[Task 6] Updating app.js and Deploying Production Frontend...${RESET_FORMAT}"
+
+cd ~/pet-theory/lab06/firebase-frontend/public || exit
+sed -i "s|https://netflix-dataset-service-abcdef-uc.a.run.app|$SERVICE_URL|g" app.js
+
+cd .. || exit
+
+gcloud builds submit \
+  --tag ${REGION}-docker.pkg.dev/$DEVSHELL_PROJECT_ID/$FRONTEND_REPO/frontend-production:0.1 .
+
+gcloud run deploy $FRONTEND_PRODUCTION_SERVICE \
+  --image=${REGION}-docker.pkg.dev/$DEVSHELL_PROJECT_ID/$FRONTEND_REPO/frontend-production:0.1 \
+  --platform=managed \
+  --region=$REGION \
+  --allow-unauthenticated \
+  --max-instances=1 \
+  --quiet
+
+PROD_URL=$(gcloud run services describe $FRONTEND_PRODUCTION_SERVICE \
+  --region=$REGION \
+  --format='value(status.url)')
+  
 echo
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo "${CYAN_TEXT}${BOLD_TEXT}🚀  LAB COMPLETED SUCCESSFULLY  🚀${RESET_FORMAT}"
