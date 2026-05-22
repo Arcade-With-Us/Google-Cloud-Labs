@@ -35,9 +35,7 @@
 Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
 
 ## 💻 **Execute in Cloud Shell** 
-```
-export REGION=
-```
+
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Develop%20Serverless%20Apps%20with%20Firebase%3A%20Challenge%20Lab/GSP344.sh
 
