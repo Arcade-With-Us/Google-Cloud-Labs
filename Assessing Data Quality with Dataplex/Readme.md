@@ -39,9 +39,9 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Assessing%20Data%20Quality%20with%20Dataplex/GSP1158.sh
 
-sudo chmod +x gsp1158.sh
+sudo chmod +x GSP1158.sh
 
-./gsp1158.sh
+./GSP1158.sh
 ```
 
 * Go to `BigQuery` from [here](https://console.cloud.google.com/bigquery?)
