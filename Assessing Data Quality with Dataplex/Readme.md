@@ -1,5 +1,5 @@
 <h1 align="center">
-✨ Assessing Data Quality with Dataplex || GSP1158 ✨
+✨ Assessing Data Quality with Knowledge Catalog || GSP1158 ✨
 </h1>
 
 <div align="center">
@@ -39,7 +39,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 export REGION=
 ```
 ```
-curl -LO raw.githubusercontent.com/QUICK-GCP-LAB/2-Minutes-Labs-Solutions/main/Assessing%20Data%20Quality%20with%20Dataplex/gsp1158.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Assessing%20Data%20Quality%20with%20Dataplex/GSP1158.sh
 
 sudo chmod +x gsp1158.sh
 
