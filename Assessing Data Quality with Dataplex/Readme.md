@@ -53,15 +53,13 @@ sudo chmod +x GSP1158.sh
   ORDER BY id
   LIMIT 50
 ```
-* Task number you need to do manually
-
-* Return to the console. You should still be in the **Dataplex Universal Catalog**.
-
-* Under Govern, click **Data profiling & quality**.
-
-* Click **customer-orders-data-quality-job**.
-
-* Click **Run Now**.
+* Return to BigQuery, and in the Classic explorer pane, expand the arrow next to your project ID to list the contents
+* Click the expander arrow next to the **customer_dq_dataset** dataset.
+* Click the _dq_results_ table.
+* Click the `Preview` tab to see the results.
+* Scroll to the column named **`rule_failed_records_query`**.
+* Copy the query, it starts with `WITH`.
+* Click SQL query (+). Copy and paste the query into the SQL Editor and click Run
 
 ---
 
