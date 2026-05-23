@@ -1,5 +1,5 @@
 <h1 align="center">
-✨ Tagging Dataplex Assets || GSP1145 ✨
+✨ Create and Add Aspects to Knowledge Catalog Assets || GSP1145 ✨
 </h1>
 
 <div align="center">
