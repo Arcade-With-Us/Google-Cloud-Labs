@@ -35,9 +35,7 @@
 Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
 
 ## 💻 **Execute in Cloud Shell** 
-```
-export REGION=
-```
+
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Assessing%20Data%20Quality%20with%20Dataplex/GSP1158.sh
 
