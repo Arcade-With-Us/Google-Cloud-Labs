@@ -126,7 +126,16 @@ rule_bindings:
 EOF_CP
 
 # Copy the YAML file to a Cloud Storage bucket
-gsutil cp dq-customer-orders.yaml gs://$DEVSHELL_PROJECT_ID-dq-config
+gsutil cp dq-customer-orders.yaml gs://$PROJECT_ID-dq-config/
+echo "${GREEN_TEXT}${BOLD_TEXT}YAML Uploaded to GCS${RESET_FORMAT}"
+echo
+
+echo "${MAGENTA_TEXT}${BOLD_TEXT}Creating Data Quality Scan...${RESET_FORMAT}"
+gcloud dataplex datascans create data-quality customer-orders-data-quality-job \
+    --project=$PROJECT_ID \
+    --location=$REGION \
+    --data-source-resource="//bigquery.googleapis.com/projects/$PROJECT_ID/datasets/customer_orders/tables/ordered_items" \
+    --data-quality-spec-file="gs://$PROJECT_ID-dq-config/dq-customer-orders.yaml"
 
 echo "${CYAN}${BOLD}Click here: "${RESET}""${BLUE}${BOLD}"https://console.cloud.google.com/dataplex/search?project=$DEVSHELL_PROJECT_ID&qSystems=DATAPLEX""${RESET}"
 
