@@ -93,39 +93,24 @@ gcloud dataplex assets add-iam-policy-binding customer-engagements \
     --member=user:$USER_2
 
 # Create a YAML file named "dq-customer-orders.yaml" with the following content:
-cat > dq-customer-orders.yaml <<EOF_CP
-metadata_registry_defaults:
-  dataplex:
-    projects: $DEVSHELL_PROJECT_ID
-    locations: $REGION
-    lakes: sales-lake
-    zones: curated-customer-zone
-row_filters:
-  NONE:
-    filter_sql_expr: |-
-      True
-rule_dimensions:
-  - completeness
+echo "${BLUE_TEXT}${BOLD_TEXT}Creating Data Quality YAML File...${RESET_FORMAT}"
+cat > dq-customer-orders.yaml <<EOF
 rules:
-  NOT_NULL:
-    rule_type: NOT_NULL
-    dimension: completeness
-rule_bindings:
-  VALID_CUSTOMER:
-    entity_uri: bigquery://projects/$DEVSHELL_PROJECT_ID/datasets/customer_orders/tables/ordered_items
-    column_id: user_id
-    row_filter_id: NONE
-    rule_ids:
-      - NOT_NULL
-  VALID_ORDER:
-    entity_uri: bigquery://projects/$DEVSHELL_PROJECT_ID/datasets/customer_orders/tables/ordered_items
-    column_id: order_id
-    row_filter_id: NONE
-    rule_ids:
-      - NOT_NULL
-EOF_CP
+- nonNullExpectation: {}
+  column: user_id
+  dimension: COMPLETENESS
+  threshold: 1
 
-# Copy the YAML file to a Cloud Storage bucket
+- nonNullExpectation: {}
+  column: order_id
+  dimension: COMPLETENESS
+  threshold: 1
+
+postScanActions:
+  bigqueryExport:
+    resultsTable: projects/$PROJECT_ID/datasets/orders_dq_dataset/tables/results
+EOF
+
 gsutil cp dq-customer-orders.yaml gs://$PROJECT_ID-dq-config/
 echo "${GREEN_TEXT}${BOLD_TEXT}YAML Uploaded to GCS${RESET_FORMAT}"
 echo
@@ -136,6 +121,7 @@ gcloud dataplex datascans create data-quality customer-orders-data-quality-job \
     --location=$REGION \
     --data-source-resource="//bigquery.googleapis.com/projects/$PROJECT_ID/datasets/customer_orders/tables/ordered_items" \
     --data-quality-spec-file="gs://$PROJECT_ID-dq-config/dq-customer-orders.yaml"
+
 
 echo "${CYAN}${BOLD}Click here: "${RESET}""${BLUE}${BOLD}"https://console.cloud.google.com/dataplex/search?project=$DEVSHELL_PROJECT_ID&qSystems=DATAPLEX""${RESET}"
 
