@@ -47,9 +47,7 @@ sudo chmod +x GSP514.sh
 ./GSP514.sh
 ```
 
-* For the display name enter, **`Customer Orders Data Quality Job`**
-
-* For BigQuery table type **`results`**
+* For the 2nd task simply go to Knowledge Cataloge -> metadata types -> Create the aspect types according to the lab manual -> Go to search option under the same cataloge and search for task no2 details -> go and attach
 
 ---
 
