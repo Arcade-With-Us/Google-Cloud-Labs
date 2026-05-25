@@ -125,7 +125,7 @@ gcloud dataplex datascans create data-quality customer-orders-data-quality-job \
 
 echo "${CYAN}${BOLD}Click here: "${RESET}""${BLUE}${BOLD}"https://console.cloud.google.com/dataplex/search?project=$DEVSHELL_PROJECT_ID&qSystems=DATAPLEX""${RESET}"
 
-echo "${CYAN}${BOLD}Click here: "${RESET}""${BLUE}${BOLD}""https://console.cloud.google.com/dataplex/process/create-task/data-quality?project=$DEVSHELL_PROJECT_ID"""${RESET}"
+echo "${CYAN}${BOLD}Click here: "${RESET}""${BLUE}${BOLD}""https://console.cloud.google.com/dataplex/govern/data-profiling-and-quality?project=$DEVSHELL_PROJECT_ID"""${RESET}"
 
 echo
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
