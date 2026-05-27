@@ -49,13 +49,13 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 Run the following commands in **Cloud Shell**:
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Implement%20DevOps%20Workflows%20in%20Google%20Cloud%3A%20Challenge%20Lab/GSP330-1.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Implement%20DevOps%20Workflows%20in%20Google%20Cloud%3A%20Challenge%20Lab/GSP330.sh
 
-sudo chmod +x GSP330-1.sh
+sudo chmod +x GSP330.sh
 
-./GSP330-1.sh
+./GSP330.sh
 ```
-### 🛠️ **Cloud Build Trigger Configuration**  
+### 🛠️Step 2: **Cloud Build Trigger Configuration**  
 
 #### **Production Deployment Trigger:** 
 
@@ -73,15 +73,6 @@ sudo chmod +x GSP330-1.sh
 | **Branch Pattern**           | ^dev$          |  
 | **Build Configuration File** | cloudbuild-dev.yaml |  
 
-### Step 2: Download and Run Script Part 2
-
-```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Implement%20DevOps%20Workflows%20in%20Google%20Cloud%3A%20Challenge%20Lab/GSP330-2.sh
-
-sudo chmod +x GSP330-2.sh
-
-./GSP330-2.sh
-```
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
