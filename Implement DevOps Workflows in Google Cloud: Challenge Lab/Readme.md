@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Implement DevOps Workflows in Google Cloud: Challenge Lab ✨
+  Implement DevOps Workflows in Google Cloud: Challenge Lab 
 </h1>
 
 <div align="center">
