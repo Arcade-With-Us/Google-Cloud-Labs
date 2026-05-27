@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐  Implement DevOps Workflows in Google Cloud: Challenge Lab || GSP330  ✨
+✨  Implement DevOps Workflows in Google Cloud: Challenge Lab ✨
 </h1>
 
 <div align="center">
@@ -45,7 +45,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ## 💻 **Execute in Cloud Shell**  
 
-### Step 1: Download and Run Script Part 1
+### Step 1: Download and Run Script
 
 Run the following commands in **Cloud Shell**:
 ```
