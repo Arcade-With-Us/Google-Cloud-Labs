@@ -44,7 +44,7 @@ echo
 gcloud artifacts repositories create $REPO \
   --repository-format=docker \
   --location=$REGION \
-  --description="Dr Abhishek"
+  --description="Arcade With Us"
 
 spinner() {
     local pid=$!
@@ -118,7 +118,7 @@ git init
 cd sample-app/
 git checkout -b master
 git add .
-git commit -m "Dr Abhishek" 
+git commit -m "Arcade With Us" 
 git push -u origin master
 
 git add .
@@ -184,7 +184,7 @@ sed -i "13c\    args: ['push', '$REGION-docker.pkg.dev/$PROJECT_ID/my-repository
 sed -i "17s|        image: <todo>|        image: $REGION-docker.pkg.dev/$PROJECT_ID/my-repository/hello-cloudbuild-dev:v1.0|" dev/deployment.yaml
 
 git add .
-git commit -m "Dr Abhishek" 
+git commit -m "Arcade With Us" 
 git push -u origin dev
 
 echo "${WHITE_TEXT}${BOLD_TEXT}Deploying development version..."
@@ -205,7 +205,7 @@ sed -i "16c\    args: ['push', '$REGION-docker.pkg.dev/\$PROJECT_ID/my-repositor
 sed -i "17c\        image:  $REGION-docker.pkg.dev/$PROJECT_ID/my-repository/hello-cloudbuild:v1.0" prod/deployment.yaml
 
 git add .
-git commit -m "Dr Abhishek" 
+git commit -m "Arcade With Us" 
 git push -u origin master
 
 echo "${WHITE_TEXT}${BOLD_TEXT}Deploying production version..."
@@ -243,7 +243,7 @@ sed -i "13c\    args: ['push', '$REGION-docker.pkg.dev/\$PROJECT_ID/my-repositor
 sed -i "17c\        image: $REGION-docker.pkg.dev/$PROJECT_ID/my-repository/hello-cloudbuild:v2.0" dev/deployment.yaml
 
 git add .
-git commit -m "Dr Abhishek" 
+git commit -m "Arcade With Us" 
 git push -u origin dev
 
 echo "${WHITE_TEXT}${BOLD_TEXT}Deploying development v2.0..."
@@ -276,7 +276,7 @@ sed -i "16c\    args: ['push', '$REGION-docker.pkg.dev/\$PROJECT_ID/my-repositor
 sed -i "17c\        image: $REGION-docker.pkg.dev/$PROJECT_ID/my-repository/hello-cloudbuild:v2.0" prod/deployment.yaml
 
 git add .
-git commit -m "Dr Abhishek" 
+git commit -m "Arcade With Us" 
 git push -u origin master
 
 echo "${WHITE_TEXT}${BOLD_TEXT}Deploying production v2.0..."
