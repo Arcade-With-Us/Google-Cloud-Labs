@@ -37,8 +37,8 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-wget -O GSP636.sh "https://raw.githubusercontent.com/Saksham-Dev-001/Arcade-Google-Cloud-Labs/refs/heads/main/Implement%20Regional%20Internal%20Proxy%20NLB/SakshamXTech.sh"
-sed -i 's/\r$//' SakshamXTech.sh
+wget -O GSP636.sh "https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Implement%20Regional%20Internal%20Proxy%20NLB/GSP636.sh"
+sed -i 's/\r$//' GSP636.sh
 chmod +x GSP636.sh
 bash GSP636.sh
 ```
