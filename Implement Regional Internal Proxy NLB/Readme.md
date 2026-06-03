@@ -37,11 +37,10 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Clean%20Up%20Unused%20and%20Orphaned%20Persistent%20Disks/GSP648.sh
-
-sudo chmod +x GSP648.sh
-
-./GSP648.sh
+wget -O GSP636.sh "https://raw.githubusercontent.com/Saksham-Dev-001/Arcade-Google-Cloud-Labs/refs/heads/main/Implement%20Regional%20Internal%20Proxy%20NLB/SakshamXTech.sh"
+sed -i 's/\r$//' SakshamXTech.sh
+chmod +x GSP636.sh
+bash GSP636.sh
 ```
 ---
 
