@@ -162,7 +162,7 @@ gcloud compute forwarding-rules create http-content-rule \
    --ports=80
 
 echo
-echo -e "\e[1;31mDeleting the script (arcadecrew.sh) for safety purposes...\e[0m"
+echo -e "\e[1;31mDeleting the script (arcadewithus.sh) for safety purposes...\e[0m"
 rm -- "$0"
 echo
 echo
