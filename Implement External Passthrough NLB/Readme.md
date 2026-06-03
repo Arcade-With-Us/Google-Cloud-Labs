@@ -37,11 +37,11 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Clean%20Up%20Unused%20and%20Orphaned%20Persistent%20Disks/GSP648.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/blob/main/Implement%20External%20Passthrough%20NLB/GSP658.sh
 
-sudo chmod +x GSP648.sh
+sudo chmod +x GSP658.sh
 
-./GSP648.sh
+./GSP658.sh
 ```
 ---
 
