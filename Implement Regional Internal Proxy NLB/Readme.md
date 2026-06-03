@@ -36,7 +36,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ## 💻 **Execute in Cloud Shell** 
 
-```
+```cpp
 wget -O GSP636.sh "https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Implement%20Regional%20Internal%20Proxy%20NLB/GSP636.sh"
 sed -i 's/\r$//' GSP636.sh
 chmod +x GSP636.sh
@@ -75,6 +75,6 @@ You've successfully completed the lab. **Way to go!** 🚀
     <em>This guide is provided for educational purposes. Always follow Qwiklabs terms of service and YouTube's community guidelines.</em>
   </p>
   <p style="font-size: 12px; color: #586069;">
-    <em>Last updated: June 2025</em>
+    <em>Last updated: June 2026</em>
   </p>
 </div>
