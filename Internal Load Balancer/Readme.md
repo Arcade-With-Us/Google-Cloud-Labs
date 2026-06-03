@@ -1,5 +1,5 @@
 <h1 align="center">
-✨🌐   Internal Load Balancer || GSP041 ✨
+✨🌐   Use an Internal Application Load Balancer || GSP041 🌐✨
 </h1>
 
 <div align="center">
