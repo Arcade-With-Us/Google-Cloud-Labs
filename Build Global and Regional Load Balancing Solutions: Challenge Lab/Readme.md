@@ -163,7 +163,7 @@ Run in SSH
 ```cpp
 curl http://[LB_IP]:110
 ```
-```cpp
+```py
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Build%20Global%20and%20Regional%20Load%20Balancing%20Solutions%3A%20Challenge%20Lab/GSP539.sh
 
 sudo chmod +x GSP539.sh
