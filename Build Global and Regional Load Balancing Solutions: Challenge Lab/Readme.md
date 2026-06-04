@@ -112,7 +112,7 @@ Create:
 
 ### 5. Create Regional Internal Proxy Network Load Balancer
 
-```cpp
+```py
 gcloud compute backend-services create internal-proxy-backend \
     --load-balancing-scheme=INTERNAL_MANAGED \
     --protocol=TCP \
