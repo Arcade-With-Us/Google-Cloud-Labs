@@ -47,7 +47,7 @@ echo "${GREEN_TEXT}${BOLD_TEXT}📄 Generating configuration file 'pubsub-channe
 cat > pubsub-channel.json <<EOF_END
 {
   "type": "pubsub",
-  "displayName": "arcadecrew",
+  "displayName": "arcadewithus",
   "description": "Hiiii There !!",
   "labels": {
   "topic": "projects/$DEVSHELL_PROJECT_ID/topics/notificationTopic"
@@ -162,8 +162,8 @@ done
 echo "${WHITE_TEXT}${BOLD_TEXT}]${RESET_FORMAT}" # Close the indicator bracket and add newline
 echo "${GREEN_TEXT}${BOLD_TEXT}   ✅ Metric should now be available.${RESET_FORMAT}"
 
-echo "${MAGENTA_TEXT}${BOLD_TEXT}📝 Generating the alert policy configuration file 'arcadecrew.json' for 'hello-app' errors...${RESET_FORMAT}"
-cat > arcadecrew.json <<'EOF_END'
+echo "${MAGENTA_TEXT}${BOLD_TEXT}📝 Generating the alert policy configuration file 'arcadewithus.json' for 'hello-app' errors...${RESET_FORMAT}"
+cat > arcadewithus.json <<'EOF_END'
 {
   "displayName": "log based metric alert",
   "userLabels": {},
@@ -198,8 +198,8 @@ cat > arcadecrew.json <<'EOF_END'
 
 EOF_END
 
-echo "${CYAN_TEXT}${BOLD_TEXT}🚨 Deploying the alert policy for 'hello-app' errors using 'arcadecrew.json'...${RESET_FORMAT}"
-gcloud alpha monitoring policies create --policy-from-file=arcadecrew.json
+echo "${CYAN_TEXT}${BOLD_TEXT}🚨 Deploying the alert policy for 'hello-app' errors using 'arcadewithus.json'...${RESET_FORMAT}"
+gcloud alpha monitoring policies create --policy-from-file=arcadewithus.json
 
 echo "${RED_TEXT}${BOLD_TEXT}💥 Triggering errors in the 'hello-app' for 120 seconds to generate logs and test the alert...${RESET_FORMAT}"
 timeout 120 bash -c -- 'while true; do curl $(kubectl get services -n gmp-test -o jsonpath='{.items[*].status.loadBalancer.ingress[0].ip}')/error; sleep $((RANDOM % 4)) ; done'
