@@ -35,7 +35,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell**  
 
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Service%20Accounts%20and%20Roles%3A%20Fundamentals/GSP199.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Service%20Accounts%20and%20Roles%3A%20Fundamentals/GSP199.sh
 
 sudo chmod +x GSP199.sh
 
