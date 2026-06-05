@@ -36,7 +36,7 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 
 ### Run the following Commands in CloudShell
 ```
-curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Translate%20Text%20with%20the%20Cloud%20Translation%20API/GSP049.sh
+curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Translate%20Text%20with%20the%20Cloud%20Translation%20API/GSP049.sh
 
 sudo chmod +x GSP049.sh
 
