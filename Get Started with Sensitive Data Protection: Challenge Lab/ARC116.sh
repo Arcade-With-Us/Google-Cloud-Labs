@@ -482,7 +482,8 @@ curl --request POST \
   "https://dlp.googleapis.com/v2/projects/$DEVSHELL_PROJECT_ID/locations/us/jobTriggers/dlp_job:activate"
 
 echo
-
+echo "${YELLOW_TEXT}${BOLD_TEXT}Open Below Link run the DLP job trigger...${RESET_FORMAT}"
+echo "https://console.cloud.google.com/security/dlp/landing?project=$PROJECT_ID"
 # Function to display a random congratulatory message
 function random_congrats() {
     MESSAGES=(
