@@ -20,42 +20,104 @@ echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORM
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
+# Spinner function
+spinner() {
+    local pid=$!
+    local delay=0.1
+    local spinstr='|/-\'
+    while [ "$(ps a | awk '{print $1}' | grep $pid)" ]; do
+        local temp=${spinstr#?}
+        printf " [%c]  " "$spinstr"
+        local spinstr=$temp${spinstr%"$temp"}
+        sleep $delay
+        printf "\b\b\b\b\b\b"
+    done
+    printf "    \b\b\b\b"
+}
+
+echo "${BG_MAGENTA}${BOLD}Starting Execution${RESET}"
+
+# Display current authenticated accounts
+echo -n "${CYAN}${BOLD}Checking authenticated accounts...${RESET}"
+(gcloud auth list > /dev/null 2>&1) &
+spinner
+echo " ${GREEN}✓ Done!${RESET}"
 gcloud auth list
 
+# Set up environment variables
 export BUCKET_NAME=$DEVSHELL_PROJECT_ID-bucket
-
 export PROJECT_ID=$DEVSHELL_PROJECT_ID
 
-git clone https://github.com/quiccklabs/Redacting-Sensitive-Data-with-Cloud-Data-Loss-Prevention.git
+# Clone repository
+echo -n "${YELLOW}${BOLD}Cloning repository...${RESET}"
+(git clone https://github.com/quiccklabs/Redacting-Sensitive-Data-with-Cloud-Data-Loss-Prevention.git > /dev/null 2>&1) &
+spinner
+echo " ${GREEN}✓ Done!${RESET}"
 
-cd Redacting-Sensitive-Data-with-Cloud-Data-Loss-Prevention/quicklabgsp864/samples && npm install
+# Install npm dependencies
+echo -n "${MAGENTA}${BOLD}Installing npm dependencies...${RESET}"
+(cd Redacting-Sensitive-Data-with-Cloud-Data-Loss-Prevention/quicklabgsp864/samples && npm install > /dev/null 2>&1) &
+spinner
+echo " ${GREEN}✓ Done!${RESET}"
 
-gcloud config set project $PROJECT_ID
+# Set project
+echo -n "${BLUE}${BOLD}Setting project...${RESET}"
+(gcloud config set project $PROJECT_ID > /dev/null 2>&1) &
+spinner
+echo " ${GREEN}✓ Done!${RESET}"
 
-gcloud services enable dlp.googleapis.com cloudkms.googleapis.com \
---project $PROJECT_ID
+# Enable services
+echo -n "${GREEN}${BOLD}Enabling required services...${RESET}"
+(gcloud services enable dlp.googleapis.com cloudkms.googleapis.com --project $PROJECT_ID > /dev/null 2>&1) &
+spinner
+echo " ${GREEN}✓ Done!${RESET}"
 
-node inspectString.js $PROJECT_ID "My email address is jenny@somedomain.com and you can call me at 555-867-5309" > inspected-string.txt
+# Run DLP operations
+echo "${CYAN}${BOLD}Running DLP inspection and redaction tasks...${RESET}"
 
-node inspectFile.js $PROJECT_ID resources/accounts.txt > inspected-file.txt
+echo -n "  - Inspecting string..."
+(node inspectString.js $PROJECT_ID "My email address is jenny@somedomain.com and you can call me at 555-867-5309" > inspected-string.txt 2>&1) &
+spinner
+echo " ${GREEN}✓ Done!${RESET}"
 
-gsutil cp inspected-string.txt gs://$BUCKET_NAME
-gsutil cp inspected-file.txt gs://$BUCKET_NAME
+echo -n "  - Inspecting file..."
+(node inspectFile.js $PROJECT_ID resources/accounts.txt > inspected-file.txt 2>&1) &
+spinner
+echo " ${GREEN}✓ Done!${RESET}"
 
-node deidentifyWithMask.js $PROJECT_ID "My order number is F12312399. Email me at anthony@somedomain.com" > de-identify-output.txt
+echo -n "  - Uploading results to bucket..."
+(gsutil cp inspected-string.txt gs://$BUCKET_NAME > /dev/null 2>&1 && 
+ gsutil cp inspected-file.txt gs://$BUCKET_NAME > /dev/null 2>&1) &
+spinner
+echo " ${GREEN}✓ Done!${RESET}"
 
-gsutil cp de-identify-output.txt gs://$BUCKET_NAME
+echo -n "  - De-identifying data..."
+(node deidentifyWithMask.js $PROJECT_ID "My order number is F12312399. Email me at anthony@somedomain.com" > de-identify-output.txt 2>&1) &
+spinner
+echo " ${GREEN}✓ Done!${RESET}"
 
+echo -n "  - Uploading de-identified data..."
+(gsutil cp de-identify-output.txt gs://$BUCKET_NAME > /dev/null 2>&1) &
+spinner
+echo " ${GREEN}✓ Done!${RESET}"
 
-node redactText.js $PROJECT_ID  "Please refund the purchase to my credit card 4012888888881881" CREDIT_CARD_NUMBER > redacted-string.txt
+echo -n "  - Redacting text..."
+(node redactText.js $PROJECT_ID "Please refund the purchase to my credit card 4012888888881881" CREDIT_CARD_NUMBER > redacted-string.txt 2>&1) &
+spinner
+echo " ${GREEN}✓ Done!${RESET}"
 
-node redactImage.js $PROJECT_ID resources/test.png "" PHONE_NUMBER ./redacted-phone.png
+echo -n "  - Redacting images..."
+(node redactImage.js $PROJECT_ID resources/test.png "" PHONE_NUMBER ./redacted-phone.png > /dev/null 2>&1 &&
+ node redactImage.js $PROJECT_ID resources/test.png "" EMAIL_ADDRESS ./redacted-email.png > /dev/null 2>&1) &
+spinner
+echo " ${GREEN}✓ Done!${RESET}"
 
-node redactImage.js $PROJECT_ID resources/test.png "" EMAIL_ADDRESS ./redacted-email.png
-
-gsutil cp redacted-string.txt gs://$BUCKET_NAME
-gsutil cp redacted-phone.png gs://$BUCKET_NAME
-gsutil cp redacted-email.png gs://$BUCKET_NAME
+echo -n "  - Uploading redacted content..."
+(gsutil cp redacted-string.txt gs://$BUCKET_NAME > /dev/null 2>&1 &&
+ gsutil cp redacted-phone.png gs://$BUCKET_NAME > /dev/null 2>&1 &&
+ gsutil cp redacted-email.png gs://$BUCKET_NAME > /dev/null 2>&1) &
+spinner
+echo " ${GREEN}✓ Done!${RESET}"
 
 # Completion message
 echo
