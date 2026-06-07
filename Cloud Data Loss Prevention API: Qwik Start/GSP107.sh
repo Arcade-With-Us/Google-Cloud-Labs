@@ -20,6 +20,8 @@ echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORM
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
+echo "${NEON_GREEN_TEXT}${BOLD_WHITE}Initiating DLP Inspection Process...${RESET_FORMAT}"
+echo
 gcloud auth list
 
 export PROJECT_ID=$DEVSHELL_PROJECT_ID
