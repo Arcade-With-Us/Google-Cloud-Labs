@@ -44,6 +44,10 @@ sudo chmod +x GSP750.sh
 
 ./GSP750.sh
 ```
+### If you face an issue in task no 2 then run this command
+```
+terraform destroy
+```
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
