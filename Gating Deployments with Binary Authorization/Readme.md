@@ -41,6 +41,7 @@ sudo chmod +x GSP1183.sh
 
 ./GSP1183.sh
 ```
+## Once you get a 90/100 score, you can end the lab; don't worry, your lab will be ticked
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
