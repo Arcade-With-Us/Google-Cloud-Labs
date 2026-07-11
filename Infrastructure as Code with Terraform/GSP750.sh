@@ -19,18 +19,28 @@ echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}
 echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORMAT}"
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
-gcloud auth list
 
-export ZONE=$(gcloud compute project-info describe --format="value(commonInstanceMetadata.items[google-compute-default-zone])")
-export REGION=$(gcloud compute project-info describe --format="value(commonInstanceMetadata.items[google-compute-default-region])")
-
+# Set environment variables
+echo -e "${YELLOW}🌍 Configuring Project Settings${NC}"
+export REGION=${ZONE%-*}
 export PROJECT_ID=$(gcloud config get-value project)
-gcloud config set project $DEVSHELL_PROJECT_ID
+echo -e "${GREEN}✅ Project ID: ${WHITE}$PROJECT_ID${NC}"
+echo -e "${GREEN}✅ Region: ${WHITE}$REGION${NC}"
+echo -e "${GREEN}✅ Zone: ${WHITE}$ZONE${NC}"
+echo
 
-gcloud config set compute/zone "$ZONE"
-gcloud config set compute/region "$REGION"
+cat <<'EOF' > ~/.customize_environment
+# Set up HashiCorp repository and install Terraform
+wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(grep -oP '(?<=UBUNTU_CODENAME=).*' /etc/os-release || lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install -y terraform
+EOF
+bash ~/.customize_environment
 
-echo 'terraform {
+# Phase 1: Network Deployment
+echo -e "${YELLOW}🛠️ Phase 1: Deploying Network Infrastructure${NC}"
+cat > main.tf <<EOF
+terraform {
   required_providers {
     google = {
       source = "hashicorp/google"
@@ -39,18 +49,22 @@ echo 'terraform {
 }
 provider "google" {
   version = "3.5.0"
-  project = "'"$PROJECT_ID"'"
+  project = "$PROJECT_ID"
   region  = "$REGION"
   zone    = "$ZONE"
 }
 resource "google_compute_network" "vpc_network" {
   name = "terraform-network"
-}' > main.tf
+}
+EOF
 
 terraform init
 terraform apply -auto-approve
 
-echo 'terraform {
+# Phase 2: Basic VM Deployment
+echo -e "\n${YELLOW}🖥️ Phase 2: Deploying Basic VM Instance${NC}"
+cat > main.tf <<EOF
+terraform {
   required_providers {
     google = {
       source = "hashicorp/google"
@@ -59,9 +73,9 @@ echo 'terraform {
 }
 provider "google" {
   version = "3.5.0"
-  project = "'"$PROJECT_ID"'"
-  region  = "'"$REGION"'"
-  zone    = "'"$ZONE"'"
+  project = "$PROJECT_ID"
+  region  = "$REGION"
+  zone    = "$ZONE"
 }
 resource "google_compute_network" "vpc_network" {
   name = "terraform-network"
@@ -71,19 +85,22 @@ resource "google_compute_instance" "vm_instance" {
   machine_type = "e2-micro"
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-11"
+      image = "debian-cloud/debian-12"
     }
   }
   network_interface {
     network = google_compute_network.vpc_network.name
-    access_config {
-    }
+    access_config {}
   }
-}' > main.tf
+}
+EOF
 
 terraform apply -auto-approve
 
-echo 'terraform {
+# Phase 3: Tagged VM Deployment
+echo -e "\n${YELLOW}🏷️ Phase 3: Adding Tags to VM${NC}"
+cat > main.tf <<EOF
+terraform {
   required_providers {
     google = {
       source = "hashicorp/google"
@@ -92,9 +109,9 @@ echo 'terraform {
 }
 provider "google" {
   version = "3.5.0"
-  project = "'"$PROJECT_ID"'"
-  region  = "'"$REGION"'"
-  zone    = "'"$ZONE"'"
+  project = "$PROJECT_ID"
+  region  = "$REGION"
+  zone    = "$ZONE"
 }
 resource "google_compute_network" "vpc_network" {
   name = "terraform-network"
@@ -102,22 +119,25 @@ resource "google_compute_network" "vpc_network" {
 resource "google_compute_instance" "vm_instance" {
   name         = "terraform-instance"
   machine_type = "e2-micro"
-  tags        = ["web", "dev"]
+  tags         = ["web", "dev"]
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-11"
+      image = "debian-cloud/debian-12"
     }
   }
   network_interface {
     network = google_compute_network.vpc_network.name
-    access_config {
-    }
+    access_config {}
   }
-}' > main.tf
+}
+EOF
 
 terraform apply -auto-approve
 
-echo 'terraform {
+# Phase 4: COS Image Deployment
+echo -e "\n${YELLOW}🖼️ Phase 4: Switching to COS Image${NC}"
+cat > main.tf <<EOF
+terraform {
   required_providers {
     google = {
       source = "hashicorp/google"
@@ -126,9 +146,9 @@ echo 'terraform {
 }
 provider "google" {
   version = "3.5.0"
-  project = "'"$PROJECT_ID"'"
-  region  = "'"$REGION"'"
-  zone    = "'"$ZONE"'"
+  project = "$PROJECT_ID"
+  region  = "$REGION"
+  zone    = "$ZONE"
 }
 resource "google_compute_network" "vpc_network" {
   name = "terraform-network"
@@ -136,24 +156,25 @@ resource "google_compute_network" "vpc_network" {
 resource "google_compute_instance" "vm_instance" {
   name         = "terraform-instance"
   machine_type = "e2-micro"
-  tags        = ["web", "dev"]
-      boot_disk {
+  tags         = ["web", "dev"]
+  boot_disk {
     initialize_params {
       image = "cos-cloud/cos-stable"
     }
   }
   network_interface {
     network = google_compute_network.vpc_network.name
-    access_config {
-    }
+    access_config {}
   }
-}' > main.tf
+}
+EOF
 
 terraform apply -auto-approve
-terraform destroy -auto-approve
-terraform apply -auto-approve
 
-echo 'terraform {
+# Phase 5: Static IP Configuration
+echo -e "\n${YELLOW}📡 Phase 5: Configuring Static IP${NC}"
+cat > main.tf <<EOF
+terraform {
   required_providers {
     google = {
       source = "hashicorp/google"
@@ -162,9 +183,9 @@ echo 'terraform {
 }
 provider "google" {
   version = "3.5.0"
-  project = "'"$PROJECT_ID"'"
-  region  = "'"$REGION"'"
-  zone    = "'"$ZONE"'"
+  project = "$PROJECT_ID"
+  region  = "$REGION"
+  zone    = "$ZONE"
 }
 resource "google_compute_network" "vpc_network" {
   name = "terraform-network"
@@ -172,50 +193,13 @@ resource "google_compute_network" "vpc_network" {
 resource "google_compute_instance" "vm_instance" {
   name         = "terraform-instance"
   machine_type = "e2-micro"
-  tags        = ["web", "dev"]
-      boot_disk {
+  tags         = ["web", "dev"]
+  boot_disk {
     initialize_params {
       image = "cos-cloud/cos-stable"
     }
   }
   network_interface {
-    network = google_compute_network.vpc_network.name
-    access_config {
-    }
-  }
-}
-resource "google_compute_address" "vm_static_ip" {
-  name = "terraform-static-ip"
-}' > main.tf
-
-terraform plan
-
-echo 'terraform {
-  required_providers {
-    google = {
-      source = "hashicorp/google"
-    }
-  }
-}
-provider "google" {
-  version = "3.5.0"
-  project = "'"$PROJECT_ID"'"
-  region  = "'"$REGION"'"
-  zone    = "'"$ZONE"'"
-}
-resource "google_compute_network" "vpc_network" {
-  name = "terraform-network"
-}
-resource "google_compute_instance" "vm_instance" {
-  name         = "terraform-instance"
-  machine_type = "e2-micro"
-  tags        = ["web", "dev"]
-      boot_disk {
-    initialize_params {
-      image = "cos-cloud/cos-stable"
-    }
-  }
-    network_interface {
     network = google_compute_network.vpc_network.self_link
     access_config {
       nat_ip = google_compute_address.vm_static_ip.address
@@ -224,12 +208,16 @@ resource "google_compute_instance" "vm_instance" {
 }
 resource "google_compute_address" "vm_static_ip" {
   name = "terraform-static-ip"
-}' > main.tf
+}
+EOF
 
 terraform plan -out static_ip
 terraform apply "static_ip"
 
-echo 'terraform {
+# Phase 6: Storage Bucket Deployment
+echo -e "\n${YELLOW}🪣 Phase 6: Deploying Storage Bucket${NC}"
+cat > main.tf <<EOF
+terraform {
   required_providers {
     google = {
       source = "hashicorp/google"
@@ -238,9 +226,9 @@ echo 'terraform {
 }
 provider "google" {
   version = "3.5.0"
-  project = "'"$PROJECT_ID"'"
-  region  = "'"$REGION"'"
-  zone    = "'"$ZONE"'"
+  project = "$PROJECT_ID"
+  region  = "$REGION"
+  zone    = "$ZONE"
 }
 resource "google_compute_network" "vpc_network" {
   name = "terraform-network"
@@ -248,13 +236,13 @@ resource "google_compute_network" "vpc_network" {
 resource "google_compute_instance" "vm_instance" {
   name         = "terraform-instance"
   machine_type = "e2-micro"
-  tags        = ["web", "dev"]
-      boot_disk {
+  tags         = ["web", "dev"]
+  boot_disk {
     initialize_params {
       image = "cos-cloud/cos-stable"
     }
   }
-    network_interface {
+  network_interface {
     network = google_compute_network.vpc_network.self_link
     access_config {
       nat_ip = google_compute_address.vm_static_ip.address
@@ -264,18 +252,16 @@ resource "google_compute_instance" "vm_instance" {
 resource "google_compute_address" "vm_static_ip" {
   name = "terraform-static-ip"
 }
-# Please like share & subscribe to https://www.youtube.com/@techcps
 resource "google_storage_bucket" "example_bucket" {
-  name     = "'"$PROJECT_ID"'"
+  name     = "$PROJECT_ID"
   location = "US"
   website {
     main_page_suffix = "index.html"
     not_found_page   = "404.html"
   }
 }
-# Create a new instance that uses the bucket
 resource "google_compute_instance" "another_instance" {
-  depends_on = [google_storage_bucket.example_bucket]
+  depends_on   = [google_storage_bucket.example_bucket]
   name         = "terraform-instance-2"
   machine_type = "e2-micro"
   boot_disk {
@@ -285,18 +271,22 @@ resource "google_compute_instance" "another_instance" {
   }
   network_interface {
     network = google_compute_network.vpc_network.self_link
-    access_config {
-    }
+    access_config {}
   }
-}' > main.tf
+}
+EOF
 
 terraform plan
 terraform apply -auto-approve
 
-echo "${RED}${BOLD}Congratulations${RESET}" "${WHITE}${BOLD}for${RESET}" "${GREEN}${BOLD}Completing the Lab !!!${RESET}"
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}🚀  LAB COMPLETED SUCCESSFULLY  🚀${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
+echo
 
-echo "" 
-echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe to my Channel (Arcade With Us):${RESET_FORMAT}" 
+echo ""
+echo -e "${RED_TEXT}${BOLD_TEXT}Subscribe to my Channel (Arcade With Us):${RESET_FORMAT}"
 echo -e "${BLUE_TEXT}${BOLD_TEXT}https://youtube.com/@arcadewithus_we?si=yeEby5M3k40gdX4l${RESET_FORMAT}"
 echo
 #-----------------------------------------------------end----------------------------------------------------------#
