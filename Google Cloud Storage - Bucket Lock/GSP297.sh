@@ -63,6 +63,10 @@ echo "${MAGENTA_TEXT}${BOLD_TEXT}Releasing temporary hold...${RESET_FORMAT}"
 gsutil retention temp release "gs://$BUCKET/dummy_transactions"
 
 
+echo "${MAGENTA_TEXT}${BOLD_TEXT}Deleting the dummy_transactions file${RESET_FORMAT}"
+gsutil rm "gs://$BUCKET/dummy_transactions"
+
+
 echo "${MAGENTA_TEXT}${BOLD_TEXT}Setting event-based hold as default...${RESET_FORMAT}"
 gsutil retention event-default set "gs://$BUCKET/"
 
