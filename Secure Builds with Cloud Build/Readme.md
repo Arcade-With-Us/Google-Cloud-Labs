@@ -42,7 +42,8 @@ sudo chmod +x GSP1184.sh
 
 ./GSP1184.sh
 ```
-* You may have to run the code again if it shows error
+* You may have to run the code again if it shows an error.
+* If you get a score of 90+, then you can end the lab.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
