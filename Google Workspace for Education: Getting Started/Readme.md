@@ -31,7 +31,7 @@
 
 > ✅ **NOTE:** *Watch Full Video to get Full Scores on Check My Progress.*
 
-### Download the CSV file from here: [Click](https://github.com/Arcade-With-Us/Google-Cloud-Labs/raw/refs/heads/main/Google%20Workspace%20for%20Education:%20Getting%20Started/ArcadeWithUs.csv)
+### Download the CSV file from here: [Click](https://github.com/Arcade-With-Us/Google-Cloud-Labs/blob/main/Google%20Workspace%20for%20Education%3A%20Getting%20Started/ArcadeWithUs.csv)
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
