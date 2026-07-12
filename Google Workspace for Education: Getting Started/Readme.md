@@ -1,9 +1,9 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Google Workspace for Education: Getting Started || GSP978 ✨
 </h1>
 
 <div align="center">
-  <a href="https://www.cloudskillsboost.google/focuses/49749?parent=catalog"_blank" rel="noopener noreferrer">
+  <a href=""_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/Open_Lab-Cloud_Skills_Boost-4285F4?style=for-the-badge&logo=google&logoColor=white&labelColor=34A853" alt="Open Lab Badge">
   </a>
 </div>
@@ -31,18 +31,7 @@
 
 > ✅ **NOTE:** *Watch Full Video to get Full Scores on Check My Progress.*
 
-**🌐Launch Cloud Shell:**
-Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
-
-## 💻 **Execute in Cloud Shell** 
-
-```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Build%20Global%20and%20Regional%20Load%20Balancing%20Solutions%3A%20Challenge%20Lab/GSP539.sh
-
-sudo chmod +x GSP539.sh
-
-./GSP539.sh
-```
+### Download the CSV file from here: [Click](https://github.com/Arcade-With-Us/Google-Cloud-Labs/raw/refs/heads/main/Google%20Workspace%20for%20Education:%20Getting%20Started/ArcadeWithUs.csv)
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
@@ -76,6 +65,6 @@ You've successfully completed the lab. **Way to go!** 🚀
     <em>This guide is provided for educational purposes. Always follow Qwiklabs terms of service and YouTube's community guidelines.</em>
   </p>
   <p style="font-size: 12px; color: #586069;">
-    <em>Last updated: June 2025</em>
+    <em>Last updated: July 2026</em>
   </p>
 </div>
