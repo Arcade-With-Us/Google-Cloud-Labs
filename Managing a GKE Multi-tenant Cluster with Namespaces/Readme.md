@@ -1,5 +1,5 @@
 <h1 align="center">
-✨  Managing a GKE Multi-tenant Cluster with Namespaces || GSP766 ✨
+  Managing a GKE Multi-tenant Cluster with Namespaces || GSP766 
 </h1>
 
 <div align="center">
@@ -35,7 +35,9 @@
 Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
 
 ## 💻 **Execute in Cloud Shell** 
-
+```
+export ZONE=
+```
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Managing%20a%20GKE%20Multi-tenant%20Cluster%20with%20Namespaces/GSP766.sh
 
