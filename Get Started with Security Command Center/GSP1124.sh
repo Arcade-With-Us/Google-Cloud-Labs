@@ -48,7 +48,7 @@ while true; do
 done
 
 # Once the service is enabled, you can proceed with other commands
-gcloud scc muteconfigs create muting-pga-findings \
+gcloud scc muteconfigs create mute-flowlogs-findings \
   --project=$DEVSHELL_PROJECT_ID \
   --description="Mute rule for VPC Flow Logs" \
   --filter="category=\"FLOW_LOGS_DISABLED\""
