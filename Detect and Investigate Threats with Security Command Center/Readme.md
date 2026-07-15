@@ -33,7 +33,12 @@
 Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
 
 ## 💻 **Execute in Cloud Shell**  
-
+```
+gcloud auth login
+```
+```
+gcloud config set project PROJECT_ID
+```
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Detect%20and%20Investigate%20Threats%20with%20Security%20Command%20Center/GSP1125.sh
 
