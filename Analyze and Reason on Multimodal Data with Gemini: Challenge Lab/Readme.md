@@ -1,9 +1,9 @@
 <h1 align="center">
-✨  Autoscaling TensorFlow Model Deployments with TF Serving and Kubernetes || GSP777 ✨
+✨  Analyze and Reason on Multimodal Data with Gemini: Challenge Lab || GSP524 ✨
 </h1>
 
 <div align="center">
-  <a href="https://www.cloudskillsboost.google/focuses/49749?parent=catalog"_blank" rel="noopener noreferrer">
+  <a href=""_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/Open_Lab-Cloud_Skills_Boost-4285F4?style=for-the-badge&logo=google&logoColor=white&labelColor=34A853" alt="Open Lab Badge">
   </a>
 </div>
@@ -37,11 +37,9 @@ Start your Google CloudShell session by [clicking here](https://console.cloud.go
 ## 💻 **Execute in Cloud Shell** 
 
 ```
-curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Build%20Global%20and%20Regional%20Load%20Balancing%20Solutions%3A%20Challenge%20Lab/GSP539.sh
+rm gsp524-challenge-v1.0.0.ipynb
 
-sudo chmod +x GSP539.sh
-
-./GSP539.sh
+curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Analyze%20and%20Reason%20on%20Multimodal%20Data%20with%20Gemini%3A%20Challenge%20Lab/gsp524-challenge-v1.0.0.ipynb
 ```
 ---
 
