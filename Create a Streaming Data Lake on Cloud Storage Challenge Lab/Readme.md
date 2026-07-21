@@ -41,7 +41,7 @@ sudo chmod +x ARC110.sh
 ./ARC110.sh
 ```
 ### If you don't get the score for TASK 4 please follow this
-```
+```py
 export PROJECT_ID="<YOUR_PROJECT_ID>"
 export REGION="<YOUR_REGION>"                 # Example: us-west1
 export ZONE="<YOUR_ZONE>"                     # Example: us-west1-c
@@ -50,10 +50,10 @@ export TOPIC="<YOUR_PUBSUB_TOPIC>"
 export MESSAGE="<YOUR_MESSAGE>"
 export JOB_NAME="pubsub-to-gcs-$(date +%s)"
 ```
-```
+```py
 gcloud config set project $PROJECT_ID
 ```
-```
+```py
 cd ~
 
 if [ ! -d "python-docs-samples" ]; then
@@ -62,11 +62,11 @@ fi
 
 cd python-docs-samples/pubsub/streaming-analytics
 ```
-```
+```py
 python3 -m pip install --upgrade pip
 python3 -m pip install -r requirements.txt
 ```
-```
+```py
 python3 PubSubToGCS.py \
     --runner=DataflowRunner \
     --project=$PROJECT_ID \
@@ -80,14 +80,14 @@ python3 PubSubToGCS.py \
     --worker_machine_type=e2-standard-2 \
     --worker_disk_type=compute.googleapis.com/projects/$PROJECT_ID/zones/$ZONE/diskTypes/pd-standard
 ```
-```
+```py
 gcloud pubsub topics publish $TOPIC \
     --message="$MESSAGE"
 
 echo "Waiting 150 seconds..."
 sleep 150
 ```
-```
+```py
 echo
 echo "Files written to Cloud Storage:"
 gcloud storage ls gs://$BUCKET/output/
