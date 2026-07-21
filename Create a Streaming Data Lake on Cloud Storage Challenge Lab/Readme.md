@@ -40,6 +40,58 @@ sudo chmod +x ARC110.sh
 
 ./ARC110.sh
 ```
+### If you don't get the score for TASK 4 please follow this
+```
+export PROJECT_ID="<YOUR_PROJECT_ID>"
+export REGION="<YOUR_REGION>"                 # Example: us-west1
+export ZONE="<YOUR_ZONE>"                     # Example: us-west1-c
+export BUCKET="<YOUR_BUCKET_NAME>"
+export TOPIC="<YOUR_PUBSUB_TOPIC>"
+export MESSAGE="<YOUR_MESSAGE>"
+export JOB_NAME="pubsub-to-gcs-$(date +%s)"
+```
+```
+gcloud config set project $PROJECT_ID
+```
+```
+cd ~
+
+if [ ! -d "python-docs-samples" ]; then
+    git clone https://github.com/GoogleCloudPlatform/python-docs-samples.git
+fi
+
+cd python-docs-samples/pubsub/streaming-analytics
+```
+```
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
+```
+```
+python3 PubSubToGCS.py \
+    --runner=DataflowRunner \
+    --project=$PROJECT_ID \
+    --region=$REGION \
+    --job_name=$JOB_NAME \
+    --input_topic=projects/$PROJECT_ID/topics/$TOPIC \
+    --output_path=gs://$BUCKET/output \
+    --window_size=2 \
+    --temp_location=gs://$BUCKET/temp \
+    --staging_location=gs://$BUCKET/staging \
+    --worker_machine_type=e2-standard-2 \
+    --worker_disk_type=compute.googleapis.com/projects/$PROJECT_ID/zones/$ZONE/diskTypes/pd-standard
+```
+```
+gcloud pubsub topics publish $TOPIC \
+    --message="$MESSAGE"
+
+echo "Waiting 150 seconds..."
+sleep 150
+```
+```
+echo
+echo "Files written to Cloud Storage:"
+gcloud storage ls gs://$BUCKET/output/
+```
 ---
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
 
