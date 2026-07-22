@@ -43,6 +43,30 @@ sudo chmod +x GSP523.sh
 
 ./GSP523.sh
 ```
+### For the last TASK 4, If you don't get the full score, run this code in BIGQUERY
+##### Make sure to change the variables value like (MODEL_NAME, PROJECT_ID, DATASET_NAME, EMBEDDINGS_FUNCTION)
+```py
+Create or replace table `[PROJECT_ID].[DATASET_NAME].[SEARCH_RESULTS_TABLE]` AS
+select base.uri,
+base.product_name,
+base.content_type,
+distance
+ from
+[VECTOR_SEARCH_FUNCTION](table [DATASET_NAME].[EMBEDDINGS_TABLE_NAME],'ml_generate_embedding_result',
+(
+SELECT ml_generate_embedding_result as embedding_col
+FROM
+ [EMBEDDINGS_FUNCTION]
+ (
+   MODEL `[DATASET_NAME].[MODEL_NAME]`,
+   (select 'Men Sweaters' as content),
+   STRUCT(TRUE AS flatten_json_output)
+ )
+),
+  [STATEMENT_TO_SELECT_TOP_2_RESULTS],
+  distance_type => 'COSINE'
+);
+```
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
