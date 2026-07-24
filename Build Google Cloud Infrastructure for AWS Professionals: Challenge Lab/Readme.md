@@ -55,13 +55,14 @@ mysql          ClusterIP      ...
 ```
 Now create the uptime check with these exact settings:
 
-Display name: wordpress (or any name)
-Protocol: HTTP
-Resource Type: URL
-Hostname: <WordPress_External_IP>
-Path: /
-Check frequency: 1 minute (default)
-All other settings will be default; now test and create.
+* Display name: wordpress (or any name)
+* Protocol: `HTTP`
+* Resource Type: `URL`
+* Hostname: `<WordPress_External_IP>`
+* Path: `/`
+* Check frequency: `1 minute (default)`
+* All other settings will be `default`; now **test** and **create**.
+
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
