@@ -43,6 +43,25 @@ sudo chmod +x GSP511.sh
 
 ./GSP511.sh
 ```
+#### For the Uptime Check, follow these steps-
+```py
+kubectl get services
+```
+You should see something like:
+```py
+NAME           TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)
+wordpress      LoadBalancer   10.xx.xx.xx     35.xx.xx.xx      80:xxxxx/TCP
+mysql          ClusterIP      ...
+```
+Now create the uptime check with these exact settings:
+
+Display name: wordpress (or any name)
+Protocol: HTTP
+Resource Type: URL
+Hostname: <WordPress_External_IP>
+Path: /
+Check frequency: 1 minute (default)
+All other settings will be default; now test and create.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
