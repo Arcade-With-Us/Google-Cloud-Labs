@@ -60,7 +60,7 @@ sudo chmod +x GSP499.sh
     * The domain will be protected by **IAP**. Click **Turn On**.
     * Click **Add Principal**.
     * Enter your **Student email address**.
-    * Then, pick the `Cloud IAP` > **`IAP-Secured Web App User role`** to assign to that address.
+    * Then, pick the `Cloud IAP` > **`IAP-Secured Web App User`** role to assign to that address.
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
