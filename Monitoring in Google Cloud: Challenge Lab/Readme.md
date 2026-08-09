@@ -88,6 +88,16 @@ sudo chmod +x ARC115.sh
 
 5. Verify and create the metric
 
+### Or you can run this code in cloudshell
+```py
+PROJECT_ID=$(gcloud config get-value project)
+
+gcloud logging metrics create drabhi \
+  --description="Count Apache 200 OK responses" \
+  --log-filter='resource.type="gce_instance"
+logName="projects/'"$PROJECT_ID"'/logs/apache-access"
+textPayload:"200"'
+```
 </div>
 </details>
 
