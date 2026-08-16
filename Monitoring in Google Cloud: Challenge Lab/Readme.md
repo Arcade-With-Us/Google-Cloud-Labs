@@ -92,7 +92,7 @@ sudo chmod +x ARC115.sh
 ```py
 PROJECT_ID=$(gcloud config get-value project)
 
-gcloud logging metrics create drabhi \
+gcloud logging metrics create arcadewithus \
   --description="Count Apache 200 OK responses" \
   --log-filter='resource.type="gce_instance"
 logName="projects/'"$PROJECT_ID"'/logs/apache-access"
