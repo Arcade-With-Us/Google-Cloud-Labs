@@ -49,6 +49,13 @@ gcloud compute firewall-rules create fw-ssh-dev --source-ranges=0.0.0.0/0 --targ
 
 gcloud compute firewall-rules create fw-ssh-prod --source-ranges=0.0.0.0/0 --target-tags ssh --allow=tcp:22 --network=griffin-prod-vpc
 
+ZONE=$(gcloud config get-value compute/zone)
+
+gcloud compute instances create griffin-bastion \
+  --zone="$ZONE" \
+  --machine-type=e2-micro \
+  --network-interface=network=griffin-dev-vpc,subnet=griffin-dev-mgmt \
+  --network-interface=network=griffin-prod-vpc,subnet=griffin-prod-mgmt,no-address
 
 echo "${RED}${BOLD}Task 3. ${RESET}""${WHITE}${BOLD}Create bastion host${RESET}" "${GREEN}${BOLD}Completed${RESET}"
 
