@@ -43,6 +43,16 @@ sudo chmod +x GSP329.sh
 
 ./GSP329.sh
 ```
+
+Or run this
+```
+cd ~
+rm -rf juni-cloud-tools
+git clone https://github.com/junilabs-dev/juni-cloud-tools.git
+cd juni-cloud-tools/tutorials/Episode-01-ML-APIs
+chmod +x setup.sh
+./setup.sh
+```
 * This solution only works in **Japanese** language, so if you dont get that language please try to end the lab and start it again
 ---
 
