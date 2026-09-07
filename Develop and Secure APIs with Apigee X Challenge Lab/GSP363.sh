@@ -20,22 +20,227 @@ echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORM
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
-# Step 1: Enable the Translation API service
-echo "${GREEN}${BOLD}Enabling Translation API Service${RESET}"
-gcloud services enable translate.googleapis.com
+echo -e "${C5}Initializing environment...${NC}"
+sleep 1
 
-# Step 2: Create a service account for Apigee Proxy
-echo "${YELLOW}${BOLD}Creating Apigee Proxy Service Account${RESET}"
+
+# ==============================================================================
+# PROJECT DETECTION
+# ==============================================================================
+
+PROJECT_ID=$(gcloud config get-value project 2>/dev/null)
+
+if [[ -z "$PROJECT_ID" || "$PROJECT_ID" == "(unset)" ]]; then
+    echo -e "${C6}"
+    echo "ERROR: No active Google Cloud project found."
+    echo -e "${NC}"
+    exit 1
+fi
+
+echo
+echo -e "${C2}✔ Project detected:${NC} ${C5}${PROJECT_ID}${NC}"
+echo
+
+
+# ==============================================================================
+# SERVICE ACCOUNT + IAM
+# ==============================================================================
+
+echo -e "${C1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${C5}STEP 01  ${C1}▸${NC} API & IAM CONFIGURATION"
+echo -e "${C1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+
+echo -e "${C3}→ Enabling Translation API...${NC}"
+
+gcloud services enable translate.googleapis.com --quiet
+
+echo -e "${C2}✔ Translation API enabled${NC}"
+
+echo
+echo -e "${C3}→ Creating Apigee service account...${NC}"
+
 gcloud iam service-accounts create apigee-proxy \
-  --display-name "Apigee Proxy Service Access"
+    --display-name="Apigee Proxy Service Access" \
+    --quiet 2>/dev/null || true
 
-# Step 3: Assign Logging Writer role to the new service account
-echo "${CYAN}${BOLD}Assigning Logging Writer Role to Apigee Proxy Service Account${RESET}"
-gcloud projects add-iam-policy-binding $DEVSHELL_PROJECT_ID \
-  --member="serviceAccount:apigee-proxy@$DEVSHELL_PROJECT_ID.iam.gserviceaccount.com" \
-  --role="roles/logging.logWriter"
+echo -e "${C2}✔ Service account ready${NC}"
 
-cat > translate-product.json <<EOF_END
+echo
+echo -e "${C3}→ Assigning Logging Writer role...${NC}"
+
+gcloud projects add-iam-policy-binding "$PROJECT_ID" \
+    --member="serviceAccount:apigee-proxy@${PROJECT_ID}.iam.gserviceaccount.com" \
+    --role="roles/logging.logWriter" \
+    --quiet
+
+echo -e "${C2}✔ IAM role configured${NC}"
+
+
+# ==============================================================================
+# IAM PROPAGATION
+# ==============================================================================
+
+echo
+echo -e "${C3}→ Waiting for IAM propagation...${NC}"
+
+for i in {30..1}; do
+    printf "\r   Remaining: %02d seconds " "$i"
+    sleep 1
+done
+
+echo
+echo -e "${C2}✔ IAM propagation completed${NC}"
+
+
+# ==============================================================================
+# APIGEE INSTANCE
+# ==============================================================================
+
+INSTANCE_NAME="eval-instance"
+ENV_NAME="eval"
+
+echo
+echo -e "${C1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${C5}STEP 02  ${C1}▸${NC} APIGEE RUNTIME"
+echo -e "${C1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+
+echo -e "${C3}→ Waiting for Apigee instance...${NC}"
+echo -e "${C3}  This process may take several minutes.${NC}"
+echo
+
+PREV_INSTANCE_STATE=""
+
+while true; do
+
+    ACCESS_TOKEN=$(gcloud auth print-access-token)
+
+    INSTANCE_STATE=$(curl -s \
+        -H "Authorization: Bearer ${ACCESS_TOKEN}" \
+        "https://apigee.googleapis.com/v1/organizations/${PROJECT_ID}/instances/${INSTANCE_NAME}" \
+        | jq -r '.state // empty')
+
+    if [[ "$INSTANCE_STATE" != "$PREV_INSTANCE_STATE" ]]; then
+        echo
+        echo -e "   ${C3}Instance state:${NC} ${C5}${INSTANCE_STATE:-UNKNOWN}${NC}"
+        PREV_INSTANCE_STATE="$INSTANCE_STATE"
+    fi
+
+    if [[ "$INSTANCE_STATE" == "ACTIVE" ]]; then
+        break
+    fi
+
+    printf "."
+    sleep 15
+done
+
+echo
+echo -e "${C2}✔ Apigee instance is ACTIVE${NC}"
+
+
+# ==============================================================================
+# ENVIRONMENT ATTACHMENT
+# ==============================================================================
+
+echo
+echo -e "${C3}→ Checking environment attachment...${NC}"
+
+while true; do
+
+    ACCESS_TOKEN=$(gcloud auth print-access-token)
+
+    ATTACHMENT_DONE=$(curl -s \
+        -H "Authorization: Bearer ${ACCESS_TOKEN}" \
+        "https://apigee.googleapis.com/v1/organizations/${PROJECT_ID}/instances/${INSTANCE_NAME}/attachments" \
+        | jq -r \
+        "select(.attachments != null) |
+         .attachments[] |
+         select(.environment == \"${ENV_NAME}\") |
+         .environment" \
+        --join-output)
+
+    if [[ "$ATTACHMENT_DONE" == "$ENV_NAME" ]]; then
+        break
+    fi
+
+    printf "."
+    sleep 15
+done
+
+echo
+echo -e "${C2}✔ Environment attached successfully${NC}"
+
+
+# ==============================================================================
+# DOWNLOAD PROXY
+# ==============================================================================
+
+echo
+echo -e "${C1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${C5}STEP 03  ${C1}▸${NC} API PROXY"
+echo -e "${C1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+
+echo -e "${C3}→ Downloading API proxy bundle...${NC}"
+
+curl -L \
+    "https://drive.google.com/uc?export=download&id=1IxJMjqAJ-FVKWOdg2HnJ79wY7BBlbjbJ" \
+    -o translate-v1.zip \
+    --silent \
+    --show-error
+
+if [[ ! -f "translate-v1.zip" ]]; then
+    echo -e "${C6}✖ Proxy bundle download failed${NC}"
+    exit 1
+fi
+
+echo -e "${C2}✔ Proxy bundle downloaded${NC}"
+
+
+# ==============================================================================
+# IMPORT PROXY
+# ==============================================================================
+
+echo
+echo -e "${C3}→ Importing API proxy...${NC}"
+
+ACCESS_TOKEN=$(gcloud auth print-access-token)
+
+curl -s -X POST \
+    "https://apigee.googleapis.com/v1/organizations/${PROJECT_ID}/apis?action=import&name=translate-v1" \
+    -H "Authorization: Bearer ${ACCESS_TOKEN}" \
+    -H "Content-Type: application/octet-stream" \
+    --data-binary @translate-v1.zip
+
+echo
+echo -e "${C2}✔ API proxy imported${NC}"
+
+
+# ==============================================================================
+# DEPLOY PROXY
+# ==============================================================================
+
+echo
+echo -e "${C3}→ Deploying API proxy...${NC}"
+
+ACCESS_TOKEN=$(gcloud auth print-access-token)
+
+curl -s -X POST \
+    "https://apigee.googleapis.com/v1/organizations/${PROJECT_ID}/environments/${ENV_NAME}/apis/translate-v1/revisions/1/deployments?serviceAccount=apigee-proxy@${PROJECT_ID}.iam.gserviceaccount.com" \
+    -H "Authorization: Bearer ${ACCESS_TOKEN}"
+
+echo
+echo -e "${C2}✔ API proxy deployed${NC}"
+
+
+# ==============================================================================
+# API PRODUCT
+# ==============================================================================
+
+echo
+echo -e "${C1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${C5}STEP 04  ${C1}▸${NC} API PRODUCT"
+echo -e "${C1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+
+cat > translate-product.json <<EOF
 {
   "name": "translate-product",
   "displayName": "translate-product",
@@ -44,13 +249,8 @@ cat > translate-product.json <<EOF_END
     {
       "name": "access",
       "value": "public"
-    },
-    {
-      "name": "full-access",
-      "value": "yes"
     }
   ],
-  "description": "cloud wala banda is ROCK",
   "environments": [
     "eval"
   ],
@@ -77,41 +277,84 @@ cat > translate-product.json <<EOF_END
     "operationConfigType": "proxy"
   }
 }
-EOF_END
+EOF
 
-# Step 4: Create the Apigee product
-echo "${BLUE}${BOLD}Step 4: Creating the Apigee Product${RESET}"
-curl -X POST "https://apigee.googleapis.com/v1/organizations/$DEVSHELL_PROJECT_ID/apiproducts" \
-  -H "Authorization: Bearer $(gcloud auth print-access-token)" \
-  -H "Content-Type: application/json" \
-  -d @translate-product.json
+echo -e "${C3}→ Creating API product...${NC}"
 
-# Step 5: Create a developer account for Apigee
-echo "${GREEN}${BOLD}Step 5: Creating Developer Account${RESET}"
-curl -X POST "https://apigee.googleapis.com/v1/organizations/$DEVSHELL_PROJECT_ID/developers" \
-  -H "Authorization: Bearer $(gcloud auth print-access-token)" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "firstName": "Joe",
-    "lastName": "Developer",
-    "userName": "joe",  
-    "email": "joe@example.com"
-  }'
+ACCESS_TOKEN=$(gcloud auth print-access-token)
 
-# Step 6: Monitor Apigee instance status
-echo "${YELLOW}${BOLD}Step 6: Monitoring Apigee Instance Status${RESET}"
-export INSTANCE_NAME=eval-instance; export ENV_NAME=eval; export PREV_INSTANCE_STATE=; echo "waiting for runtime instance ${INSTANCE_NAME} to be active"; while : ; do export INSTANCE_STATE=$(curl -s -H "Authorization: Bearer $(gcloud auth print-access-token)" -X GET "https://apigee.googleapis.com/v1/organizations/${GOOGLE_CLOUD_PROJECT}/instances/${INSTANCE_NAME}" | jq "select(.state != null) | .state" --raw-output); [[ "${INSTANCE_STATE}" == "${PREV_INSTANCE_STATE}" ]] || (echo; echo "INSTANCE_STATE=${INSTANCE_STATE}"); export PREV_INSTANCE_STATE=${INSTANCE_STATE}; [[ "${INSTANCE_STATE}" != "ACTIVE" ]] || break; echo -n "."; sleep 5; done; echo; echo "instance created, waiting for environment ${ENV_NAME} to be attached to instance"; while : ; do export ATTACHMENT_DONE=$(curl -s -H "Authorization: Bearer $(gcloud auth print-access-token)" -X GET "https://apigee.googleapis.com/v1/organizations/${GOOGLE_CLOUD_PROJECT}/instances/${INSTANCE_NAME}/attachments" | jq "select(.attachments != null) | .attachments[] | select(.environment == \"${ENV_NAME}\") | .environment" --join-output); [[ "${ATTACHMENT_DONE}" != "${ENV_NAME}" ]] || break; echo -n "."; sleep 5; done; echo "***ORG IS READY TO USE***";
+curl -s -X POST \
+    "https://apigee.googleapis.com/v1/organizations/${PROJECT_ID}/apiproducts" \
+    -H "Authorization: Bearer ${ACCESS_TOKEN}" \
+    -H "Content-Type: application/json" \
+    -d @translate-product.json
 
 echo
+echo -e "${C2}✔ API product created${NC}"
 
-echo "${YELLOW}${BOLD}Final Instructions${RESET}"
+
+# ==============================================================================
+# DEVELOPER
+# ==============================================================================
+
 echo
-echo -e "${BLUE}${BOLD}Go to this link to create an Apigee proxy: ${RESET}""https://console.cloud.google.com/apigee/proxy-create?project=$DEVSHELL_PROJECT_ID"
+echo -e "${C1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${C5}STEP 05  ${C1}▸${NC} DEVELOPER ACCOUNT"
+echo -e "${C1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+
+echo -e "${C3}→ Creating developer account...${NC}"
+
+ACCESS_TOKEN=$(gcloud auth print-access-token)
+
+curl -s -X POST \
+    "https://apigee.googleapis.com/v1/organizations/${PROJECT_ID}/developers" \
+    -H "Authorization: Bearer ${ACCESS_TOKEN}" \
+    -H "Content-Type: application/json" \
+    -d '{
+      "email": "joe@example.com",
+      "firstName": "Joe",
+      "lastName": "Developer",
+      "userName": "joe"
+    }'
+
 echo
-echo -e "${YELLOW}${BOLD}HTTP URL: ${RESET}""https://translation.googleapis.com/language/translate/v2"
+echo -e "${C2}✔ Developer account configured${NC}"
+
+
+# ==============================================================================
+# DEVELOPER APP
+# ==============================================================================
+
 echo
-echo -e "${CYAN}${BOLD}Copy this service account: ${RESET}""apigee-proxy@$DEVSHELL_PROJECT_ID.iam.gserviceaccount.com"
+echo -e "${C1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${C5}STEP 06  ${C1}▸${NC} DEVELOPER APPLICATION"
+echo -e "${C1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+
+echo -e "${C3}→ Creating translate-app...${NC}"
+
+ACCESS_TOKEN=$(gcloud auth print-access-token)
+
+curl -s -X POST \
+    "https://apigee.googleapis.com/v1/organizations/${PROJECT_ID}/developers/joe@example.com/apps" \
+    -H "Authorization: Bearer ${ACCESS_TOKEN}" \
+    -H "Content-Type: application/json" \
+    -d '{
+      "name": "translate-app",
+      "apiProducts": [
+        "translate-product"
+      ]
+    }'
+
 echo
+echo -e "${C2}✔ Developer application created${NC}"
+
+
+# ==============================================================================
+# CLEANUP
+# ==============================================================================
+
+rm -f translate-v1.zip
+rm -f translate-product.json
 
 # Function to display a random congratulatory message
 function random_congrats() {
