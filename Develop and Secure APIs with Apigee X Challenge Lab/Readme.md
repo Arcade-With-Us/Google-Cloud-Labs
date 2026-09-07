@@ -43,24 +43,7 @@ sudo chmod +x GSP363.sh
 
 ./GSP363.sh
 ```
-### 🛠️ **Proxy Configuration Details:**  
-
-| **Property**   | **Value**     |  
-| :------------: | :------------: |  
-| Name           | translate-v1   |  
-| Base Path      | /translate/v1  |
-
-### 📥 **Download Required Files:**  
-
-- **translate-v1**: [⬇️ Download Here](https://drive.google.com/uc?export=download&id=1IxJMjqAJ-FVKWOdg2HnJ79wY7BBlbjbJ)
-
-### 🛠️ **App Configuration Details:**  
-
-| **Property**   | **Value**           |  
-| :------------: | :-----------------: |  
-| Name           | translate-app       |
 ---
-
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
 
 Your hard work and determination paid off! 💻
