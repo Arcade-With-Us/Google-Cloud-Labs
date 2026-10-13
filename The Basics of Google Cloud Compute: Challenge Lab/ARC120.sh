@@ -25,10 +25,6 @@ export PROJECT_ID=$(gcloud config get-value project 2>/dev/null)
 export REGION=$(gcloud config get-value compute/region 2>/dev/null)
 export ZONE=$(gcloud config get-value compute/zone 2>/dev/null)
 
-# 2. Set required lab defaults if not configured
-export REGION=${REGION:-us-west1}
-export ZONE=${ZONE:-us-west1-b}
-
 # 3. Display detected configuration
 echo "PROJECT ID: $PROJECT_ID | REGION: $REGION | ZONE: $ZONE"
 
