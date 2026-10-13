@@ -21,9 +21,9 @@ echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}
 echo
 
 # 1. Get project ID, region, and zone from lab configuration
-export PROJECT_ID=$(gcloud config get-value project 2>/dev/null)
-export REGION=$(gcloud config get-value compute/region 2>/dev/null)
-export ZONE=$(gcloud config get-value compute/zone 2>/dev/null)
+export PROJECT_ID=$(gcloud config get-value project)
+export REGION=$(gcloud config get-value compute/region)
+export ZONE=$(gcloud config get-value compute/zone)
 
 # 3. Display detected configuration
 echo "PROJECT ID: $PROJECT_ID | REGION: $REGION | ZONE: $ZONE"
