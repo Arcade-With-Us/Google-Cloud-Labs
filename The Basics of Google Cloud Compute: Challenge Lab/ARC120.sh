@@ -20,43 +20,47 @@ echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORM
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
-# 1. Get project ID, region, and zone from lab configuration
-export PROJECT_ID=$(gcloud config get-value project)
-export REGION=$(gcloud config get-value compute/region)
-export ZONE=$(gcloud config get-value compute/zone)
 
-# 3. Display detected configuration
-echo "PROJECT ID: $PROJECT_ID | REGION: $REGION | ZONE: $ZONE"
+#!/bin/bash
+set -e
 
-# 4. Validate project ID
-if [ -z "$PROJECT_ID" ] || [ "$PROJECT_ID" = "(unset)" ]; then
-  echo "ERROR: No active project found."
+# Get current lab details
+read -rp "Enter PROJECT ID: " PROJECT_ID
+read -rp "Enter ZONE (e.g. us-west1-b): " ZONE
+
+export PROJECT_ID ZONE
+REGION="${ZONE%-*}"
+export REGION
+
+if [[ -z "$PROJECT_ID" || -z "$ZONE" ]]; then
+  echo "ERROR: Project ID and Zone are required."
   exit 1
 fi
 
-# 5. Set gcloud configuration
 gcloud config set project "$PROJECT_ID"
 gcloud config set compute/region "$REGION"
 gcloud config set compute/zone "$ZONE"
 
-# 6. Define resource names AFTER detecting project and zone
+echo "PROJECT ID: $PROJECT_ID | REGION: $REGION | ZONE: $ZONE"
+
+# Resource names
 BUCKET="${PROJECT_ID}-bucket"
 DISK="mydisk"
 VM="my-instance"
 
-# Task 1: Create Cloud Storage bucket in US multi-region
-if ! gcloud storage buckets describe "gs://$BUCKET" >/dev/null 2>&1; then
+# Task 1: Create Cloud Storage bucket
+if ! gcloud storage buckets describe "gs://$BUCKET" --project="$PROJECT_ID" >/dev/null 2>&1; then
   gcloud storage buckets create "gs://$BUCKET" \
     --project="$PROJECT_ID" \
     --location=US \
-    --default-storage-class=STANDARD
+    --default-storage-class=STANDARD \
+    --uniform-bucket-level-access
 else
   echo "Bucket already exists: $BUCKET"
 fi
 
 # Task 2A: Create 200 GB balanced persistent disk
-if ! gcloud compute disks describe "$DISK" \
-  --project="$PROJECT_ID" --zone="$ZONE" >/dev/null 2>&1; then
+if ! gcloud compute disks describe "$DISK" --project="$PROJECT_ID" --zone="$ZONE" >/dev/null 2>&1; then
   gcloud compute disks create "$DISK" \
     --project="$PROJECT_ID" \
     --zone="$ZONE" \
@@ -66,9 +70,8 @@ else
   echo "Disk already exists: $DISK"
 fi
 
-# Task 2B: Create VM with Debian 12 and balanced 10 GB boot disk
-if ! gcloud compute instances describe "$VM" \
-  --project="$PROJECT_ID" --zone="$ZONE" >/dev/null 2>&1; then
+# Task 2B: Create VM with Debian 12 and 10 GB balanced boot disk
+if ! gcloud compute instances describe "$VM" --project="$PROJECT_ID" --zone="$ZONE" >/dev/null 2>&1; then
   gcloud compute instances create "$VM" \
     --project="$PROJECT_ID" \
     --zone="$ZONE" \
@@ -95,9 +98,8 @@ else
   echo "Disk $DISK is already attached."
 fi
 
-# Task 2D: Configure HTTP firewall access
-if ! gcloud compute firewall-rules describe allow-http \
-  --project="$PROJECT_ID" >/dev/null 2>&1; then
+# Task 2D: Allow HTTP traffic
+if ! gcloud compute firewall-rules describe allow-http --project="$PROJECT_ID" >/dev/null 2>&1; then
   gcloud compute firewall-rules create allow-http \
     --project="$PROJECT_ID" \
     --network=default \
@@ -107,7 +109,13 @@ else
   echo "HTTP firewall rule already exists."
 fi
 
-# 7. Display completion information
+# Task 3: Install and start NGINX
+gcloud compute ssh "$VM" \
+  --project="$PROJECT_ID" \
+  --zone="$ZONE" \
+  --quiet \
+  --command="sudo apt-get update && sudo apt-get install -y nginx && sudo systemctl enable --now nginx && sudo systemctl is-active nginx"
+
 echo ""
 echo "Infrastructure setup completed!"
 echo "PROJECT ID: $PROJECT_ID"
@@ -116,37 +124,6 @@ echo "ZONE: $ZONE"
 echo "BUCKET: gs://$BUCKET"
 echo "VM: $VM"
 echo "DISK: $DISK (200 GB)"
-echo ""
-echo "Next, connect to the VM:"
-
-echo "${YELLOW_TEXT}${BOLD_TEXT}Waiting for 15 seconds for the changes to take effect...${RESET_FORMAT}"
-sleep 15
-
-echo
-echo "${GREEN_TEXT}${BOLD_TEXT} ========================== Preparing the 'prepare_disk.sh' script ========================== ${RESET_FORMAT}"
-echo
-cat > prepare_disk.sh <<'EOF_END'
-
-sudo apt update && sudo apt upgrade -y
-sudo apt install nginx -y
-sudo systemctl enable nginx
-sudo systemctl start nginx
-sudo systemctl status nginx
-
-EOF_END
-
-echo
-echo "${GREEN_TEXT}${BOLD_TEXT} ========================== Copying the script to the instance ========================== ${RESET_FORMAT}"
-echo
-
-gcloud compute scp prepare_disk.sh my-instance:/tmp --project=$PROJECT_ID --zone=$ZONE --quiet
-
-echo
-echo "${GREEN_TEXT}${BOLD_TEXT} ========================== Executing the script on the instance ========================== ${RESET_FORMAT}"
-echo
-
-gcloud compute ssh my-instance --project=$PROJECT_ID --zone=$ZONE --quiet --command="bash /tmp/prepare_disk.sh"
-echo
 
 echo
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
