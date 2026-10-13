@@ -20,63 +20,108 @@ echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORM
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
-read -p "${YELLOW_TEXT}${BOLD_TEXT}Enter ZONE: ${RESET_FORMAT}" ZONE
+# 1. Get project ID, region, and zone from lab configuration
+export PROJECT_ID=$(gcloud config get-value project 2>/dev/null)
+export REGION=$(gcloud config get-value compute/region 2>/dev/null)
+export ZONE=$(gcloud config get-value compute/zone 2>/dev/null)
 
-echo "${MAGENTA_TEXT}${BOLD_TEXT}You entered: $ZONE${RESET_FORMAT}"
+# 2. Set required lab defaults if not configured
+export REGION=${REGION:-us-west1}
+export ZONE=${ZONE:-us-west1-b}
 
-export ZONE=$ZONE
+# 3. Display detected configuration
+echo "PROJECT ID: $PROJECT_ID | REGION: $REGION | ZONE: $ZONE"
 
-PROJECT_ID=$(gcloud config get-value project 2>/dev/null)
-if [[ -z "$PROJECT_ID" ]]; then
-    echo "${RED_TEXT}${BOLD_TEXT}ERROR: No project ID found. Set your project ID using 'gcloud config set project PROJECT_ID'.${RESET_FORMAT}"
-    exit 1
+# 4. Validate project ID
+if [ -z "$PROJECT_ID" ] || [ "$PROJECT_ID" = "(unset)" ]; then
+  echo "ERROR: No active project found."
+  exit 1
 fi
 
-# Define bucket name
-BUCKET_NAME="${PROJECT_ID}-bucket"
-echo
+# 5. Set gcloud configuration
+gcloud config set project "$PROJECT_ID"
+gcloud config set compute/region "$REGION"
+gcloud config set compute/zone "$ZONE"
 
-# Check if the bucket already exists
-if gsutil ls -b "gs://${BUCKET_NAME}" >/dev/null 2>&1; then
-    echo "${YELLOW_TEXT}${BOLD_TEXT}Bucket '${BUCKET_NAME}' already exists.${RESET_FORMAT}"
+# 6. Define resource names AFTER detecting project and zone
+BUCKET="${PROJECT_ID}-bucket"
+DISK="mydisk"
+VM="my-instance"
+
+# Task 1: Create Cloud Storage bucket in US multi-region
+if ! gcloud storage buckets describe "gs://$BUCKET" >/dev/null 2>&1; then
+  gcloud storage buckets create "gs://$BUCKET" \
+    --project="$PROJECT_ID" \
+    --location=US \
+    --default-storage-class=STANDARD
 else
-    # Create the Cloud Storage bucket in the US multi-region
-    echo "${BLUE_TEXT}${BOLD_TEXT}Creating Cloud Storage bucket: ${BUCKET_NAME}${RESET_FORMAT}"
-    if gcloud storage buckets create "gs://${BUCKET_NAME}" --location=US --uniform-bucket-level-access; then
-        echo "${GREEN_TEXT}${BOLD_TEXT}Bucket '${BUCKET_NAME}' created successfully.${RESET_FORMAT}"
-    else
-        echo "${RED_TEXT}${BOLD_TEXT}Failed to create bucket '${BUCKET_NAME}'. Check your permissions and try again.${RESET_FORMAT}"
-        exit 1
-    fi
+  echo "Bucket already exists: $BUCKET"
 fi
 
-echo
-echo "${GREEN_TEXT}${BOLD_TEXT} ========================== Creating the Compute Engine Instance 'my-instance' ========================== ${RESET_FORMAT}"
-echo
+# Task 2A: Create 200 GB balanced persistent disk
+if ! gcloud compute disks describe "$DISK" \
+  --project="$PROJECT_ID" --zone="$ZONE" >/dev/null 2>&1; then
+  gcloud compute disks create "$DISK" \
+    --project="$PROJECT_ID" \
+    --zone="$ZONE" \
+    --size=200GB \
+    --type=pd-balanced
+else
+  echo "Disk already exists: $DISK"
+fi
 
-gcloud compute instances create my-instance \
+# Task 2B: Create VM with Debian 12 and balanced 10 GB boot disk
+if ! gcloud compute instances describe "$VM" \
+  --project="$PROJECT_ID" --zone="$ZONE" >/dev/null 2>&1; then
+  gcloud compute instances create "$VM" \
+    --project="$PROJECT_ID" \
+    --zone="$ZONE" \
     --machine-type=e2-medium \
-    --zone=$ZONE \
+    --image-family=debian-12 \
     --image-project=debian-cloud \
-    --image-family=debian-11 \
     --boot-disk-size=10GB \
     --boot-disk-type=pd-balanced \
-    --create-disk=size=100GB,type=pd-standard,mode=rw,device-name=additional-disk \
     --tags=http-server
+else
+  echo "VM already exists: $VM"
+fi
 
-echo
-echo "${GREEN_TEXT}${BOLD_TEXT} ========================== Creating a Persistent Disk 'mydisk' ========================== ${RESET_FORMAT}"
-echo
-gcloud compute disks create mydisk \
-    --size=200GB \
-    --zone=$ZONE
+# Task 2C: Attach persistent disk if not already attached
+if ! gcloud compute instances describe "$VM" \
+  --project="$PROJECT_ID" --zone="$ZONE" \
+  --format="value(disks.source)" | grep -q "/disks/$DISK$"; then
+  gcloud compute instances attach-disk "$VM" \
+    --project="$PROJECT_ID" \
+    --zone="$ZONE" \
+    --disk="$DISK" \
+    --mode=rw
+else
+  echo "Disk $DISK is already attached."
+fi
 
-echo
-echo "${GREEN_TEXT}${BOLD_TEXT} ========================== Attaching 'mydisk' to 'my-instance' ========================== ${RESET_FORMAT}"
-echo
-gcloud compute instances attach-disk my-instance \
-    --disk=mydisk \
-    --zone=$ZONE
+# Task 2D: Configure HTTP firewall access
+if ! gcloud compute firewall-rules describe allow-http \
+  --project="$PROJECT_ID" >/dev/null 2>&1; then
+  gcloud compute firewall-rules create allow-http \
+    --project="$PROJECT_ID" \
+    --network=default \
+    --allow=tcp:80 \
+    --target-tags=http-server
+else
+  echo "HTTP firewall rule already exists."
+fi
+
+# 7. Display completion information
+echo ""
+echo "Infrastructure setup completed!"
+echo "PROJECT ID: $PROJECT_ID"
+echo "REGION: $REGION"
+echo "ZONE: $ZONE"
+echo "BUCKET: gs://$BUCKET"
+echo "VM: $VM"
+echo "DISK: $DISK (200 GB)"
+echo ""
+echo "Next, connect to the VM:"
 
 echo "${YELLOW_TEXT}${BOLD_TEXT}Waiting for 15 seconds for the changes to take effect...${RESET_FORMAT}"
 sleep 15
@@ -86,9 +131,11 @@ echo "${GREEN_TEXT}${BOLD_TEXT} ========================== Preparing the 'prepar
 echo
 cat > prepare_disk.sh <<'EOF_END'
 
-sudo apt update
+sudo apt update && sudo apt upgrade -y
 sudo apt install nginx -y
+sudo systemctl enable nginx
 sudo systemctl start nginx
+sudo systemctl status nginx
 
 EOF_END
 
@@ -96,13 +143,13 @@ echo
 echo "${GREEN_TEXT}${BOLD_TEXT} ========================== Copying the script to the instance ========================== ${RESET_FORMAT}"
 echo
 
-gcloud compute scp prepare_disk.sh my-instance:/tmp --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet
+gcloud compute scp prepare_disk.sh my-instance:/tmp --project=$PROJECT_ID --zone=$ZONE --quiet
 
 echo
 echo "${GREEN_TEXT}${BOLD_TEXT} ========================== Executing the script on the instance ========================== ${RESET_FORMAT}"
 echo
 
-gcloud compute ssh my-instance --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet --command="bash /tmp/prepare_disk.sh"
+gcloud compute ssh my-instance --project=$PROJECT_ID --zone=$ZONE --quiet --command="bash /tmp/prepare_disk.sh"
 echo
 
 echo
