@@ -49,8 +49,10 @@ gcloud projects add-iam-policy-binding ${PROJECT_ID} \
 # TASK 4: Create VM with DevOps Service Account
 # ==========================================
 
+export ZONE=$(gcloud config get-value compute/zone)
+
 gcloud compute instances create vm-2 \
-  --zone=us-east1-c \
+  --zone=${ZONE} \
   --machine-type=e2-micro \
   --service-account=${SA} \
   --scopes=https://www.googleapis.com/auth/cloud-platform
@@ -97,9 +99,10 @@ gcloud projects add-iam-policy-binding ${PROJECT_ID} \
 # ==========================================
 # Create BigQuery VM with Service Account
 # ==========================================
+export ZONE=$(gcloud config get-value compute/zone)
 
 gcloud compute instances create bigquery-instance \
-  --zone=us-east1-c \
+  --zone=${ZONE} \
   --machine-type=e2-medium \
   --service-account=${BQ_SA} \
   --scopes=https://www.googleapis.com/auth/cloud-platform
@@ -108,8 +111,9 @@ gcloud compute instances create bigquery-instance \
 # ==========================================
 # Connect to BigQuery VM
 # ==========================================
+export ZONE=$(gcloud config get-value compute/zone)
 
-gcloud compute ssh bigquery-instance --zone=us-east1-c
+gcloud compute ssh bigquery-instance --zone=${ZONE}
 Important: The block above ends by connecting to the BigQuery VM. Once connected, run the following second block inside the VM to install dependencies and execute the query.
 
 bash
