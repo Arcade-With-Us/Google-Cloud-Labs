@@ -45,6 +45,28 @@ sudo chmod +x ARC134.sh
 
 ./ARC134.sh
 ```
+### If task 3 is not getting a tick, then follow this:
+1. In the search bar, search for VM instance & go to VM instances
+2. Create an instance named `vm-2`
+3. Leave all other specifications; just go to security and choose the service account `devops` and create.
+4. Check the progress.
+
+### If task 5 is also completed but you don't get full score, then follow the same steps:
+1. In the search bar, search for VM instance & go to VM instances
+2. Create an instance named `bigquery-instance`
+3. Leave all other specifications; just go to security and choose the service account `bigquery-qwiklab`
+4. Scroll to Identity and API access.
+5. Under Access scopes, select Set access for each API.
+6. Create and SSH into it and run this command.
+```py
+bq query --use_legacy_sql=false \
+'SELECT name, SUM(number) AS total
+ FROM `bigquery-public-data.usa_names.usa_1910_current`
+ GROUP BY name
+ ORDER BY total DESC
+ LIMIT 10'
+```
+7. Check the score
 ---
 
 ## 🎉 **Congratulations! Lab Completed Successfully!** 🏆  
