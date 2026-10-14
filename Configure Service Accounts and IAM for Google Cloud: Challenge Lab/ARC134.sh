@@ -19,144 +19,100 @@ echo "${CYAN_TEXT}${BOLD_TEXT}  🚀       INITIATING EXECUTION     🚀  ${RESE
 echo "${CYAN_TEXT}${BOLD_TEXT}=========================================${RESET_FORMAT}"
 echo
 
-# Set text styles
-YELLOW=$(tput setaf 3)
-BOLD=$(tput bold)
-RESET=$(tput sgr0)
+export ZONE=
 
-# ==========================================
-# TASK 2 & 3: Create DevOps Service Account
-# ==========================================
+export PROJECTID=$(gcloud config get-value project)
 
-export PROJECT_ID=$(gcloud config get-value project)
-export SA=devops@${PROJECT_ID}.iam.gserviceaccount.com
-
-gcloud iam service-accounts create devops \
-  --display-name="devops" 2>/dev/null || true
-
-gcloud projects add-iam-policy-binding ${PROJECT_ID} \
-  --member="serviceAccount:${SA}" \
-  --role="roles/iam.serviceAccountUser" \
-  --condition=None
-
-gcloud projects add-iam-policy-binding ${PROJECT_ID} \
-  --member="serviceAccount:${SA}" \
-  --role="roles/compute.instanceAdmin" \
-  --condition=None
+gcloud auth login
 
 
-# ==========================================
-# TASK 4: Create VM with DevOps Service Account
-# ==========================================
+# PART 1:-  Run all this commands on lab-vm instance 
 
-export ZONE=$(gcloud config get-value compute/zone)
+gcloud iam service-accounts create devops --display-name devops
+
+gcloud config configurations activate default
+
+gcloud iam service-accounts list  --filter "displayName=devops"
+
+SA=$(gcloud iam service-accounts list --format="value(email)" --filter "displayName=devops")
+
+gcloud projects add-iam-policy-binding $PROJECTID --member serviceAccount:$SA --role=roles/iam.serviceAccountUser
+
+gcloud projects add-iam-policy-binding $PROJECTID --member serviceAccount:$SA --role=roles/compute.instanceAdmin
 
 gcloud compute instances create vm-2 \
-  --zone=${ZONE} \
-  --machine-type=e2-micro \
-  --service-account=${SA} \
-  --scopes=https://www.googleapis.com/auth/cloud-platform
+--service-account=$SA \
+--zone=$ZONE
 
-
-# ==========================================
-# TASK 5: Create Custom IAM Role
-# ==========================================
-
-cat <<'EOF' > role-definition.yaml
-title: "Custom Role"
-description: "Custom role for Cloud SQL access"
-stage: "GA"
+cat > role-definition.yaml <<EOF
+title: Custom Role
+description: Custom role with cloudsql.instances.connect and cloudsql.instances.get permissions
 includedPermissions:
 - cloudsql.instances.connect
 - cloudsql.instances.get
 EOF
 
-gcloud iam roles create customRole \
-  --project=${PROJECT_ID} \
-  --file=role-definition.yaml
+gcloud iam roles create customRole --project=$PROJECTID --file=role-definition.yaml
 
+gcloud iam service-accounts create bigquery-qwiklab --display-name bigquery-qwiklab
 
-# ==========================================
-# TASK 6: Create BigQuery Service Account
-# ==========================================
+SSA=$(gcloud iam service-accounts list --format="value(email)" --filter "displayName=bigquery-qwiklab")
 
-export BQ_SA=bigquery-qwiklab@${PROJECT_ID}.iam.gserviceaccount.com
+gcloud projects add-iam-policy-binding $PROJECTID --member=serviceAccount:$SSA --role=roles/bigquery.dataViewer
 
-gcloud iam service-accounts create bigquery-qwiklab \
-  --display-name="bigquery-qwiklab" 2>/dev/null || true
+gcloud projects add-iam-policy-binding $PROJECTID --member=serviceAccount:$SSA --role=roles/bigquery.user
 
-gcloud projects add-iam-policy-binding ${PROJECT_ID} \
-  --member="serviceAccount:${BQ_SA}" \
-  --role="roles/bigquery.dataViewer" \
-  --condition=None
+gcloud compute instances create bigquery-instance --service-account=$SSA --scopes=https://www.googleapis.com/auth/bigquery --zone=$ZONE
 
-gcloud projects add-iam-policy-binding ${PROJECT_ID} \
-  --member="serviceAccount:${BQ_SA}" \
-  --role="roles/bigquery.user" \
-  --condition=None
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+# PART 2:- Run all command on bigquery-instance
 
-# ==========================================
-# Create BigQuery VM with Service Account
-# ==========================================
-export ZONE=$(gcloud config get-value compute/zone)
+export PROJECT_ID=$(gcloud config get-value project)
 
-gcloud compute instances create bigquery-instance \
-  --zone=${ZONE} \
-  --machine-type=e2-medium \
-  --service-account=${BQ_SA} \
-  --scopes=https://www.googleapis.com/auth/cloud-platform
-
-
-# ==========================================
-# Connect to BigQuery VM
-# ==========================================
-export ZONE=$(gcloud config get-value compute/zone)
-
-gcloud compute ssh bigquery-instance --zone=${ZONE}
-Important: The block above ends by connecting to the BigQuery VM. Once connected, run the following second block inside the VM to install dependencies and execute the query.
-
-bash
-# Install Python dependencies
 sudo apt-get update
-sudo apt-get install -y python3-pip python3-pandas python3-google-auth
-pip3 install google-cloud-bigquery db-dtypes --break-system-packages
 
-export PROJECT_ID=$(curl -s -H "Metadata-Flavor: Google" \
-  http://metadata.google.internal/computeMetadata/v1/project/project-id)
+sudo apt-get install -y git python3-pip
 
-export BQ_SA=$(curl -s -H "Metadata-Flavor: Google" \
-  http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email)
+pip3 install --upgrade pip
 
-# Create the BigQuery query script
-cat <<'EOF' > query.py
+pip3 install google-cloud-bigquery
+
+pip3 install pyarrow
+
+pip3 install pandas
+
+pip3 install db-dtypes
+
+echo "
 from google.auth import compute_engine
 from google.cloud import bigquery
-import os
-
-PROJECT_ID = os.environ["PROJECT_ID"]
-BQ_SA = os.environ["BQ_SA"]
-
 credentials = compute_engine.Credentials(
-    service_account_email=BQ_SA
-)
-
-query = """
-SELECT name, SUM(number) AS total_people
-FROM `bigquery-public-data.usa_names.usa_1910_2013`
+    service_account_email='bigquery-qwiklab@$PROJECT_ID.iam.gserviceaccount.com')
+query = '''
+SELECT name, SUM(number) as total_people
+FROM "bigquery-public-data.usa_names.usa_1910_2013"
 WHERE state = 'TX'
 GROUP BY name, state
 ORDER BY total_people DESC
 LIMIT 20
-"""
-
+'''
 client = bigquery.Client(
-    project=PROJECT_ID,
-    credentials=credentials
-)
-
+    project='$PROJECT_ID',
+    credentials=credentials)
 print(client.query(query).to_dataframe())
-EOF
+" > query.py
+
+
+pip3 install --upgrade pip
+
+pip3 install google-cloud-bigquery
+
+pip3 install pyarrow
+
+pip3 install pandas
+
+pip3 install db-dtypes
 
 python3 query.py
 
