@@ -20,70 +20,91 @@ echo "${CYAN_TEXT}${BOLD_TEXT}🚀     INITIATING EXECUTION     🚀${RESET_FORM
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
 echo
 
-audio_uri="gs://cloud-samples-data/speech/corbeau_renard.flac"
+#!/usr/bin/env bash
+set -e
 
-export PROJECT_ID=$(gcloud config get-value project)
+if [ -z "${API_KEY}" ]; then
+  API_KEY=$(gcloud services api-keys list --filter="displayName:*API key*" --format="value(keyString)" 2>/dev/null | head -n 1)
+  if [ -z "${API_KEY}" ]; then
+    API_KEY=$(gcloud alpha services api-keys list --format="value(keyString)" 2>/dev/null | head -n 1)
+  fi
+fi
 
-source venv/bin/activate
+if [ -z "${API_KEY}" ]; then
+  echo "Error: API_KEY is not set and could not be detected. Run 'export API_KEY=\"...\"' and retry."
+  exit 1
+fi
+export API_KEY
 
-cat > synthesize-text.json <<EOF
+gcloud services enable speech.googleapis.com texttospeech.googleapis.com translate.googleapis.com >/dev/null 2>&1 || true
 
+cat << 'EOF' > synthesize-text.json
 {
-'input':{
-   'text':'Cloud Text-to-Speech API allows developers to include
-      natural-sounding, synthetic human speech as playable audio in
-      their applications. The Text-to-Speech API converts text or
-      Speech Synthesis Markup Language (SSML) input into audio data
-      like MP3 or LINEAR16 (the encoding used in WAV files).'
-},
-'voice':{
-   'languageCode':'en-gb',
-   'name':'en-GB-Standard-A',
-   'ssmlGender':'FEMALE'
-},
-'audioConfig':{
-   'audioEncoding':'MP3'
-}
-}
-
-EOF
-
-curl -H "Authorization: Bearer "$(gcloud auth application-default print-access-token) \
--H "Content-Type: application/json; charset=utf-8" \
--d @synthesize-text.json "https://texttospeech.googleapis.com/v1/text:synthesize" \
-> $task_2_file_name
-
-cat > "$task_3_request_file" <<EOF
-{
-"config": {
-"encoding": "FLAC",
-"sampleRateHertz": 44100,
-"languageCode": "fr-FR"
-},
-"audio": {
-"uri": "$audio_uri"
-}
+  "input":{
+    "text":"Cloud Text-to-Speech API allows developers to include natural-sounding, synthetic human speech as playable audio in their applications. The Text-to-Speech API converts text or Speech Synthesis Markup Language (SSML) input into audio data like MP3 or LINEAR16 (the encoding used in WAV files)."
+  },
+  "voice":{
+    "languageCode":"en-GB",
+    "name":"en-GB-Standard-A",
+    "ssmlGender":"FEMALE"
+  },
+  "audioConfig":{
+    "audioEncoding":"MP3"
+  }
 }
 EOF
 
-curl -s -X POST -H "Content-Type: application/json" \
---data-binary @"$task_3_request_file" \
-"https://speech.googleapis.com/v1/speech:recognize?key=${API_KEY}" \
--o "$task_3_response_file"
+curl -s -H "Content-Type: application/json; charset=utf-8" --data @synthesize-text.json "https://texttospeech.googleapis.com/v1/text:synthesize?key=${API_KEY}" -o synthesize-text.txt
 
-response=$(curl -s -X POST \
--H "Authorization: Bearer $(gcloud auth application-default print-access-token)" \
--H "Content-Type: application/json; charset=utf-8" \
--d "{\"q\": \"$task_4_sentence\"}" \
-"https://translation.googleapis.com/language/translate/v2?key=${API_KEY}&source=ja&target=en")
-echo "$response" > "$task_4_file"
+cat << 'EOF' > tts_decode.py
+import argparse
+from base64 import decodebytes
+import json
 
-curl -s -X POST \
--H "Authorization: Bearer $(gcloud auth application-default print-access-token)" \
--H "Content-Type: application/json; charset=utf-8" \
--d "{\"q\": [\"$task_5_sentence\"]}" \
-"https://translation.googleapis.com/language/translate/v2/detect?key=${API_KEY}" \
--o "$task_5_file"
+def decode_tts_output(input_file, output_file):
+    with open(input_file) as input_stream:
+        response = json.load(input_stream)
+        audio_data = response['audioContent']
+        with open(output_file, "wb") as new_file:
+            new_file.write(decodebytes(audio_data.encode('utf-8')))
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--input', required=True)
+    parser.add_argument('--output', required=True)
+    args = parser.parse_args()
+    decode_tts_output(args.input, args.output)
+EOF
+
+python3 tts_decode.py --input "synthesize-text.txt" --output "synthesize-text-audio.mp3"
+
+cat << 'EOF' > speech_request_fr.json
+{
+  "config":{
+    "encoding":"FLAC",
+    "languageCode":"fr-FR",
+    "audioChannelCount":1
+  },
+  "audio":{
+    "uri":"gs://cloud-samples-data/speech/corbeau_renard.flac"
+  }
+}
+EOF
+
+cp speech_request_fr.json speech_request.json
+cp speech_request_fr.json request.json
+
+curl -s -X POST -H "Content-Type: application/json; charset=utf-8" --data @speech_request_fr.json "https://speech.googleapis.com/v1/speech:recognize?key=${API_KEY}" -o response.json
+
+cp response.json speech_response.json
+
+curl -s -X POST -H "Content-Type: application/json; charset=utf-8" -d '{"q":"これは日本語です。","target":"en"}' "https://translation.googleapis.com/language/translate/v2?key=${API_KEY}" -o translation_response.txt
+
+cp translation_response.txt translated_response.txt
+
+curl -s -X POST -H "Content-Type: application/json; charset=utf-8" -d '{"q":"Este%é%japonês."}' "https://translation.googleapis.com/language/translate/v2/detect?key=${API_KEY}" -o detection_response.txt
+
+cp detection_response.txt detected_response.txt
 
 echo
 echo "${CYAN_TEXT}${BOLD_TEXT}===================================${RESET_FORMAT}"
