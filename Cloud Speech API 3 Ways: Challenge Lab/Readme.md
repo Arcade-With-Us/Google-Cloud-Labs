@@ -32,9 +32,14 @@
 **🌐Launch Cloud Shell:**
 Start your Google CloudShell session by [clicking here](https://console.cloud.google.com/home/dashboard?project=&pli=1&cloudshell=true).
 
+## First, create an API key and select:
+1. Cloud speech to text api
+2. Cloud text to speech api
+3. Cloud Translate api
+
 ## 💻 **Execute in Cloud Shell**  
 
-### Run the following Commands in CloudShell
+### Run the following Commands in Cloud Shell
 
 ```
 export ZONE=$(gcloud compute instances list lab-vm --format 'csv[no-heading](zone)')
@@ -45,13 +50,6 @@ gcloud compute ssh lab-vm --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet
 
 ```
 export API_KEY=
-export task_2_file_name=""
-export task_3_request_file=""
-export task_3_response_file=""
-export task_4_sentence=""
-export task_4_file=""
-export task_5_sentence=""
-export task_5_file=""
 ```
 ```
 curl -LO https://raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Cloud%20Speech%20API%203%20Ways%3A%20Challenge%20Lab/ARC132.sh
