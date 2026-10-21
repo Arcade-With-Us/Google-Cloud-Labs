@@ -33,7 +33,12 @@
 
 ## ⚙️ Lab Environment Setup:
 
-## 💻 **Execute in VM instance SSH terminal** 
+### Create an Api Key:
+1. In the Google Cloud console, navigate to Navigation menu > APIs & Services > Credentials.
+2. Click Create Credentials at the top of the screen and select API key.
+3. Choose `Cloud Speech-to-Text API` and create.
+
+## 💻 **Execute in you Cloudshell** 
 ```
 curl -LO raw.githubusercontent.com/Arcade-With-Us/Google-Cloud-Labs/refs/heads/main/Using%20the%20Google%20Cloud%20Speech%20API%3A%20Challenge%20Lab/ARC131.sh
 
