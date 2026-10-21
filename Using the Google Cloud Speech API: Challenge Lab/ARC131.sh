@@ -38,28 +38,14 @@ export API_KEY="$USER_API_KEY"
 echo "${GREEN_TEXT}${BOLD_TEXT}API Key Set Successfully!${RESET_FORMAT}"
 echo ""
 
-# Taking user input for file names
-read -p "${YELLOW_TEXT}${BOLD_TEXT}Enter request file name for English: ${RESET_FORMAT}" REQUEST_FILE_A
-read -p "${YELLOW_TEXT}${BOLD_TEXT}Enter response file name for English: ${RESET_FORMAT}" RESPONSE_FILE_A
-read -p "${YELLOW_TEXT}${BOLD_TEXT}Enter request file name for Spanish: ${RESET_FORMAT}" REQUEST_FILE_B
-read -p "${YELLOW_TEXT}${BOLD_TEXT}Enter response file name for Spanish: ${RESET_FORMAT}" RESPONSE_FILE_B
+export GOOGLE_CLOUD_PROJECT=$(gcloud config get-value project)
+export BUCKET_NAME="${GOOGLE_CLOUD_PROJECT}-speech"
 
-# Display selected file names
-echo -e "${GREEN_TEXT}${BOLD_TEXT}REQUEST FILE FOR ENGLISH: $REQUEST_FILE_A${RESET_FORMAT}"
-echo -e "${GREEN_TEXT}${BOLD_TEXT}RESPONSE FILE FOR ENGLISH: $RESPONSE_FILE_A${RESET_FORMAT}"
-echo -e "${GREEN_TEXT}${BOLD_TEXT}REQUEST FILE FOR SPANISH: $REQUEST_FILE_B${RESET_FORMAT}"
-echo -e "${GREEN_TEXT}${BOLD_TEXT}RESPONSE FILE FOR SPANISH: $RESPONSE_FILE_B${RESET_FORMAT}"
+# Create the bucket if it does not exist already
+gcloud storage buckets create gs://${BUCKET_NAME} --location=us
 
-# Exporting variables
-export REQUEST_CP2=$REQUEST_FILE_A
-export RESPONSE_CP2=$RESPONSE_FILE_A
-export REQUEST_SP_CP3=$REQUEST_FILE_B
-export RESPONSE_SP_CP3=$RESPONSE_FILE_B
-
-
-echo "${YELLOW_TEXT}${BOLD_TEXT} STEP 2: Creating Request payload for English Speech Recognition:${RESET_FORMAT}"
-
-cat > "$REQUEST_CP2" <<EOF
+# Create the English transcription request
+cat <<EOF > request.json
 {
   "config": {
     "encoding": "LINEAR16",
@@ -72,17 +58,12 @@ cat > "$REQUEST_CP2" <<EOF
 }
 EOF
 
-echo "${GREEN_TEXT}${BOLD_TEXT}REQUEST FILE CREATED SUCCESSFULLY!${RESET_FORMAT}"
+# Call the API for English transcription
+curl "https://speech.googleapis.com/v1/speech:recognize?key=${API_KEY}" \
+  -s -X POST -H "Content-Type: application/json" --data-binary @request.json > speech_response_en.json
 
-echo "${YELLOW_TEXT}${BOLD_TEXT} STEP 3: Sending Request for English Speech Recognition:${RESET_FORMAT}"
-
-curl -s -X POST -H "Content-Type: application/json" --data-binary @"$REQUEST_CP2" \
-"https://speech.googleapis.com/v1/speech:recognize?key=$API_KEY" > $RESPONSE_CP2
-
-echo "${GREEN_TEXT}${BOLD_TEXT}RESPONSE FILE CREATED SUCCESSFULLY!${RESET_FORMAT}"
-echo "${YELLOW_TEXT}${BOLD_TEXT} STEP 4: Creating Request payload for Spanish Speech Recognition:${RESET_FORMAT}"
-
-cat > "$REQUEST_SP_CP3" <<EOF
+# Create the Spanish transcription request
+cat > request_sp.json <<'EOF'
 {
   "config": {
     "encoding": "FLAC",
@@ -94,13 +75,28 @@ cat > "$REQUEST_SP_CP3" <<EOF
 }
 EOF
 
-echo "${GREEN_TEXT}${BOLD_TEXT}REQUEST FILE CREATED SUCCESSFULLY!${RESET_FORMAT}"
-echo "${YELLOW_TEXT}${BOLD_TEXT} STEP 5: Sending Request for Spanish Speech Recognition:${RESET_FORMAT}"
+# Call the API for Spanish transcription
+curl -s -X POST \
+  "https://speech.googleapis.com/v1/speech:recognize?key=${API_KEY}" \
+  -H "Content-Type: application/json" \
+  --data-binary @request_sp.json \
+  -o response_sp.json
 
-curl -s -X POST -H "Content-Type: application/json" --data-binary @"$REQUEST_SP_CP3" \
-"https://speech.googleapis.com/v1/speech:recognize?key=$API_KEY" > $RESPONSE_SP_CP3
+# Upload all four files for lab verification
+gcloud storage cp request.json "gs://${BUCKET_NAME}/request.json"
+gcloud storage cp speech_response_en.json "gs://${BUCKET_NAME}/speech_response_en.json"
+gcloud storage cp request_sp.json "gs://${BUCKET_NAME}/request_sp.json"
+gcloud storage cp response_sp.json "gs://${BUCKET_NAME}/response_sp.json"
 
-echo "${GREEN_TEXT}${BOLD_TEXT}RESPONSE FILE CREATED SUCCESSFULLY!${RESET_FORMAT}"
+# Display the transcription results
+echo "===== ENGLISH TRANSCRIPTION ====="
+cat speech_response_en.json
+echo
+echo "===== SPANISH TRANSCRIPTION ====="
+cat response_sp.json
+echo
+echo "===== ALL COMMANDS COMPLETED ====="
+
 echo
 echo "${GREEN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
 echo "${GREEN_TEXT}${BOLD_TEXT}              LAB COMPLETED SUCCESSFULLY!              ${RESET_FORMAT}"
